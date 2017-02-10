@@ -1,0 +1,37 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="css/user_index.css">
+<link rel="stylesheet" type="text/css" href="css/user_userdata.css">
+<script type="text/javascript" src="js/user/artDlaig.js"></script>
+<script type="text/javascript" src="themes/default/js/user/{$opt}.js"></script>
+<div id="main">
+<div class="user_left">
+	{include user/leftmenu}
+</div>
+<div id="_right">
+	<div id="mid">
+		<div id="myDate">
+		<div class="bq_menu2">
+	<a {if $opt == 'userinfo'}class="nov"{else}class="information"{/if}  href="?act=userinfo&opt=userinfo">修改个人资料</a>
+
+	<a {if $opt == 'password'}class="nov"{else}class="revLogin"{/if} href="?act=userinfo&opt=password">修改登录密码</a>
+
+	<a {if $opt == 'setsafepass'}class="nov"{else}class="safeCode"{/if} href="?act=userinfo&opt=setsafepass">修改安全操作码</a>
+
+	<a {if $opt == 'setquestion'}class="nov"{else}class="safeTrouble"{/if} href="?act=userinfo&opt=setquestion">修改密码保护</a>
+
+	<a {if $opt == 'authname'}class="nov"{else}class="vident"{/if} href="?act=userinfo&opt=authname">加V实名认证</a>
+</div>
+
+		<form name="{$opt}" action="" method="post" onsubmit="return check();" enctype="multipart/form-data"> 
+		<br>
+		{if $opt== 'userinfo'}{include user/userdata/userinfo}{/if}
+		{if $opt== 'password'}{include user/userdata/password}{/if}
+		{if $opt== 'setsafepass'}{include user/userdata/setsafepass}{/if}
+		{if $opt== 'setquestion'}{include user/userdata/setquestion}{/if}
+		{if $opt== 'authname'}{include user/userdata/authname}{/if}
+		</form>
+		</div>
+	</div>
+</div>
+</div>
+{include common/footer}

@@ -1,0 +1,7 @@
+<div class="imgs">
+	<ul>
+		{foreach item=val key=key from=$img}
+		<li {if $uinfo.headimg==$val}class="act"{/if}><img src="themes/default/images/user/headimg/{$val}" onclick="headimg('{$val}');"></li>
+		{/foreach}
+	</ul>
+</div>

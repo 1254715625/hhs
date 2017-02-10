@@ -1,0 +1,713 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>淘宝交易大厅_好会刷互动平台</title>
+    <meta name="description" content="好会刷信誉平台为为那些零信誉低销量的掌柜提供解决方案,新手快速提升信誉,发任务提升信誉,就选好会刷。">
+    <meta name="keywords" content="好会刷,好会刷信誉平台,好会刷网商互动平台">
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link rel="stylesheet" type="text/css" href="../css/dialog/twitter.css">
+	<link rel="stylesheet" type="text/css" href="../css/mm.css">
+    <link rel="stylesheet" type="text/css" href="../css/paipai_common.css">
+    <script type="text/javascript" src="../js/jquery-1.7.2.min.js?v=20150715114537"></script>
+    <script type="text/javascript" src="../js/artDialog.js?v=20150715114537"></script>
+    <script type="text/javascript" src="../js/header.js?v=20150715114537"></script>
+    <script type="text/javascript" src="../js/socket.io.js?v=20150715114537"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js?v=20150715114537"></script>
+</head>
+s<body>
+	<!-- 顶部 -->
+<div id="m_top">
+	<div class="TopBanner">
+	 
+	  <div class="TopBannerNotice">
+	      <div id="closeTopBanner" title="关闭" style="position:absolute;top:5px;right:5px;width:23px;height:22px;background: url(http://test.haohuisua.com../images/home/close_b.png) no-repeat;cursor:pointer">
+	  </div>
+	  </div>   
+	</div>
+	<div id="10mts" style="background: #F93414;height: 32px;line-height: 32px;display:none;">
+		<div style="text-align:center;width:980px;margin:0 auto;color: #FFF;font-size:14px;font-weight:bold;">
+			任何向您索要短信验证码的人都是骗子！认清主动联系您的客服真假！
+		</div>
+  	</div>
+	<div class="kd">
+		<div class="kmain"> 
+			<div class="hy">
+				<div class="userdate">
+					<a href="" title="首页" style="margin: 4px;float:left;width:15px;height:15px;background:url(../images/ico/home.gif) no-repeat;"></a>
+					<!-- 登录前效果-->
+					
+					<!-- <img width="16" height="16" src="../images/ico/sina_1.png" class="hzhl login-before"> -->
+					
+					
+					<a class="login-after username" target="_blank" href="/info?username=叶子0327" style="display: inline;">叶子0327</a>
+					 　
+					<a class="login-after" href="/User/logout/" style="display: inline;">退出</a>
+					
+					
+				</div>
+			</div>
+			
+			<div class="top_btn">
+				<ul class="quick-menu">
+					<li class="menu-item login-after" style="display: list-item; background-image: none; border: 1px solid rgb(239, 246, 254); background-position: initial initial; background-repeat: initial initial;">
+						<div class="menud">
+							<a class="menu-hd" target="_blank" href="http://member.haohuisua.com/#topup/bank">存款 <span class="chengse moneyAll money" style="font-weight:700;">0.00</span><b style="border-color: rgb(102, 102, 102) rgb(239, 246, 254) rgb(239, 246, 254);"></b></a>
+							<div class="menu-0" style="width: 90px; display: none;">
+							  <div class="menu-bd-panel">
+								  <a href="http://member.haohuisua.com/#topup/bank">账户充值</a>
+								  <a href="http://member.haohuisua.com/#paydetails/payde">存款明细</a>
+							  </div>
+							</div>
+						</div>
+					</li>
+					<li class="login-after" style="margin-top: -1px; display: list-item;">|</li>
+					<li class="menu-item login-after" style="display: list-item;">
+						<div class="menud">
+							<a target="_blank" class="menu-hd" href="/BuyPoint">麦点 <span class="chengse moneyAll maidian" style="font-weight:700;">1.00</span><b></b></a>
+							<div class="menu-0" style="width: 90px;">
+							  <div class="menu-bd-panel">
+								  <a href="/BuyPoint">购买麦点</a>
+								  <a href="http://member.haohuisua.com/#paydetails/logpoint">麦点明细</a>
+							  </div>
+							</div>
+						</div>
+					</li>
+					<li class="login-after" style="margin-top: -1px; display: list-item;">|</li>
+					<li class="menu-item login-after" style="display: list-item;">
+						<div class="menud">
+							<a target="_blank" class="menu-hd" href="http://member.haohuisua.com/#message/personal">信息 <span class="chengse moneyAll message" style="font-weight:700;">0</span><b></b></a>
+							<div class="menu-0" style="width: 90px;">
+							  <div class="menu-bd-panel">
+								  <a href="http://member.haohuisua.com/#message/personal">私人收件箱</a>
+								  <a href="http://member.haohuisua.com/#message/official">官方收件箱</a>
+								  <a href="http://member.haohuisua.com/#message/sendNews">发送短消息</a>
+								  <a href="http://member.haohuisua.com/#message/remind">提醒设置</a>
+							  </div>
+							</div>
+						</div>
+					</li>
+					<li class="menu-item newdh heimg">
+						<a href="/Platform/soft">
+							我是发布方
+						</a>
+						<span class="newdh_bor">
+							<b class="heimg">向上</b>
+							<ul>
+								<li class="heimg lie lieimg1"><a href="/help/guide">图文教程</a></li>
+								<li class="heimg lie lieimg2"><a href="/help/Video">视频教程</a></li>
+								<li class="heimg lie lieimg3"><a href="http://member.haohuisua.com/#topup">帐号充值</a></li>
+								<li class="heimg lie lieimg4"><a href="/BuyPoint">购买麦点</a></li>
+								<li class="heimg lie lieimg5"><a href="/info/express">单号搜索</a></li>
+								<li class="heimg lie lieimg6"><a href="/info/rank">排行榜</a></li>
+								<li class="heimg lie lieimg7"><a href="tencent://message/?uin=800081529">客服帮助</a></li>
+							</ul>
+						</span>
+					</li>
+					<li class="menu-item newdh heimg">
+						<a href="/Platform/soft">
+							我是接手方
+						</a>
+						<span class="newdh_bor" style="display: none;">
+							<b class="heimg">向上</b>
+							<ul>
+								<li class="heimg lie liejsf1"><a href="/help/guide">图文教程</a></li>
+								<li class="heimg lie liejsf2"><a href="/help/Video">视频教程</a></li>
+								<li class="heimg lie liejsf3"><a href="http://member.haohuisua.com/#payment">申请提现</a></li>
+								<li class="heimg lie liejsf4"><a href="http://member.haohuisua.com/#rechange">回收麦点</a></li>
+								<li class="heimg lie liejsf5"><a href="/Platform/soft">常用软件</a></li>
+								<li class="heimg lie liejsf6"><a href="http://member.haohuisua.com/#userjob">领取奖励</a></li>
+								<li class="heimg lie liejsf7"><a href="/info/rank">排行榜</a></li>
+								<li class="heimg lie liejsf8"><a href="tencent://message/?uin=800081529">客服帮助</a></li>
+							</ul>
+						</span>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+		<div class="menu_qq">
+			  <a class="qq_help" href="javascript:;">客服帮助</a>
+		</div>
+		<div style="display: none;" class="help_down" id="service_qq"></div>
+		<!-- 客服悬浮 -->
+	  	<div id="kuzhan" style="height: 130px;">
+	  		<a class="propose" href="http://bbs.haohuisua.com/forum.php?mod=forumdisplay&amp;fid=39"></a>
+	  		<a class="propose yxiaoqq" href="javascript:;" style="top: 23px;height: 105px;"></a>
+	  		<div class="rtop" style="display: none;"><img src="/taobao/images/1tdi7nR70h.png" style="margin-top: 22px;width: 80px;"></div>
+	  		<div class="services" style="display: none;">        
+				<div class="con">        	
+					<ul>            	
+						<li class="qq">
+							<p><a class="yxiaoqq" href="javascript:;" style="font-size:13px;">800081529</a></p>          	
+							<p><a class="yxiaoqq" href="javascript:;"><img border="0" src="http://wpa.qq.com/pa?p=2:800081529:41" alt="点击这里给我发消息" title="点击这里给我发消息"></a></p>
+							<p><a class="qun" target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=6c3a6de2ba1ebe59b8d437d1564122064f6120f53a8d44fda85634feea9e14b0">176682996</a></p>
+							<p><a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=6c3a6de2ba1ebe59b8d437d1564122064f6120f53a8d44fda85634feea9e14b0">
+								<img border="0" src="http://pub.idqqimg.com/wpa/images/group.png">
+							</a></p>
+							<p class="gtime">上班时间 8:00-21:00</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="tirenwuinfo" style="display: block;">
+			<div class="tirenwu_bot">
+				<ul class="tirenwu_cont">
+					<li nov="0" style="margin-top: 37px;"><span class="span1"></span></li>
+					<li nov="1"><span class="span1"></span></li>
+					<li nov="2" style="margin-top: 2px;"><span class="span1"></span></li>
+					<li nov="3" style="margin-top: 35px;"><span class="span1"></span></li>
+					<li nov="4"><span class="span1"></span></li>
+					<li nov="5" style="margin-top: 2px;"><span class="span1"></span></li>
+				</ul>
+			</div>
+			<ul class="tirenwu_mis"></ul>
+		</div>
+	</div>
+</div>
+<!--logo+广告-->
+<div id="m_logo">
+	<a href="/" class="logo">
+		<img src="../images/public/head_logo.png" alt="好会刷_淘宝刷信誉">
+	</a>
+
+	<a class="gg" target="_blank" href="http://fuwu.haohuisua.com/fuwu/beisheng">
+		<img border="0" src="../images/public/3qq.png">
+	</a>
+</div>
+<!-- 导航 -->
+<div id="m_menu">
+  	<div class="menu_nav">
+	  <div class="m_menu_nav">
+		<ul>
+			<li class="n-home">
+				<a href="">首页</a>
+			</li>
+			<li id="yi_fuwu" class="n-fuwu" style="position: relative;display:none;">
+				<a href="http://fuwu.haohuisua.com">卖家服务</a>
+				<ul style="left:-20px;top:30px;">
+					<li class="gxhtg">
+						<a href="http://fuwu.haohuisua.com/fuwu/tuoguan" style="height:15px;">个性化托管</a>
+					</li>
+					<li class="zdlmtg">
+						<a href="http://fuwu.haohuisua.com/fuwu/sorttuoguan" style="height:15px;">指定类目托管</a>
+					</li>
+					<li class="wptg">
+						<a href="http://fuwu.haohuisua.com/fuwu/tuoguan" style="height:15px;">旺铺推广</a>
+					</li>
+					<li class="spjx">
+						<a href="http://fuwu.haohuisua.com/fuwu/video" style="height:15px;">视频教学</a>
+					</li>
+					<li class="bbpm">
+						<a href="http://fuwu.haohuisua.com/fuwu/beisheng" style="height:15px;">宝贝提升</a>
+					</li>
+					<li class="more">
+						<a href="http://fuwu.haohuisua.com/fuwu/plan" style="height:15px;">更多</a>
+					</li>
+				</ul>
+			</li>
+			<li class="n-taobao" id="n-taobao">
+				<a href="http://paipai.haohuisua.com/#index">拍拍大厅</a>
+				<ul> 
+					<li class="wdzr">
+						<a href="http://paipai.haohuisua.com/#index" style="height:15px;">拍拍大厅</a>
+					</li>
+					<li class="xsrw">
+						<a href="http://paipai.haohuisua.com/#souIndex" style="height:15px;">搜索大厅</a>
+					</li>
+					<li class="wdzrss">
+						<a href="http://fuwu.haohuisua.com/fuwu/phoxc" style="height:15px;">手机订单</a>
+					</li>
+				</ul>
+			</li>
+			<li class="n-paipai"><!-- .com style="display:none;" -->
+				<a href="http://paipai.haohuisua.com/#index">拍拍大厅</a>
+			</li>
+			<!-- .com -->
+			<!-- <li class="n-point n-notlogin" style="background-position: -98px -413px;">
+				<a href="http://paipai.haohuisua.com/#souIndex">搜索大厅</a>
+			</li> -->
+			<!-- .com -->
+			<li class="n-wk">
+				<a href="http://wk.haohuisua.com/#task">交易大厅</a>
+				<ul> 
+					<li class="wdzr">
+						<a href="http://wk.haohuisua.com#taobao" style="height:15px;">网店转让</a>
+					</li>
+					<li class="xsrw">
+						<a href="http://wk.haohuisua.com/#task" style="height:15px;">悬赏任务</a>
+					</li>
+					<li class="more">
+						<a href="http://wk.haohuisua.com/#task" style="height:15px;">更多</a>
+					</li>
+				</ul>
+			</li>
+			<!-- .com -->
+			<!-- <li class="n-point n-notlogin" style="background-position: -270px -747px;height: 34px;margin: 7px 0;">
+				<a href="http://wk.haohuisua.com/#task">悬赏任务</a>
+			</li> -->
+			<!-- .com -->
+			<li class="n-tuoguan"><!-- .com style="display:none;" -->
+				<a href="http://fuwu.haohuisua.com/fuwu/collect">收藏流量</a>
+				<ul>
+					<li class="gmsc">
+						<a href="http://fuwu.haohuisua.com/fuwu/collect" style="height:15px;">购买收藏</a>
+					</li>
+					<li class="gmll">
+						<a href="http://fuwu.haohuisua.com/fuwu/wip" style="height:15px;">购买流量</a>
+					</li>
+					<li class="gmbp">
+						<a href="http://fuwu.haohuisua.com/fuwu/bangpai" style="height:15px;">购买帮派</a>
+					</li>
+					<li class="gmyz">
+						<a href="http://fuwu.haohuisua.com/fuwu/bangpai" style="height:15px;">购买优站</a>
+					</li>
+					<li class="gmgz">
+						<a href="http://fuwu.haohuisua.com/fuwu/bangpai" style="height:15px;">购买关注</a>
+					</li>
+				</ul>
+			</li>
+			<li id="er_fuwu" class="n-fuwu" style="position: relative;">
+				<a href="http://fuwu.haohuisua.com">卖家服务</a>
+				<ul style="left:-20px;top:30px;">
+					<li class="gxhtg">
+						<a href="http://fuwu.haohuisua.com/fuwu/tuoguan" style="height:15px;">个性化托管</a>
+					</li>
+					<li class="zdlmtg">
+						<a href="http://fuwu.haohuisua.com/fuwu/sorttuoguan" style="height:15px;">指定类目托管</a>
+					</li>
+					<li class="wptg">
+						<a href="http://fuwu.haohuisua.com/fuwu/tuoguan" style="height:15px;">旺铺推广</a>
+					</li>
+					<li class="spjx">
+						<a href="http://fuwu.haohuisua.com/fuwu/video" style="height:15px;">视频教学</a>
+					</li>
+					<li class="bbpm">
+						<a href="http://fuwu.haohuisua.com/fuwu/beisheng" style="height:15px;">宝贝提升</a>
+					</li>
+					<li class="more">
+						<a href="http://fuwu.haohuisua.com/fuwu/plan" style="height:15px;">更多</a>
+					</li>
+				</ul>
+			</li>
+			<!-- .cn -->
+			<li class="n-bbs">
+				<a href="http://bbs.haohuisua.com/" target="_blank">问答</a>
+			</li>
+			<!-- .cn -->
+			<li class="n-point">
+				<a href="/BuyPoint/">购买麦点</a>
+			</li>
+			<li class="n-collect"><!-- .com style="display:none;" -->
+				<a href="http://fuwu.haohuisua.com/fuwu/sorttuoguan">网店托管</a>
+				<ul style="display: none;"> 
+					<li class="gxhtg">
+						<a href="http://fuwu.haohuisua.com/fuwu/tuoguan" style="height:15px;">个性化托管</a>
+					</li>
+					<li class="zdlmtg">
+						<a href="http://fuwu.haohuisua.com/fuwu/sorttuoguan" style="height:15px;">指定类目托管</a>
+					</li>
+					<li class="wdzr">
+						<a href="http://fuwu.haohuisua.com/fuwu/phoxc" style="height:15px;">手机订单</a>
+					</li>
+					<li class="xsrw">
+						<a href="/activity/youhuiquan" style="height:15px;">优惠券</a>
+					</li>
+				</ul>
+			</li>
+			<li class="n-member">
+				<a href="http://member.haohuisua.com">会员中心</a>
+			</li>
+		</ul>
+		<a class="fplink" href="/help/guide">
+			<img src="../images/home/text1.gif">
+		</a>
+	   </div>
+  	</div>
+</div>
+
+	<div id="content"><div class="h15"></div>
+<div class="fabu_box1">
+    <div class="fabu_title"><span class="tico fabu_left"></span><span class="tico fabu_h2">发布任务须知（*号为必填项）</span><span class="tico fabu_right"></span></div>
+	<div class="cle"></div>
+	<div class="fabu_cont">
+	  <ul>
+	  	
+		<li>本页仅供发布搜索任务，接手方通过发布方预设的形式进行浏览店铺；</li>
+		<li>增加搜索权重，同时也能让宝贝权重更好，让宝贝排名更好；</li>
+		
+		<li>要尽量保证平台任务担保价大于 (拍拍商品价格+快递运费)/2 ，否则接手人拍下商品后您的拍拍改价将会导致您的支付宝使用率低于50%既被拍拍视为信用炒作处理；</li>
+		<li>您发任务时，平台中的保证金不得少于任务价，成功发布任务将会在平台中扣押相应的任务保证金；接手人完成您的任务时等额的资金会作为商品款返回给您网店的帐户中；</li>
+		<li>您想发布任务的时候，必须保证您拥有相应的麦点，每次发布都会根据商品价格不同扣除相应的麦点数。您如果想让任务排名靠前就可以追加麦点奖励，追加的越多排名就越靠前；</li>
+		<li class="chengse">请确认商品地址绝对正确，否则会造成不必要的纠纷。</li>
+		<li class="chengse">为了您的店铺安全，发布“实物任务”商品价格请大于10元！</li>
+	  </ul>
+	</div>
+</div>
+
+<div class="newsHelp">
+	<a href="tencent://message/?uin=188239031"></a>
+</div>
+
+<a id="mao1"></a>
+<div class="tico menu">
+	<a title="单个任务商品" href="#publish/oneTask">单个任务商品</a>
+	<a title="来路任务" href="#publish/lailuTask">来路任务</a>
+	<a title="套餐任务" href="#publish/mealTask">套餐任务</a>
+	<a title="购物车任务" href="#publish/shopCartTask">购物车任务</a>
+	<a class="nov" title="搜索任务" href="#publish/batTask">搜索任务</a>
+	<!-- <a title="爆款任务" href="http://fuwu.haohuisua.com/fuwu/baokuan" target="_blank" style="position: relative;"><img src="../images/public/hot.gif" style="position: absolute;top: -1px;left: 68%;">爆款任务</a> -->
+	<a title="任务模版" href="#publish/taskTemplate">任务模版</a>
+	<a title="已发任务" href="#outTask">已发任务</a>
+	<a title="已发任务" href="http://fuwu.haohuisua.com/fuwu/phorder">手机销量</a>
+</div>
+
+<div class="cle"></div>
+
+<form id="all-data" method="post" onsubmit="return false;" val="4">
+<div class="fabu_box2" style=" position: relative; ">
+	
+   <ul class="cont">
+   		<li style="color: red;text-indent: 40px;height: 15px;padding: 5px 10px;">
+本页仅供发布搜索（流量）任务，接手方不会拍下付款，只需要按需求浏览！
+</li>
+<li>
+	<!-- <input type="hidden" name="task_type" value="2" /> -->
+	<div class="name">
+	<span style="color:Red;"></span>
+	使用模板：
+	</div>
+	<div class="value">
+	<select id="ddlTemplate" name="ddlTemplate" style="width:190px;">
+	<option value="0">请选择模板</option>
+	
+	</select>
+	</div>
+	<div class="exp">
+	您可以选择从已经保存的任务模板中选择一个，发布任务将更加方便快捷。
+	<a target="_blank" href="/bbs/t1313/">查看使用帮助</a>
+	</div>
+</li>
+<li>
+	<div class="name">
+	<span style="color:Red;">*</span>
+	拍拍掌柜名：
+	</div>
+	<div class="value">
+	<select id="ddlZGAccount" name="ddlZGAccount" style="width:190px;">
+	
+	<option value="挽云妆">挽云妆</option>
+	
+	</select>
+	</div>
+	<div class="exp">就是您想提升信誉的拍拍帐号，接任务的朋友用来确认您的身份。<a href="/#bindSeller">绑定掌柜</a></div>
+</li>
+
+<li style="margin-left: 40px;">
+	<div id="divtype" style="float:left;width:340px;">
+	<input id="rshop" type="radio" checked="checked" name="visitWay" value="1">
+	搜店铺&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input id="rgoods" type="radio" name="visitWay" value="2">
+	搜商品&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input id="rcredits" type="radio" name="visitWay" value="3">
+	信用评价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input id="rtrains" type="radio" name="visitWay" value="4">
+	直通车
+	</div>
+</li>
+<li class="visitWay visitWay-1">
+	<div id="divkey" class="name">搜索店铺关键字</div>
+	<div class="value">
+	<input id="txtDes" class="txt" type="text" style="width:182px;color:#f50;" maxlength="100" name="txtDes">
+	</div>
+	<div id="divkeytip" class="exp">请输入您的“店铺名称”或者“掌柜名称”，要确保接手人在拍拍店铺搜索中正确并且唯一能搜索到您的店铺。</div>
+</li>
+<li class="visitWay visitWay-1" style="height:65px;">
+	<div id="divdes" class="name">店铺搜索提示</div>
+	<div class="value">
+	<textarea id="txtSearchDes" rows="3" style="width:188px" name="txtSearchDes"></textarea>
+	</div>
+	<div id="divdestip" class="exp">请输入提示信息，说明店铺在拍拍搜索结果列表中的位置，商品在店铺首页中的大概位置等等，例如：店铺在搜索结果第二个，商品在店铺首页第二排第一个</div>
+</li>
+<li>
+	<div class="name">
+	店铺链接位置截图
+	</div>
+	<div class="value long">
+	<input id="url-upfile-1" type="text" title="没有图片请保留空" readonly="" style="width:206px;height:20px" maxlength="150" name="PhotoUrl">
+	</div>
+	<div class="exp" style="float:left;"> 
+		<span class="uploadImg" style="float:left;">          
+	        <input type="file" name="file" class="file" id="upfile-1" size="25" style="margin-left:-232px;margin-top:0px;">    
+	        <input type="button" class="button" value="选择本地图片并上传"> 
+	      </span>
+	      <span id="info-upfile-1" class="upload-info green"></span>
+	</div>
+	<div class="cle"></div>
+	<div style="padding:5px 0px 0px 145px; height:18px;width:700px; ">可以用QQ截图功能把目标链接位置截图并保存到你的电脑，再上传图片方便接手人查看链接所在位置</div>
+</li>
+<li>
+	<div class="name">
+	<span style="color:Red;">*</span>
+	商品链接地址：
+	</div>
+	<div class="value long">
+	<input id="txtGoodsUrl" class="txt" type="text" placeholder="http://" style="width:100%;" name="txtGoodsUrl">
+	</div>
+	<div class="exp">填写您要对方购买的商品地址，尽量使用不同商品来发布任务。</div>
+</li>
+ 
+   		
+		<li>
+			<div class="name">基本麦点：</div>
+			<div class="value">
+			<input id="txtMaidian" class="txt" type="text" value="1" style="width:130px;color:#f50;background:#F0F0F0;" name="txtMinMPrice" readonly="">
+			  个麦点
+			</div>
+			<div class="exp">
+			发布该价格任务需要扣除的麦点，不包括增值服务.
+			<br>
+			您目前还有麦点
+			<em>1.00</em>
+			个，
+			<a target="_blank" href="/BuyPoint">我要购买</a>
+			</div>
+		</li>
+		
+		
+		<li><div class="name">追加悬赏麦点：</div>
+			<div class="value">
+			<input id="pointExt" class="txt" type="text" style="width:130px;color:#f50;" value="" name="pointExt">
+			  个麦点
+			</div>
+			<div class="exp">
+			追加悬赏麦点数越多，更易被人接手，刷钻效率越高！  
+			</div>
+		</li>
+		
+		
+		<a id="mao2"></a>
+		<li class="add">
+		    <div class="name">增值服务：</div>
+			<div class="addvalue">
+			   <ul>
+			   		
+			        <li>
+							<div class="name">设置审核对象：<br><span style="color:red;float: left;margin-left: 20px;">接手较慢</span></div>
+							<div class="value short">
+							<input id="cbxIsAudit" type="checkbox" name="cbxIsAudit" value="1">
+							</div>
+							<div class="exp">
+							接手方接任务后，要您亲自审核后，接手方才可看到商品地址，对刷实物和规定旺旺聊天的商家很有用!可以事先QQ联系对方商量好。需要额外支付
+							<em>0.3</em>
+							个麦点给接手方
+							</div>
+					</li>
+					
+					<li>
+							<div class="name">需要旺旺聊天：</div>
+							<div class="value short">
+							<input id="cbxIsWW" type="checkbox" name="cbxIsWW" value="1">
+							</div>
+							<div class="exp">
+							要求接手方先在旺旺上聊几句，
+							<em>强烈建议开启审核先使用QQ约定好</em>
+							。需额外支付
+							<em>1</em>
+							个麦点给接手方
+							</div>
+					</li>
+					
+						  <li>
+	                          <div class="name">购物收藏：<img src="../images/public/new.png"></div>
+	                          <div class="value short">
+	                          	<input id="shopcoller" type="checkbox" name="shopcoller" value="1">
+	                          </div>
+	                          <div class="exp">拍拍购物收藏，收藏后提交收藏成功截图给您，额外支付<em>0.5</em>个麦点将奖励给接手方</div>
+	                      </li>
+	                
+                      
+                      <li>
+                          <div class="name">限制接手人：</div>
+                          <div class="value longest">
+                            <div id="divFMCount" style="margin-bottom:5px;">
+                            	<div>
+	                            	<label><input type="checkbox" value="1" id="cbxIsFMaxMCount" name="cbxIsFMaxMCount"></label> 
+	                            	<input type="radio" name="fmaxmc" id="fmaxmc_1" value="1" price="1"> 1天接5个(<em>1</em>个麦点)
+	                            	<input type="radio" name="fmaxmc" value="2" price="0.5" id="fmaxmc_2"> 1天接10个(<em>0.5</em>个麦点)
+	                            	<input type="radio" name="fmaxmc" id="fmaxmc_3" value="3"> 1天接20个(<em>0.2</em>个麦点)
+                            	</div>
+                            </div>
+                            <div class="exp">您可以设置接手人1天内接手您发布任务的次数，需额外支付麦点</div>
+                          </div>
+                      </li>
+                      
+                      
+                      <li>
+                          <div class="name">买号实名认证：</div>
+                          <div class="value longest">
+                            <div id="divBaLevel" style="margin-bottom:5px;">
+                            	<input id="isReal" type="checkbox" value="1" name="isReal">
+                            	<input type="radio" name="realname" value="1" id="isReal_1">
+                            	<label for="isReal_1">普通实名(<em>1.0</em>个麦点)</label>
+                            </div>
+                           
+                            <div class="exp">限制接手买号必须是通过了支付宝实名认证才可以接手此任务</div>
+                          </div>
+                      </li>
+                      
+
+                    <li>
+                        <div class="name">过滤接手人：</div>
+                        <div class="value longest">
+                         <div id="divFilter" style="margin-bottom:10px;">
+                         	<div>
+                         		<label style="float:left;"><input type="checkbox" value="1" id="cbxIsFMinGrade" name="cbxIsFMinGrade"></label>
+                         		<label class="labelstyle" style="float:left;width:160px;margin-left:10px;">接手人积分不低于</label>
+                         		<label class="labelstyle" style="float: left;width:40px"><input type="radio" name="fmingrade" value="10">10</label>
+                         		<label class="labelstyle" style="float: left;width:40px"><input type="radio" name="fmingrade" value="30">30</label>
+                         		<label class="labelstyle" style="float: left;width:40px"><input type="radio" name="fmingrade" value="50">50</label>
+                         		<label class="labelstyle" style="width:40px"><input type="radio" name="fmingrade" value="100">100</label>
+                         	</div>
+							<div>
+								<label style="float:left;"><input type="checkbox" value="1" id="cbxIsFMaxBBC" name="cbxIsFMaxBBC"></label>
+								<label class="labelstyle" style="float:left;width:160px;margin-left:10px;">接手买号被拉黑次数不大于</label>
+								<label class="labelstyle" style="float: left;width:40px"><input type="radio" name="fmaxbbc" value="5">5</label>
+								<label class="labelstyle" style="float: left;width:40px"><input type="radio" name="fmaxbbc" value="10">10</label>
+								<label class="labelstyle" style="width:40px"><input type="radio" name="fmaxbbc" value="15">15</label>
+							</div>
+
+							<div>
+								<label style="float:left;"><input type="checkbox" value="1" id="cbxIsFMaxABC" name="cbxIsFMaxABC"></label>
+								<label class="labelstyle" style="float:left;width:160px;margin-left:10px;">接手人刷客满意度不低于</label>
+								<label class="labelstyle" style="float: left;width:40px"><input type="radio" name="fmaxabc" value="98">98%</label>
+								<label class="labelstyle" style="float: left;width:40px"><input type="radio" name="fmaxabc" value="95">95%</label>
+								<label class="labelstyle" style="width:40px"><input type="radio" name="fmaxabc" value="90">90%</label>
+							</div>
+
+							<div>
+								<label style="float:left;"><input type="checkbox" value="1" id="cbxIsFMaxCredit" name="cbxIsFMaxCredit"></label>
+								<label class="labelstyle" style="float:left;width:160px;margin-left:10px;">接手买号信誉不高于</label>
+								<label class="labelstyle" style="float: left;width:40px"><input type="radio" name="fmaxcredit" value="10">10</label>
+								<label class="labelstyle" style="float: left;width:40px"><input type="radio" name="fmaxcredit" value="150">150</label>
+								<label class="labelstyle" style="width:40px"><input type="radio" name="fmaxcredit" value="200">200</label>
+							</div>
+
+							<div>
+								<label style="float:left;"><input type="checkbox" value="1" id="cbxIsFMaxBTSCount" name="cbxIsFMaxBTSCount"></label>
+								<label class="labelstyle" style="float:left;width:160px;margin-left:10px;">接手人被有效投诉次数不大于</label>
+								<label class="labelstyle" style="float: left;width:40px"><input type="radio" name="fmaxbtsc" value="2">2</label>
+								<label class="labelstyle" style="float: left;width:40px"><input type="radio" name="fmaxbtsc" value="3">3</label>
+								<label class="labelstyle" style="width:40px"><input type="radio" name="fmaxbtsc" value="4">4</label>
+							</div>
+						</div>
+                         
+	                        <div style="color:#999;">
+	                        	您可以设置接手人的最低资质要求，系统将自动为您过滤掉不合格的接手人。每条任务需额外支付<em>0.5</em>个麦点给接手方。 
+	                        	<a target="_blank" href="http://bbs.haohuisua.com/forum.php?mod=viewthread&amp;tid=1314">如何设置筛选条件</a>
+	                        </div>
+                        </div>
+                    </li>
+                    
+                 	
+                    <li>
+                      <div class="name">购买前停留：</div>
+                      <div class="value longest">
+                        <div id="divFMCount" style="margin-bottom:5px;">
+                        	<div>
+                            	<label><input type="checkbox" value="1" id="stopDsTime" name="stopDsTime"></label> 
+  								<input type="radio" name="stopTime" value="1">
+  								<span>停留1分钟（<b style="color: #FF5500;font-weight: normal;">0.1</b>个麦点）</span>
+  								<input type="radio" name="stopTime" value="2">
+  								<span>停留3分钟（<b style="color: #FF5500;font-weight: normal;">0.3</b>个麦点）</span>
+  								<input type="radio" name="stopTime" value="3">
+  								<span>停留5分钟（<b style="color: #FF5500;font-weight: normal;">0.5</b>个麦点）</span>
+  							</div>
+                        </div>
+                      </div>
+                 	</li>
+                 	<li>
+						<div class="name">完整浏览到底：</div>
+						<div class="value short" style="height: 20px;">
+							<input id="isViewEnd" type="checkbox" name="isViewEnd" value="1">
+						</div>
+						<div class="exp">要求接手方上传任务商品的底部浏览截图，需要额外支付<em>0.3</em>个麦点</div>
+					</li>
+                    
+                    <li>
+                      <div class="name">店内浏览商品：</div>
+                      <div class="value longest">
+                        <div id="divFMCount" style="margin-bottom:5px;">
+                        	<div>
+                            	<label><input type="checkbox" value="1" id="shopBrGoods" name="shopBrGoods"></label> 
+                            	<input type="radio" name="lgoods" value="1"> 额外浏览1个商品
+                            	<input type="radio" name="lgoods" value="2"> 额外浏览2个商品
+                            	<input type="radio" name="lgoods" value="3"> 额外浏览3个商品
+                        	</div>
+                        </div>
+                        <div class="exp">每额外浏览一个商品需要<em>0.3</em>个麦点</div>
+                      </div>
+                 	</li>
+                 	
+					<li>
+                        <div class="name"> 保存任务模版：</div>
+                        <div class="value longest">
+                            <input id="isTpl" type="checkbox" value="1" name="isTpl"> <span style="color:#000">模版名称</span>
+                            <input name="tplTo" type="text" id="tplTo" class="txt" maxlength="50"><br>
+                            实现快捷方便的发布任务,普通用户最多可保存3个任务发布模板，VIP最高可拥有30个任务发布模板 <a target="_blank" href="/info/vip">查看VIP特权</a>
+                        </div>
+                        <div class="exp"></div>
+                    </li>
+                  </ul>
+				  
+              </div>
+              <div id="gl_xs">
+	              <div class="one_1" style="display: none;background:#FAFADF;border:1px solid rgb(255,148,87);float:left;margin-left: 11px;margin-right:30px;overflow: hidden;  padding: 5px 10px;  width: 660px;margin: 15px 0 0 144px;">
+					提示：由于您的店铺信誉为<span class="xingji">0</span>，为确保符合基本安全规则，我们建议您每天操作不超过<b style="color:red;margin:0 3px;">3-6</b> 单，建议搭配平台的搜索流量套餐，增大流量的同时，控制店铺的转化率在日常左右合理范围，同时我们建议您两个任务的发布间隔大于<b style="color:red;margin:0 3px;">60</b>分钟，详情请查阅<a target="_blank" href="/help/safesz" style="color: #1996E6;">《安全操作守则》</a>
+	              </div>
+	              <div class="one_2" style="display: none;background:#FAFADF;border:1px solid rgb(255,148,87);float:left;margin-left: 11px;margin-right:30px;overflow: hidden;  padding: 5px 10px;  width: 660px;margin: 15px 0 0 144px;">
+					提示：由于您的店铺信誉为<span class="xingji">0</span>，我们建议您搭配平台的<a target="_blank" href="http://fuwu.haohuisua.com/fuwu/beisheng" style="color: #1996E6;margin:0 3px;">搜索流量套餐</a>，增大流量的同时，控制店铺的转化率在日常左右合理范围，同时我们建议您购买真实单号，保障操作安全。
+	              </div>
+	              <div class="one_3" style="background:#FAFADF;border:1px solid rgb(255,148,87);float:left;margin-left: 11px;margin-right:30px;overflow: hidden;  padding: 5px 10px;  width: 660px;margin: 15px 0 0 144px;">
+					提示：我们建议您搭配平台的<a target="_blank" href="http://fuwu.haohuisua.com/fuwu/beisheng" style="color: #1996E6;margin:0 3px;">搜索流量套餐</a>，增大流量的同时，控制店铺的转化率在日常左右合理范围，同时我们建议您购买真实单号，保障操作安全。
+	              </div>
+	          </div>
+          </li>
+          
+         <!--  <li>
+	            <div class="name"><span style="color:Red;">*</span>发布数量：</div>
+	            <div class="value"><input name="txtFCount" type="text" id="txtFCount" style="width:70px;color:#f50;" value="2" class="txt" maxlength="5">&nbsp;&nbsp;个</div>
+	            <div class="exp">设置您要批量发布的任务数量，最少2个，最多个</div>
+	        </li> -->
+          
+		  <p class="taskbutton"><input type="submit" id="btnCilentAdd" class="taskadd" value="立即发布" style="cursor: pointer; display: none;"></p>
+		   <p class="taskbutton"><a target="_blank" href="http://bbs.haohuisua.com/forum.php?mod=viewthread&amp;tid=17573&amp;page=1&amp;extra=#pid113015"><img src="../images/paipai/jtt.jpg"></a></p>
+		</ul>
+</div>
+</form>
+
+<div id="subform" val="4" style="display: block;">
+	<div class="center">
+	 	<p class="anone"></p>
+		<p class="txtone">
+			批量发布数量:<input name="txtFCount" type="text" id="txtFCount" value="10" class="txt" maxlength="5">个&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	    	批量发布间隔:<input name="txtFTime" type="text" id="txtFTime" value="60" class="txt" maxlength="5">秒</p>
+    </div>
+</div>
+</div>
+	<div id="footer">
+	<p>
+		<span class="chengse">官方QQ群：<a style="color:#FE5500;" target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=6c3a6de2ba1ebe59b8d437d1564122064f6120f53a8d44fda85634feea9e14b0">176682996</a></span>
+		（加群请注明好会刷）</p>
+	<p class="lanse">
+		<a href="/info/about?p=1">联系我们</a>|
+		<a href="/info/about?p=2">好会刷规则</a>|
+		<a target="_blank" href="http://www.yaodamai.com/">拍拍信誉查询</a>|
+		<a target="_blank" href="http://www.aizhanggui.com/">爱掌柜拍拍培训</a>|
+		<a target="_blank" href="/info/jishu">技术好会刷</a>
+	</p><p class="lanse">Copyright © 2012-2020 Damaihu.com All RightsReserved    好会刷版权所有 
+		<a target="_blank" href="http://www.miitbeian.gov.cn">黔ICP备14004290号</a>
+	</p>
+</div>
+</body></html>

@@ -1,0 +1,246 @@
+<ol id="topUpUL" class="block" style="height: 525px;">
+<div style="width:950px; height:95%; MARGIN-RIGHT: auto; MARGIN-LEFT: auto;">
+            
+	<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0" class="sf8sh">
+	<tbody>
+	<tr>
+		<td height="30" align="center" colspan="3" class="sf8sh1"><p><span style="color: rgb(255, 0, 0);"><strong>所有快递时间均为：20:00，超过20:00 下单的将延迟到次日20:00 发货！</strong></span></p></td>
+	</tr>
+	<tr>
+		<td height="10" colspan="3"></td>
+	</tr>
+	<tr>
+		<td width="150" rowspan="2" class="kdmb">
+			<table height="60" border="0" cellpadding="0" cellspacing="0" class="jgxx">
+			<tbody>
+			<tr>
+				<td width="60"></td>
+				<td>
+					选择快递：
+				</td>
+			</tr>
+			</tbody>
+			</table>
+		</td>
+        
+		<td width="550" rowspan="2" class="kdmb">
+		<div style="margin:0px 10px 0px ;">
+          <div class="dk_container dk_theme_default existing_event" id="dk_container_express" tabindex="0" aria-hidden="true" style="display: block;"><a class="dk_toggle dk_label" style="width: 212px;">{$express.0.title}</a>
+		  <div class="dk_options">
+			  <ul class="dk_options_inner" role="main" aria-hidden="true">
+				{foreach item=val key=key from=$express}
+				<li class="{if $key==0}dk_option_current{/if}"><a data-dk-dropdown-value="{$val.id}">{$val.title}</a></li>
+				{/foreach}
+			  </ul>
+		  </div>
+		  <select name="express" class="existing_event" id="express" style="width: 210px; display: none;">
+			{foreach item=val key=key from=$express}
+			 <option value="{$val.id}">{$val.title}</option>
+			{/foreach}
+		  </select></div></div>
+		</td>
+		<td width="335" class="kdmbmr kbxx" style="padding-left:15px" id="mr"><span id="onwo">{if $default_express}已{else}未{/if}设置默认快递：</span><span id="woyo">您当前{if $default_express}已设置 <font color="green">{$express.0.title}</font> 为{else}还未设置{/if}默认快递</span></td>
+	</tr>
+	
+	<tr>
+	  <td class="kdmbbtn" align="center" style="padding:2px 0px 5px 0px"><a class="media-filter" href="javascript:void(0)" id="woyo_btn">设置默认快递</a></td>
+	</tr>
+	<tr>
+		<td colspan="3" style="padding:3px;"></td>
+	</tr>
+	<tr>
+		<td colspan="3" class="hyxxxxx">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border-spacing: 0px;">
+			<tbody>
+			<tr>
+				<td width="138" height="50" align="left">
+					<table height="60" border="0" cellpadding="0" cellspacing="0" class="jgxs">
+					<tbody>
+					<tr>
+						<td width="60">
+						</td>
+						<td>
+							快递详情：
+						</td>
+					</tr>
+					</tbody>
+					</table>
+				</td>
+				<td width="14" height="60" align="center">
+				</td>
+				<td width="647" align="left">
+				{foreach item=val key=key from=$express}
+				 <div class="kuaidi" data="{$val.id}" style="width:100%;margin:0px;padding:0px;overflow:hidden;{if $key>0}display:none;{/if}">
+					<?php echo htmlspecialchars_decode($this->_var['val']['content']);?>
+				 </div>
+				{/foreach}
+				</td>
+			</tr>
+			</tbody>
+			</table>
+		</td>
+	</tr>
+	<tr><td colspan="3" class="hyxxxxx">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="kbfj">
+		<tbody>
+		<tr>
+			<td height="40" align="left">
+				<table width="100%" height="80" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-spacing: 0px;">
+				<tbody>
+				<tr>
+					<td width="21" height="40" align="left">
+						 
+					</td>
+					<td width="96" align="center">
+						发货地址：
+					</td>
+					<td width="660" align="left">
+                    <div class="dk_container dk_theme_default ex_delivery" id="dk_container_delivery" tabindex="0" aria-hidden="true" style="display: block;">
+						<a class="dk_toggle dk_label" style="width: 582px;">{if $address.0.id}收件人：{$address.0.user}({$address.0.phone})，地址：{$address.0.address}({$address.0.zipcode}){else}暂无发货地址，请先添加~{/if}</a>
+						<div class="dk_options" style="width:630px;">
+							<ul class="dk_options_inner" role="main" aria-hidden="true">
+								{foreach item=val key=key from=$address}
+								<li class="dk_option_current"><a data-dk-dropdown-value="{$val.id}">收件人：{$val.user}({$val.phone})，地址：{$val.address}({$val.zipcode})</a></li>
+								{/foreach}
+							</ul>
+						</div>
+					<select name="delivery" id="delivery" class="ex_delivery" style="width: 580px; display: none;">
+						{foreach item=val key=key from=$address}
+						<option value="{$val.id}">{$val.address}</option>
+						{/foreach}
+					</select>
+				</div>
+						</td><td width="173"><div style="*margin:6px 0 0 0;">
+							<a class="btn_jc" href="single.php?mod=deliver" >添加</a>&nbsp;
+                            <a class="btn_jc" href="javascript:void(0)" id="add_def">设置为默认</a>
+                            </div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" align="left">
+						</td>
+						<td align="left" style="color:Red;font-size:12px; padding-bottom:8px">
+							<br>
+							<p align="left">
+								淘宝地址步骤：登录淘宝 - 已卖出的宝贝 - 找到订单 - 点击“详情” 再选择【收货信息】 - 复制收货地址。
+							</p>
+							<p align="left">
+								千牛地址步骤：登录千牛 - 交易管理 - 找到订单 - 复制信息 - 复制收货地址。
+							</p>
+							</td><td colspan="2" align="left">
+							</td>
+						</tr>
+						</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td height="55" colspan="3" valign="bottom">
+						<table width="100%" height="40" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-spacing: 0px;">
+						<tbody>
+						<tr>
+							<td>
+							</td>
+							<td colspan="2">
+							</td>
+						</tr>
+						<tr>
+							<td width="20" align="left">
+								 
+							</td>
+							<td width="105" align="center">
+								收货地址：
+							</td>
+							<td width="851" align="left">
+								<div class="kongbao_form">
+									<div class="sh_box">
+										<div class="sh_cont_left">
+											<div class="textarea_cont" id="show_czlc">
+                                             <div class="form-control">
+                                               <textarea name="address" class="textarea_lest" id="address" spellcheck="false"></textarea>
+                                             </div>
+                                             
+										  </div>
+                                          <div style="float:right; padding-right:5px"><div title="清空收货地址" id="clear" onclick="delcontr()">×</div></div>
+										</div>
+										<div class="sh_cont_right">
+											<p class="sh_mm"><span id="kblev">我的等级：{$uinfo.rank_name}</span></p><p class="sh_mm"><span id="kbord" class="color_ord">享受单价：{$uinfo.params.zsdhgm}元/单</span></p><p class="sh_mm"><span id="kbmoney">余额：<b id="xydd" class="color_or"> ¥{$uinfo.user_money}{if $uinfo.user_money<$uinfo.params.zsdhgm}<font color="red">余额不足</font>{/if}</b></span></p>
+											<p class="pdt"><a class="btn_jc" href="single.php?mod=apply">查看订单</a></p>
+											<p class="pdt"><input name="btnSubmit" class="ljbutton orange medium" type="button" id="but" value="提交订单"></p>
+										</div>
+                                        
+									</div>
+								</div>
+                                
+							</td>
+						</tr>
+						</tbody>
+						</table>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+			<td width="1"></td></tr></tbody>
+		  </table>
+		</div>
+    </ol>
+	<script type="text/javascript">
+        $(function(){
+			$(".dk_container").mouseenter(function(){
+				$(this).children('.dk_options').show();
+			});
+			$(".dk_container").mouseleave(function(){
+				$(this).children('.dk_options').hide();
+			});
+			$(".dk_container .dk_options_inner li").click(function(){
+				$(this).addClass('dk_option_current').siblings('li').removeClass('dk_option_current');
+				var value=$(this).children('a').attr('data-dk-dropdown-value');
+				var html=$(this).children('a').text();
+				$(this).parents('.dk_container').children('a.dk_toggle').text(html);
+				$(this).parents('.dk_container').find('select option[value="'+value+'"]').attr("selected",true);
+				$(this).parents('.dk_options').hide();
+				$('.kuaidi').hide();
+				$('.kuaidi[data="'+value+'"]').show();
+			});
+			$("#woyo_btn").click(function(){
+				var id=$("#express option:selected").val();
+				var text=$("#express option:selected").text();
+				var de={$default_express};
+				if(id){
+					if(id==de){
+						$.dialog({id:'mention', title: '提示',content: '您当前已设置 <font color="green">'+text+'</font> 为默认快递~',fixed: true,lock: true,cancelValue: '确定',cancel: function () { return true;}});return false;
+					}else{
+						$.post('single.php?mod=bag&act=set_default',{'did': id},function(data){
+							$.dialog({title: '提示',content: ''+data.info,fixed: true,lock: true,lock: true,cancelValue: '确定',cancel: function () { if(data.state){$("#mr").html(data.mr);de=id;}return true;}});
+						},'json');
+					}
+				}
+			});
+			$("#add_def").click(function(){
+				var id=$("#delivery option:selected").val();
+				if(id){
+					$.post('single.php?mod=bag&act=add_default',{'did': id},function(data){
+						$.dialog({title: '提示',content: ''+data.info,fixed: true,lock: true,lock: true,cancelValue: '确定',cancel: function () {return true;}});
+					},'json');
+				}
+			});
+			$("#but").click(function(){
+				var express=$("#express option:selected").val();
+				var delivery=$("#delivery option:selected").val();
+				var address=$("#address").val();
+				if(express==''){
+					$.dialog({title: '提示',content: '请选择快递~',fixed: true,lock: true,lock: true,cancelValue: '确定',cancel: function () {return true;}});
+				}else if(delivery==''){
+					$.dialog({title: '提示',content: '请选择发货地址~',fixed: true,lock: true,lock: true,cancelValue: '确定',cancel: function () {return true;}});
+				}else if(address==''){
+					$.dialog({title: '提示',content: '请填写收货地址~',fixed: true,lock: true,lock: true,cancelValue: '确定',cancel: function () {$("#address").focus();return true;}});
+				}else{
+					$.post('single.php?mod=bag&act=submit',{'express': express,'delivery': delivery,'address': address},function(data){
+						$.dialog({title: '提示',content: ''+data.info,fixed: true,lock: true,lock: true,cancelValue: '确定',cancel: function () {if(data.state){location.href='single.php?mod=wait';}return true;}});
+					},'json');
+				}
+
+			});
+		});
+        </script>

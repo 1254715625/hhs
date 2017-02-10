@@ -1,0 +1,68 @@
+<div id="bq_menu2_cont_1">
+		<p class="hsmd_ts">您当前等级为：{$uinfo.rank_name}，你现在有
+			<span class="chengse2">
+				<strong>{$uinfo.pay_money}</strong>
+			</span>
+			个刷点。刷点回收价格：
+			<span class="chengse2">
+				<span>1个刷点=</span>
+				{$uinfo.params.sdhsjg}元
+			</span>&nbsp;
+			<a class="comlink" target="_blank" href="">查看高等级回收价格</a>
+		</p>
+		<span class="hsmd_hsj">回收数量：
+				<select name="nums">
+					<option value="20">20 </option>
+					<option value="50">50 </option>
+					<option value="100">100 </option>
+					<option value="200">200 </option>
+					<option value="500">500 </option>
+					<option value="1000">1000 </option>
+					<option value="5000">5000 </option>
+				</select>个
+		</span>
+		<input type="submit" class="hsmd_btn" name="hsmd_btn">
+    </div>
+	<div class="cle"></div>
+	<p class="fuli">刷点还可以换以下福利：</p>
+	<div class="weal_hsj">
+		<ul>
+			<li><input type="radio" name="sid" value="6"> <img src="images/ico/rechange2.gif"> 一级VIP月使用权　<font color="red">60刷点</font></li>
+			<li><input type="radio" name="sid" value="7"> <img src="images/ico/rechange4.gif"> 钻石VIP月使用权　<font color="red">100刷点</font></li>
+			<li><input type="radio" name="sid" value="8"> <img src="images/ico/rechange3.gif"> 皇冠VIP月使用权　<font color="red">200刷点</font></li>
+	 	 </ul>
+	 	<p style="padding:10px 0px; line-height:20px; color:#666">
+	  		我们所提供的均为安全有效买号，售出后由于违反淘宝规则造成封号，不予任何售后。购买后买号信息将发送到您的站内信箱，请登陆 会员中心 - 站内提醒 查收。请遵循以上原则后进行购买。
+	  	</p>
+     	<p>
+     		<input type="submit" class="weal_btn" name="weal_btn">
+     	</p>
+	</div>
+	<script type="text/javascript">
+	$(function(){
+		$('.hsmd_btn').click(function(){
+			var m = parseInt($(".hsmd_hsj select option:selected").val());
+			if({$uinfo.pay_money} < m+3){
+				$.dialog({title: '提示',content: '对不起，您的麦点小于'+ m +'+3 (需保留3个麦点)',fixed: true,lock: true,cancelValue: '确定',cancel: function () { return true;}});
+				return false;
+			}
+			$.dialog({
+				title: '友情提示',
+				content: '亲，提交后您将得到'+ ({$uinfo.params.sdhsjg}*m).toFixed(2) +'存款，失去'+ m +'个麦点~<br/><p style="margin:10px 0;color:#EB0F0F;">请输入安全码：<input style="border:1px solid #999;" type="password" id="safecode"></p>',
+				fixed: true,
+				lock: true,
+				okValue: '确定',
+			    ok: function () {
+			    	if($("#safecode").val() ==''){
+						$.dialog({id:'mention', title: '提示',content: '请输入安全码~',fixed: true,lock: true,cancelValue: '确定',cancel: function () { return true;}});return false;
+					}
+			    	$.post('user.php?act=rechange&Recovery=maipoint',{'nums': m,'safecode':$("#safecode").val()},function(data){
+			    		$.dialog({title: '提示',content: data.info,fixed: true,lock: true,lock: true,cancelValue: '确定',cancel: function () { return true;}});
+
+			    	},'json');
+			    }
+			})
+			return false;
+		});
+	});
+	</script>

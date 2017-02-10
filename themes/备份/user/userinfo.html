@@ -1,0 +1,255 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="../css/user_userData.css">
+<div id="main">
+<div class="user_left">
+	{include user/leftmenu}
+</div>
+
+<div id="_right">
+<div id="myDate">
+    <div class="bq_menu2">
+		<a class="nov" href="javascript:;">修改个人资料</a>
+		<a class="revLogin" href="javascript:;">修改登录密码</a>
+		<a class="safeCode" href="javascript:;">修改安全操作码</a>
+		<a class="emailSafe" href="javascript:;">获取安全验证码</a>
+		<a class="safeTrouble" href="javascript:;">修改密码保护</a>
+		<a class="vident" href="javascript:;" style="width: 100px;">加V实名认证</a>
+	</div>
+	<br>
+	
+	<form id="jForm">
+    <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
+      	<tbody><tr>
+			<td width="20%" valign="middle" height="40" align="right">用户名：</td>
+			<td width="80%" valign="middle" align="left"> <span class="chengse2 strong">ekmeng</span></td>
+		</tr>
+		<tr>
+	        <td valign="top" height="40" align="right" style="line-height:45px;">头  像：</td>
+			<td colspan="2">
+				<span class="xginfo_tx">
+					<img width="87" height="87" id="user_avatar" src="http://u.damaih.com.cn/avatar.php?uid=314232&amp;size=middle&amp;1438248822">
+				</span>
+			</td>
+        </tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>
+				<span id="uploadImg">
+					<input id="BtnSubmit" class="button" type="button" value="点击修改头像..." name="Submit">
+				</span>
+			</td>
+		</tr>
+			<tr>
+            <td valign="middle" height="40" align="right">手机号码：</td>
+            <td valign="middle" align="left"> <strong class="chengse2">133****3618</strong>
+            	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            	<a href="javascript:;" style="color: #1996E6;text-decoration: underline;" id="updatePhone">修改手机号</a>
+				<a href="javascript:;" style="color: #1996E6;margin-left: 10px;text-decoration: underline;" id="updateEmone">邮箱修改手机号</a>
+            </td>
+        </tr>
+			<tr>
+            <td valign="middle" height="40" align="right">QQ号码：</td>
+            <td valign="middle" align="left"><input type="text" class="text_normal" name="qq" value="253356420"></td>
+        </tr>
+        <tr>
+			<td valign="middle" height="40" align="right">真实姓名：</td>
+			<td valign="middle" align="left"><input type="text" class="text_normal" name="truename" value=""></td>
+		</tr>
+		<tr>
+			<td valign="middle" height="40" align="right">Email：</td>
+			<td valign="middle" align="left">2***0@qq.com
+			</td>
+		</tr>
+		<tr>
+		    <td valign="middle" height="40" align="right">性别：</td>
+		    <td valign="middle" align="left">
+		    	<input type="radio" value="0" name="sex" checked="checked">男&nbsp;&nbsp;&nbsp;<input type="radio" value="1" name="sex">女
+		    </td>
+	    </tr>
+	    <tr>
+		    <td valign="middle" height="40" width="100" align="right">开启异地登陆短信验证：</td>
+		    <td align="left">
+		    	<input type="radio" checked="checked" value="1" name="remote">开启
+		    	<input type="radio" value="0" name="remote">关闭
+		      	<font color="red">已开启</font>
+		    </td>
+	    </tr>
+	    <tr>
+		    <td valign="middle" height="40" align="right">签收快递发货省份：</td>
+		    <td valign="middle" align="left">
+		    	
+		    		<select class="text_normal" name="sendAddress">
+			    		<option value="请选择">请选择</option>
+						<option value="北京市">北京市</option>
+						<option value="天津市">天津市</option>
+						<option value="河北省">河北省</option>
+						<option value="山西省">山西省</option>
+						<option value="内蒙古">内蒙古</option>
+						<option value="江苏省">江苏省</option>
+						<option value="安徽省">安徽省</option>
+						<option value="山东省">山东省</option>
+						<option value="辽宁省">辽宁省</option>
+						<option value="吉林省">吉林省</option>
+						<option value="黑龙江">黑龙江</option>
+						<option value="上海市">上海市</option>
+						<option value="浙江省">浙江省</option>
+						<option value="江西省">江西省</option>
+						<option value="福建省">福建省</option>
+						<option value="湖北省">湖北省</option>
+						<option value="湖南省">湖南省</option>
+						<option value="河南省">河南省</option>
+						<option value="广东省">广东省</option>
+						<option value="广西">广西</option>
+						<option value="海南省">海南省</option>
+						<option value="重庆市">重庆市</option>
+						<option value="四川省">四川省</option>
+						<option value="贵州省">贵州省</option>
+						<option value="云南省">云南省</option>
+						<option value="西藏">西藏</option>
+						<option value="陕西省">陕西省</option>
+						<option value="甘肃省">甘肃省</option>
+						<option value="宁夏">宁夏</option>
+						<option value="青海省">青海省</option>
+						<option value="新疆">新疆</option>
+				  	</select>
+		    	
+		        发布同省快递签收任务时的省份，一旦选定不可修改</td>
+	    </tr>
+	    <tr>
+		    <td valign="middle" height="40" align="right">签收快递收货省份：</td>
+		    <td valign="middle" align="left">
+		    	
+		    		<select class="text_normal" disabled="disabled">
+		    			<option value="安徽省">安徽省</option>
+		    		</select>
+		    	
+				
+			    	<select class="text_norma1" name="recAddress2">
+			    		<option value="请选择">请选择</option>
+						<option value="北京市">北京市</option>
+						<option value="天津市">天津市</option>
+						<option value="河北省">河北省</option>
+						<option value="山西省">山西省</option>
+						<option value="内蒙古">内蒙古</option>
+						<option value="江苏省">江苏省</option>
+						<option value="安徽省">安徽省</option>
+						<option value="山东省">山东省</option>
+						<option value="辽宁省">辽宁省</option>
+						<option value="吉林省">吉林省</option>
+						<option value="黑龙江">黑龙江</option>
+						<option value="上海市">上海市</option>
+						<option value="浙江省">浙江省</option>
+						<option value="江西省">江西省</option>
+						<option value="福建省">福建省</option>
+						<option value="湖北省">湖北省</option>
+						<option value="湖南省">湖南省</option>
+						<option value="河南省">河南省</option>
+						<option value="广东省">广东省</option>
+						<option value="广西">广西</option>
+						<option value="海南省">海南省</option>
+						<option value="重庆市">重庆市</option>
+						<option value="四川省">四川省</option>
+						<option value="贵州省">贵州省</option>
+						<option value="云南省">云南省</option>
+						<option value="西藏">西藏</option>
+						<option value="陕西省">陕西省</option>
+						<option value="甘肃省">甘肃省</option>
+						<option value="宁夏">宁夏</option>
+						<option value="青海省">青海省</option>
+						<option value="新疆">新疆</option>
+				  	</select>
+				
+				
+			    	<select class="text_norma1" name="recAddress3">
+			    		<option value="请选择">请选择</option>
+						<option value="北京市">北京市</option>
+						<option value="天津市">天津市</option>
+						<option value="河北省">河北省</option>
+						<option value="山西省">山西省</option>
+						<option value="内蒙古">内蒙古</option>
+						<option value="江苏省">江苏省</option>
+						<option value="安徽省">安徽省</option>
+						<option value="山东省">山东省</option>
+						<option value="辽宁省">辽宁省</option>
+						<option value="吉林省">吉林省</option>
+						<option value="黑龙江">黑龙江</option>
+						<option value="上海市">上海市</option>
+						<option value="浙江省">浙江省</option>
+						<option value="江西省">江西省</option>
+						<option value="福建省">福建省</option>
+						<option value="湖北省">湖北省</option>
+						<option value="湖南省">湖南省</option>
+						<option value="河南省">河南省</option>
+						<option value="广东省">广东省</option>
+						<option value="广西">广西</option>
+						<option value="海南省">海南省</option>
+						<option value="重庆市">重庆市</option>
+						<option value="四川省">四川省</option>
+						<option value="贵州省">贵州省</option>
+						<option value="云南省">云南省</option>
+						<option value="西藏">西藏</option>
+						<option value="陕西省">陕西省</option>
+						<option value="甘肃省">甘肃省</option>
+						<option value="宁夏">宁夏</option>
+						<option value="青海省">青海省</option>
+						<option value="新疆">新疆</option>
+				  	</select>
+				
+		     签收同省快递签收任务时的省份，可选3个，选定不可修改</td>
+	    </tr>
+	    <tr>
+		    <td valign="middle" height="40" align="right">签收快递收货详细信息：</td>
+		   <td valign="middle" align="left">
+		    	<input class="text_normal" type="text" placeholder="收件人姓名" value="宋先生" maxlength="8" size="9" name="rec_name1"> 
+		    	<input class="text_normal" type="text" placeholder="收货地址" value="安徽省合肥市望江东路12" maxlength="150" size="30" name="rec_add1"> 
+		    	<input class="text_normal" type="text" placeholder="手机号码" value="13637082358" maxlength="15" size="15" name="rec_tel1"> 
+		    	<input class="text_normal" type="text" placeholder="邮编" value="230031" maxlength="8" size="8" name="rec_code1">
+		    	<a href="javascript:;" class="colseAdd" val="1">清空</a>
+		    </td>
+		</tr>
+		<tr>
+		    <td valign="middle" height="40" align="right">签收快递收货详细信息：</td>
+		    <td valign="middle" align="left">
+		    	<input class="text_normal" type="text" placeholder="收件人姓名" value="" maxlength="8" size="9" name="rec_name2"> 
+		    	<input class="text_normal" type="text" placeholder="收货地址" value="" maxlength="150" size="30" name="rec_add2"> 
+		    	<input class="text_normal" type="text" placeholder="手机号码" value="" maxlength="15" size="15" name="rec_tel2"> 
+		    	<input class="text_normal" type="text" placeholder="邮编" value="" maxlength="8" size="8" name="rec_code2">
+		    	<a href="javascript:;" class="colseAdd" val="2">清空</a>
+		    </td>
+		</tr>
+		<tr>
+		    <td valign="middle" height="40" align="right">签收快递收货详细信息：</td>
+		    <td valign="middle" align="left">
+		    	<input class="text_normal" type="text" placeholder="收件人姓名" value="" maxlength="8" size="9" name="rec_name3"> 
+		    	<input class="text_normal" type="text" placeholder="收货地址" value="" maxlength="150" size="30" name="rec_add3"> 
+		    	<input class="text_normal" type="text" placeholder="手机号码" value="" maxlength="15" size="15" name="rec_tel3"> 
+		    	<input class="text_normal" type="text" placeholder="邮编" value="" maxlength="8" size="8" name="rec_code3">
+		    	<a href="javascript:;" class="colseAdd" val="3">清空</a>
+		    </td>
+		</tr>
+		<tr>
+		    <td valign="middle" height="40" align="right">安全操作码：</td>
+		    <td valign="middle" align="left">
+		  	  <input type="password" class="text_normal" name="passcode">&nbsp; <span class="chengse2">*修改资料需要提供安全操作码</span>
+			</td>
+	    </tr>
+	    <tr>
+		    <td valign="middle" height="70" align="right">&nbsp;</td>
+		    <td valign="middle" align="left"><input type="submit" class="xginfo_qr"></td>
+	    </tr>
+    </tbody></table>
+	</form>
+    
+
+    
+
+    
+
+    
+    
+    
+</div></div>
+
+</div>
+
+{include common/footer}

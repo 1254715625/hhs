@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="js/artDialog.js"></script>
+    <script type="text/javascript" src="js/layer/layer.js"></script>
+</head>
+<body>
+    <div class="ur_here">首页 &raquo; 网站设置 &raquo; 提现中心</div>
+    <div class="container">
+        <form enctype='multipart/form-data' action="taobao.php" method="POST">
+          <table width="100%" id="listTb">
+            <tr>
+                <th>编号</th>
+                <th>简称</th>
+                <th>名字</th>
+                <th>状态</th>
+                <th>操作</th> 
+            </tr>
+            {foreach item=val key=key from=$results}
+            <tr>
+                <td>{$val.id}</td>
+                <td>{$val.code}</td>
+                <td>{$val.name}</td>
+                {if $val.value eq 0 }
+                <td>禁用</td>
+                {elseif $val.value eq 1 }
+                <td>启用</td>
+                {/if}
+                <td><a href="system.php?act=tixian_center_save&id={$val.id}">修改</a></td>
+            </tr>
+            {/foreach}
+            <tr>
+                <td class="footer" colspan="5" ><div class="page">{$list.pagestr}</div></td>
+            </tr>
+          </table>
+        </form>
+    </div>
+</body>
+</html>

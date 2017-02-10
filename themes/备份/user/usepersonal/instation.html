@@ -1,0 +1,545 @@
+<div class="mh_tishi">
+		您希望获得哪些消息提醒？通过哪种方式获得？请在相应的选框内打勾。<br>  
+        <input type="checkbox" checked="checked" disabled="disabled" value="checkbox" name="checkbox">
+        表示该项消息接收方式是必需的，不能取消；<br>
+        <input type="checkbox" disabled="disabled" value="checkbox" name="checkbox2">
+        表示该项消息暂时不支持这种接收方式。 部分消息可以通过手机短信接收。<br>
+		站内手机短信提醒： <span class="chengse2">普通用户每条七分钱；尊享VIP每条只要六分钱。</span><br>
+	</div>
+
+	<form id="jForm" method="post" action="">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody><tr>
+                <td class="txjl_bg1"></td>
+                <td width="63%" align="left" class="txjl_bg2">&nbsp;信息内容</td>
+                <td width="20%" align="center" class="txjl_bg2">站内信</td>
+                <td width="15%" align="center" class="txjl_bg2">手机短信</td>
+                <td class="txjl_bg3"></td>
+            </tr>
+    		
+                
+                <tr>
+                    <td height="35" bgcolor="#eff6fd">&nbsp;</td>
+                    <td valign="middle" bgcolor="#eff6fd" align="left" colspan="3"><span class="znx_sj">信用记录提醒</span></td>
+                    <td bgcolor="#eff6fd">&nbsp;</td>
+                </tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 收到投诉</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="c_complaint[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="c_complaint[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 收到申诉审核结果</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="c_complaint_result[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="c_complaint_result[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 官方扣除积分提醒</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="c_minus_integral[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="c_minus_integral[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 进入他人黑名单提醒</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="c_push_black[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="c_push_black[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 收到维权投诉</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="c_rights[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="c_rights[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 收到维权审核结果</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="c_rights_result[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="c_rights_result[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+                <tr>
+                    <td height="35" bgcolor="#eff6fd">&nbsp;</td>
+                    <td valign="middle" bgcolor="#eff6fd" align="left" colspan="3"><span class="znx_sj">资金变动通知</span></td>
+                    <td bgcolor="#eff6fd">&nbsp;</td>
+                </tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 申请提现通知</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="f_apply_money[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="f_apply_money[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 购买刷点提醒</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="f_buy_maidian[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="f_buy_maidian[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 充值失败通知</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="f_charge_error[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="f_charge_error[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 充值成功通知</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="f_charge_success[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="f_charge_success[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 兑换刷点提醒</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="f_exchange_maidian[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="f_exchange_maidian[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 发放提现通知</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="f_grant_money[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="f_grant_money[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 各种奖励通知</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="f_reward[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="f_reward[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 推广相关通知</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="f_spread[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="f_spread[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+                <tr>
+                    <td height="35" bgcolor="#eff6fd">&nbsp;</td>
+                    <td valign="middle" bgcolor="#eff6fd" align="left" colspan="3"><span class="znx_sj">接手任务提醒</span></td>
+                    <td bgcolor="#eff6fd">&nbsp;</td>
+                </tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 买号相关提醒</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="ft_buyer[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="ft_buyer[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 信用额度过低提醒</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="ft_credit_low[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="ft_credit_low[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 使用预定特权卡，预定到任务</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="ft_destine[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="ft_destine[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 发布方确认付款</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="ft_pay[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="ft_pay[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 发布方确认发货</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="ft_ship[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="ft_ship[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 成功接手任务</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="ft_take[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="ft_take[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+                <tr>
+                    <td height="35" bgcolor="#eff6fd">&nbsp;</td>
+                    <td valign="middle" bgcolor="#eff6fd" align="left" colspan="3"><span class="znx_sj">任务发布提醒</span></td>
+                    <td bgcolor="#eff6fd">&nbsp;</td>
+                </tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 接手人平台确认好评</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="jt_comment[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="jt_comment[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 接手人平台确认付款</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="jt_pay[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="jt_pay[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 接手人平台确认收货</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="jt_shouhuo[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="jt_shouhuo[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 发布的任务被人接手</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="jt_take[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="jt_take[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+                <tr>
+                    <td height="35" bgcolor="#eff6fd">&nbsp;</td>
+                    <td valign="middle" bgcolor="#eff6fd" align="left" colspan="3"><span class="znx_sj">账户记录提醒</span></td>
+                    <td bgcolor="#eff6fd">&nbsp;</td>
+                </tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 资料更改提醒</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="u_edit[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="u_edit[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 封号通知</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="u_lock[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="u_lock[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 帐号挂起通知</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="u_pause[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="u_pause[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+                
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; 会员到期提醒</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" name="u_vip[0]">
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" name="u_vip[1]">
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+                
+    		
+            <tr>
+                <td height="35">&nbsp;</td>
+                <td height="70" colspan="3" align="left" valign="middle">
+                    <input type="submit" class="znx_btn">
+                    <input type="button" class="znx_ac">
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+        </tbody></table>
+    </form>

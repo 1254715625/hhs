@@ -1,0 +1,33 @@
+<link rel="stylesheet" type="text/css" href="css/weixinindex.css">
+<div class="w1190">
+
+        <div class="xgguod" style="width:90%;">
+            <ul>
+				{foreach item=vals key=key from=$lists}
+                <li class="pitem">
+                    <a href="javascript:void(0)" target="_blank">
+                        <img class="tryimg dbdl lazy" src="{$vals.aimg}" data-original="" alt="活动图片加载失败" style="display: block;">
+                    </a>
+                    <h4>
+                        <a href="javascript:void(0)" target="_blank">活动ID : {$vals.id}</a>
+                    </h4>
+                    <p>
+                        <em class="hqeme">￥{$vals.goods_price} </em>&nbsp;&nbsp;
+                        限量<em class="c_red"> 1</em> 份&nbsp;&nbsp;
+                        奖励<em class="c_red"> {$vals.total_points}</em> 刷点
+                    </p>
+
+                      
+                        <a href="javascript:void(0)" onclick="weixinqiang('{$vals.id}');" class="freeof" style="background-color: #FF6E02;color: white;">抢此任务</a>
+                </li>
+                {/foreach}
+                              
+   
+        </div>
+    </div>
+</div>
+
+<div class="rwdt_dlm">
+			<a href="bbs.php" target="_blank" class="tico rwdt_tbhelp"></a>
+			<div id="page">{$page}</div>
+</div>

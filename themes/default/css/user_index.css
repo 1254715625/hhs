@@ -1,0 +1,140 @@
+@charset "utf-8";
+/* CSS Document */
+#mid {float: left;margin-left: 14px;width: 565px;z-index: 1;}
+.top_gr {background: none repeat scroll 0 0 #E7EFFA;float: left;height: 160px;width: 100%; }
+.top_gr .portrait {float: left;height: 100%;width: 135px;}
+.top_gr .portrait .portrait_img {height: 100px;margin: 15px 15px 0;position: relative;width: 100px;}
+.top_gr .portrait span {color: #3693DC;float: left;font-size: 13.5px;font-weight: bold;height: 30px;line-height: 240%;text-align: center;width: 100%;}
+.top_gr .content {color: #3693DC;float: left;font-weight: bold;height: 128px;padding: 10px;width: 400px;}
+.top_gr .content .content_name {color: #FA5C12;font-size: 16px;}
+.top_gr .content .content_li1 {font-size: 13px;height: 28px;}
+.top_gr .content .content_li1 span {background-position: -297px -48px;float: left;height: 20px;width: 15px;}
+.content a, .help a {color: #0F98CA;text-decoration: none;}
+.top_gr .content .content_li2 {font-size: 13px;height: 28px;}
+.top_gr .content .content_li2 span {background-position: -300px -104px;float: left;height: 20px;width: 15px;}
+.top_gr .content .content_li3 {font-size: 13px;height: 28px;}
+.top_gr .content .content_li3 span {background-position: -300px -175px;float: left;height: 20px;width: 15px;}
+.top_gr .content .content_li4 {height: 25px;margin-top: 5px;width: 100%;}
+.top_gr .content .content_li4 .progress {float: left;width: 250px;}
+.progress .jindutiao {background: none repeat scroll 0 0 #2CA8FF;float: left;height: 15px;margin-top: 3px;position: relative;width: 100%;}
+.progress b {background: none repeat scroll 0 0 #0077D3;float: left;height: 15px;width: 10%;}
+.progress span {color: white;cursor: pointer;float: left;font-size: 10px;left: 90px;line-height: 150%;position: absolute;}
+.top_gr .content .content_li4 .switch {float: right;height: 100%;margin-left: 10px;width: 120px;}
+.top_gr .content a:hover {color: rgb(250, 92, 18);text-decoration: underline;}
+.switch .dv {float: left;height: 100%;margin-left: 15px;width: 55px;-webkit-text-size-adjust:none;}
+.switch .dv_sp1 {background-position: -49px 1px;cursor: pointer;float: left;height: 15px;margin: 4px 0 3px;width: 50px;}
+.switch .dv_sp0 {background-position:-51px -55px;cursor: pointer;float: left;height: 15px;margin: 4px 0 3px;width: 50px;}
+.switch .remone{position: relative;}
+.switch .remone p{position: absolute;left: -65px;top: 18px;z-index: 1;;}
+.center_gr {background: none repeat scroll 0 0 #FFDCAF;box-shadow: 0 1px 5px 3px #DDDDDD;float: left;height: 120px;margin-top: 15px;width: 100%;}
+.center_gr .tweer {float: left;height: 105px;margin: 10px 0 0 65px;width: 100px;display: inline;}
+.center_gr .tweer a {cursor: pointer;float: left;}
+.center_gr .tweer_10 {background-position: -42px -178px;float: left;height: 60px;margin: 5px 0 0 22px;width: 50px;display: inline;cursor: pointer;}
+.center_gr .tweer .tweer_f10 {background-position: -113px -552px;float: left;height: 16px;width: 100%;}.center_gr .tweer_11 {background-position: -42px -105px;float: left;height: 60px;margin: 5px 0 0 22px;width: 50px;display: inline;cursor: pointer;}.center_gr .tweer .tweer_f11 {background-position: -202px -552px;float: left;height: 16px;width: 100%;}
+.center_gr .tweer_20 {background-position: -120px -178px;float: left;height: 60px;margin: 5px 0 0 22px;display: inline;width: 50px;cursor: pointer;}.center_gr .tweer .tweer_f20 {background-position: -113px -593px;float: left;height: 16px;width: 100%;}.center_gr .tweer_21 {background-position: -120px -105px;float: left;height: 60px;margin: 5px 0 0 22px;display: inline;width: 50px;cursor: pointer;}.center_gr .tweer .tweer_f21 {background-position: -202px -593px;float: left;height: 16px;width: 100%;}.center_gr .tweer_30 {background-position: -202px -178px;float: left;height: 60px;margin: 5px 0 0 22px;width: 55px;display: inline;cursor: pointer;}.center_gr .tweer .tweer_f30 {background-position: -106px -634px;float: left;height: 16px;width: 100%;}.center_gr .tweer_31 {background-position: -202px -105px;float: left;height: 60px;margin: 5px 0 0 22px;width: 55px;display: inline;cursor: pointer;}.center_gr .tweer .tweer_f31 {background-position: -195px -634px;float: left;height: 16px;width: 100%;}.center_gr .tweer span {color: #FA5C12;float: left;font-size: 13px;font-weight: bold;text-align: center;width: 100%;}.right_gr {float: left;height: 283px;margin-left: 15px;width: 140px;}.right_gr a {text-decoration: none;}.right_gr_top {background: none repeat scroll 0 0 #5FB9F8;box-shadow: 0 1px 5px 3px #DDDDDD;cursor: pointer;height: 140px;width: 100%;}.right_gr_icon {height: 90px;margin-left: 40px;padding-top: 25px;width: 60px;}.right_gr_icon .renwu {background-position: -120px -46px;height: 45px;position: relative;width: 100%;}.right_gr_icon .renwu .renwu_icon {background-position: -295px -282px;float: right;height: 16px;text-align: center;width: 16px;}.right_gr_icon .renwu .renwu_icon span {color: white;position: absolute;right: 3px;top: -3px;}.right_gr_icon .handle {background-position: -318px -549px;float: left;height: 54px;width: 100%;}.right_gr_bottom {background: none repeat scroll 0 0 #5FB9F8;box-shadow: 0 1px 5px 3px #DDDDDD;cursor: pointer;height: 140px;margin-top: 10px;width: 100%;}
+.right_gr_icon .shensu {background-position: -198px -46px;height: 45px;position: relative;width: 100%;}
+.right_gr_icon .shensu .shensu_icon {background-position: -295px -282px;float: right;height: 16px;text-align: center;width: 16px;}
+.right_gr_icon .shensu .shensu_icon span {color: white;position: absolute;right: 3px;top: -3px;}
+.right_gr_icon .appeal {background-position: -400px -549px;float: left;height: 54px;width: 100%;}
+.gonggao {color: #3693DC;float: left;font-size: 14px;font-weight: bold;height: 25px;margin: 15px 0 0 15px;width: 720px;}
+.gonggao .ico {background-position: -487px -550px;float: left;height: 100%;width: 75px;}
+.gonggao a {color: #0F98CA;font-size: 12px;font-weight: normal;margin-left: 15px;}
+.gonggao a:hover {text-decoration: underline;}
+.add {background: none repeat scroll 0 0 #E7EFFA;float: left;height: 118px;margin: 15px 0 0 15px;display:inline;width: 725px;}
+.add .business {float: left;height: 100%;margin-left: 95px;display:inline;width: 112px;}
+.add .add_bw {height: 104px;width: 110px;}
+.add .business .business_1 {background-position: -46px -252px;height: 50px;margin: 10px 0 0 30px;width: 60px;}
+.add .business .business_2 {background-position: -202px -334px;height: 20px;width: 100%;}
+.add .business a {background-position: -353px -446px;float: left;height: 33px;width: 100%;}
+.add .business a:hover {width: 100%;height: 33px;float: left;background-position: -352px -492px;}
+.add .career1 a:hover {width: 100%;height: 33px;float: left;background-position: -485px -492px;}
+.add .career2 a:hover {width: 100%;height: 33px;float: left;background-position: -614px -492px;}
+.add .career1, .add .career2 {float: left;height: 100%;margin-left: 100px;width: 112px;}
+.add .career1 .career1_1 {background-position: -124px -252px;height: 50px;margin: 10px 0 0 30px;width: 60px;}
+.add .career1 .career1_2 {background-position: -202px -371px;height: 20px;width: 100%;}
+.add .career1 a {background-position: -485px -446px;float: left;height: 33px;width: 100%;}
+.add .career2 .career2_1 {background-position: -206px -243px;height: 50px;margin: 10px 0 0 30px;width: 60px;}
+.add .career2 .career2_2 {background-position: -196px -405px;height: 20px;width: 100%;}
+.add .career2 a {background-position: -614px -446px;float: left;height: 33px;width: 100%;}
+.trends {float: left;height: 30px;margin: 15px 0 0 15px;width: 565px;}
+.trends .line{float: left;height: 25px;overflow: hidden;}
+.trends .trends_img {background-position: -492px -587px;float: left;height: 100%;width: 105px;}
+.help {background: none repeat  0 0 #AACFEC;float: left;height: 245px;margin: 15px 0 0 15px;width: 723px;}
+.help_head {background: none repeat  0 0 #D2E7F9;float: left;height: 50px;width: 100%;}
+.help_head_img {background-position: -495px -617px;float: left;height: 45px;margin: 5px 0 0 10px;width: 90px;}
+.help_head_text {color: #5492C2;float: left;padding-top: 15px;width: 605px;}
+.help_head_text .bangzu_link {float: right;font-size: 13px;margin-right: 10px;}
+.help_head_text .bangzu_link a {margin-left: 10px;}
+.help_head_text .bangzu_link a:hover {text-decoration: underline;}
+.help .zhuanshi{background: url(../images/user/ad.png) no-repeat  17px 21px transparent;float: left;height: 108px;margin: 20px 100px 0;width: 150px;}
+.help .zhuanshi:hover{background-position: 17px -112px;}
+.help .yongjin{background: url(../images/user/ad.png) no-repeat  -240px 17px ;float: left;height: 108px;margin: 20px 100px 0;width: 150px;}
+.help .yongjin:hover{background-position: -240px -116px;}
+.help .shushuo{float: left;height: 60px;width: 100%;}
+.help .zhuanshi_text {background: url(../images/user/ad.png) no-repeat  7px -251px ;float: left;height: 50px;margin-left: 90px;width: 166px;}
+.help .yongjin_text {background: url(../images/user/ad.png) no-repeat  -212px -251px ;float: right;height: 50px;margin-right: 99px;width: 195px;}
+
+/*手机激活框*/
+#sphone{width: 490px; float:left;}
+#sphone .send_img{background: url(../images/user/dxyz_ico.gif) no-repeat  0px -125px ; height: 80px; width: 80px; float: left;}
+#sphone .send_cont{float: left; width: 240px; margin-top: 10px;}
+#sphone .send_phone{float: left; width: 231px; text-align: right; height: 40px;}
+#sphone .send_phone input{height:150px;border: 1px solid rgb(221, 221, 221); height: 25px; line-height: 29px; text-indent: 5px;}
+#sphone .send_v{float: left; width: 230px; text-align: right; height: 40px;}
+#sphone .send_v input{height:150px;border: 1px solid rgb(221, 221, 221);  height: 25px; line-height: 29px; text-indent: 5px;}
+#sphone .getvcode{float: left; margin-top: 10px;}
+#sphone .getvcode input{border: medium none;
+cursor: pointer;
+height: 28px;
+overflow: hidden;
+background: #1A74B9 url(../images//user/nnttss.png) no-repeat 2px 0px;
+padding: 0 8px;
+color: #FFF;
+text-indent: 30px;
+font-size: 14px;
+border-radius: 3px;}
+#sphone .sountcode{width: 158px;margin-top: 12px;float: left;cursor: pointer;}
+#sphone .sountcode:hover{color:#0F98CA;}
+#sphone .sountcode span{border: medium none;
+cursor: pointer;
+height: 28px;
+overflow: hidden;
+background: #FF3200 url(../images//user/nnttss.png) no-repeat 2px -28px;
+padding: 0 8px;
+color: #FFF;
+text-indent: 30px;
+font-size: 14px;
+border-radius: 3px;
+float: left;
+line-height: 28px;}
+#sphone .set_sub{float: left; width: 470px;}
+#sphone .set_sub .dxyz_qr{border: medium none; width: 100px; background: url(../images/user/dxyz_ico.gif) no-repeat  -298px -148px ; height: 36px; cursor: pointer; margin-left: 160px;}
+#sphone #SendTimes{font-style: italic;font-family: Constantia, Georgia;font-weight: normal;font-size: 16px;margin:0 3px;}
+/*小调查*/
+#xiaodc .title{color: #0275B0; height:25px;font-size:15px; font-weight:bold;}
+
+/*注册提示*/
+#regTitle {float: left;width: 460px;padding:20px 25px;}
+#regTitle span{width: 44px;height: 65px;background: url(../images/user/glb.png) no-repeat;float: left;}
+#regTitle h2{float: left;margin-left: 25px;font-size: 18px;width: 340px;height: 25px;}
+#regTitle .ms{float: left;margin-left: 25px;width: 340px;height: 25px;}
+#regTitle a{display: block;width: 160px;height: 37px;line-height: 37px;overflow: hidden;text-align: center;font-size: 14px;font-weight: bold;color: #FFF;background: url(../images/user/glb.png) no-repeat 0 -90px;text-decoration: none;margin: 15px 0 5px 23px;float:left;}
+
+
+/*提示*/
+#userTishi{position: relative;width: 560px;height: 364px;}
+#userTishi img{position: absolute;top: 0px;left: 0px;}
+#userTishi .xinshou{position: absolute;left: 25px;top: 25px;width: 228px;height: 40px;background: url(../images//user/tsback1.png) no-repeat -9px -36px;text-indent: -9999px;}
+#userTishi .xiaotis{background: url(../images//user/tsback1.png) no-repeat -16px -100px;position: absolute;top: 80px;left: 28px;text-indent: -9999px;width: 134px;}
+#userTishi .lie{position: absolute;left: 25px;top: 150px;width: 527px;height: 150px;}
+#userTishi .lie .hova{background: url(../images//user/tsback1.png) no-repeat;width: 90px;height: 98px;float: left;text-indent: -9999px;margin-right: 15px;}
+#userTishi .lie .a1{ background-position: -16px -153px;}
+#userTishi .lie .a2{ background-position: -130px -153px; }
+#userTishi .lie .a3{ background-position: -237px -153px; }
+#userTishi .lie .a4{ background-position: -348px -153px; }
+#userTishi .lie .a5{ background-position: -458px -153px; }
+#userTishi .lie .a1:hover{ background-position: -14px -265px;}
+#userTishi .lie .a2:hover{ background-position: -128px -265px;}
+#userTishi .lie .a3:hover{ background-position: -235px -265px;}
+#userTishi .lie .a4:hover{ background-position: -346px -265px;}
+#userTishi .lie .a5:hover{ background-position: -456px -265px;}

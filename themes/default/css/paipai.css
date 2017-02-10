@@ -1,0 +1,129 @@
+#content{width: 1000px;margin: 0 auto;}
+.com-hidden{display: none}
+.f-left{float: left}
+
+/**/
+
+.success-del td{background: #bd362f;}
+
+/*×ÖºÅ*/
+.font-12{font-size: 12px}
+.font-14{font-size: 14px}
+.font-16{font-size: 16px}
+.font-18{font-size: 18px}
+.font-20{font-size: 20px}
+.font-24{font-size: 24px}
+/*ÑÕÉ«*/
+.green{color: #2C9E0A;}
+.orange{color: #fe5500;}
+.yellow{color:#FF9000;}
+.blue{color: #1996e6;}
+.black{color:#333;}
+.red{color:red;}
+
+.block {
+display: block;
+}
+.strong{
+	font-weight: bold;
+}
+.center{
+	text-align: center;;
+}
+
+#page {
+padding: 0 15px;
+margin: 30px 10px 25px;
+}
+#page a {
+border: 1px solid #e8e8e8;
+background: #f8f8f8;
+display: block;
+height: 25px;
+width: 25px;
+float: left;
+margin: 0 2px;
+text-align: center;
+}
+#page a:hover, #page a.now-page {
+background: #EAF4FD;
+border-color: #B0D0E9;
+}
+
+#page .total {
+float: right;
+
+}
+
+.uploadImg {
+overflow: hidden;
+}
+.uploadImg .file {
+cursor: pointer;
+position: absolute;
+z-index: 100;
+margin-left: -180px;
+font-size: 20px;
+opacity: 0;
+filter: alpha(opacity=0);
+margin-top: -5px;
+}
+.uploadImg .button {
+background: #3366CC;
+border-color: #3366CC;
+color: #FFFFFF;
+margin-right: 1em;
+border-width: 1px;
+cursor: pointer;
+font-size: 9pt;
+line-height: 130%;
+overflow: visible;
+padding: 0.1em 1em;
+}
+.upload-info{
+margin-left: 60px;
+}
+
+.btn_orange {
+float: none;
+padding: 0 3px 0 3px;
+line-height: 18px;
+margin: 2px;
+margin-right: 10px;
+float: right;
+background: #FDE9D5;
+border: 1px solid #F9AC3A;
+color: #F50;
+display: inline-block;
+text-align: center;
+white-space: nowrap;
+word-break: keep-all;
+}
+.btn_blue {
+padding: 0 3px 0 3px;
+line-height: 18px;
+margin: 2px;
+margin-right: 10px;
+background: #EFF9FF;
+border: 1px solid #B6DDF6;
+color: #0E51B6;
+display: inline-block;
+text-align: center;
+white-space: nowrap;
+word-break: keep-all;
+}
+.btn_blue.active,.btn_blue:hover{color:#D64007}
+
+#sellerbox td{height:37px; line-height:37px; text-align:center;}
+#sellerbox td.tdline{height:1px; padding-top:10px;}
+#sellerbox td.tdline hr{border:0; border-top:1px #CCC dashed;}
+
+ul.f-gray{width:240px; margin:12px auto; clear:both;}
+ul.f-gray li{float:left; text-align:center; line-height:20px;}
+ul.f-gray p{font-weight:bold; text-align:center;}
+
+.other-i{background:url(../images/taobao/sellers-other-i.png) left top no-repeat;display:inline-block; margin-left:15px;}
+.other-i.good{background-position: -2px 0; width:14px; height:16px;}
+.other-i.normal{background-position:-21px -1px;  width:16px; height:16px;}
+.other-i.bad{background-position:-42px -1px;  width:20px; height:16px;}
+.other-i.collect{background-position:-65px -1px;  width:20px; height:16px;}

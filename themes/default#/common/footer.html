@@ -1,0 +1,13 @@
+<div id="footer">
+	<p>
+		<span class="chengse">官方QQ群：{foreach item=item from=$cfg.group_qq}<a style="color:#FE5500;" target="_blank" href="tencent://message/?uin={$item}">{$item}</a>{/foreach}</span>
+		（加群请注明好会刷）</p>
+	<p class="lanse">
+	{foreach item=val key=key from=$link}
+		{if $key>0}|{/if}<a href="{$val.link}" target="_blank">{$val.name}</a>
+	{/foreach}
+	</p>
+	 <p class="lanse">{$cfg.site_foot}</p>
+</div>
+</body>
+</html>

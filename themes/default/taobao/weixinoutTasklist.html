@@ -1,0 +1,58 @@
+<link rel="stylesheet" type="text/css" href="css/weixinindex.css">
+<div class="w1190">
+
+        <div class="xgguod" style="width:90%;">
+            <ul>
+				{foreach item=vals key=key from=$lists}
+                <li class="pitem">
+                    <a href="javascript:void(0)" target="_blank">
+                        <img class="tryimg dbdl lazy" src="{$vals.aimg}" data-original="" alt="活动图片加载失败" style="display: block;">
+                    </a>
+                    <h4>
+                        <a href="javascript:void(0)" target="_blank">活动ID : {$vals.id}</a>
+                    </h4>
+                    <p>
+                        <em class="hqeme">￥{$vals.goods_price} </em>&nbsp;&nbsp;
+                        限量<em class="c_red"> 1</em> 份&nbsp;&nbsp;
+                        奖励<em class="c_red"> {$vals.total_points}</em> 刷点
+                    </p>
+					
+				{if $vals.process==0}
+					<a href="javascript:void(0)" onclick="qiang('{$vals.id}');" class="freeof" style="background-color: #FF6E02;color: white;">
+						待接手
+					</a>
+				{else}
+                      <div style="width: 150px;margin: 0px auto;">
+                        <a href="javascript:void(0)" {if $vals.process==2||$vals.process==1}onclick="weixinqueren('{$vals.id}')"{/if} class="freeof" style="background-color: #FF6E02;color: white;display:inline-block;width:64px; ">
+								{if $vals.process==2||$vals.process==1}确认完成{/if}
+                        </a>
+                        <a href="javascript:void(0)" ids="{$vals.id}" class="freeof" style="background-color: #CCC;color: white;width:64px;display:inline-block;">
+								终止
+                        </a>
+                       </div>
+                {/if}
+                </li>
+                {/foreach}
+                              
+   
+        </div>
+    </div>
+</div>
+
+
+<div id="insert-before"></div>
+		<div id="page"><span style="padding-left:20px;">本页合计金额：金额:<span class="orange">{$page_amount}</span>元，刷点:<span class="orange">{$page_mai}</span>个；未完成金额:<span class="orange">{$page_wamount}</span>元，未完成刷点:<span class="orange">{$page_wmai}</span>个，待付款任务金额：<span style="color:blue;">{$page_wfu}</span>元</span>{$array.pagestr}</div>
+
+</div>
+<script>
+	$(".freeof[ids]").click(function(){
+		var thisid=$(this).attr("ids");
+		$.post("?mod=taskexit",{data:thisid},function(backdata){
+			if(backdata==1){
+                getweixinoutTask();
+            }else{
+                alert("暂不能终止该任务");
+            }
+		});
+	});
+</script>

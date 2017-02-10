@@ -1,0 +1,258 @@
+{include common/header}
+<style>
+#wrap { margin: 0 auto;width: 1000px;}
+.phb_fd { float: left;margin: 0 3px;}
+.chengse2 { color: #EB0F0F;}
+.imagstr{ background: url(themes/default/images/info/rank_3.gif) no-repeat;}
+.phb_t1 { background: url(themes/default/images/info/rank_2.gif) no-repeat;color: #333333;font-size: 14px;font-weight: bold;text-indent: 20px;}
+.phb_ht { height: 418px;}
+.phb_t2 { border-left: 1px solid #DDDDDD;border-right: 1px solid #DDDDDD;margin: 0 auto;padding: 0 10px;width: 299px;}
+.phb_sx { border-bottom: 1px solid #DDDDDD;font-weight: bold;height: 37px;line-height: 37px;padding-left: 25px;}
+.phb_md, .phb_md1 { float: right;margin: 0 15px 0 0;}
+.phb_md1 { margin: 0 35px 0 0;}
+.phb_name { border-bottom: 1px dotted #DDDDDD;clear: both;height: 37px;line-height: 37px;padding-left: 10px;}
+.phb_nameico1{ background-position:0 -44px;display: block;float: left;height: 31px;margin: 3px 8px 0 0;width: 22px;}
+.phb_t3 { background:url(themes/default/images/info/rank_2.gif) no-repeat 0 -63px;height: 10px;}
+.phb_nameico1{ background-position:0 -44px;display: block;float: left;height: 31px;margin: 3px 8px 0 0;width: 22px;}
+.phb_nameico2{ background-position:-22px -44px;display: block;float: left;height: 31px;margin: 3px 8px 0 0;width: 22px;}
+.phb_nameico3{ background-position:-44px -44px;display: block;float: left;height: 31px;margin: 3px 8px 0 0;width: 22px;}
+.phb_nameico4{ background-position:-66px -44px;display: block;float: left;height: 31px;margin: 3px 8px 0 0;width: 22px;}
+.phb_nameico5{ background-position:-88px -44px;display: block;float: left;height: 31px;margin: 3px 8px 0 0;width: 22px;}
+.phb_nameico6{ background-position:-110px -44px;display: block;float: left;height: 31px;margin: 3px 8px 0 0;width: 22px;}
+.phb_nameico7{ background-position:-132px -44px;display: block;float: left;height: 31px;margin: 3px 8px 0 0;width: 22px;}
+.phb_nameico8{ background-position:-154px -44px;display: block;float: left;height: 31px;margin: 3px 8px 0 0;width: 22px;}
+.phb_nameico9{ background-position:-176px -44px;display: block;float: left;height: 31px;margin: 3px 8px 0 0;width: 22px;}
+.phb_nameico10{ background-position:-198px -44px;display: block;float: left;height: 31px;margin: 3px 8px 0 0;width: 22px;}
+</style>
+<div id="wrap">
+	<div style="margin:20px 0 10px 0;"><img src="themes/default/images/info/rank_1.jpg"></div>
+	 <!-- 麦点消费排行榜 -->
+	<table width="325" cellspacing="0" cellpadding="0" border="0" class="phb_fd">
+		<tbody><tr><td height="41" class="phb_t1">金额消费排行榜</td></tr>
+      	<tr>
+	        <td>
+				<ul class="phb_t2 phb_ht">
+					<li class="phb_sx">用户名<span class="phb_md">消费金额</span></li>
+						{if $ranks.money.0.user_name}
+						{foreach item=v key=key from=$ranks.money}
+						<li class="phb_name">
+							<span class="phb_nameico<?php echo $this->_var['key']+1;?> imagstr"></span>
+							<a href="info.php?act=info&uname={$v.user_name}">{$v.user_name}</a>
+							<span class="phb_md chengse2">{$v.money}元</span>
+						</li>
+						{/foreach}
+						{/if}
+				</ul>
+			</td>
+      	</tr>
+     	<tr><td height="10" class="phb_t3">&nbsp;</td></tr>
+    </tbody></table>
+    <!-- 发布任务周排行榜 -->
+    <table width="325" cellspacing="0" cellpadding="0" border="0" class="phb_fd">
+    	<tbody><tr><td height="41" class="phb_t1">发布任务周排行榜</td></tr>
+     	 <tr>
+        	<td>
+        		<ul class="phb_t2 phb_ht">
+          			<li class="phb_sx">用户名<span class="phb_md">发布任务</span></li>
+						{if $ranks.out.0.user_name}
+						{foreach item=v key=key from=$ranks.out}
+						<li class="phb_name">
+							<span class="phb_nameico<?php echo $this->_var['key']+1;?> imagstr"></span>
+							<a href="info.php?act=info&uname={$v.user_name}">{$v.user_name}</a>
+							<span class="phb_md chengse2">{$v.num}个</span>
+						</li>
+						{/foreach}
+						{/if}
+						</ul>
+			</td>
+      	</tr>
+      	<tr><td height="10" class="phb_t3">&nbsp;</td></tr>
+    </tbody></table>
+    <!-- 接手任务周排行榜 -->
+    <table width="325" cellspacing="0" cellpadding="0" border="0" class="phb_fd">
+    	<tbody><tr><td height="41" class="phb_t1">接手任务周排行榜</td></tr>
+     	 <tr>
+        	<td>
+        		<ul class="phb_t2 phb_ht">
+					<li class="phb_sx">用户名<span class="phb_md">接手任务</span></li>
+						{if $ranks.in.0.user_name}
+						{foreach item=v key=key from=$ranks.in}
+						<li class="phb_name">
+							<span class="phb_nameico<?php echo $this->_var['key']+1;?> imagstr"></span>
+							<a href="info.php?act=info&uname={$v.user_name}">{$v.user_name}</a>
+							<span class="phb_md chengse2">{$v.num}个</span>
+						</li>
+						{/foreach}
+						{/if}
+				</ul>
+			</td>
+      	</tr>
+      	<tr><td height="10" class="phb_t3">&nbsp;</td></tr>
+    </tbody></table>
+    <!-- 本周推广收益总排行榜 -->
+    <table width="325" cellspacing="0" cellpadding="0" border="0" class="phb_fd">
+    	<tbody><tr><td height="41" class="phb_t1">本月推广收益排行榜</td></tr>
+     	 <tr>
+        	<td>
+        		<ul class="phb_t2 phb_ht">
+					<li class="phb_sx">用户名<span class="phb_md">预计收益</span><span class="phb_md1">推广人数</span></li>
+											<li class="phb_name">
+							<span class="phb_nameico1 imagstr"></span>
+							<a href="/info/?username=核心词1">核心词1</a>
+							<span class="phb_md chengse2">1825.00元</span>
+							<span class="phb_md1 chengse2">365</span>
+						</li>
+											<li class="phb_name">
+							<span class="phb_nameico2 imagstr"></span>
+							<a href="/info/?username=bobotg">bobotg</a>
+							<span class="phb_md chengse2">1145.00元</span>
+							<span class="phb_md1 chengse2">229</span>
+						</li>
+											<li class="phb_name">
+							<span class="phb_nameico3 imagstr"></span>
+							<a href="/info/?username=核心词">核心词</a>
+							<span class="phb_md chengse2">1090.00元</span>
+							<span class="phb_md1 chengse2">218</span>
+						</li>
+											<li class="phb_name">
+							<span class="phb_nameico4 imagstr"></span>
+							<a href="/info/?username=longang123">longang123</a>
+							<span class="phb_md chengse2">395.00元</span>
+							<span class="phb_md1 chengse2">79</span>
+						</li>
+											<li class="phb_name">
+							<span class="phb_nameico5 imagstr"></span>
+							<a href="/info/?username=森之诚品">森之诚品</a>
+							<span class="phb_md chengse2">305.00元</span>
+							<span class="phb_md1 chengse2">61</span>
+						</li>
+											<li class="phb_name">
+							<span class="phb_nameico6 imagstr"></span>
+							<a href="/info/?username=hellosee">hellosee</a>
+							<span class="phb_md chengse2">170.00元</span>
+							<span class="phb_md1 chengse2">34</span>
+						</li>
+											<li class="phb_name">
+							<span class="phb_nameico7 imagstr"></span>
+							<a href="/info/?username=sg947015968">sg947015968</a>
+							<span class="phb_md chengse2">105.00元</span>
+							<span class="phb_md1 chengse2">21</span>
+						</li>
+											<li class="phb_name">
+							<span class="phb_nameico8 imagstr"></span>
+							<a href="/info/?username=chaofen">chaofen</a>
+							<span class="phb_md chengse2">100.00元</span>
+							<span class="phb_md1 chengse2">20</span>
+						</li>
+											<li class="phb_name">
+							<span class="phb_nameico9 imagstr"></span>
+							<a href="/info/?username=yubaibai">yubaibai</a>
+							<span class="phb_md chengse2">70.00元</span>
+							<span class="phb_md1 chengse2">14</span>
+						</li>
+											<li class="phb_name">
+							<span class="phb_nameico10 imagstr"></span>
+							<a href="/info/?username=hy5">hy5</a>
+							<span class="phb_md chengse2">65.00元</span>
+							<span class="phb_md1 chengse2">13</span>
+						</li>
+									</ul>
+			</td>
+      	</tr>
+      	<tr><td height="10" class="phb_t3">&nbsp;</td></tr>
+    </tbody></table>
+    <!-- 推广收益总排行榜 -->
+    <table width="325" cellspacing="0" cellpadding="0" border="0" class="phb_fd">
+    	<tbody><tr><td height="41" class="phb_t1">推广收益总排行榜</td></tr>
+     	 <tr>
+        	<td>
+        		<ul class="phb_t2 phb_ht">
+					<li class="phb_sx">用户名<span class="phb_md">预计收益</span><span class="phb_md1">推广人数</span></li>
+											<li class="phb_name">
+							<span class="phb_nameico1 imagstr"></span>
+							<a href="/info/?username=愉悦的大麦">愉悦的大麦</a>
+							<span class="phb_md chengse2">196280.00元</span>
+							<span class="phb_md1 chengse2">39256</span>
+						</li>
+											<li class="phb_name">
+							<span class="phb_nameico2 imagstr"></span>
+							<a href="/info/?username=核心词">核心词</a>
+							<span class="phb_md chengse2">164115.00元</span>
+							<span class="phb_md1 chengse2">32823</span>
+						</li>
+											<li class="phb_name">
+							<span class="phb_nameico3 imagstr"></span>
+							<a href="/info/?username=chaofen">chaofen</a>
+							<span class="phb_md chengse2">47640.00元</span>
+							<span class="phb_md1 chengse2">9528</span>
+						</li>
+											<li class="phb_name">
+							<span class="phb_nameico4 imagstr"></span>
+							<a href="/info/?username=jkxtd">jkxtd</a>
+							<span class="phb_md chengse2">44565.00元</span>
+							<span class="phb_md1 chengse2">8913</span>
+						</li>
+											<li class="phb_name">
+							<span class="phb_nameico5 imagstr"></span>
+							<a href="/info/?username=小麦麦啦">小麦麦啦</a>
+							<span class="phb_md chengse2">37045.00元</span>
+							<span class="phb_md1 chengse2">7409</span>
+						</li>
+											<li class="phb_name">
+							<span class="phb_nameico6 imagstr"></span>
+							<a href="/info/?username=装修词">装修词</a>
+							<span class="phb_md chengse2">30935.00元</span>
+							<span class="phb_md1 chengse2">6187</span>
+						</li>
+											<li class="phb_name">
+							<span class="phb_nameico7 imagstr"></span>
+							<a href="/info/?username=hellosee">hellosee</a>
+							<span class="phb_md chengse2">30765.00元</span>
+							<span class="phb_md1 chengse2">6153</span>
+						</li>
+											<li class="phb_name">
+							<span class="phb_nameico8 imagstr"></span>
+							<a href="/info/?username=百度yaoda">百度yaoda</a>
+							<span class="phb_md chengse2">23805.00元</span>
+							<span class="phb_md1 chengse2">4761</span>
+						</li>
+											<li class="phb_name">
+							<span class="phb_nameico9 imagstr"></span>
+							<a href="/info/?username=liuzz">liuzz</a>
+							<span class="phb_md chengse2">17415.00元</span>
+							<span class="phb_md1 chengse2">3483</span>
+						</li>
+											<li class="phb_name">
+							<span class="phb_nameico10 imagstr"></span>
+							<a href="/info/?username=核心词1">核心词1</a>
+							<span class="phb_md chengse2">9025.00元</span>
+							<span class="phb_md1 chengse2">1805</span>
+						</li>
+									</ul>
+			</td>
+      	</tr>
+      	<tr><td height="10" class="phb_t3">&nbsp;</td></tr>
+    </tbody></table>
+     <!-- 积分总排行榜 -->
+    <table width="325" cellspacing="0" cellpadding="0" border="0" class="phb_fd">
+    	<tbody><tr><td height="41" class="phb_t1">积分总排行榜</td></tr>
+     	 <tr>
+        	<td>
+				<ul class="phb_t2 phb_ht">
+					<li class="phb_sx">用户名<span class="phb_md">积分</span></li>
+						{if $ranks.points.0.user_name}
+						{foreach item=v key=key from=$ranks.points}
+						<li class="phb_name">
+							<span class="phb_nameico<?php echo $this->_var['key']+1;?> imagstr"></span>
+							<a href="info.php?act=info&uname={$v.user_name}">{$v.user_name}</a>
+							<span class="phb_md chengse2">{$v.rank_points}分</span>
+						</li>
+						{/foreach}
+						{/if}
+				</ul>
+			</td>
+      	</tr>
+      	<tr><td height="10" class="phb_t3">&nbsp;</td></tr>
+    </tbody></table>
+</div>
+{include common/footer}

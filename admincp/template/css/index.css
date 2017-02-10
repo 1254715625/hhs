@@ -1,0 +1,29 @@
+@charset "utf-8";
+/*
+ * @author dbWei
+ * @date Oct,10 2016
+ * @addredss hefei
+ */
+
+#header{height:80px;background:#232a32;position:relative;}
+#header .logo{float:left;height:100%;width:150px;margin-right:20px;background:url(../images/logo.png) center center no-repeat;}
+#header .loginfo{float:left;height:100%;}
+#header .loginfo .info-t{line-height:46px;color:#fff;}
+#header .helpnav{position:absolute; right:10px; top:10px; color:#FFF;}
+#header .helpnav a{color:#FFF;}
+#header .topnav{margin-top:5px;}
+#header .topnav li{float:left;height:28px;line-height:28px;overflow:hidden;font-size:14px;border-top:1px solid #fff;border-left:1px solid #fff;border-right:1px solid #fff;margin-right:10px;font-weight:bold;}
+#header .topnav li a{color:#fff;display:block;padding:0 12px;}
+#header .topnav li:hover,#header .topnav li.sel{background-color:#fff;}
+#header .topnav li:hover a,#header .topnav li.sel a{color:#232a32;}
+
+/* 左侧菜单 */
+#mlbox{float:left;height:500px;width:150px;background-color:#232a32;}
+#mlbox h3{height:40px;line-height:40px;padding-left:20px;color:#7e8184;font-size:14px;border-bottom:1px solid #181d23;}
+#mlbox ul{text-align:center;padding-top:3px;}
+#mlbox ul li a{display:block;height:40px;line-height:40px;color:#7e8184;margin:1px 0;-webkit-transition:background-color 0.3s linear 0s,color 0.3s linear 0s,padding-left 0.3s linear 0s;-moz-transition:background-color 0.3s linear 0s,color 0.3s linear 0s,padding-left 0.3s linear 0s;-ms-transition:background-color 0.3s linear 0s,color 0.3s linear 0s,padding-left 0.3s linear 0s;-o-transition:background-color 0.3s linear 0s,color 0.3s linear 0s,padding-left 0.3s linear 0s;transition:background-color 0.3s linear 0s,color 0.3s linear 0s,padding-left 0.3s linear 0s;}
+#mlbox ul li a:hover{background-color:#000;color:#fff;padding-left:15px;}
+#mlbox ul li a.sel{color:#fff;background:#000 url(../images/triangle.png) right center no-repeat;}
+
+/* 右侧内容 */
+#mrbox{float:right;}

@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+.rechange{float: left; width: 760px;margin-left:10px;}
+.rechange .mh_tishi {background: none repeat scroll 0 0 #FFFBF2;border: 1px solid #FBE1C4;margin-bottom: 15px;padding: 12px 15px;}
+.rechange .chengse2 {color: #EB0F0F;}
+.rechange a:link, .rechange a:visited, .rechange a:active {text-decoration: none;}
+.rechange a.comlink {color: #3372A2;}
+.rechange .rechange .bq_menu2 {background: url(../images/user/der_ico.png) repeat scroll 0 -374px ;height: 32px;float:left;width:100%;}
+.rechange .bq_menu2 a:hover, .rechange .bq_menu2 a.nov {color:#1996E6;background: url(../images/user/der_ico.png) no-repeat scroll 0 -277px transparent;font-weight: bold;}
+.rechange .bq_menu2 a {background: url(../images/user/der_ico.png) no-repeat scroll 0 -324px ;display: block;float: left;font-size: 14px;height: 32px;line-height: 30px;margin-right: 3px;text-align: center;width: 128px;}
+.rechange #bq_menu2_cont_1{margin-bottom:10px;float:left;width:100%;}
+.rechange #bq_menu2_cont_2 p{float: left}
+.rechange .hsmd_ts {float: left;background: url(../images/user/hsmd_ico.png) no-repeat scroll 0 -190px ; width:740px;border-bottom: 1px dotted #DDDDDD;height: 30px;line-height: 30px;margin: 10px 0;text-indent: 35px;}
+.rechange .hsmd_hsj {float: left;margin: 4px 0px 0 10px;float: left;width:150px;margin-bottom: 10px;}
+.rechange .hsmd_btn {background: url(../images/user/hsmd_ico.png) no-repeat scroll 0 -234px ;border: medium none;cursor: pointer;display: block;float: left;height: 33px;line-height: 99px;overflow: hidden;text-indent: 999px;width: 95px;}
+.rechange .weal_btn {background: url(../images/user/hsmd_ico.png) no-repeat scroll 0 -234px ;border: medium none;cursor: pointer;display: block;float: left;height: 33px;line-height: 99px;overflow: hidden;text-indent: 999px;width: 95px;}
+.rechange .STYLE4 {clear: left;font-size: 12px;height: 35px;line-height: 35px;margin: 70px 0 10px;color: #FF9900}
+.rechange .hsmd_dj {clear: left;font-weight: bold;height: 35px;line-height: 35px;margin: 70px 0 10px;}
+.rechange .lanse {color: #1996E6;}
+.rechange .hsmd_list {background: url(../images/user/hsmd_ico.png) no-repeat scroll 0 0 ;float: left;height: 130px;margin: 5px 0px 10px 0;position: relative;width: 253px;}
+.rechange ul {list-style-type: none;margin: 0;padding: 0;}
+.rechange .hsmd_list .hs_jf {color: #604C23;font-weight: bold;left: 38px;position: absolute;top: 16px;}
+.rechange .hsmd_list .hs_jb {font-size: 14px;left: 116px;position: absolute;top: 50px;}
+.rechange .hsmd_list .hs_dh {background: url(../images/user/hsmd_ico.png) no-repeat scroll 0 -146px ;border: medium none;cursor: pointer;height: 25px;left: 116px;line-height: 999px;overflow: hidden;position: absolute;text-indent: 999px;top: 85px;width: 81px;}
+.rechange .hsmd_btn {background: url(../images/user/hsmd_ico.png) no-repeat scroll 0 -234px ;border: medium none;cursor: pointer;display: block;float: left;height: 33px;line-height: 99px;overflow: hidden;text-indent: 999px;width: 95px;}
+.rechange .cle {clear: both;font-size: 0;height: 0;line-height: 0;}
+.rechange .fuli{height:18px; padding-top:20px;font-size:15px; font-weight:bold;}
+.weal_hsj{padding-top:10px}
+

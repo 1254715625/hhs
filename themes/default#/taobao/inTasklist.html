@@ -1,0 +1,245 @@
+<div id="taskList">			<!--开始-->
+   	    <table id="insert-after" width="100%" border="0" cellspacing="0" cellpadding="0">
+   	      <thead>
+          	<tr>
+	            <td width="10" height="39" align="center" valign="middle" class="tico rwdt_bt1"></td>
+	            <td width="200" align="center" valign="middle" class="tico rwdt_bt2"><span class="h-sort" val="id" onclick="javascript:location.reload();">任务编号</span></td>
+	            <td width="12%" align="center" valign="middle" class="tico rwdt_bt2"><span class="h-sort floatcenter" val="goodsPrice" onclick="getTasksa('getinTask','a.goods_price')">任务价格</span></td>
+	            <td width="18%" align="center" valign="middle" class="tico rwdt_bt2"><span class="h-sort floatcenter" val="timeEnter" style="width:88px;" onclick="getTasksa('getinTask','a.ddlOKDay')">发布者要求</span></td>
+	            <td width="12%" align="center" valign="middle" class="tico rwdt_bt2"><span class="h-sort floatcenter" val="maidian" onclick="getTasksa('getinTask','a.txtMinMPrice')">悬赏刷点</span></td>
+	            <td width="12%" align="center" valign="middle" class="tico rwdt_bt2"><span class="h-sort floatcenter" val="state" onclick="getTasksa('getinTask','a.process')">任务状态</span></td>
+	            <td width="1%" align="center" valign="middle" class="tico rwdt_bt2"></td>
+	            <td width="50" align="center" valign="middle" class="tico rwdt_bt2">
+	            </td>
+	            <td width="15%" align="center" valign="middle" class="tico rwdt_bt2">操作</td>
+	            <td width="10" align="center" valign="middle" class="tico rwdt_bt3"></td>
+            </tr>
+   	      </thead>
+    	</table>	
+			{foreach item=vals key=key from=$lists}
+    	<table class="yfrw_list" style=""><tbody>
+    <tr>
+        <td width="180" class="yf_pd2">
+            
+            <span class="hico type{$vals.task_types} topt" style="width: 180px;">
+                <strong>TB{$vals.id}</strong>
+               {if $vals.process==0}<b id="reporTask" title="举报该任务" onclick="jubao({$val.id});">举报</b>{/if}
+            </span>
+            <p class="cle"></p>
+            <span class="block">
+                接手时间:{$vals.add_time}
+                
+            </span>
+            <span class="rwdt_xbh0">发布方:<a target="_blank" href="info.php?act=info&uname={$vals.add_user}">{$vals.add_user}</a></span>
+        </td>
+        <td width="90" class="yf_pd2">
+             {if $vals.cbxIsGJ==1}
+			<span class="hico xgj" title="拍下商品，付款前需要联系店主修改价格，使得支付费用与任务金额相等，即为{$vals.goods_price}元">{$vals.goods_price}</span>
+			{else}<span class="hico rwdt_db " title="平台担保：此任务卖家已缴纳全额担保存款，买家可放心购买，任务完成时，买家平台账号自动获得相应存款。">{$vals.goods_price}</span>{/if}
+           
+            
+        </td>
+        <td width="170" align="center" class="yf_pd yf_em">
+            
+      {if $vals.ddlOKDay==0}<p class="orange" title="任务接手付款后，立即对宝贝进行好评并打五星！">立即五星带字好评</p>{/if}
+			{if $vals.ddlOKDay==1}<p class="green" title="任务接手付款后，在24小时后对宝贝进行收货好评！">24小时五星带字好评</p>{/if}
+			{if $vals.ddlOKDay==2}<p class="green" title="任务接手付款后，在48小时后对宝贝进行收货好评！">48小时五星带字好评</p>{/if}
+			{if $vals.ddlOKDay==3}<p class="green" title="任务接手付款后，在72小时后对宝贝进行收货好评！">72小时五星带字好评</p>{/if}
+			{if $vals.ddlOKDay==4}<p class="green" title="任务接手付款后，在96小时后对宝贝进行收货好评！">96小时五星带字好评</p>{/if}
+			{if $vals.ddlOKDay==5}<p class="green" title="任务接手付款后，在120小时后对宝贝进行收货好评！">120小时五星带字好评</p>{/if}
+			{if $vals.ddlOKDay==6}<p class="green" title="任务接手付款后，在144小时后对宝贝进行收货好评！">144小时五星带字好评</p>{/if}
+			{if $vals.ddlOKDay==7}<p class="green" title="任务接手付款后，在168小时后对宝贝进行收货好评！">168小时五星带字好评</p>{/if}
+            
+            
+      {if $vals.cbhp>1}<em title="对多个商品分开评价" class="hico limit2 lopt">&nbsp;</em>&nbsp;{/if}
+			{if $vals.attrs.cbxIsAudit==1&&$vals.finish.cbxIsAudit!=1}<em title="接任务者需要发布者核审" class="hico limit3 lopt">&nbsp;</em>&nbsp;{/if}
+			{if $vals.attrs.cbxIsWW==1}<em title="任务需要旺旺模拟咨询再拍下" class="hico limit4 lopt">&nbsp;</em>&nbsp;{/if}
+			{if $vals.attrs.cbxIsLHS==1}<em title="任务需要模拟聊天后确认收货" class="hico limit5 lopt">&nbsp;</em>&nbsp;{/if}
+			{if $vals.attrs.cbxIsMsg==1}<em title="按发布者提供的评语进行评价" class="hico limit6 lopt">&nbsp;</em>&nbsp;{/if}
+			{if $vals.attrs.cbxIsAddress==1}<em title="任务需要指定收货地址" class="hico limit7 lopt">&nbsp;</em>&nbsp;{/if}
+			{if $vals.attrs.pinimage==1}<em title="接任务者需要上传好评图片" class="hico limit8 lopt">&nbsp;</em>&nbsp;{/if}
+			{if $vals.attrs.isShare==1}<em title="好评后对宝贝进行分享" class="hico limit9 lopt">&nbsp;</em>&nbsp;{/if}
+			{if $vals.attrs.isReal==1}<em title="接手买号必须通过了支付宝实名认证" class="hico limit10 lopt">&nbsp;</em>&nbsp;{/if}
+			{if $vals.attrs.cbxIsTaoG==1}<em title="需要淘金币:{$vals.attrs.txtTaoG}个" class="hico limit11 lopt">&nbsp;</em>&nbsp;{/if}
+			{if $vals.attrs.isLimitCity==1}<em title="要求接手方地址是{$vals.attrs.Province}" class="hico limit13 lopt">&nbsp;</em>&nbsp;{/if}
+			{if $vals.attrs.cbxIsWX==1}<em title="接任务者需要通过手机、pad等智能设备的app进行旺旺购买前聊天" class="hico limit30 lopt">&nbsp;</em>&nbsp;{/if}
+			
+			{if $vals.attrs.shopBrGoods==1}<em title="接任务者需要额外浏览商品，额外0.3~0.9个刷点" class="hnews limit{if !empty($vals.finish.shopBrGoods)}h{/if}25 lopt" {if !empty($vals.finish.isViewEnd)}onclick="imgs('{$vals.finish.shopBrGoods}');"{/if}>&nbsp;</em>&nbsp;{/if}
+
+			{if $vals.attrs.stopDsTime==1}<em title="购买前需停留1~5分钟，接手后可查看，额外0.1~0.5个刷点" class="hnews limit26 lopt">&nbsp;</em>&nbsp;{/if}
+
+			{if $vals.attrs.isViewEnd==1}<em title="接任务者需要上传商品底部截图，额外0.3个刷点" class="hnews limit{if !empty($vals.finish.isViewEnd)}h{/if}27 lopt" {if !empty($vals.finish.isViewEnd)}onclick="imgs('{$vals.finish.isViewEnd}');"{/if}>&nbsp;</em>&nbsp;{/if}
+
+
+			{if $vals.attrs.isViewEnd==1}<em title="接任务者需要根据提示进行货比截图，额外0.5~1.5个刷点" class="hnews limit28 lopt">&nbsp;</em>&nbsp;{/if}
+
+			{if $vals.attrs.shopcoller==1}<em title="接任务者需要收藏该商品，收藏后提交收藏成功截图" class="hico limit31 lopt">&nbsp;</em>&nbsp;{/if}
+   
+        </td>
+        <td width="120" align="center" class="yf_pd">
+            <span class="{if $vals.ddlOKDay==0}red{else}green{/if} "><strong>{$vals.total_points}个刷点</strong></span><br>
+			{if $vals.pointExt} <span class="orange">↑ 发布者追加了刷点{$vals.pointExt}个</span>{/if} 
+        </td>
+        <td width="120" align="center" class="yf_pd">
+              
+            <strong class="orange">
+				{if $vals.appeal==1}任务申诉中{else}
+                {if $vals.process==0}等待您对商品付款{/if}
+                {if $vals.process==1}接手方已付款，等待发布方发货{/if}
+				{if $vals.process==2}发布方已发货，等待接手方好评{/if}
+				{if $vals.process==3}接手方已确认，等待发布方核实{/if}
+				{if $vals.process==4}确认已被好评，任务完成{/if}
+				{if $vals.appeal==1}任务申诉中{/if}
+				{/if}
+            </strong>
+        </td>
+        <td width="240" align="right" class="yf_pd2" valign="top" style="padding:0px;">
+            <div style="height:30px; position:relative; top:5px;left: 20px;">
+			{if $vals.appeal==1}任务申述中，暂停操作{else}
+
+				{if $vals.process==0&&$vals.attrs.cbxIsAudit==1&&$vals.get_user>0&&$vals.finish.cbxIsAudit!=1}<a href="javascript:;" class="aico abtn1 copy-field goodsUrl" onclick="qq({$vals.qq});">&nbsp;</a>{/if}<!-- 联系发布人审核 -->
+				
+				{if $vals.process==0&&(($vals.attrs.cbxIsAudit==1&&$vals.finish.cbxIsAudit==1)||$vals.attrs.cbxIsAudit==0)&&$vals.get_user>0}
+					{if $vals.task_other.visitWay>0}
+						{if $vals.finish.goods_url==$vals.goods_url}
+							{if $vals.attrs.lgoods>0}
+								{if $vals.finish.contrast.$vals.attrs.lgoods!=''}
+									<a href="javascript:getTaobaourl({$vals.id});" class="aico abtn3" copy-field="goodsUrl">&nbsp;</a><!-- 查看淘宝地址 -->
+									<a href="javascript:payment({$vals.id});" class="aico abtn4 " copy-field="goodsUrl">&nbsp;</a><!-- 我已付款 -->
+								{else}
+									<a href="javascript:{if $vals.attrs.isCompare==1}hb({$vals.id}){else}yz({$vals.id}){/if};" class="aico abtn2 " copy-field="goodsUrl">&nbsp;</a><!-- 查看搜索宝贝提示 -->
+								{/if}
+							{else}
+								<a href="javascript:getTaobaourl({$vals.id});" class="aico abtn3" copy-field="goodsUrl">&nbsp;</a><!-- 查看淘宝地址 -->
+								<a href="javascript:payment({$vals.id});" class="aico abtn4 " copy-field="goodsUrl">&nbsp;</a><!-- 我已付款 -->
+							{/if}
+						{else}
+							<a href="javascript:{if $vals.attrs.isCompare==1}hb({$vals.id}){else}yz({$vals.id}){/if};" class="aico abtn2 " copy-field="goodsUrl">&nbsp;</a><!-- 查看搜索宝贝提示 -->
+						{/if}
+					{else}
+						<a href="javascript:getTaobaourl({$vals.id});" class="aico abtn3" copy-field="goodsUrl">&nbsp;</a><!-- 查看淘宝地址 -->
+						<a href="javascript:payment({$vals.id});" class="aico abtn4 " copy-field="goodsUrl">&nbsp;</a><!-- 我已付款 -->
+					{/if}
+				{/if}
+
+				{if $vals.process==1}<a href="javascript:nopayment({$vals.id});" class="aico abtn5" copy-field="goodsUrl">&nbsp;</a>{/if}<!-- 我还未付款 -->
+				
+				{if $vals.process==2&&$vals.ddlOKDay>0&&$vals.ddlOKDays>0}<a href="javascript:;" class="aico abtn21" copy-field="goodsUrl">&nbsp;</a>{/if}<!-- 等待规定时间后收货 -->
+
+				{if $vals.process==2&&$vals.attrs.pinimage==1&&$vals.ddlOKDays==0}<a href="javascript:haoimg({$vals.id});" class="aico abtn18" copy-field="goodsUrl">&nbsp;</a>{/if}<!-- 上传好评截图 -->
+
+				{if $vals.process==2&&$vals.attrs.pinimage==0&&$vals.ddlOKDay==0}<a href="javascript:praise({$vals.id});" class="aico abtn6" copy-field="goodsUrl">&nbsp;</a>{/if}<!-- 我已按照要求好评 -->
+
+				{if $vals.process==3}<a href="javascript:;" class="aico abtn20" copy-field="goodsUrl">&nbsp;</a>{/if}<!-- 等待对方确认完成 -->
+
+				{if $vals.process==4&&$vals.evaluation==0}<a href="javascript:pingjia({$vals.id});" class="aico abtn8" copy-field="goodsUrl">&nbsp;</a>{/if}<!-- 评价 -->
+			{/if}
+            </div>
+			{if $vals.appeal==1}
+				<p style="clear:both;line-height:30px;height:30px;"><strong class="green time" ></strong></p>
+			{else}
+			{if $vals.process==0&&$vals.attrs.cbxIsAudit==1&&$vals.get_user>0&&$vals.finish.cbxIsAudit!=1}<p style="clear:both;line-height:30px;height:30px;">审核剩余时间：<strong class="green time" time="{$vals.time}"></strong></p>{/if}
+
+			{if $vals.process==0&&$vals.get_user>0}
+				{if ($vals.attrs.cbxIsAudit==0||($vals.attrs.cbxIsAudit==1&&$vals.finish.cbxIsAudit==1))}<p style="clear:both;line-height:30px;height:30px;">付款剩余时间：<strong class="green time" time="{$vals.time}"></strong></p>{/if}
+			{/if}
+
+			{if $vals.process==1}<p style="clear:both; line-height:30px;height:30px;">发货剩余时间：<strong class="green time" time="{$vals.time}"></strong></p>{/if}
+			<p style="clear:both; line-height:30px;height:30px;"></p>
+			{/if}
+
+			{if $vals.process==2&&$vals.ddlOKDay>0&&$vals.ddlOKDays>0}<p style="clear:both; line-height:30px;height:30px;">收货剩余时间<strong class="green time" time="{$vals.times}"></strong></p>{/if}
+
+            <p class="task-border">
+                联系对方：<a href="javascript:;" class="yf_lx">
+                <img border="0" src="http://wpa.qq.com/pa?p=1:{$vals.qq}:17" alt="{$vals.qq}" title="qq联系对方" onclick="qq({$vals.qq});"></a>
+                <a href="javascript:;" title="给卖家发送手机短信" alt="给卖家发送手机短信" class="aico phone"></a> |
+                {if $vals.appeal==1}<a href="user.php?act=complaint" title="查看申述" class="yf_ckss">查看申述</a>{else}
+               {if $vals.process==0} <a href="javascript:task_out(this,{$vals.id});" title="退出任务" class="yf_wz">退出</a>{/if}
+			   {if $vals.process>0&&$vals.process<4}<a href="javascript:shenshu({$vals.id});" title="任务申述" class="yf_ss">投诉</a>{/if}{/if}
+         {if $vals.remarks==''}<a href="javascript:remarks('',{$vals.id});;" style=" height:12px;top:2px;" class="aico no-flag yf_bz" ></a>{/if}
+			   {if $vals.remarks}<a href="javascript:remarks('{$vals.remarks}',{$vals.id});;" style=" height:12px;top:2px;" class="aico flag yf_bz" title="{$vals.remarks}"></a>{/if}
+            </p>
+        </td>
+        <td width="15">&nbsp;</td>
+    </tr>
+    <tr>
+        <td colspan="9" valign="middle" class="yfrw_listxia">
+            <ul>
+                <li class="info">不按规定修改地址、好评的的接手人将给予严厉处分</li>
+                <li>
+                    <span class="f-left" style="width: 150px;overflow: hidden;height: 20px;">
+                        <span class="aico"></span>掌柜名:<a href="javascript:;" class="blue nicknames" val="qinsijiong">{$vals.nickname}</a>
+                    </span>
+                    <span class="f-left"><span class="aico wangwang"></span>
+                        <span>
+                            采用买号:<a href="http://www.haohuisua.com/user.php?act=info&uname={$vals.buyno}" class="blue" target="_blank" title="查看买号信息">{$vals.buyno}</a>
+							
+                            <span title="买号信誉：{$vals.buyer_credit}" >{$vals.buyer_credit_img}</span>
+                        </span>
+                    </span>
+                </li>
+                <li width="12%" style="float:right">
+                {if $vals.process==0&&$vals.get_user>0}
+					{if ($vals.attrs.cbxIsAudit==1&&$vals.finish.cbxIsAudit==1)||$vals.attrs.cbxIsAudit==0}
+						{if $vals.task_other.visitWay>0}
+							{if $vals.finish.goods_url==$vals.goods_url}
+								{if $vals.attrs.lgoods>0}
+									{if $vals.finish.contrast.$vals.attrs.lgoods!=''}
+										<a href="javascript:getTaobaourl({$vals.id});" copy-field="goodsUrl" class="strong lookgurl">查看淘宝地址</a>
+									{/if}
+								{else}
+									<a href="javascript:getTaobaourl({$vals.id});" copy-field="goodsUrl" class="strong lookgurl">查看淘宝地址</a>
+								{/if}
+							{/if}
+						{else}
+							<a href="javascript:getTaobaourl({$vals.id});" copy-field="goodsUrl" class="strong lookgurl">查看淘宝地址</a>
+						{/if}
+					{/if}
+				{/if}
+                    
+                    
+                </li>
+            </ul>
+        </td>
+    </tr>
+{if $vals.remind}<tr>
+	<td colspan="9" height="40" class="yf_ts1">
+		<span class="aico bcomment"></span>
+		<strong class="orange">{$vals.remind}</strong>
+	</td>
+</tr>
+{/if}
+{if $vals.attrs.cbxIsMsg}
+<tr>
+	<td colspan="9" height="40" class="yf_ts2">
+		<span class="aico goodcomment"></span>
+		<strong class="orange goodinfo">{$vals.attrs.txtMessage}</strong>
+		<span copy-field="goodMessage" class="aico cpycomment" onclick="copys('{$vals.attrs.txtMessage}');"></span>
+	</td>
+</tr>
+{/if}
+{if $vals.attrs.cbxIsAddress}
+<tr>
+        <td colspan="9" height="40" class="yf_ts2"> 
+            <span class="aico limit-address"></span>
+            <span>姓名：</span>
+            <strong class="orange">{$vals.attrs.cbxName}</strong>
+            <span class="address-title">地址：</span>
+            <strong class="orange">{$vals.attrs.cbxAddress}</strong>
+            <span class="address-title">电话：</span>
+            <strong class="orange">{$vals.attrs.cbxMobile}</strong>
+            <span class="address-title">邮编：</span>
+            <strong class="orange">{$vals.attrs.cbxcode}</strong>
+            <span class="aico cpyaddress" copy-field="readdres" onclick="copys('{$vals.attrs.cbxName}&nbsp;{$vals.attrs.cbxAddress}&nbsp;{$vals.attrs.cbxMobile}&nbsp;{$vals.attrs.cbxcode}');"></span>
+        </td>
+</tr>
+{/if}
+</tbody>
+</table>
+{/foreach}
+
+
+<div id="insert-before"></div>
+		<div id="page"><span style="padding-left:20px;">本页合计金额：金额:<span class="orange">{$page_amount}</span>元，刷点:<span class="orange">{$page_mai}</span>个；未完成金额:<span class="orange">{$page_wamount}</span>元，未完成刷点:<span class="orange">{$page_wmai}</span>个，待付款任务金额：<span style="color:blue;">{$page_wfu}</span>元</span>{$array.pagestr}</div>
+</div>

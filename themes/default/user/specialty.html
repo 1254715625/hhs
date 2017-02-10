@@ -1,0 +1,122 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="css/user_specialty.css">
+<div id="main">
+<div class="user_left">
+	{include user/leftmenu}
+</div>
+<div id="_right"><div id="shuake">
+<div class="mh_tishi">
+{if $uinfo.brush_time}
+        您是职业刷客，本周已接完成任务进度：<strong style="color: Red;">{$user.in_task}</strong>(有效任务:<strong style="color: Red;">{$user.in_tasks}</strong>){if $user.receive.id}&nbsp;&nbsp;<font color="red">本周奖励：<font id="receive">{if $user.receive.receive==1}刷点{else}存款{/if}{$user.receive.money}</font>，请点击下方按钮领取</font>{/if}<br>
+        接手500个任务可获得100麦点奖励。 <br>
+        任务完成条件:<br>
+        1.每周完成500个任务。<br>
+        2.每周接手单个掌柜虚拟任务 50个 并有效完成，计算为有效完成任务，超出则不含。<br>
+        职业刷客到期时间：<font style="color: green;">{$brush_time}</font>
+{else}
+        1、申请兼职刷客可以获得更高的金币回收价格、更多的同时接手任务次数、更多的买号绑定、推广用户可以获得更高的提成奖励，申请时限为一个月，到期后将自动恢复到当前积分对应等级；一旦申请成功，无法返回原始的会员等级，必须到期后才能取消，请申请前一定重视！<br>
+        2、为了保障发布方的利益，杜绝新手在毫无接手任务经验的情况下就加入刷客，<font style="color: Red;">平台限制刷客的申请条件为经验大于等于{$integral_brush}点，并且无有效投诉记录。</font><br>
+        3、职业刷客每周接手500个任务可获得300元，200元，100元，100麦点奖励。
+{/if}
+</div>
+
+	<div class="ke">
+       	<h1>
+       		<span>成为职业刷客</span>
+       		<input type="submit" class="{if $user.receive.id}receive{else}shenqing{/if}">
+       	</h1>
+        <ul>
+            <li style="width:170px;">&nbsp;</li>
+            <li style="width:350px;">普通会员</li>
+            <li style="text-indent:30px;text-align:left;">职业刷客</li>
+        </ul>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+           <tbody>
+			{foreach item=v key=k from=$brush}
+			<tr>
+			    <td class="k01">{$v.name}</td>
+                <td class="k02">{$v.rank}</td>
+                <td class="k03"><span>{$v.value}</span></td>
+            </tr>
+			{/foreach}
+			<tr>
+			    <td class="k01">每周接手任务500个以上</td>
+                <td class="k02">无奖励</td>
+                <td class="k03"><span>300元，200元，100元，100麦点</span></td>
+            </tr>
+            <tr class="tcolor">
+                <td class="k01">费用</td>
+                <td class="k02">免费</td>
+                <td class="k03"><span>免费</span></td>
+            </tr>
+        </tbody></table>  
+    </div>
+</div></div>
+<script type="text/javascript">
+$(function(){
+	$('.shenqing').click(function(){
+		art.dialog({
+			title: '提示',
+			fixed: true,
+			lock: true,
+			content: '一旦申请成功，无法返回原始的会员等级，必须到期后才能取消，您确定要申请吗？',
+			okValue: '确定',
+			cancelValue: '取消',
+			ok: function (){
+				art.dialog({id:"ajaxStart",title: '正在加载中..',fixed: true});
+				$.post('user.php?act=specialty',function(data){
+					art.dialog.get('ajaxStart').close();
+					art.dialog({
+						title: '提示',
+						content: data.info,
+						fixed: true,
+						lock: true,
+						okValue: '确定',
+						ok: function () {
+							if(data.state){
+								window.location.href="user.php?act=login";
+							}
+						}
+					});
+				},'json'); 
+			},
+			cancel: function () { return true;}
+		});
+	});
+	{if $user.receive.id}
+	$('.receive').click(function(){
+		var t=$("#receive").html();
+		art.dialog({
+			title: '领取奖励 <font color="red">'+t+'</font>',
+			fixed: true,
+			lock: true,
+			content: '<p style="margin:10px 0;color:#EB0F0F;">请输入安全验证码：<input style="border:1px solid #999;" type="password" id="safecode" value=""></p>',
+			okValue: '确定',
+			cancelValue: '取消',
+			ok: function (){
+				var safecode=$("#safecode").val();
+				if(safecode ==''){
+					art.dialog({id:'mention', title: '提示',content: '请输入安全验证码~',fixed: true,lock: true,cancelValue: '确定',cancel: function () { return true;}});return false;
+				}
+				art.dialog({id:"ajaxStart",title: '正在加载中..',fixed: true});
+				$.post('user.php?act=specialty&receive=1',{'safecode':safecode},function(data){
+					art.dialog.get('ajaxStart').close();
+					art.dialog({
+						title: '提示',
+						content: data.info,
+						fixed: true,
+						lock: true,
+						cancelValue: '确定',
+						cancel: function () {
+							return true;
+						}
+					});
+				},'json'); 
+			},
+			cancel: function () { return true;}
+		});
+	});
+	{/if}
+});
+</script>
+{include common/footer}

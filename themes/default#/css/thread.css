@@ -1,0 +1,9 @@
+/*论坛帖子*/
+#threaddate {float: left;width: 760px;margin-left: 10px;}
+#threaddate .bq_menu {background: url(../images/user/fy_ico.jpg) repeat scroll 0 -1342px ;height: 32px;}
+#threaddate .bq_menu a {background: url(../images/user/fy_ico.jpg) no-repeat scroll -4px -806px ;display: block;float: left;font-size: 14px;height: 32px;line-height: 30px;margin-right: 3px;text-align: center;width: 96px;}
+#threaddate .bq_menu a:hover, #threaddate .bq_menu a.nov {color: #0D93D2;background: url(../images/user/fy_ico.jpg) no-repeat scroll -4px -758px ;font-weight: bold;}
+#threaddate .txjl_bg1 {background: url(../images/user/tx_btn.gif) no-repeat scroll 0 -225px ;}
+#threaddate .txjl_bg2 {background: url(../images/user/tx_btn.gif) repeat-x scroll 0 -264px ;color:#333;font-size: 14px;vertical-align: middle;height:37px;font-weight: bold;}
+#threaddate .txjl_bg3 {background: url(../images/user/tx_btn.gif) no-repeat scroll right -303px ;}
+#threaddate .mh_xxian {border-bottom: 1px dotted #DDDDDD;vertical-align: middle;}

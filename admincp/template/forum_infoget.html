@@ -1,0 +1,20 @@
+<div class="container" style="width:1000px;height:300px;margin:0px;padding:0px;overflow-y:auto;">
+  <form id="forms" name="form1" method="post" action="">
+    <table width="100%" id="listTb">
+      <tr>
+        <th>会员ID</th>
+        <th>会员名称</th>
+        <th>注册时间</th>
+        <th>添加</th>
+      </tr>
+	    {foreach item=item key=key from=$list}
+      <tr data="{$item.user_id}">
+        <td>{$item.user_id}</td>
+        <td>{$item.user_name}</td>
+        <td>{$item.add_time}</td>
+        <td><input type="checkbox" name="info" class="info" value="{$item.user_id}"></td>
+      </tr>
+	    {/foreach}
+    </table>
+  </form>
+</div>

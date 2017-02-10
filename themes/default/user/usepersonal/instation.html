@@ -1,0 +1,93 @@
+<div class="mh_tishi">
+		您希望获得哪些消息提醒？通过哪种方式获得？请在相应的选框内打勾。<br>  
+        <input type="checkbox" checked="checked" disabled="disabled" value="checkbox" name="checkbox">
+        表示该项消息接收方式是必需的，不能取消；<br>
+        <input type="checkbox" disabled="disabled" value="checkbox" name="checkbox2">
+        表示该项消息暂时不支持这种接收方式。 部分消息可以通过手机短信接收。<br>
+		站内手机短信提醒： <span class="chengse2">普通用户每条七分钱；尊享VIP每条只要六分钱。</span><br>
+	</div>
+
+	<form id="jForm" method="post" action="">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody><tr>
+                <td class="txjl_bg1"></td>
+                <td width="63%" align="left" class="txjl_bg2">&nbsp;信息内容</td>
+                <td width="20%" align="center" class="txjl_bg2"><input type="checkbox" class="all" data="website"> 站内信</td>
+                <td width="15%" align="center" class="txjl_bg2"><input type="checkbox" class="all" data="mobile">手机短信</td>
+                <td class="txjl_bg3"><input type="hidden" name="set" value="instation"><input type="hidden" name="safecode" value="" id="safecodes"></td>
+            </tr>
+    		
+                {foreach item=v key=k from=$instation}
+                <tr>
+                    <td height="35" bgcolor="#eff6fd">&nbsp;</td>
+                    <td valign="middle" bgcolor="#eff6fd" align="left" colspan="3"><span class="znx_sj">{$k}</span></td>
+                    <td bgcolor="#eff6fd">&nbsp;</td>
+                </tr>
+				{foreach item=val key=key from=$v}
+    	  		<tr>
+                    <td height="35">&nbsp;</td>
+                    <td width="63%" valign="middle" align="left">&nbsp; {$key}</td>
+                    <td width="20%" valign="middle" align="center">
+                    	<input type="checkbox" value="1" class="website" name="{$val}[website]" {if $uinfo['mess_set'][$val]['website']==1}checked{/if}>
+                    </td>
+                    <td width="15%" valign="middle" align="center">
+
+                    	<span class="chengse2">
+                    		<input type="checkbox" value="1" class="mobile" name="{$val}[mobile]" {if $uinfo['mess_set'][$val]['mobile']==1}checked{/if}>
+                    	</span>
+                    </td>
+            		<td>&nbsp;</td>
+         		</tr>
+				{/foreach}
+                {/foreach}
+            <tr>
+                <td height="35">&nbsp;</td>
+                <td height="70" colspan="3" align="left" valign="middle">
+                    <input type="submit" class="znx_btn">
+                    <input type="button" class="znx_ac">
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+        </tbody></table>
+    </form>
+<script type="text/javascript">
+$(function(){
+	$(".znx_ac").click(function(){
+		$.post('user.php?act=personal&opt=instation',{'set':'instation','reset':1},function(data){
+			art.dialog({ id:'one',title: '提示',content: data.info,fixed: true,lock: true,cancelValue: '确定',cancel: function () { location.reload();}});
+		},'json');
+	});
+	$(".all").click(function(){
+		var data=$(this).attr('data');
+		if(data){
+			$("."+data+":checkbox").each(function () {  
+				$(this).attr("checked", !$(this).attr("checked"));  
+			});  
+		}
+	});
+	$(".znx_btn").click(function(){
+		art.dialog({
+			title: '验证安全码',
+			content: '<p style="margin:10px 0;color:#EB0F0F;">请输入安全码：<input style="border:1px solid #999;" type="password" id="safecode"></p>',
+			fixed: true,
+			lock: true,
+			okValue: '确定',
+			cancelValue: '取消',
+			ok: function () {
+				var safecode=$("#safecode").val();
+				if(safecode ==''){
+					art.dialog({id:'mention', title: '提示',content: '请输入安全码~',fixed: true,lock: true,cancelValue: '确定',cancel: function () { return true;}});return false;
+				}else{
+					$("#safecodes").val(safecode);
+					var formDate = $('#jForm').serializeArray();
+					$.post('user.php?act=personal&opt=instation',formDate,function(data){
+						art.dialog({ id:'one',title: '提示',content: data.info,fixed: true,lock: true,cancelValue: '确定',cancel: function () { return true;}});
+					},'json');
+				}
+			},
+			cancel: function () { return true;}
+		});		
+		return false;
+	});
+});
+</script>

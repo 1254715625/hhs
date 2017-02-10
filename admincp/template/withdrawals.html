@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/twitter.css">
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="js/artDialog.js"></script>
+</head>
+<body>
+<div class="ur_here">首页 &raquo; 任务管理 &raquo;  提现处理</div>
+<div class="container">
+	<div class="btnBox">
+		<ul class="clearfix">
+			<li class="{if $opt=='tbbuy'}current{/if}"><a href="task_manager.php?act=tbbuy">淘宝买号管理</a></li>
+			<li class="{if $opt=='tbsel'}current{/if}"><a href="task_manager.php?act=tbsel">淘宝掌柜管理</a></li>
+
+			<!--<li class="{if $opt=='ppbuy'}current{/if}"><a href="task_manager.php?act=ppbuy">拍拍买号管理</a></li>
+			<li class="{if $opt=='ppsel'}current{/if}"><a href="task_manager.php?act=ppsel">拍拍掌柜管理</a></li>-->
+
+			<li>
+				<select class="bankSearch" name="bankSearch">
+					<option value="中国银行">请选择银行</option>
+					<option value="中国银行">中国银行</option>
+					<option value="建设银行">建设银行</option>
+					<option value="工商银行">工商银行</option>
+					<option value="招商银行">招商银行</option>
+					<option value="浦发银行">浦发银行</option>
+				</select>
+			</li>
+		</ul>
+	</div>
+    <form id="form1" name="form1" method="post" action="">
+    <table width="100%" id="listTb">
+      <tr>
+        <th>流水号</th>
+        <th>会员名称</th>
+        <th>银行账户</th>
+        <th>提现银行</th>
+        <th>银行卡号</th>
+        <th>提现金额</th>
+		<th>手机卡号</th>
+        <th>申请时间</th>
+        <th>{if $state}结果{else}操作{/if}</th>
+      </tr>
+	  {foreach item=item key=key from=$lists}
+      <tr>
+        <td>{$item.oid}</td>
+        <td><a href="aboutuser.php?uid={$item.uid}">{$item.user_name}</a></td>
+        <td>{$item.name}</td>
+        <td>{$item.bank}</td>
+        <td>{$item.bid}</td>
+        <td>{$item.user_money}</td>
+        <td>{if $item.is_show eq 1 }{$item.mobile_phone} {else} 没有填写{/if}</td>
+        <td>{$item.createtime}</td>
+		{if $state}
+		<td>{if $item.state==1}已完成{elseif $item.state==2}<font color="red">未通过:</font>{$item.error}{/if}</td>
+		{else}
+        <td><a href="JavaScript:;" style="color:green;" data="{$item.id}" data_uid="{$item.uid}"  data_mobile="{if $item.is_show eq 1 }{$item.mobile_phone} {else}0{/if}" class="tg" data_bank="{$item.bank}" data_dd="{$item.bid}" data_price="{$item.user_money}">通过</a>|<a href="JavaScript:;" style="color:red;" class="jj" data="{$item.id}">拒绝</a></td>
+		{/if}
+      </tr>
+	  {/foreach}
+    </table>
+    </form>
+</div>
+<script type="text/javascript">
+$(function(){
+	//关键词银行搜索
+	$(".bankSearch").change(function(){
+		var banks = $(this).val();
+		window.location.href = "withdrawals.php?banks="+banks;
+	})
+	$(".tg").click(function(){
+		var bank=$(this).attr('data');
+		var data_uid=$(this).attr('data_uid');
+		var data_bank=$(this).attr('data_bank');
+		var data_dd=$(this).attr('data_dd');
+		var mobile=$(this).attr('data_mobile');
+		var data_price=$(this).attr('data_price');
+		var t=$(this).parent().parent();
+
+		art.dialog({
+			title: '友情提示',
+			content: '您确认要通过提现处理吗？',
+			fixed: true,
+			lock: true,
+			ok : function(){
+				$.post('withdrawals.php?act=tg',{"bank":bank,"uid":data_uid,"mobile":mobile,"data_bank":data_bank,"data_dd":data_dd,"data_price":data_price},function(data){
+					if(data.state){
+						t.remove();
+					}else{
+						art.dialog({title: '提示',content: data.info,fixed: true,lock: true,cancelValue: '确定',cancel: function () {}});
+					}
+				},'json');
+			},
+			okValue : '确定',
+			cancelValue: '取消',
+			cancel: function () { return true;}
+		});
+	});
+	$(".jj").click(function(){
+		var bank=$(this).attr('data');
+		var t=$(this).parent().parent();
+		art.dialog({
+			title: '友情提示',
+			content: '请填写拒绝原因：<br><textarea id="ju" style="width:350px;height:150px;"></textarea>',
+			fixed: true,
+			lock: true,
+			ok : function(){
+				var ju=$("#ju").val();
+				if(ju ==''){
+					art.dialog({id:'mention', title: '提示',content: '请填写拒绝原因~',fixed: true,lock: true,cancelValue: '确定',cancel: function () { $('#ju').focus();return true;}});return false;
+				}
+				$.post('withdrawals.php?act=jj',{"bank":bank,"ju":ju},function(data){
+					if(data.state){
+						t.remove();
+					}else{
+						art.dialog({title: '提示',content: data.info,fixed: true,lock: true,cancelValue: '确定',cancel: function () {}});
+					}
+				},'json');
+			},
+			okValue : '确定',
+			cancelValue: '取消',
+			cancel: function () { return true;}
+		});
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<style type="text/css">
+    h1{margin:0;padding:0;font-weight:normal;font-size:30px;font-family:'微软雅黑';text-align:center;margin-top:20%;}
+    h1 span{display:inline-block;width:35px;height:35px;margin-left:5px;vertical-align:2px;}
+    h1 span img{width:100%;height:100%;vertical-align:middle;}
+</style>
+<body>
+    <h1>欢迎进入好会刷管理中心<span><img src="template/images/smile.png" alt="笑脸" /></span></h1>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<div id="bq_menu2_cont_2">
+	 	<p>
+	 		<span class="STYLE4">您当前等级为：</span>
+	 		<span class="hsmd_dj">
+	 			<span class="lanse">{$uinfo.rank_name}</span> &nbsp;&nbsp;&nbsp; 
+	 		</span>
+	 		<span class="STYLE4">当前积分：</span>
+	 		<span class="hsmd_dj">
+	 			<span class="chengse2">{$uinfo.rank_points}</span> &nbsp;&nbsp;&nbsp; 
+	 		</span>
+	 		<span class="STYLE4">可换积分</span>
+	 		<span class="hsmd_dj">：
+	 			<span class="chengse2">{$rank_points}</span> 
+	 		</span>，兑换前您的帐号必须先预留1000积分。
+	 	</p>
+		<input type="hidden" value="0" name="rank_points">
+		<ul class="hsmd_list">
+		 	<li class="hs_jf">100积分</li>
+			<li class="hs_jb">可兑换刷点<span class="hongse">1</span>个</li>
+			<li><input type="hidden" value="1" name="num"><input type="button" class="hs_dh"></li>
+		</ul>
+		 <ul class="hsmd_list">
+		 	<li class="hs_jf">200积分</li>
+			<li class="hs_jb">可兑换刷点<span class="hongse">2</span>个</li>
+			<li><input type="hidden" value="2" name="num"><input type="button" class="hs_dh"></li>
+		 </ul>
+		 <ul class="hsmd_list">
+		 	<li class="hs_jf">400积分</li>
+			<li class="hs_jb">可兑换刷点<span class="hongse">4</span>个</li>
+			<li><input type="hidden" value="4" name="num"><input type="button" class="hs_dh"></li>
+		 </ul>
+		 <ul class="hsmd_list">
+		 	<li class="hs_jf">800积分</li>
+			<li class="hs_jb">可兑换刷点<span class="hongse">8</span>个</li>
+			<li><input type="hidden" value="8" name="num"><input type="button" class="hs_dh"></li>
+		 </ul>
+		 <ul class="hsmd_list">
+		 	<li class="hs_jf">1000积分</li>
+			<li class="hs_jb">可兑换刷点<span class="hongse">10</span>个</li>
+			<li><input type="hidden" value="10" name="num"><input type="button" class="hs_dh"></li>
+		 </ul>
+		 <ul class="hsmd_list">
+		 	<li class="hs_jf">2000积分</li>
+			<li class="hs_jb">可兑换刷点<span class="hongse">20</span>个</li>
+			<li><input type="hidden" value="20" name="num"><input type="button" class="hs_dh"></li>
+		 </ul>
+	</div>
+	<div class="cle"></div>
+	<p class="fuli">刷点还可以换以下福利：</p>
+	<div class="weal_hsj">
+		<ul>
+		{foreach item=val key=key from=$vip}
+			<li><input type="radio" name="sid" value="{$val.rank_id}"> <img src="images/ico/rechange{$val.class}.gif"> {$val.rank_name}月使用权　<font color="red">{$val.point}刷点</font></li>
+		{/foreach}
+	 	 </ul>
+     	<p>
+     		<input type="button" class="weal_btn">
+     	</p>
+	</div>
+	<script type="text/javascript">
+	$(function(){
+		$(".hs_dh").click(function(){
+			var num = parseInt($(this).siblings("input[name='num']").val());
+			if({$uinfo.rank_points} -(num*100) < 1000 ){
+				art.dialog({title: '提示',content: '对不起，您的可换积分低于最小兑换',fixed: true,lock: true,cancelValue: '确定',cancel: function () { return true;}});
+				return false;
+			}
+			art.dialog({
+				id:'hsmd',
+				title: '提示',
+				content: '您将兑换'+ num +'个麦点~<br/><p style="margin:10px 0;color:#EB0F0F;">请输入安全码：<input style="border:1px solid #999;" type="password" id="safecode"></p>',
+				fixed: true,
+				lock: true,
+				okValue: '确定',
+				ok: function (){
+					if($("#safecode").val() ==''){
+						art.dialog({id:'mention', title: '提示',content: '请输入安全码~',fixed: true,lock: true,cancelValue: '确定',cancel: function () { return true;}});return false;
+					}
+					$.post('user.php?act=rechange&Recovery=integral',{'rank_points': num,'safecode':$("#safecode").val()},function(data){
+						art.dialog({title: '提示',content: data.info,fixed: true,lock: true,lock: true,cancelValue: '确定',cancel: function () { return true;}});
+					},'json');
+				}
+			})
+		});
+		$('.weal_btn').click(function(){
+			var i = parseInt($("input[name='sid']:checked").val());
+			var brush="{$uinfo.brush_time}";
+			var rank="{$uinfo.user_rank}";
+			if(brush){
+				art.dialog({title: '提示',content: '对不起，您是职业刷客，必须到期后才能正常使用VIP功能~',fixed: true,lock: true,cancelValue: '确定',cancel: function () { return true;}});return false;
+			}
+			if(isNaN(i)){art.dialog({title: '提示',content:'请选择您要兑换的选项~',fixed: true,lock: true,lock: true,cancelValue: '确定',cancel: function () { return true;}});return false;}
+			if( rank >=6 && rank <=8 && i >=6){
+
+				if(i == rank){
+					cont = '您已是VIP会员,若兑换则为您增加该VIP30天~'
+				}
+				if(i > rank){
+					cont = '您兑换的VIP高于本身，若兑换则会替换原先特权~'
+				}
+				if(i < rank){
+					cont = '您兑换的VIP小于本身，若兑换则会替换原先特权~'
+				}
+			}else{
+				cont = '';
+			}
+			cont += '您确定要兑换吗？<br/><p style="margin:10px 0;color:#EB0F0F;">请输入安全码：<input style="border:1px solid #999;" type="password" id="safecode"></p>'
+
+			art.dialog({
+				title: '提示',
+				content: cont,
+				fixed: true,
+				lock: true,
+				okValue: '确定',
+			    ok: function () {
+			    	if($("#safecode").val() ==''){
+						art.dialog({id:'mention', title: '提示',content: '请输入安全码~',fixed: true,lock: true,cancelValue: '确定',cancel: function () { return true;}});return false;
+					}
+					$.post('user.php?act=rechange&Recovery=welfare',{"type":i,"safecode":$("#safecode").val()},function(data){
+						art.dialog({
+			    			title: '提示',
+			    			content: data.info,
+			    			fixed: true,
+			    			lock: true,
+			    			okValue: '确定',
+						    ok: function () {
+						    	if(data.status == 1){
+						    		window.location.href="user.php";
+						    	}
+						    }
+			    		});
+					},'json');
+			    }
+			});
+		});
+	});
+	</script>

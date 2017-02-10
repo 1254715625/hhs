@@ -1,0 +1,371 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="css/mm.css" />
+<link rel="stylesheet" type="text/css" href="css/taobao.css" />
+<script type="text/javascript" src="js/taobao/index.js"></script>
+<script type="text/javascript" src="js/taobao/addtask.js"></script>
+<script type="text/javascript" src="js/taobao/from.js"></script>
+<script type="text/javascript">
+{if !$accs}
+alert("您还没有绑定掌柜号，请先绑定");
+location.href = '?mod=bindseller';
+{/if}
+</script>
+<div id="content"><div class="h15"></div>
+<div class="fabu_box1">
+    <div class="fabu_title"><span class="tico fabu_left"></span><span class="tico fabu_h2">发布任务须知（*号为必填项）</span><span class="tico fabu_right"></span></div>
+	<div class="cle"></div>
+	<div class="fabu_cont">
+	  <ul>
+	  	
+		<li>本页仅供发布搜索任务，接手方通过发布方预设的形式进行浏览店铺；</li>
+		<li>增加搜索权重，同时也能让宝贝权重更好，让宝贝排名更好；</li>
+		
+		<li>要尽量保证平台任务担保价大于 (淘宝商品价格+快递运费)/2 ，否则接手人拍下商品后您的淘宝改价将会导致您的支付宝使用率低于50%既被淘宝视为信用炒作处理；</li>
+		<li>您发任务时，平台中的保证金不得少于任务价，成功发布任务将会在平台中扣押相应的任务保证金；接手人完成您的任务时等额的资金会作为商品款返回给您网店的帐户中；</li>
+		<li>您想发布任务的时候，必须保证您拥有相应的刷点，每次发布都会根据商品价格不同扣除相应的刷点数。您如果想让任务排名靠前就可以追加刷点奖励，追加的越多排名就越靠前；</li>
+		<li class="chengse">请确认商品地址绝对正确，否则会造成不必要的纠纷。</li>
+		<li class="chengse">为了您的店铺安全，发布“实物任务”商品价格请大于10元！</li>
+	  </ul>
+	</div>
+</div>
+
+<div class="newsHelp">
+	<a href="tencent://message/?uin=188239031"></a>
+</div>
+
+<a id="mao1"></a>
+{include taobao/nav_up}
+<div class="cle"></div>
+
+<form id="all-data" method="post" onsubmit="return check();" action="taobao.php?mod=searchTask">
+<div class="fabu_box2">
+
+   <ul class="cont">
+   	<li style="color: red;text-indent: 40px;height: 15px;padding: 5px 10px;">
+	本页仅供发布搜索（流量）任务，接手方不会拍下付款，只需要按需求浏览！
+	</li>
+   		<li>
+		<input type="hidden" name="task_type" value="5">
+	<div class="name">
+	<span style="color:Red;"></span>
+	使用模板：
+	</div>
+	<div class="value">
+	<select id="tmpname" name="tmpname" style="width:190px;">
+	<option value="0">请选择模板</option>
+	{foreach item=val key=key from=$date}
+	<option value="{$val.id}" {if $temid==$val.id}selected{/if}>{$val.name}</option>
+	{/foreach}
+
+	</select>
+	</div>
+	<div class="exp">
+	您可以选择从已经保存的任务模板中选择一个，发布任务将更加方便快捷。
+	<a target="_blank" href="#">查看使用帮助</a>
+	</div>
+</li>
+<li>
+	<div class="name">
+	<span style="color:Red;">*</span>
+	淘宝掌柜名：
+	</div>
+	<div class="value">
+	<select id="accid" name="accid" style="width:190px;">
+	{foreach item=acc key=key from=$accs}
+	<option value="{$acc.id}" {if $temval.accid==$acc.id}selected{/if}>{$acc.nickname}</option>
+	{/foreach}
+	</select>
+	</div>
+	<div class="exp">就是您想提升信誉的淘宝帐号，接任务的朋友用来确认您的身份。<a href="?mod=bindseller">绑定掌柜</a></div>
+</li>
+
+<li style="margin-left: 40px;">
+	<div id="divtype" style="float:left;width:340px;">
+	<input id="rshop" type="radio" checked="checked" name="task_other[visitWay]" value="1" {if $temval.task_other.visitWay==1}checked="checked"{/if}>
+	搜店铺&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input id="rgoods" type="radio" name="task_other[visitWay]" value="2" {if $temval.task_other.visitWay==2}checked="checked"{/if}>
+	搜商品&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input id="rcredits" type="radio" name="task_other[visitWay]" value="3" {if $temval.task_other.visitWay==3}checked="checked"{/if}>
+	信用评价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input id="rtrains" type="radio" name="task_other[visitWay]" value="4" {if $temval.task_othervisitWay==4}checked="checked"{/if}>
+	直通车
+	</div>
+	<div style="color:#999; float:left;">
+	需要额外支付{$task_set.s_visitWay}个刷点
+	</div>
+</li>
+<li class="visitWay visitWay-1">
+	<div id="divkey" class="name">搜索店铺关键字</div>
+	<div class="value">
+	<input id="txtDes" class="txt" type="text" style="width:182px;color:#f50;" maxlength="100" name="task_other[txtDes]" value="{$temval.task_other.txtDes}">
+	</div>
+	<div id="divkeytip" class="exp">请输入您的“店铺名称”或者“掌柜名称”，要确保接手人在淘宝店铺搜索中正确并且唯一能搜索到您的店铺。</div>
+</li>
+<li class="visitWay visitWay-1" style="height:65px;">
+	<div id="divdes" class="name">店铺搜索提示</div>
+	<div class="value">
+	<textarea id="txtSearchDes" rows="3" style="width:188px" name="task_other[txtSearchDes]">{$temval.task_other.txtSearchDes}</textarea>
+	</div>
+	<div id="divdestip" class="exp">请输入提示信息，说明店铺在淘宝搜索结果列表中的位置，商品在店铺首页中的大概位置等等，例如：店铺在搜索结果第二个，商品在店铺首页第二排第一个</div>
+</li>
+<li>
+	<div class="name">
+	店铺链接位置截图
+	</div>
+	<div class="value long">
+	<input class="url-upfile" type="text" title="没有图片请保留空" readonly="readonly" style="width:206px;height:20px" maxlength="150" name="task_other[PhotoUrl]" value="{$temval.task_other.PhotoUrl}">
+	</div>
+	<div class="exp" style="float:left;"> 
+	<div class="uploadImgs"><input type="hidden" name="PhotoUrl" value="{$temval.task_other.PhotoUrl}" class="url-upfile">
+		<span class="uploadImg" style="float:left;">          
+	        <input type="file" name="file" class="file" id="upfile-1" size="25" style="margin-left:-232px;margin-top:0px;" value=""> 
+	        <input type="button" class="button" value="选择本地图片并上传"> 
+	      </span>
+	      <span id="info-upfile-1" class="upload-info green"></span>
+		  </div>
+	</div>
+	<div class="cle"></div>
+	<div style="padding:5px 0px 0px 145px; height:18px;width:700px; ">可以用QQ截图功能把目标链接位置截图并保存到你的电脑，再上传图片方便接手人查看链接所在位置</div>
+</li>
+
+<li>
+	<div class="name">
+	<span style="color:Red;">*</span>
+	商品链接地址：
+	</div>
+	<div class="value long">
+	<input id="goodsurl" class="txt" type="text" placeholder="http://" style="width:100%;" name="goodsurl" value="{$temval.goodsurl}">
+	</div>
+	<div class="exp" id="goodsurlexp">填写您要对方购买的商品地址，尽量使用不同商品来发布任务。</div>
+</li>
+		<li>
+			<div class="name">基本刷点：</div>
+			<div class="value">
+			<input id="txtMinMPrice" class="txt" type="text" style="width:130px;color:#f50;background:#F0F0F0;" name="txtMinMPrice" readonly="readonly" value="1" space="1">
+			  个刷点
+			</div>
+			<div class="exp">
+			发布该价格任务需要扣除的刷点，不包括增值服务.   
+			<a target="_blank" href="#">查看商品的价格与最底消耗额的关系</a>
+		
+				
+			<br>
+			您目前还有刷点
+			<em >{$member_point}</em>
+			个，
+			<a target="_blank" href="#">我要购买</a>
+			</div>
+		</li>
+		
+		
+		<li><div class="name">追加悬赏刷点：</div>
+			<div class="value">
+			<input id="pointExt" class="txt" type="text" style="width:130px;color:#f50;" value="{$temval.pointExt}" name="pointExt">
+			  个刷点
+			</div>
+			<div class="exp">
+			追加悬赏刷点数越多，更易被人接手，刷钻效率越高！  
+			</div>
+		</li>
+		
+		
+		<a id="mao2"></a>
+		<li class="add">
+		    <div class="name">增值服务：</div>
+			<div class="addvalue">
+			   <ul>
+			   		
+			        <li>
+							<div class="name">设置审核对象：</div>
+							<div class="value short">
+							<input id="cbxIsAudit" type="checkbox" name="attrs[cbxIsAudit]" value="1" {if $temval.attrs.cbxIsAudit==1}checked="checked"{/if}>
+							</div>
+							<div class="exp">
+							接手方接任务后，要您亲自审核后，接手方才可看到商品地址，对刷实物和规定旺旺聊天的商家很有用!可以事先QQ联系对方商量好。需要额外支付
+							<em>{$task_set.cbxIsAudit}</em>
+							个刷点给接手方
+							</div>
+					</li>
+					
+					<li>
+							<div class="name">需要旺旺聊天：</div>
+							<div class="value short">
+							<input id="cbxIsWW" type="checkbox" name="attrs[cbxIsWW]" value="1" {if $temval.attrs.cbxIsWW==1}checked="checked"{/if}>
+							</div>
+							<div class="exp">
+							要求接手方先在旺旺上聊几句，
+							<em>强烈建议开启审核先使用QQ约定好</em>
+							。需额外支付
+							<em>{$task_set.cbxIsWW}</em>
+							个刷点给接手方
+							</div>
+					</li>
+					
+						  <li>
+	                          <div class="name">购物收藏：<img src="images/public/new.png"></div>
+	                          <div class="value short">
+	                          	<input id="shopcoller" type="checkbox" name="attrs[shopcoller]" value="1" {if $temval.attrs.shopcoller==1}checked="checked"{/if}>
+	                          </div>
+	                          <div class="exp">淘宝购物收藏，收藏后提交收藏成功截图给您，额外支付<em>{$task_set.shopcoller}</em>个刷点将奖励给接手方</div>
+	                      </li>
+	                
+                      
+                      <li>
+                          <div class="name">限制接手人：</div>
+                          <div class="value longest">
+                            <div id="divFMCount" style="margin-bottom:5px;">
+                            	<div>
+	                            	<label><input type="checkbox" value="1" id="cbxIsFMaxMCount" name="attrs[cbxIsFMaxMCount]" {if $temval.attrs.cbxIsFMaxMCount==1}checked="checked"{/if}></label> 
+	                            	<input type="radio" name="attrs[fmaxmc]" id="fmaxmc_1" value="1" {if $temval.attrs.fmaxmc==1}checked="checked"{/if}> 1天接1个(<em>{$task_set.fmaxmc1}</em>个刷点)
+	                            	<input type="radio" name="attrs[fmaxmc]" value="2" id="fmaxmc_2" {if $temval.attrs.fmaxmc==2}checked="checked"{/if}> 1天接2个(<em>{$task_set.fmaxmc2}</em>个刷点)
+	                            	<input type="radio" name="attrs[fmaxmc]" id="fmaxmc_3" value="3" {if $temval.attrs.fmaxmc==3}checked="checked"{/if}> 1周接1个(<em>{$task_set.fmaxmc3}</em>个刷点)
+	                            	<input type="radio" name="attrs[fmaxmc]" id="fmaxmc_4" value="4" {if $temval.attrs.fmaxmc==4}checked="checked"{/if}> 每月接1个(<em>{$task_set.fmaxmc4}</em>个刷点)
+                            	</div>
+                            </div>
+                            <div class="exp">您可以设置接手人在1天或一周内接手您发布任务的次数，需额外支付刷点</div>
+                          </div>
+                      </li>
+                      
+                      
+                      <li>
+                          <div class="name">买号实名认证：</div>
+                          <div class="value longest">
+                            <div id="divBaLevel" style="margin-bottom:5px;">
+                            	<input id="isReal" type="checkbox" value="1" name="attrs[isReal]" {if $temval.attrs.isReal==1}checked="checked"{/if}>
+                            	<input type="radio" name="attrs[realname]" value="1" id="realname" {if $temval.attrs.realname==1}checked="checked"{/if}>
+                            	<label for="isReal_1">普通实名(<em{$task_set.isReal}</em>个刷点)</label>
+                            </div>
+                           
+                            <div class="exp">限制接手买号必须是通过了支付宝实名认证才可以接手此任务</div>
+                          </div>
+                      </li>
+
+                   <li>
+                        <div class="name">过滤接手人：</div>
+                        <div class="value longest">
+                         <div id="divFilter" style="margin-bottom:10px;">
+                         	<div>
+                         		<label style="float:left;"><input type="checkbox" value="1" id="cbxIsFMinGrade" name="attrs[cbxIsFMinGrade]" {if $temval.attrs.cbxIsFMinGrade==1}checked="checked"{/if}></label>
+                         		<label class="labelstyle" style="float:left;width:160px;margin-left:10px;">接手人积分不低于</label>
+                         		<label class="labelstyle" style="float: left;width:40px"><input type="radio" name="attrs[fmingrade]" value="10" {if $temval.attrs.fmingrade==10}checked="checked"{/if}>10</label>
+                         		<label class="labelstyle" style="float: left;width:40px"><input type="radio" name="attrs[fmingrade]" value="30" {if $temval.attrs.fmingrade==30}checked="checked"{/if}>30</label>
+                         		<label class="labelstyle" style="float: left;width:40px"><input type="radio" name="attrs[fmingrade]" value="50" {if $temval.attrs.fmingrade==50}checked="checked"{/if}>50</label>
+                         		<label class="labelstyle" style="width:40px"><input type="radio" name="attrs[fmingrade]" value="100" {if $temval.attrs.fmingrade==100}checked="checked"{/if}>100</label>
+                         	</div>
+							<div>
+								<label style="float:left;"><input type="checkbox" value="1" id="cbxIsFMaxBBC" name="attrs[cbxIsFMaxBBC]" {if $temval.attrs.cbxIsFMaxBBC==1}checked="checked"{/if}></label>
+								<label class="labelstyle" style="float:left;width:160px;margin-left:10px;">接手买号被拉黑次数不大于</label>
+								<label class="labelstyle" style="float: left;width:40px"><input type="radio" name="attrs[fmaxbbc]" value="5" {if $temval.attrs.fmaxbbc==5}checked="checked"{/if}>5</label>
+								<label class="labelstyle" style="float: left;width:40px"><input type="radio" name="attrs[fmaxbbc]" value="10" {if $temval.attrs.fmaxbbc==10}checked="checked"{/if}>10</label>
+								<label class="labelstyle" style="width:40px"><input type="radio" name="attrs[fmaxbbc]" value="15" {if $temval.attrs.fmaxbbc==15}checked="checked"{/if}>15</label>
+							</div>
+
+							<div>
+								<label style="float:left;"><input type="checkbox" value="1" id="cbxIsFMaxABC" name="attrs[cbxIsFMaxABC]" {if $temval.attrs.cbxIsFMaxABC==1}checked="checked"{/if}></label>
+								<label class="labelstyle" style="float:left;width:160px;margin-left:10px;">接手人刷客满意度不低于</label>
+								<label class="labelstyle" style="float: left;width:40px"><input type="radio" name="attrs[fmaxabc]" value="98" {if $temval.attrs.fmaxabc==98}checked="checked"{/if}>98%</label>
+								<label class="labelstyle" style="float: left;width:40px"><input type="radio" name="attrs[fmaxabc]" value="95" {if $temval.attrs.fmaxabc==95}checked="checked"{/if}>95%</label>
+								<label class="labelstyle" style="width:40px"><input type="radio" name="attrs[fmaxabc]" value="90" {if $temval.attrs.fmaxabc==90}checked="checked"{/if}>90%</label>
+							</div>
+
+							<div>
+								<label style="float:left;"><input type="checkbox" value="1" id="cbxIsFMaxCredit" name="attrs[cbxIsFMaxCredit]" {if $temval.attrs.cbxIsFMaxCredit==1}checked="checked"{/if}></label>
+								<label class="labelstyle" style="float:left;width:160px;margin-left:10px;">接手买号信誉不高于</label>
+								<label class="labelstyle" style="float: left;width:40px"><input type="radio" name="attrs[fmaxcredit]" value="10" {if $temval.attrs.fmaxcredit==10}checked="checked"{/if}>10</label>
+								<label class="labelstyle" style="float: left;width:40px"><input type="radio" name="attrs[fmaxcredit]" value="150" {if $temval.attrs.fmaxcredit==150}checked="checked"{/if}>150</label>
+								<label class="labelstyle" style="width:40px"><input type="radio" name="attrs[fmaxcredit]" value="200" {if $temval.attrs.fmaxcredit==200}checked="checked"{/if}>200</label>
+							</div>
+
+							<div>
+								<label style="float:left;"><input type="checkbox" value="1" id="cbxIsFMaxBTSCount" name="attrs[cbxIsFMaxBTSCount]" {if $temval.attrs.cbxIsFMaxBTSCount==1}checked="checked"{/if}></label>
+								<label class="labelstyle" style="float:left;width:160px;margin-left:10px;">接手人被有效投诉次数不大于</label>
+								<label class="labelstyle" style="float: left;width:40px"><input type="radio" name="attrs[fmaxbtsc]" value="2" {if $temval.attrs.fmaxbtsc==2}checked="checked"{/if}>2</label>
+								<label class="labelstyle" style="float: left;width:40px"><input type="radio" name="attrs[fmaxbtsc]" value="3" {if $temval.attrs.fmaxbtsc==3}checked="checked"{/if}>3</label>
+								<label class="labelstyle" style="width:40px"><input type="radio" name="attrs[fmaxbtsc]" value="4" {if $temval.attrs.fmaxbtsc==4}checked="checked"{/if}>4</label>
+							</div>
+						</div>
+                         
+	                        <div style="color:#999;">
+	                        	您可以设置接手人的最低资质要求，系统将自动为您过滤掉不合格的接手人。每条任务需额外支付<em>{$task_set.cbxIsFMinGrade}</em>个刷点给接手方。 
+	                        	<a target="_blank" href="#">如何设置筛选条件</a>
+	                        </div>
+                        </div>
+                    </li>
+                    
+                     <li>
+                      <div class="name">购买前停留：</div>
+                      <div class="value longest">
+                        <div id="divFMCount" style="margin-bottom:5px;">
+                        	<div>
+                            	<label><input type="checkbox" value="1" id="stopDsTime" name="attrs[stopDsTime]" {if $temval.attrs.stopDsTime==1}checked="checked"{/if}></label> 
+  								<input type="radio" name="attrs[stopTime]" value="1" {if $temval.attrs.stopTime==1}checked="checked"{/if}>
+  								<span>停留1分钟（<b style="color: #FF5500;font-weight: normal;">{$task_set.stopTime1}</b>个刷点）</span>
+  								<input type="radio" name="attrs[stopTime]" value="2" {if $temval.attrs.stopTime==2}checked="checked"{/if}>
+  								<span>停留3分钟（<b style="color: #FF5500;font-weight: normal;">{$task_set.stopTime2}</b>个刷点）</span>
+  								<input type="radio" name="attrs[stopTime]" value="3" {if $temval.attrs.stopTime==3}checked="checked"{/if}>
+  								<span>停留5分钟（<b style="color: #FF5500;font-weight: normal;">{$task_set.stopTime3}</b>个刷点）</span>
+  							</div>
+                        </div>
+                      </div>
+                 	</li>
+
+
+                 	<li>
+						<div class="name">完整浏览到底：</div>
+						<div class="value short" style="height: 20px;">
+							<input id="isViewEnd" type="checkbox" name="attrs[isViewEnd]" value="1" {if $temval.attrs.isViewEnd==1}checked="checked"{/if}>
+						</div>
+						<div class="exp">要求接手方上传任务商品的底部浏览截图，需要额外支付<em>{$task_set.isViewEnd}</em>个刷点</div>
+					</li>
+                    
+                    <li>
+                      <div class="name">店内浏览商品：</div>
+                      <div class="value longest">
+                        <div id="divFMCount" style="margin-bottom:5px;">
+                        	<div>
+                            	<label><input type="checkbox" value="1" id="shopBrGoods" name="attrs[shopBrGoods]" {if $temval.attrs.shopBrGoods==1}checked="checked"{/if}></label> 
+                            	<input type="radio" name="attrs[lgoods]" value="1" {if $temval.attrs.lgoods==1}checked="checked"{/if}> 额外浏览1个商品
+                            	<input type="radio" name="attrs[lgoods]" value="2" {if $temval.attrs.lgoods==2}checked="checked"{/if}> 额外浏览2个商品
+                            	<input type="radio" name="attrs[lgoods]" value="3" {if $temval.attrs.lgoods==3}checked="checked"{/if}> 额外浏览3个商品
+                        	</div>
+                        </div>
+                        <div class="exp">每额外浏览一个商品需要<em>{$task_set.lgoods}</em>个刷点</div>
+                      </div>
+                 	</li>
+                 	
+					<li>
+                        <div class="name"> 保存任务模版：</div>
+                        <div class="value longest">
+                            <input id="isTpl" type="checkbox" value="1" name="attrs[isTpl]"> <span style="color:#000">模版名称</span>
+                            <input name="attrs[tplTo]" type="text" id="tplTo" class="txt" maxlength="50"><br>
+                            实现快捷方便的发布任务,普通用户最多可保存3个任务发布模板，VIP最高可拥有30个任务发布模板 <a target="_blank" href="#">查看VIP特权</a>
+                        </div>
+                        <div class="exp"></div>
+                    </li>
+                  </ul>
+				  
+              </div>
+          </li>
+          
+         <li>
+	            <div class="name"><span style="color:Red;">*</span>发布数量：</div>
+	            <div class="value"><input name="txtFCount" type="text" id="txtFCount" style="width:70px;color:#f50;" value="1" class="txt" maxlength="5">&nbsp;&nbsp;个</div>
+	            <div class="exp">设置您要批量发布的任务数量，最少1个，最多个</div>
+	        </li>
+          
+		  <p class="taskbutton"><input type="submit" id="btnCilentAdd" class="taskadd" value="立即发布" style="cursor: pointer;"></p>
+		   <p class="taskbutton"><img src="images/taobao/rwss.jpg"></p>
+		</ul>
+</div>
+</form>
+
+<!-- <div id="subform" val="4">
+	<div class="center">
+	 	<p class="anone"></p>
+		<p class="txtone">
+			批量发布数量:<input name="txtFCount" type="text" id="txtFCount" value="10" class="txt" maxlength="5">个&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	    	批量发布间隔:<input name="txtFTime" type="text" id="txtFTime" value="60" class="txt" maxlength="5">秒</p>
+    </div>
+</div> -->
+</div>
+{include common/header}

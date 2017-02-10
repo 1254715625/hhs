@@ -1,0 +1,541 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>淘宝交易大厅_好会刷互动平台</title>
+    <meta name="description" content="好会刷信誉平台为为那些零信誉低销量的掌柜提供解决方案,新手快速提升信誉,发任务提升信誉,就选好会刷。">
+    <meta name="keywords" content="好会刷,好会刷信誉平台,好会刷网商互动平台">
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link rel="stylesheet" type="text/css" href="../css/dialog/twitter.css">
+	<link rel="stylesheet" type="text/css" href="../css/mm.css">
+    <link rel="stylesheet" type="text/css" href="../css/taobao_common.css">
+    
+    <script type="text/javascript" src="../js/jquery-1.7.2.min.js?v=20150715114537"></script>
+    <script type="text/javascript" src="../js/artDialog.js?v=20150715114537"></script>
+    <script type="text/javascript" src="../js/header.js?v=20150715114537"></script>
+    <script type="text/javascript" src="../js/socket.io.js?v=20150715114537"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js?v=20150715114537"></script>
+</head>
+
+<body><div class="" style="left: 0px; top: 0px; position: fixed; visibility: hidden;"><div class="d-outer" role="dialog" tabindex="-1" aria-labelledby="d-title-id-info" aria-describedby="d-content-id-info"><table class="d-border"><tbody><tr><td class="d-nw"></td><td class="d-n"></td><td class="d-ne"></td></tr><tr><td class="d-w"></td><td class="d-c"><div class="d-inner"><table class="d-dialog"><tbody><tr><td class="d-header"><div class="d-titleBar"><div id="d-title-id-info" class="d-title"></div><a class="d-close" href="javascript:;">×</a></div></td></tr><tr><td class="d-main" style="width: 300px; height: auto;"><div id="d-content-id-info" class="d-content" style="padding: 20px 25px;"></div></td></tr><tr><td class="d-footer"><div class="d-buttons"></div></td></tr></tbody></table></div></td><td class="d-e"></td></tr><tr><td class="d-sw"></td><td class="d-s"></td><td class="d-se"></td></tr></tbody></table></div></div>
+	<!-- 顶部 -->
+<div id="m_top">
+	<div class="TopBanner">
+	 
+	  <div class="TopBannerNotice">
+	      <div id="closeTopBanner" title="关闭" style="position:absolute;top:5px;right:5px;width:23px;height:22px;background: url(http://test.damaihu.com.cn../images/home/close_b.png) no-repeat;cursor:pointer">
+	  </div>
+	  </div>   
+	</div>
+	<div id="10mts" style="background: #F93414;height: 32px;line-height: 32px;display:none;">
+		<div style="text-align:center;width:980px;margin:0 auto;color: #FFF;font-size:14px;font-weight:bold;">
+			任何向您索要短信验证码的人都是骗子！认清主动联系您的客服真假！
+		</div>
+  	</div>
+	<div class="kd">
+		<div class="kmain"> 
+			<div class="hy">
+				<div class="userdate">
+					<a href="" title="首页" style="margin: 4px;float:left;width:15px;height:15px;background:url(../images/ico/home.gif) no-repeat;"></a>
+					<!-- 登录前效果-->
+					
+					<!-- <img width="16" height="16" src="../images/ico/sina_1.png" class="hzhl login-before"> -->
+					
+					
+					<a class="login-after username" target="_blank" href="/info?username=叶子0327" style="display: inline;">叶子0327</a>
+					 　
+					<a class="login-after" href="/User/logout/" style="display: inline;">退出</a>
+					
+					
+				</div>
+			</div>
+			
+			<div class="top_btn">
+				<ul class="quick-menu">
+					<li class="menu-item login-after" style="display: list-item; background-image: none; border: 1px solid rgb(239, 246, 254); background-position: initial initial; background-repeat: initial initial;">
+						<div class="menud">
+							<a class="menu-hd" target="_blank" href="http://member.damaihu.com.cn/#topup/bank">存款 <span class="chengse moneyAll money" style="font-weight:700;">0.00</span><b style="border-color: rgb(102, 102, 102) rgb(239, 246, 254) rgb(239, 246, 254);"></b></a>
+							<div class="menu-0" style="width: 90px; display: none;">
+							  <div class="menu-bd-panel">
+								  <a href="http://member.damaihu.com.cn/#topup/bank">账户充值</a>
+								  <a href="http://member.damaihu.com.cn/#paydetails/payde">存款明细</a>
+							  </div>
+							</div>
+						</div>
+					</li>
+					<li class="login-after" style="margin-top: -1px; display: list-item;">|</li>
+					<li class="menu-item login-after" style="display: list-item; background-image: none; border: 1px solid rgb(239, 246, 254); background-position: initial initial; background-repeat: initial initial;">
+						<div class="menud">
+							<a target="_blank" class="menu-hd" href="/BuyPoint">麦点 <span class="chengse moneyAll maidian" style="font-weight:700;">1.00</span><b style="border-color: rgb(102, 102, 102) rgb(239, 246, 254) rgb(239, 246, 254);"></b></a>
+							<div class="menu-0" style="width: 90px; display: none;">
+							  <div class="menu-bd-panel">
+								  <a href="/BuyPoint">购买麦点</a>
+								  <a href="http://member.damaihu.com.cn/#paydetails/logpoint">麦点明细</a>
+							  </div>
+							</div>
+						</div>
+					</li>
+					<li class="login-after" style="margin-top: -1px; display: list-item;">|</li>
+					<li class="menu-item login-after" style="display: list-item; background-image: none; border: 1px solid rgb(239, 246, 254); background-position: initial initial; background-repeat: initial initial;">
+						<div class="menud">
+							<a target="_blank" class="menu-hd" href="http://member.damaihu.com.cn/#message/personal">信息 <span class="chengse moneyAll message" style="font-weight:700;">0</span><b style="border-color: rgb(102, 102, 102) rgb(239, 246, 254) rgb(239, 246, 254);"></b></a>
+							<div class="menu-0" style="width: 90px; display: none;">
+							  <div class="menu-bd-panel">
+								  <a href="http://member.damaihu.com.cn/#message/personal">私人收件箱</a>
+								  <a href="http://member.damaihu.com.cn/#message/official">官方收件箱</a>
+								  <a href="http://member.damaihu.com.cn/#message/sendNews">发送短消息</a>
+								  <a href="http://member.damaihu.com.cn/#message/remind">提醒设置</a>
+							  </div>
+							</div>
+						</div>
+					</li>
+					<li class="menu-item newdh heimg">
+						<a href="/Platform/soft">
+							我是发布方
+						</a>
+						<span class="newdh_bor">
+							<b class="heimg">向上</b>
+							<ul>
+								<li class="heimg lie lieimg1"><a href="/help/guide">图文教程</a></li>
+								<li class="heimg lie lieimg2"><a href="/help/Video">视频教程</a></li>
+								<li class="heimg lie lieimg3"><a href="http://member.damaihu.com.cn/#topup">帐号充值</a></li>
+								<li class="heimg lie lieimg4"><a href="/BuyPoint">购买麦点</a></li>
+								<li class="heimg lie lieimg5"><a href="/info/express">单号搜索</a></li>
+								<li class="heimg lie lieimg6"><a href="/info/rank">排行榜</a></li>
+								<li class="heimg lie lieimg7"><a href="tencent://message/?uin=800081529">客服帮助</a></li>
+							</ul>
+						</span>
+					</li>
+					<li class="menu-item newdh heimg">
+						<a href="/Platform/soft">
+							我是接手方
+						</a>
+						<span class="newdh_bor">
+							<b class="heimg">向上</b>
+							<ul>
+								<li class="heimg lie liejsf1"><a href="/help/guide">图文教程</a></li>
+								<li class="heimg lie liejsf2"><a href="/help/Video">视频教程</a></li>
+								<li class="heimg lie liejsf3"><a href="http://member.damaihu.com.cn/#payment">申请提现</a></li>
+								<li class="heimg lie liejsf4"><a href="http://member.damaihu.com.cn/#rechange">回收麦点</a></li>
+								<li class="heimg lie liejsf5"><a href="/Platform/soft">常用软件</a></li>
+								<li class="heimg lie liejsf6"><a href="http://member.damaihu.com.cn/#userjob">领取奖励</a></li>
+								<li class="heimg lie liejsf7"><a href="/info/rank">排行榜</a></li>
+								<li class="heimg lie liejsf8"><a href="tencent://message/?uin=800081529">客服帮助</a></li>
+							</ul>
+						</span>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+		<div class="menu_qq">
+			  <a class="qq_help" href="javascript:;">客服帮助</a>
+		</div>
+		<div style="display: none;" class="help_down" id="service_qq"></div>
+		<!-- 客服悬浮 -->
+	  	<div id="kuzhan" style="height: 152px;">
+	  		<a class="propose" href="http://bbs.damaihu.com.cn/forum.php?mod=forumdisplay&amp;fid=39"></a>
+	  		<a class="propose yxiaoqq" href="javascript:;" style="top: 23px;height: 105px;"></a>
+	  		<div class="rtop" style="display: block;"><img src="/taobao/images/1tdi7nR70h.png" style="margin-top: 22px;width: 80px;"></div>
+	  		<div class="services">        
+				<div class="con">        	
+					<ul>            	
+						<li class="qq">
+							<p><a class="yxiaoqq" href="javascript:;" style="font-size:13px;">800081529</a></p>          	
+							<p><a class="yxiaoqq" href="javascript:;"><img border="0" src="http://wpa.qq.com/pa?p=2:800081529:41" alt="点击这里给我发消息" title="点击这里给我发消息"></a></p>
+							<p><a class="qun" target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=6c3a6de2ba1ebe59b8d437d1564122064f6120f53a8d44fda85634feea9e14b0">176682996</a></p>
+							<p><a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=6c3a6de2ba1ebe59b8d437d1564122064f6120f53a8d44fda85634feea9e14b0">
+								<img border="0" src="http://pub.idqqimg.com/wpa/images/group.png">
+							</a></p>
+							<p class="gtime">上班时间 8:00-21:00</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="tirenwuinfo" style="display: block;">
+			<div class="tirenwu_bot">
+				<ul class="tirenwu_cont">
+					<li nov="0" style="margin-top: 37px;"><span class="span1"></span></li>
+					<li nov="1"><span class="span1"></span></li>
+					<li nov="2" style="margin-top: 2px;"><span class="span1"></span></li>
+					<li nov="3" style="margin-top: 35px;"><span class="span1"></span></li>
+					<li nov="4"><span class="span1"></span></li>
+					<li nov="5" style="margin-top: 2px;"><span class="span1"></span></li>
+				</ul>
+			</div>
+			<ul class="tirenwu_mis"></ul>
+		</div>
+	</div>
+</div>
+<!--logo+广告-->
+<div id="m_logo">
+	<a href="/" class="logo">
+		<img src="../images/public/head_logo.png" alt="好会刷_淘宝刷信誉">
+	</a>
+
+	<a class="gg" target="_blank" href="http://fuwu.damaihu.com.cn/fuwu/beisheng">
+		<img border="0" src="../images/public/3qq.png">
+	</a>
+</div>
+<!-- 导航 -->
+<div id="m_menu">
+  	<div class="menu_nav">
+	  <div class="m_menu_nav">
+		<ul>
+			<li class="n-home">
+				<a href="">首页</a>
+			</li>
+			<li id="yi_fuwu" class="n-fuwu" style="position: relative;display:none;">
+				<a href="http://fuwu.damaihu.com.cn">卖家服务</a>
+				<ul style="left:-20px;top:30px;">
+					<li class="gxhtg">
+						<a href="http://fuwu.damaihu.com.cn/fuwu/tuoguan" style="height:15px;">个性化托管</a>
+					</li>
+					<li class="zdlmtg">
+						<a href="http://fuwu.damaihu.com.cn/fuwu/sorttuoguan" style="height:15px;">指定类目托管</a>
+					</li>
+					<li class="wptg">
+						<a href="http://fuwu.damaihu.com.cn/fuwu/tuoguan" style="height:15px;">旺铺推广</a>
+					</li>
+					<li class="spjx">
+						<a href="http://fuwu.damaihu.com.cn/fuwu/video" style="height:15px;">视频教学</a>
+					</li>
+					<li class="bbpm">
+						<a href="http://fuwu.damaihu.com.cn/fuwu/beisheng" style="height:15px;">宝贝提升</a>
+					</li>
+					<li class="more">
+						<a href="http://fuwu.damaihu.com.cn/fuwu/plan" style="height:15px;">更多</a>
+					</li>
+				</ul>
+			</li>
+			<li class="n-taobao" id="n-taobao">
+				<a href="http://taobao.damaihu.com.cn/#index">淘宝大厅</a>
+				<ul style="display: none;"> 
+					<li class="wdzr">
+						<a href="http://taobao.damaihu.com.cn/#index" style="height:15px;">淘宝大厅</a>
+					</li>
+					<li class="xsrw">
+						<a href="http://taobao.damaihu.com.cn/#souIndex" style="height:15px;">搜索大厅</a>
+					</li>
+					<li class="wdzrss">
+						<a href="http://fuwu.damaihu.com.cn/fuwu/phoxc" style="height:15px;">手机订单</a>
+					</li>
+				</ul>
+			</li>
+			<li class="n-paipai"><!-- .com style="display:none;" -->
+				<a href="http://paipai.damaihu.com.cn/#index">拍拍大厅</a>
+			</li>
+			<!-- .com -->
+			<!-- <li class="n-point n-notlogin" style="background-position: -98px -413px;">
+				<a href="http://taobao.damaihu.com.cn/#souIndex">搜索大厅</a>
+			</li> -->
+			<!-- .com -->
+			<li class="n-wk">
+				<a href="http://wk.damaihu.com.cn/#task">交易大厅</a>
+				<ul style="display: none;"> 
+					<li class="wdzr">
+						<a href="http://wk.damaihu.com.cn#taobao" style="height:15px;">网店转让</a>
+					</li>
+					<li class="xsrw">
+						<a href="http://wk.damaihu.com.cn/#task" style="height:15px;">悬赏任务</a>
+					</li>
+					<li class="more">
+						<a href="http://wk.damaihu.com.cn/#task" style="height:15px;">更多</a>
+					</li>
+				</ul>
+			</li>
+			<!-- .com -->
+			<!-- <li class="n-point n-notlogin" style="background-position: -270px -747px;height: 34px;margin: 7px 0;">
+				<a href="http://wk.damaihu.com.cn/#task">悬赏任务</a>
+			</li> -->
+			<!-- .com -->
+			<li class="n-tuoguan"><!-- .com style="display:none;" -->
+				<a href="http://fuwu.damaihu.com.cn/fuwu/collect">收藏流量</a>
+				<ul style="display: none;">
+					<li class="gmsc">
+						<a href="http://fuwu.damaihu.com.cn/fuwu/collect" style="height:15px;">购买收藏</a>
+					</li>
+					<li class="gmll">
+						<a href="http://fuwu.damaihu.com.cn/fuwu/wip" style="height:15px;">购买流量</a>
+					</li>
+					<li class="gmbp">
+						<a href="http://fuwu.damaihu.com.cn/fuwu/bangpai" style="height:15px;">购买帮派</a>
+					</li>
+					<li class="gmyz">
+						<a href="http://fuwu.damaihu.com.cn/fuwu/bangpai" style="height:15px;">购买优站</a>
+					</li>
+					<li class="gmgz">
+						<a href="http://fuwu.damaihu.com.cn/fuwu/bangpai" style="height:15px;">购买关注</a>
+					</li>
+				</ul>
+			</li>
+			<li id="er_fuwu" class="n-fuwu" style="position: relative;">
+				<a href="http://fuwu.damaihu.com.cn">卖家服务</a>
+				<ul style="left:-20px;top:30px;">
+					<li class="gxhtg">
+						<a href="http://fuwu.damaihu.com.cn/fuwu/tuoguan" style="height:15px;">个性化托管</a>
+					</li>
+					<li class="zdlmtg">
+						<a href="http://fuwu.damaihu.com.cn/fuwu/sorttuoguan" style="height:15px;">指定类目托管</a>
+					</li>
+					<li class="wptg">
+						<a href="http://fuwu.damaihu.com.cn/fuwu/tuoguan" style="height:15px;">旺铺推广</a>
+					</li>
+					<li class="spjx">
+						<a href="http://fuwu.damaihu.com.cn/fuwu/video" style="height:15px;">视频教学</a>
+					</li>
+					<li class="bbpm">
+						<a href="http://fuwu.damaihu.com.cn/fuwu/beisheng" style="height:15px;">宝贝提升</a>
+					</li>
+					<li class="more">
+						<a href="http://fuwu.damaihu.com.cn/fuwu/plan" style="height:15px;">更多</a>
+					</li>
+				</ul>
+			</li>
+			<!-- .cn -->
+			<li class="n-bbs">
+				<a href="http://bbs.damaihu.com.cn/" target="_blank">问答</a>
+			</li>
+			<!-- .cn -->
+			<li class="n-point">
+				<a href="/BuyPoint/">购买麦点</a>
+			</li>
+			<li class="n-collect"><!-- .com style="display:none;" -->
+				<a href="http://fuwu.damaihu.com.cn/fuwu/sorttuoguan">网店托管</a>
+				<ul> 
+					<li class="gxhtg">
+						<a href="http://fuwu.damaihu.com.cn/fuwu/tuoguan" style="height:15px;">个性化托管</a>
+					</li>
+					<li class="zdlmtg">
+						<a href="http://fuwu.damaihu.com.cn/fuwu/sorttuoguan" style="height:15px;">指定类目托管</a>
+					</li>
+					<li class="wdzr">
+						<a href="http://fuwu.damaihu.com.cn/fuwu/phoxc" style="height:15px;">手机订单</a>
+					</li>
+					<li class="xsrw">
+						<a href="/activity/youhuiquan" style="height:15px;">优惠券</a>
+					</li>
+				</ul>
+			</li>
+			<li class="n-member">
+				<a href="http://member.damaihu.com.cn">会员中心</a>
+			</li>
+		</ul>
+		<a class="fplink" href="/help/guide">
+			<img src="../images/home/text1.gif">
+		</a>
+	   </div>
+  	</div>
+</div>
+
+	<div id="content"><div id="cengci">
+	<div class="bwcont">
+	<div class="pngimg">
+	  <span class="over"></span>
+	  <a class="tuoguan" href="http://fuwu.damaihu.com.cn/fuwu/tuoguan" target="_blank"></a>
+	  <a class="renzheng" href="http://member.damaihu.com.cn" target="_blank"></a><i class="next"></i>
+	  <i class="next"></i>
+	</div>
+	</div>
+</div>
+<p class="hdfot"></p>
+<div class="bw" style="margin-bottom:0px;">
+	<ul class="rwdt_info">
+		<li>
+		  <p class="fd">账户余额：<strong class="orange">0.00</strong> 元</p>
+		<a title="将存款提取到我的网银或财付通上" target="_blank" href="http://member.damaihu.com.cn/#payment/bank" class="hico tx"></a></li>
+		<div class="cle"></div>
+		<li><p class="fd">麦点：<strong class="orange">1.00</strong> 个</p><a href="http://member.damaihu.com.cn/#rechange" title="将保证金兑换成能发布任务的麦点" target="_blank" class="hico hs"></a></li>
+		<div class="cle"></div>
+		<li><p>积分：<strong class="orange">0.00</strong> 个</p></li>
+		<li><p class="fd">属于：新手会员</p>
+			
+			
+		</li>
+		<div class="cle"></div>
+		<li>好评率：<strong class="green">100%</strong></li>
+		<li>有效投诉：<strong class="orange">0</strong></li>
+	</ul>
+	<div class="rwdt_bk">
+		<p class="sub_bt">
+			<a href="javascript:;" val="1">网银充值</a>
+			<a href="javascript:;" val="0">支付宝充值</a>
+			<a href="javascript:;" val="2">购买麦点</a>
+			<a href="javascript:;" val="3">财付通充值</a>
+		</p>
+		 <div id="buyboxcont">
+			<div class="task_header" style="display:none;padding:5px 10px 5px 10px;">
+			
+					<table width="100%" border="0" align="left" cellpadding="0" cellspacing="0" style="margin-top:10px;">
+						<tbody><tr><td>收款支付宝账号：<a target="_blank" href="http://member.damaihu.com.cn/#topup/alipay">进入支付宝付款页面</a> </td></tr>
+						<tr><td>转账时只能备注：<strong class="yellow">充值</strong></td></tr>
+						<tr><td>(转账完毕后验证交易号，1分钟到账)</td></tr>
+						<tr>
+	                	   <td colspan="2"><a class="tc_b" href="http://bbs.damaihu.com.cn/forum.php?mod=viewthread&amp;tid=1850" target="_blank">查看充值教程</a><a class="tc_k" target="_blank" href="http://member.damaihu.com.cn/#topup/alipay">验证订单号</a></td>
+	                    </tr>
+					</tbody></table>
+			   
+	       </div>
+	       <div class="task_header" style="display:block;">
+				<table width="90%" border="0" align="left" cellpadding="0" cellspacing="0" style="margin-top:10px;">
+				  <tbody>
+				  	<tr>
+					<td width="35%" height="30" align="right" valign="top">充值用户名：</td>
+					<td><input type="text" name="username" id="username" class="rwdt_inp" style="color:#666" value="叶子0327" disabled="disabled"></td>
+				  </tr>
+				  <tr>
+					<td height="30" align="right" valign="top">充值金额：</td>
+					<td><input type="text" name="money" id="money" class="rwdt_inp" style="color: #D9281E;font-weight: bold;" value="100"> 
+					<!-- <span class="orange">(0.5%手续费)</span> --><a href="/info/vip.html" style="margin-left: 5px;">申请VIP只需0.2%</a></td>
+				  </tr>
+				  <tr>
+					<td>&nbsp;</td>
+					<td><a target="_blank" href="http://member.damaihu.com.cn/#topup/bank" class="tico cz"></a></td>
+				  </tr>
+			  </tbody></table>
+	       </div>
+		    <div class="task_header" style="display:none">
+						<form id="q_f_3" action="/BuyPoint/" method="post" onsubmit="return checkForm3();">
+						<input type="hidden" name="cardType" value="1">
+						<input type="hidden" name="jiage" id="jiage" value="">
+								<table width="90%" border="0" align="left" cellpadding="0" cellspacing="0" style="margin-top:10px;">
+								<tbody><tr>
+										<td width="35%" height="30" align="right" valign="middle">购买价格：</td>
+										<td><span style="color:#D9281E; font-weight:bold;"><span id="jiage1">0.68</span>元=1个麦点</span></td>
+									</tr>
+								<tr>
+										<td width="35%" height="30" align="right" valign="middle">购买数量：</td>
+										<td><input name="nums" id="cardnums" value="20" type="text" size="10" maxlength="4">(最少购买1个)</td>
+									</tr>
+								<tr>
+									<td>&nbsp;</td>
+									<td><input type="submit" class="tico cz"></td>
+								</tr>
+							</tbody></table>
+						</form>
+	       </div>
+		    <div class="task_header" style="display:none">
+				<table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+	              	<tbody>
+	              	<tr style="height: 8px;float: left;"><td>&nbsp;</td></tr>
+					<tr><td>收款财付通账号：<a target="_blank" href="http://member.damaihu.com.cn/#topup/tenpay">进入财付通付款页面</a> </td></tr>
+					<tr><td>转账时只能备注：<strong class="yellow">叶子0327</strong></td></tr>
+					<tr><td>(转账完毕后验证交易号，1分钟到账)</td></tr>
+	                <tr>
+	                	<td colspan="2"><a class="tc_b" href="http://bbs.damaihu.com.cn/forum.php?mod=viewthread&amp;tid=1850" target="_blank">查看充值教程</a><a class="tc_k" target="_blank" href="http://member.damaihu.com.cn/#topup/tenpay">验证订单号</a></td>
+	                </tr>
+	              </tbody>
+				</table>
+	       </div>
+	  </div>
+	</div>
+	<div class="rwdt_bk2">
+		<span class="header-button">
+			<a href="/help/safesz" style="display: block; height: 36px; width: 110px; float: left;background:url(../images/taobao/rwdtnew.gif) no-repeat 0px -156px;" target="_blank"></a>
+			<a style="display: block; height: 36px; width: 110px; float: left; margin-left: 22px;background:url(../images/taobao/rwdtnew.gif) no-repeat 0px -193px;" href="/help/guide?go=fraud" target="_blank"></a>
+		</span>
+		<p class="tico ts">接实物任务后立即收货好评将 <span class="orange">- 20 </span>麦点</p>
+		<p class="tico ts">任务过程中旺旺聊到刷信誉平台相关字眼 <span class="orange">- 5 </span>麦点</p>
+		<p class="tico ts">为了您资金安全，接手方淘宝支付后务必在<span class="blue">15</span>分钟内回到平台操作任务点击“已付款” </p>
+	</div>
+	<div class="rwdt_gg" style="margin-top: 12px;"><a href="/activity/mineaction" target="_blank"><img src="../images/taobao/dil.jpg"></a></div>
+	<div class="rwdt_gg2" style="margin-top: 12px;"><a href="http://bbs.damaihu.com.cn/forum.php?mod=viewthread&amp;tid=11483" target="_blank"><img src="../images/taobao/banner.jpg"></a></div>
+</div>
+
+<div class="tico menu">
+	
+	
+	<a href="#index" title="淘宝任务大厅">淘宝任务大厅</a>
+	<a href="#inTask" title="已接任务">已接任务</a>
+	<a href="#outTask" class="" title="已发任务">已发任务</a>
+	
+	
+	<a href="#bindBuyer" title="绑定买号" class="nov">绑定买号</a>
+	<a href="#bindSeller" title="绑定掌柜">绑定掌柜</a>
+
+	
+		<a href="#souIndex" title="搜索任务大厅" style=" background: url(../images/taobao/t.gif) no-repeat -133px -1px; color: #FFF; ">搜索任务大厅</a>
+	
+
+</div>
+<span id="tloading" style="background-image: url(http://taobao.damaihu.com.cn../images/taobao/loading.gif); width: 100px; height: 50px; float: left; text-indent: 40px; margin: 25px 0px 0px 305px; display: none; background-position: initial initial; background-repeat: no-repeat no-repeat;"><img src="../images/taobao/fg.gif"></span>
+<div id="moveContent"><div class="cle"></div>
+<div class="lst_info">
+  <div class="mh_tishi">
+        1、该页面主要用来绑定和维护用来接任务，购买任务商品的淘宝买号；  <a href="#" class="orange">什么是买号？</a><br>
+2、根据淘宝的最新安全策略，所有买号都要求必须是完整填写个人信息后才能进行绑定；为了您的买号与任务发布方网店安全请您先将买号信息完善； <a href="#" class="orange">如何更安全的使用买号?</a><br>
+3、注册的淘宝买号请不要使用同一个开头，后面跟一串排号的数字，这种买号很容易被淘宝封(类似短命的买号就是 shua001，shua002，shua003......） <br>
+4、一个买号一天只可以接手6个任务，接手高于6个任务，系统将挂起买号，第二天才进行继续接手任务<br>
+      </div>
+      <div class="bq_menu">
+        <a href="http://taobao.damaihu.com.cn/#bindBuyer" class="nov">绑定淘宝买号</a>
+        <a href="http://paipai.damaihu.com.cn/#bindBuyer">绑定拍拍买号</a>
+      </div>
+      <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:20px;font-size:14px;">
+              <tbody><tr>
+                <td width="20%" height="30" align="left" valign="middle"><span class="mico taobao"></span></td>
+              </tr>
+        <form name="myForm" method="post" id="myForm" onsubmit="return checkForm();"></form>
+            
+              <tr>
+                <td width="20%" height="40" align="left" valign="middle"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tbody><tr>
+                    <td width="160" style="padding:0;">淘宝买号绑定：</td>
+                    <td width="800" style="padding:0;"><input onclick="if(this.value.indexOf('输入淘宝') &gt;= 0)this.value='';" onfocusout="if(this.value.length&lt;1)this.value='输入淘宝账号';" value="输入淘宝账号" name="nickname" type="text" class="mh_bk" id="nickName">
+                      <!-- <input onclick="if(this.value.indexOf('信用评价地址') >= 0)this.value='';" onfocusout="if(this.value.length<1)this.value='信用评价地址';" value="信用评价地址" name="url" type="text" class="mh_bk" id="url">
+                      <a href="http://bbs.damaihu.com.cn/forum.php?mod=viewthread&amp;tid=18557&amp;goto=lastpost#lastpost/" target="_blank" style=" color: red; text-decoration: underline; margin-left: 15px; font-size: 12px;">怎么获取淘宝信誉地址？</a> --></td>
+                    <td></td>
+                  </tr>
+                </tbody></table></td>
+              </tr>
+              <tr>
+                <td height="60" align="left" valign="middle"><input type="submit" class="mico mh_bdbtn bindBuyer"></td>
+              </tr>
+        
+              <tr>
+                <td width="20%" height="40" align="left" valign="middle" class="mh_xian">您目前是新手会员用户，可以绑定5个买号！ <a href="/BuyPoint/" class="red">申请VIP</a>最高可绑定100个买号！ <a href="/vip.html" target="_blank" class="blue">查看VIP限权</a></td>
+              </tr>
+            </tbody></table>
+          <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tbody><tr>
+                <td height="15" style="padding-bottom:10px;">每次登陆绑定买号页面，我们会为您自动更新买号信息（包括认证是否实名，买号动态等）。</td>
+              </tr>
+              <tr>
+                <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tbody>
+                    <tr id="row-head">
+                      <td width="10" height="37" class="txjl_bg1"></td>
+                      <td width="12%" height="37" align="center" valign="middle" class="txjl_bg2" style="color:#333;">淘宝账号</td>
+                      <td width="20%" height="37" align="center" valign="middle" class="txjl_bg2" style="color:#333;">初始信誉-现信誉</td>
+                      <td width="23%" height="37" align="center" valign="middle" class="txjl_bg2" style="color:#333;">当日/本周/已完成任务数</td>
+                      <td width="10%" height="37" align="center" valign="middle" class="txjl_bg2" style="color:#333;">买号状态</td>
+                      <td width="10%" height="37" align="center" valign="middle" class="txjl_bg2" style="color:#333;">买号排序</td>
+            <td width="10%" height="37" align="center" valign="middle" class="txjl_bg2" style="color:#333;">是否启用</td>
+            <td width="13%" height="37" align="center" valign="middle" class="txjl_bg2" style="color:#333;">操作</td>
+                      <td width="10" height="37" class="txjl_bg3"></td>
+                  </tr>
+        </tbody></table></td>
+              </tr>
+            </tbody></table>
+            <div class="rwdt_dlm">
+        <div id="page">	  				<a href="javascript:;" page="NULL" class="up-no">&lt;</a>										<a href="javascript:;" page="2" class="next-page">&gt;</a>										<p class="total">总：共0页 当前:第<span class="now-show"> 1 </span>页</p>				   </div>
+      </div>
+      <div class="cle"></div>
+      <!--结束-->
+      </div></div></div>
+	<div id="footer">
+	<p>
+		<span class="chengse">官方QQ群：<a style="color:#FE5500;" target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=6c3a6de2ba1ebe59b8d437d1564122064f6120f53a8d44fda85634feea9e14b0">176682996</a></span>
+		（加群请注明好会刷）</p>
+	<p class="lanse">
+		<a href="/info/about?p=1">联系我们</a>|
+		<a href="/info/about?p=2">好会刷规则</a>|
+		<a target="_blank" href="http://www.yaodamai.com/">淘宝信誉查询</a>|
+		<a target="_blank" href="http://www.aizhanggui.com/">爱掌柜淘宝培训</a>|
+		<a target="_blank" href="/info/jishu">技术好会刷</a>
+	</p><p class="lanse">Copyright © 2012-2020 Damaihu.com All RightsReserved    好会刷版权所有 
+		<a target="_blank" href="http://www.miitbeian.gov.cn">黔ICP备14004290号</a>
+	</p>
+</div>
+</body></html>

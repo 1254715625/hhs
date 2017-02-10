@@ -1,0 +1,59 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="../css/user_paydetails.css">
+
+<div id="main">
+<div class="user_left">
+	{include user/leftmenu}
+</div>
+
+<div id="_right"><div class="paydetails">
+	<div class="bq_menu">
+		<a class="payde nov" href="javascript:;">存款</a>
+		<a class="logpoint " href="javascript:;">麦点</a>
+		<a class="logcredit " href="javascript:;">积分</a>
+		<a class="logtask " href="javascript:;">任务</a>
+		<a class="logtopup " href="javascript:;">充值</a>
+		<a class="logpayment " href="javascript:;">提现</a>
+		<a class="logaccount " href="javascript:;">登录</a>
+	</div>
+	<div class="cle"></div>
+	<div class="f_text">
+		<span class="img0"></span>
+		<p class="f16">存款流动查询</p>
+		<p>查查您今天获得了多少存款吧</p>
+	</div>
+				
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">	
+		<input type="hidden" id="type" name="type" value="logpoint">
+		<tbody>
+			<tr>
+                <td width="370" valign="middle" height="25" align="right">
+                	日期：<input type="text" name="dateStart" class="i_bk hasDatepicker " value="2015-07-09 00:00" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})" readonly="readonly">
+                	 - <input type="text" name="dateEnd" class="i_bk hasDatepicker " value="2015-07-16 08:40" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})" readonly="readonly">
+				</td>
+				<td>
+					<input type="button" class="s_btn" id="bt_submit" text="0">
+				</td>
+			</tr>
+			  
+		</tbody>
+	</table>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+	        	<tr>
+	                <td class="titbg1"></td>
+	                <td width="10%" height="43" class="titbg">类型</td>
+	                <td width="33%" class="titbg">详细内容</td>
+	                <td width="15%" class="titbg">数量</td>
+	                <td width="15%" class="titbg">总数量</td>
+	                <td width="15%" class="titbg">时间</td>
+	                <td class="titbg2"></td>
+	            </tr>
+         </tbody>
+     </table>
+	 
+</div>
+</div>
+</div>
+
+{include common/footer}

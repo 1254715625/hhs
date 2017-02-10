@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* CSS Document */
+/*任务定制*/
+#taskDing {float: left;width: 760px;margin-left: 10px;}
+
+#taskDing .mh_tishi {
+background: none repeat scroll 0 0 #FFFBF2;
+border: 1px solid #FBE1C4;
+margin-bottom: 15px;
+padding: 12px 15px;
+}
+#taskDing .bq_menu2 {
+background: url(../images/user/der_ico.png) no-repeat 0 -374px;
+height: 32px;
+}
+#taskDing .bq_menu2 a:hover, #taskDing .bq_menu2 a.nov {
+background: url(../images/user/der_ico.png) no-repeat 0 -277px;
+font-weight: bold;color: #1996E6;
+}
+#taskDing .bq_menu2 a {
+background: url(../images/user/der_ico.png) no-repeat 0 -324px;
+display: block;
+float: left;
+font-size: 14px;
+height: 32px;
+line-height: 30px;
+margin-right: 3px;
+text-align: center;
+width: 128px;
+}
+#taskDing table{margin: 20px 0 0 10px;width: 738px;}
+#taskDing table td{height:35px;}
+#taskDing table input,#taskDing table select{border: 1px solid #ddd;color:#666;text-indent: 3px;}
+#taskDing .tbbcpz{background: url(../images/user/der_ico.png) 0 -432px no-repeat;
+display: block;
+width: 115px;
+height: 35px;
+margin: 0 7px 0 0;
+float: left;
+border: none;
+line-height: 99px;
+text-indent: 999px;
+overflow: hidden;
+cursor: pointer;}
+#taskDing .ppbcpz{background: url(../images/user/der_ico.png) 0 -432px no-repeat;
+display: block;
+width: 115px;
+height: 35px;
+margin: 0 7px 0 0;
+float: left;
+border: none;
+line-height: 99px;
+text-indent: 999px;
+overflow: hidden;
+cursor: pointer;}

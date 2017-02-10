@@ -1,0 +1,135 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="../css/user_exam.css">
+<div id="content">
+	<p>您现在的位置：<a href="home.php">首页</a> &gt; 考试</p>
+	<div id="divsuccess" style="display:none">
+        <div class="succee">
+            <p>恭喜您！您的调查问卷已经完成，此时您可以<a href="http://taobao.haohuisua.com/taobao.php?mod=addTask">发布任务</a><a href="http://taobao.haohuisua.com">接手任务</a>发布任务注意事项：</p>
+            <ul>
+                <li>设置审核对象：<span>请关注<a href="http://taobao.haohuisua.com/taobao.php?mod=outTask">“已发任务”</a>中任务是否被接手</span></li>
+                <li>保持联系畅通：<span>请随时登录好QQ，刷友正在四处找您</span></li>
+                <li>规定好评内容：<span>注意任务规定的好评内容和收货地址</span></li>
+                <li>设定发布时间：<span>发布的任务最好是不改价不审核的</span></li>
+            </ul>
+        </div>
+        <div class="cont" style="padding-left:130px;">
+            <a class="button_all" href="http://taobao.haohuisua.com/taobao?act=addTask">立即去发布任务</a>
+            <a class="button_all" href="http://taobao.haohuisua.com">立即接手任务</a>
+            <a class="button_all" href="user.php">进入我的后台管理</a>
+        </div>
+    </div>
+    	<div class="kaoshi-left" id="kaoshi-left">
+		 <div id="examnum">
+            <div class="kaoshi-sub">
+                <ul>
+				{foreach item=v key=key from=$question}
+					<li index="{$key}" {if $key==1}class="kaoshi-sub-current"{/if}>{$v.num}题</li>
+				{/foreach}
+				</ul>
+            </div>
+			{foreach item=v key=key from=$question}
+            <div id="exam{$key}" {if $key>1}style="display:none;"{/if}>
+				<p class="kaoshi-tishi">加油！回答完这个问题您还有<b>{$v.count}</b>题就可以完成<b>调查问卷</b>了</p>
+				<div class="kaoshi-timu">
+                    <p style="margin-bottom:10px;">{$v.title} </p>
+               		{foreach item=val key=k from=$v.topic}
+					{if $val.val}
+					<p>
+               			<input type="radio" name="r{$key}" id="radio{$val.acc}" value="{$k}">
+						<b>{$k}</b>
+						<label for="radio{$val.acc}"> {$val.val}</label>
+					</p>
+					{/if}
+					{/foreach}
+					<p class="kaoshi-next">
+						<a name="btnanswer" index="{$key}" select="{$v.answer}">
+							<img src="images/user/kaoshi-next.jpg">
+						</a>
+					</p>
+                </div>
+                <div class="kaoshi-xiaotishi">
+                    <h3>答案小提示：</h3>
+                        <p>{$v.prompt}</p>
+                 </div>
+            </div>
+			{/foreach}
+        </div>
+	</div>
+	<!-- right -->
+	<div class="kaoshi-right">
+    	<div class="kaoshi-user">
+        	<div class="kaoshi-user-top">
+            	<h4>会员信息</h4>
+            </div>
+            <div class="kaoshi-user-cen">
+            	<p class="huan">欢迎来到好会刷：<b>{$session.user_name}</b></p>
+                <p>您当前拥有: 
+				</p><p>平台存款：<b>{$uinfo.user_money}</b> 元</p>
+                <p>平台麦点：<b>{$uinfo.pay_money}</b> 个</p>
+                <p>平台积分：<b>{$uinfo.rank_points}</b> 分</p>
+                <p>属于：<b>{$uinfo.rank_name}</b></p>
+                <p class="shucao">
+                <a href="http://taobao.haohuisua.com" class="jrw">接任务赚存款</a>        
+                <a href="user.php?act=topup" class="zjput">直接购买存款</a> </p>
+                <p>
+                	<a href="user.php"><b>进入会员中心</b></a>
+                </p>
+            </div>
+        </div>
+        <p style="margin-top:15px;">
+        	<a href="bbs.php">
+        		<img src="images/user/kaoshi-ad.jpg">
+        	</a>
+        </p>
+    </div>
+    </div>
+<script type="text/javascript">
+$(function(){
+		$("a[name=btnanswer]").click(function(){
+		 	var index = parseInt($(this).attr("index"));
+		 	var select = $(this).attr("select");
+	        var choose = $("#exam" + index + " input:radio[name=r"+ index +"][checked]").val();
+
+	        /*选择答案*/
+	        if(choose!=null && choose!=""){
+	        	/*答案正确*/
+	        	if(select == choose){
+	        		if(index == {$len}){  
+	        			$.ajax({
+							   type: "POST",
+							   url: "user.php?act=exam",
+							   data: "curid=1",
+							   success: function(data){
+							   		obj = jQuery.parseJSON(data);															   		
+							   		if(obj.status == 1){
+			                           
+			                            $("#kaoshi-left").remove();
+			                            $("#exam"+ index).remove();
+			                            $("div.kaoshi-right").remove(); 
+										$("#divsuccess").show();
+
+			                        }else if(obj.status == 2){
+
+			                        	$.dialog({ id:'aasdsd',time:2000,title: '提示',content: '你之前已提交过问卷了~',fixed: true});
+			                        }else{
+			                            
+			                            $.dialog({id:'aasd',time:2000, title: '['+obj.errorCode+']提示',content: '提交问卷失败~',fixed: true});
+			                        }
+							   }
+						});
+	                }else{
+	                    $("#exam"+ index).hide();
+	                    $("#exam"+(index+1)).show();
+	                    $("#examnum li").removeClass();
+	                    $("#examnum li[index="+ (index+1) +"]").addClass("kaoshi-sub-current");
+	                }
+	        	}else{
+	        		$.dialog({ id:'asd',time:2000,title: '警告',content: '回答错误，请重新选择[可查看下方提示]~',fixed: true});
+	        	}
+	        }else{
+	            $.dialog({ id:'asda',time:2000,title: '警告',content: '请选择答案~',fixed: true});
+	        }
+		 });
+	});
+</script>
+{include common/footer}

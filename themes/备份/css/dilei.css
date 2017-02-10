@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+
+ol, ul {list-style: none outside none;}
+a {color: #666666;text-decoration: none;}
+#wrap {cursor:url(../images/activity/dilei/chuizi.ico),auto;background: url(../images/activity/dilei/head.jpg) no-repeat 50% 0px ;margin: 0 auto;position: relative;width: 1600px;height:779px;background-color: #a47944;}
+#wrap .laction{height: 50px; float: left; margin: 35px 0px 0px 347px; width: 195px;}
+#wrap_foor{background: url(../images/activity/dilei/foot.jpg) no-repeat 50% 0px ;margin: 0 auto;position: relative;text-align: left;width: 1600px;background-color: #a47944;height:458px;}
+#container {float: left;height: 350px;margin: 325px 0 0 510px;width: 625px;cursor:url(../images/activity/dilei/chuizi.png);display: inline;}
+#container .xiang1{background: url(../images/activity/dilei/dd.png) no-repeat; float: left; height: 340px; width: 339px;}
+#container .xiang1 img{margin:145px 0 0 75px;display: inline;}
+#container .xiang2{background: url(../images/activity/dilei/xx.png) no-repeat; float: left; height: 236px; width: 233px; margin: 100px 15px;}
+#container .xiang2 img{margin:100px 0 0 45px;}
+.list1 {float: left;color: #4E2E12;margin-left: 350px;margin-top: 71px;width: 464px;display: inline;}
+.c {zoom: 1;}
+.l1-n {width: 16px;height: 17px;line-height: 17px;text-align: center;background-position: -126px -50px;float: left;margin-top: 3px;color: black;}
+.l1-t {padding-left: 25px;line-height: 23px;}
+.tb-hd {color: #e3ca96;text-align: center;font-size: 16px;font-weight: bold;margin: 73px 0 0 15px;}
+.tb-hd li {float: left;height: 35px;line-height: 35px;width: 145px;}
+.scrollBox{float: left;width: 440px; margin: 5px 10px;height: 90px;overflow: hidden;}
+.scrollBox li{padding-left: 25px;}
+.scrollBox li a{text-align:center;color: #4E2E12;width:110px;float:left;}
+.scrollBox li .md{color: #4E2E12;margin-left:55px;}
+.guanggao{margin: 0px auto; overflow: hidden; position: absolute; bottom: 60px; left: 325px;}
+.guanggao a{float:left; margin-right: 10px;}
+.help_down{width:500px;height: 290px;}

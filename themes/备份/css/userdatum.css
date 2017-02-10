@@ -1,0 +1,159 @@
+#userdatum {
+margin: 0 auto;
+position: relative;
+text-align: left;
+width: 980px;
+}
+#userdatum .cle {
+    clear: both;
+}
+#userdatum #u_info {
+float: left;
+margin: 15px;
+width: 440px;
+}
+#userdatum #u_info li.tx {
+background: url(../images/public/fy_ico.jpg) no-repeat 0 -1067px;
+float: left;
+height: 110px;
+margin-right: 15px;
+width: 110px;
+}
+#userdatum #u_info li.tx img {
+margin: 15px 0 0 11px;
+}
+#userdatum #u_info li.name {
+font-size: 18px;
+font-weight: bold;
+height: 35px;
+line-height: 35px;
+margin-top: 30px;
+}
+#userdatum #u_info li.pj {
+background: url(../images/info/lt.jpg) no-repeat -4px -331px;
+height: 80px;
+margin-bottom: 10px;
+margin-top: 25px;
+position: relative;
+}
+#userdatum #u_info li .jf_ico {
+color: #999999;
+}
+#userdatum #u_info li.pj .hp, #userdatum #u_info li.pj .zp, #userdatum #u_info li.pj .cp {
+display: block;
+font-family: Georgia,"Times New Roman",Times,serif;
+font-size: 18px;
+height: 28px;
+left: 15px;
+position: absolute;
+text-align: center;
+top: 12px;
+width: 70px;
+}
+
+#userdatum #u_info li.pj .zp {
+left: 98px;
+}
+#userdatum #u_info li.pj .cp {
+left: 183px;
+}
+#userdatum #u_info li .chengse {
+color: #FE5500;
+}
+#userdatum #u_info li .time {
+color: #999999;
+}
+#userdatum #u_info li.jj {
+height: 30px;
+line-height: 30px;padding-left: 10px;
+}
+#userdatum #u_info li .jh_btn {
+background: url(../images/public/fy_ico.jpg) no-repeat 0 -983px ;
+display: block;
+float: right;
+height: 25px;
+margin-right: 170px;
+width: 90px;
+}
+#userdatum #lt_info {
+background: url(../images/info/lt.jpg) no-repeat;
+float: left;
+height: 220px;
+margin-bottom: 45px;
+margin-top: 20px;
+padding: 105px 50px 0;
+width: 410px;
+}
+#userdatum #lt_info li {
+line-height: 25px;
+}
+#userdatum #lt_info li a {
+color: #1770BA;
+}
+#userdatum #lt_info li .date {
+color: #999999;
+float: right;
+margin-top: 0;
+}
+#userdatum .u_tit {
+background: url(../images/public/fy_ico.jpg) repeat-x 0 -1202px;
+color: #2482CF;
+}
+#userdatum .u_tit .u_hr{height: 38px;text-align: center;vertical-align: middle;}
+#userdatum .u_left {
+background: url(../images/public/fy_ico.jpg) no-repeat 0 -1246px;
+}
+#userdatum .u_right {
+background: url(../images/public/fy_ico.jpg) no-repeat right -1288px;
+}
+#userdatum table .x_xian {
+border-bottom: 1px solid #E8E8E8;
+height: 38px;
+text-align: center;
+vertical-align: middle;
+line-height: 16px;
+}
+#userdatum table .x_xian .lanse{color: #1996E6;}
+#userdatum table .hao{color: green;}
+#userdatum table .cha{color: red;}
+#userdatum table .time {color: #999999;}
+#page {
+margin: 30px 10px 25px;
+padding: 0 15px;
+}
+#page a {
+background:#F8F8F8;
+border: 1px solid #E8E8E8;
+display: block;
+float: left;
+height: 25px;
+margin: 0 2px;
+text-align: center;
+width: 25px;
+}
+#page a:hover, #page a.nov {background:#EAF4FD;border-color: #B0D0E9;}
+#page .pr {float: right;}
+
+
+#userdatum .userError{width:1000px; margin:0 auto;}
+#userdatum .userError .h_30 {
+clear: both;
+height: 30px;
+}
+#userdatum .userError .error_panel {
+background: url(../images/info/ico_critical.gif) no-repeat scroll 10px 5px #FFFFCC;
+border: 1px dashed #DBDB64;
+clear: both;
+margin: 5px 0;
+height:45px;
+}
+#userdatum .userError .error_panel span{
+color: #FF0000;
+font-weight: bold;
+line-height: 18px;
+margin-bottom: 8px;
+margin-left: 44px;
+margin-top: 8px;
+padding: 5px;
+text-align: left;float: left;
+}

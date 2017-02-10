@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+/*VIP诉*/
+#vip {float: left;width: 760px;margin-left: 10px;margin-bottom:100px;}
+#vip .puy{width:760px;height:185px;margin-bottom: 30px;}
+#vip .vip_ico{background: url(../images/user/vip_ico.png) no-repeat;}
+#vip .chengse2 {color: #EB0F0F;font-size:12px;}
+#vip .lanse2 {color: #2D71A5;font-weight:bold;}
+#vip .vip_tit {background-position: 0 -939px;height: 60px;margin:20px 0 0 20px;float: left;width: 740px;clear: both;}
+#vip .vip_list {background-position:0 -1180px;width: 234px;height: 104px;float: left;margin-left: 15px;}
+#vip .vip_list .vip_dj1{background-position:0 -1016px ;margin: 20px 0 0 20px;float: left;padding-left:30px;}
+#vip .vip_dj4{background-position:0 -1058px;margin: 20px 0 0 20px;float: left;padding-left:45px;}
+#vip .vip_dj5{background-position:0 -1095px;margin: 20px 0 0 20px;float: left;padding-left:45px;}
+#vip select{float: left;margin: 21px 0 0 10px;border: 1px solid #DDDDDD;color: #666;height: 25px;}
+#vip .vip_dj3 {background-position:0 -1131px ;border: medium none;cursor: pointer;display: block;height: 32px;overflow: hidden;text-indent: 9999px;width: 97px;margin: 10px 0 0 20px;float: left;}
+#vip table{float: left;}
+#vip .txjl_bg1 {background: url(../images/user/tx_btn.gif) no-repeat 0 -225px ;height:37px;width:10px;}
+#vip .txjl_bg2 {background: url(../images/user/tx_btn.gif) repeat-x 0 -264px ;color: #1996E6;font-size: 14px;font-weight: bold;vertical-align: middle;height:37px;text-align:left;color:#333;}
+#vip .txjl_bg3 {background: url(../images/user/tx_btn.gif) no-repeat right -303px ; vertical-align: middle;height:37px;text-align:center;}
+#vip .vipsp_i1 {background-position:0 -3px ;}
+#vip .vipsp_i2 {background-position:0 -309px ;}
+#vip .vipsp_i3 {background-position:0 -617px ;}
+#vip .vipsp_i4 {background-position:0 -52px ;}
+#vip .vipsp_i5 {background-position:0 -360px ;}
+#vip .vipsp_i6 {background-position:0 -667px ;}
+#vip .vipsp_i7 {background-position:0 -105px ;}
+#vip .vipsp_i8 {background-position:0 -408px ;}
+#vip .vipsp_i9 {background-position:0 -717px ;}
+#vip .vipsp_i10 {background-position:0 -155px ;}
+#vip .vipsp_i11 {background-position:0 -462px ;}
+#vip .vipsp_i12 {background-position:0 -769px ;}
+#vip .vipsp_i13 {background-position:0 -205px ;}
+#vip .vipsp_i14 {background-position:0 -510px ;}
+#vip .vipsp_i15 {background-position:0 -820px ;}
+#vip .vipsp_i16 {background-position:0 -254px ;}
+#vip .vipsp_i17 {background-position:0 -561px ;}
+#vip .vipsp_i18 {background-position:0 -871px ;}
+#vip .vipsq_r1 {background-position:0 -1873px;color: #333333;font-weight: bold;text-indent: 20px;text-align:left;height: 38px;}
+#vip .vipsq_r2 {background-position:0 -1911px;padding: 10px;}
+#vip .vipsq_user {border-bottom: 1px dotted #DDDDDD;height: 65px;padding-bottom: 5px;margin-bottom: 11px;}
+#vip .vipsq_user li .vipsq_tx {float: left;margin: 6px 15px;}
+.vipsq_user li .vipsq_tx img {border: 1px solid #B9B9B9;}

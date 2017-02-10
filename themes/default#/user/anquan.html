@@ -1,0 +1,319 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="css/user_index.css">
+<link rel="stylesheet" type="text/css" href="css/user_userdata.css">
+<div id="main">
+<div class="user_left">
+	{include user/leftmenu}
+</div>
+<div id="_right"><style>
+#inner_container{height: 482px;position: relative;width: 760px;margin-left: 10px;float: left;}
+#inner_container .safe-level{width:100%;height: 160px;float: left;}
+#inner_container .safe-yanse0{background-color: #F9EFE3;}
+#inner_container .safe-yanse1{background-color: #F1F4F9;}
+#inner_container .safe-yanse2{background-color: #E4F7E4;}
+#inner_container .safe-level .wrap{float: left;width:400px;height:95px;padding:33px;}
+.safe-level-result strong{font-size: 15px;}
+.safe-level-result .ico-level{position: relative;top: -1px;display: inline-block;background: url(../images/user/safe_png24.png) no-repeat ;width: 86px;height: 10px;overflow: hidden;margin-left: 3px;}
+.safe-level-result .aq0{background-position: -394px 0}
+.safe-level-result .aq1{background-position: -394px -11px;}
+.safe-level-result .aq2{background-position: -394px -22px;}
+.safe-level-result .font-level{margin-left: 5px;font-weight: 700;color: #CE0313;}
+.safe-level-result .font-aq0{color:#CE0313;}
+.safe-level-result .font-aq1{color:#E86900;}
+.safe-level-result .font-aq2{color:#329046;}
+.wrap .ukey{ font-size: 14px; margin-top: 18px;color:#414141;}
+.wrap .ukey_tips{ color: #999; }
+.safe-level-bg{background: url(../images/user/safe_check.jpg) no-repeat;float: right;width: 280px;height: 160px;}
+.safe-level-aq0{background-position: 0 0;}
+.safe-level-aq1{background-position: 0 -160px;}
+.safe-level-aq2{background-position: 0 -320px;}
+
+.left_ct{width:525px;height:452px;float: left;}
+.left_ct .function-list{float: left;margin: 30px 15px;}
+.left_ct .line-bg{margin: 0;width:295px;float: left;display: block;border-bottom: 1px solid #E0E7EF;line-height: 3;background-color: #F1F5FA;padding: 6px 76px 6px 124px;border: none;}
+.left_ct .line-bg dt{display: inline;float: left;width: auto;text-align: right;margin: 0 0 0 -124px;font-size: 12px;font-weight: 200;text-indent: 6px;cursor: pointer;}
+.left_ct .line-bg dt em{float: left;width: 16px;height: 16px;margin: 10px 0px 10px 10px;background: url(../images/user/tbox.png) no-repeat;}
+.left_ct .line-bg dt em.suess{background-position:-232px 0px;}
+.left_ct .line-bg dt em.error{background-position:-198px 0px;}
+.left_ct .line-bg dt em.suesserror{background-position:-215px 0px;}
+.left_ct .line-bg dd{float: left;width:310px;position: static;min-height: 0;border: none;}
+.left_ct .line-bg dd .describe{display: inline;float: left;width: 220px;}
+.left_ct .nob{background: white;}
+.left_ct .line-bg dd .btn-white-s{padding: 3px 10px;border-radius: 3px;font-weight: 700;color: #1163A3;border: 1px solid #C0C0C0;background: #FFF;float: right;height: 20px;line-height: 20px;margin: 4px;}
+.right_ct{float: right;width: 210px;height: 452px;}
+.right_ct .pannel-main{margin-top: 30px;}
+.right_ct .pannel-main ul{list-style-type: circle;}
+.right_ct .pannel-main ul a{color: #1996E6;}
+.right_ct .pannel-main ul a:hover{text-decoration: underline;}
+</style>
+<div id="inner_container">
+	<div class="safe-level safe-yanse{$aq}">
+		<div class="wrap">
+			<div class="safe-level-result">
+				<strong id="risk_info">您的账户安全级别为：</strong>
+				<span class="ico-level aq{$aq}"></span>
+				<span class="font-level font-aq{$aq}">{$aqjb}</span>
+			</div>
+			<p class="ukey">安全信息正保护您的资金及交易安全</p>
+			<p class="ukey_tips">安全信息请勿泄漏给任何人，加密信息确保账户安全</p>
+		</div>
+		<div class="safe-level-bg safe-level-aq{$aq}"></div>
+	</div>
+	<div class="left_ct">
+		<div class="function-list">
+			<dl class="line-bg">
+				<dt><em class="{if $uinfo.mprz}suess{else}error{/if}"></em>手机激活</dt>
+				<dd>
+					<div class="describe">
+						开启后激活账号全部功能
+						<span style="color:green;">{if $uinfo.mprz}已{else}未{/if}激活</span>
+					</div>
+						<a href="javascript:;" data="{if $uinfo.mprz}{$mobile}{else}{$uinfo.mobile_phone}{/if}" class="btn-white-s {if $uinfo.mprz}upphone{else}bindPhone{/if}"><span>{if $uinfo.mprz}修改{else}激活{/if}手机</span></a>
+				</dd>
+			</dl>
+			<dl class="line-bg nob">
+				<dt><em class="{if $uinfo.safepass}suess{else}error{/if}"></em>安全码设置</dt>
+				<dd>
+					<div class="describe">账户资金及重要资料变更时需校验</div>
+						<a href="{if $uinfo.safepass}user.php?act=userinfo&opt=setsafepass{else}user.php?act=operate{/if}" class="btn-white-s upanq"><span>{if $uinfo.safepass}修改{else}设置{/if}安全码</span></a>
+					
+				</dd>
+			</dl>
+			<dl class="line-bg">
+				<dt><em class="{if $uinfo.isdc}suess{else}error{/if}"></em>安全小调查</dt>
+				<dd>
+					<div class="describe">
+						参与调查，了解防骗指南
+						{if $uinfo.isdc}<span style="color:green;">已参与</span>{else}<span style="color:#FF5C00;">奖励1麦点</span>{/if}
+					</div>
+					{if $uinfo.isdc==0}<a href="javascript:;" class="btn-white-s examine"><span>参与调查</span></a>{/if}
+				</dd>
+			</dl>
+			<dl class="line-bg nob">
+				<dt><em class="{if $uinfo.otlog}suess{else}error{/if}"></em>异地登录验证</dt>
+				<dd>
+					<div class="describe">
+						当登录IP变化时需要验证方可登录
+						{if $uinfo.otlog}<span style="color:green;">已开启</span>{else}<span style="color:#FF5C00;">已关闭</span>{/if}
+					</div>
+					<a href="javascript:;" class="btn-white-s switch dv_sp{$uinfo.otlog}">
+						<span>{if $uinfo.otlog}关闭{else}开启{/if}</span>
+					</a>
+				</dd>
+			</dl>
+			<dl class="line-bg">
+				<dt><em class="suesserror"></em>短信通知</dt>
+				<dd>
+					<div class="describe">可以设置多项任务变动以及资金提醒</div>
+					<a href="user.php?act=personal&opt=instation" class="btn-white-s"><span>开始设置</span></a>
+				</dd>
+			</dl>
+		</div>
+	</div>
+	<div class="right_ct">
+		<div class="pannel-main">
+			<h4>防骗案例</h4>
+          	<ul>
+			{foreach item=v key=key from=$hot_bbs}
+			<li><span class="ico-dot"></span><a href="bbs.php?act=view&id={$v.id}" title="{$v.title}" target="_blank">{$v.title}</a></li>
+			{/foreach}
+          	</ul>
+        </div>
+        <div style="margin-top:20px;float: right;">
+        	<a href="help.php?act=guide" target="_blank" class="">
+        		<img src="../images/user/fish228-100.jpg" width="228" height="100" border="0">
+        	</a>
+        </div>
+	</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$('.upphone').click(function(){
+		var self= this;
+		$.dialog({
+			title: '修改手机操作',
+			content: '<div id="sphone" style="width:525px;"><div class="send_img"></div><div class="send_cont"><span class="send_phone">手机号码：<input type="text" readonly style="border: none;" value="'+$(this).attr('data')+'"></span><span class="send_v">验证码：<input type="text" id="getCode"></span><span class="send_v">新号码：<input type="text" id="getPhone"></span></div><div class="getvcode"><input id="get_vcode" type="button" value="短信获取" ></div><p class="set_sub"><input type="submit" id="btn_submit" class="dxyz_qr" value=""></p></div>',
+			fixed: true,
+			lock: true
+		})
+
+		$(".d-buttons").hide();
+			
+		$("#get_vcode").click(function(){
+		$.dialog({id:"ajaxStart",title: '正在处理中..',fixed: true});
+		$.post('plugins.php?act=sendsmscode',function(data){
+			$.dialog.get('ajaxStart').close();
+			$.dialog({title: '提示',content: data.info,fixed: true,lock: true});
+			var SysSecond = 1800; 
+			var tim = setInterval(function(){
+				if(SysSecond > 0){ 
+					SysSecond = SysSecond - 1; 
+					var second = Math.floor(SysSecond);// 计算秒 
+					$(".getvcode").html('<input id="get_vcode" type="button" value="'+SysSecond+'秒后可再次发送">'); 
+				}else{
+					clearInterval(tim);
+					$(".getvcode").html('<input id="get_vcode" type="button" value="短信获取">');
+				} 
+			}, 1000);
+		},'json');
+		});
+	});
+	$(".bindPhone").click(function(){
+		var mobile=$(this).attr('data');
+		$.dialog({title: '认证 - 激活手机',content: '<div id="sphone"><p style="height: 30px;color: #E21;">注意：一个手机号码只能验证一次，验证通过的手机号将作为该账户的最终手机号</p><div class="send_img"></div><div class="send_cont"><span class="send_phone">手机号码：<input type="text" id="sendPhone" maxlength="11" value="'+mobile+'" readonly></span><span class="send_v">验证码：<input type="text" id="getCode"></span></div><div class="getvcode"><input id="get_vcode" type="button" value="短信获取" onclick="getSmsCode();"></div><div class="sountcode"><span onclick="getSoundCode();" id="yy">语音获取</span></div><p class="set_sub"><input type="submit" id="btn_submit" class="dxyz_qr" value="" onclick="checkSMS();"></p></div>', fixed:true, lock:true});
+	});
+	$(".examine").click(function(){
+		$.dialog({title: '好会刷小调查',
+		  content: '<div style="width:300px; line-height:26px;"><strong>您是通过哪里来到好会刷平台的？</strong><ul><li>1、搜索引擎</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="source" value="baidu" /> 百度 <input type="radio" name="source" value="sougou" /> 搜狗 <input type="radio" name="source" value="360" /> 360 <input type="radio" name="source" value="google" /> Google</li><li>2、<input type="radio" name="source" value="firend" /> 朋友推荐</li><li>3、<input type="radio" name="source" value="guanggao" /> 广告图</li><li>4、<input type="radio" name="source" value="bbs" /> 论坛博客</li></ul></div>', 
+		  okValue:'确定',
+		  cancelValue:'取消',
+		  ok : function(){
+				var s = $("input[name=source]:checked").val();
+				if(!s)
+				{
+					alert("请先选择项目~");
+					return false;
+				}
+
+				$.post('plugins.php?act=exam', {item:s}, function(data){
+					$.dialog({title: '提示',content:data+'感谢您的参与~', fixed: true,lock:true,cancelValue:'确定', cancel:function(){location.reload();}});
+				});
+			},
+		  cancel : {},
+		  fixed:true, lock:true});
+	});
+	$('.switch').click(function(){
+		if($(this).hasClass('dv_sp0'))
+		{
+			$.post('user.php?act=setotlog', {otlog:1}, function(data){
+				if(parseInt(data) == 1)
+				{
+					$.dialog({title: '提示',content:'异地登陆验证已开启~',fixed: true,lock: true,cancelValue: '确定',cancel: function () { location.reload();return true;}});
+				}
+			});
+		}
+		else
+		{
+			$.dialog({title : '提示', fixed : true, lock : true,
+					content : '您如果关闭异地登录，账户就可能存在账号资金被盗的风险，确定要关闭吗？',
+					okValue : '确定',
+					ok : function(){
+						$.post('user.php?act=setotlog', {otlog:0}, function(data){
+							if(parseInt(data) == 1)
+							{
+								$.dialog({title: '提示',content:'异地登陆验证已关闭~',fixed: true,lock: true,cancelValue: '确定',cancel: function () { location.reload();return true;}});
+							}
+						});					
+					},
+					cancelValue : '取消',
+					cancel : {}
+				});
+			
+		}
+	});
+});
+function getSmsCode()
+{
+	var phone = $("#sendPhone");
+	if(/^1(?:(?:3[0-9])|(?:5[0-35-9])|(?:4[0-35-9])|(?:8[0-35-9])|(?:7[0-9]))\d{8}$/.test(phone.val()) == false)
+	{
+		phone.css('border','1px solid red'); return false;
+	}else{
+		phone.css('border','1px solid #ddd');
+	}
+
+	$.dialog({id:"ajaxStart",title: '正在处理中...',fixed: true});
+	$.post('plugins.php?act=sendsmscode', {phone:phone.val()}, function(data){
+		$.dialog.get('ajaxStart').close();
+		$.dialog({title:'提示', content:data.info, fixed:true, lock:true});
+		var SysSecond = 1800;
+		
+		var tim = setInterval(function(){
+					if(SysSecond > 0){ 
+						$("#yy").hide();
+						SysSecond = SysSecond - 1; 
+						var second = Math.floor(SysSecond);// 计算秒 
+						$(".getvcode").html('<input id="get_vcode" type="button" value="'+SysSecond+'秒后重新获取">'); 
+					}else{
+						clearInterval(tim);
+						$("#yy").show();
+						$(".getvcode").html('<input id="get_vcode" type="button" value="短信获取" onclick="getSmsCode();">');
+					} 
+			  	}, 1000);	
+	}, 'json');
+}
+
+function getSoundCode()
+{
+	var phone = $("#sendPhone");
+	if(/^1(?:(?:3[0-9])|(?:5[0-35-9])|(?:4[0-35-9])|(?:8[0-35-9])|(?:7[0-9]))\d{8}$/.test(phone.val()) == false)
+	{
+		phone.css('border','1px solid red'); return false;
+	}else{
+		phone.css('border','1px solid #ddd');
+	}
+			
+	$.dialog({
+		title: '语音验证码',
+		content: '您将收到语音电话，请根据语音提示输入验证码！',
+		fixed: true,
+		lock: true,
+		okValue:'确定',
+		cancelValue:'取消',
+		ok : function(){
+				$.dialog({id:"ajaxStart",title: '正在拨号中..',fixed: true});
+				$.post('plugins.php?act=sendsoundcode', {phone:phone.val()}, function(data){
+						$.dialog.get('ajaxStart').close();
+						$.dialog({title: '提示',content: data.info,fixed: true,lock: true});
+						var SysSecond = 1800; 			    	
+					  	var tim = setInterval(function(){
+					  		if(SysSecond > 0){ 
+								$("#get_vcode").hide();
+								SysSecond = SysSecond - 1; 
+								var second = Math.floor(SysSecond);// 计算秒 
+								$(".sountcode").html('<span>'+SysSecond+'秒后重新获取</span>'); 
+							}else{
+								$("#get_vcode").show();
+								clearInterval(tim);
+								$(".sountcode").html('<span onclick="getSoundCode();">语音获取</span>');
+							} 
+					  	}, 1000);
+
+					}, 'json');
+			},
+		cancel:function(){return true;}
+	});
+}
+
+function checkSMS()
+{
+	var phone = $("#sendPhone");
+	if(/^1(?:(?:3[0-9])|(?:5[0-35-9])|(?:4[0-35-9])|(?:8[0-35-9])|(?:7[0-9]))\d{8}$/.test(phone.val()) == false)
+	{
+		phone.css('border','1px solid red'); return false;
+	}else{
+		phone.css('border','1px solid #ddd');
+	}
+
+	var sms = $("#getCode");
+	if(sms.val() == ""){
+		sms.css('border','1px solid red');
+		return false;
+	}else{
+		sms.css('border','1px solid #ddd');
+	}
+
+	$.dialog({id:"ajaxStart",title: '正在处理中..',fixed: true});
+
+	$.post('plugins.php?act=checkcode', {code:sms.val(), mod:'mprz'}, function(data){
+			$.dialog.get('ajaxStart').close();
+			$.dialog({title:'提示', content:data.info, fixed:true, lock:true, okValue:'确定', cancelValue:'取消',
+					  ok : function(){location.reload();},
+					  cancel : function(){return true;}
+					});
+		}, 'json');
+}
+</script>
+{include common/footer}

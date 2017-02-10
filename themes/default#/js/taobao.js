@@ -1,0 +1,3 @@
+$(function(){
+	$.dialog({lock:true});
+})

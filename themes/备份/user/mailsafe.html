@@ -1,0 +1,54 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="../css/user_userData.css">
+<script type="text/javascript" src="../js/user/userinfo.js"></script>
+<script type="text/javascript" src="../js/region.js"></script>
+<div id="main">
+<div class="user_left">
+	{include user/leftmenu}
+</div>
+
+<div id="_right">
+<div id="myDate">
+    <div class="bq_menu2">
+		<a href="user.php?act=userinfo">修改个人资料</a>
+		<a href="user.php?act=revlog">修改登录密码</a>
+		<a href="user.php?act=safecode">修改安全操作码</a>
+		<a class="nov" href="user.php?act=mailsafe">获取安全验证码</a>
+		<a href="user.php?act=vident">加V实名认证</a>
+	</div>
+	<br>
+	
+	<form id="jForm" action="" method="post" onsubmit="return checkForm(this);">
+    <table width="625" border="0" cellspacing="0" cellpadding="0" id="formEmail">
+		<tbody><tr>
+			<td width="200" valign="middle" height="40" align="right">
+				<select id="selectxz">
+					<option value="1">输入您的账号邮箱</option>
+					<!-- <option value="2">输入您的手机号码</option> -->
+				</select>
+			</td>
+			<td>
+				<input id="emailText" type="text" name="email" class="text_normal">
+				<input id="sphoneText" type="text" name="sphone" class="text_normal" style="display: none;">
+				&nbsp;<span class="chengse2">注意：同一用户一天最多只能找回3次操作码</span>
+			</td>
+		</tr>
+		<tr>
+			<td> </td>
+			<td>
+				<input id="email_sub" type="submit" class="email_sub">
+				<input id="phone_sub" type="submit" class="phone_sub" style="display: none;">
+			</td>
+		</tr>
+	</tbody></table>
+	</form>
+</div></div>
+
+</div>
+<script type="text/javascript">
+function checkForm(form)
+{
+}
+</script>
+
+{include common/footer}

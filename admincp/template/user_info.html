@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+function checkForm(form)
+{
+	if(form.rank_name.value == "")
+	{
+		alert("请填写会员名称");
+		return false;
+	}
+	
+	return confirm("您确定要保存这些数据吗？");
+}
+</script>
+</head>
+<body>
+<div class="ur_here">首页 &raquo; 系统设置 &raquo; 编辑会员等级</div>
+<div class="container">
+	<div class="subnav">
+		<a href="user.php?act=list">返回列表</a>
+	</div>
+    <form id="form1" name="form1" method="post" action="" onsubmit="return checkForm(this);">
+      <input type="hidden" name="user_id" value="{$data.user_id}">
+      <table width="100%" id="editTb">
+        <tr>
+          <th colspan="2">编辑会员等级</th>
+        </tr>
+        <tr>
+          <td class="left">会员名称</td>
+          <td><input name="user_name" type="text" value="{$data.user_name}" readonly/></td>
+        </tr>
+  	  <tr>
+          <td class="left">会员等级</td>
+          <td><input name="user_rank" type="text" value="{$data.user_rank}" readonly/></td>
+        </tr>
+  	  <tr>
+          <td class="left">手机</td>
+          <td><input name="mobile_phone" type="text" value="{$data.mobile_phone}" readonly/></td>
+        </tr>
+  	  <tr>
+          <td class="left">QQ</td>
+          <td><input name="qq" type="text" value="{$data.qq}" readonly/></td>
+        </tr>
+        <tr>
+          <td class="left">Email</td>
+          <td><input name="email" type="text" value="{$data.email}" readonly/></td>
+        </tr>
+  	  <tr>
+          <td class="left">存款</td>
+          <td><input name="user_money" type="text" value="{$data.user_money}" readonly/></td>
+        </tr>
+  	  <tr>
+          <td class="left">刷点</td>
+          <td><input name="pay_money" type="text" value="{$data.pay_money}" readonly/></td>
+        </tr>
+  	  <tr>
+          <td class="left">积分</td>
+          <td><input name="rank_points" type="text" value="{$data.rank_points}" readonly /></td>
+        </tr>
+  	  <tr>
+          <td class="left">经验</td>
+          <td><input name="pay_points" type="text" value="{$data.pay_points}" readonly/></td>
+        </tr>
+  	  <tr>
+          <td class="left">账号状态</td>
+          <td>
+            <label>
+              <input name="is_ok" type="radio" value="1" {if $data.is_ok eq 1} checked {/if}/>&nbsp;冻结
+            </label>
+            <label>
+              <input name="is_ok" type="radio" value="0" {if $data.is_ok eq 0} checked {/if}/>&nbsp;正常
+            </label>
+      		</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="footer">
+      			<input type="submit" class="submit" value="保存" />
+      			<input type="reset" class="reset" value="重填" />
+      		</td>
+        </tr>
+      </table>
+    </form>
+</div>
+</body>
+</html>

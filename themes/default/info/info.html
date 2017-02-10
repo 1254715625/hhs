@@ -1,0 +1,65 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="css/userdatum.css">
+<div id="userdatum">
+			<!-- 信息 -->
+		{if $info.user_id}
+		<ul id="u_info">
+			<li class="tx"><img width="87" height="87" src="images/user/headimg/{if $info.headimg==''}user_head.gif{else}{$info.headimg}{/if}"></li>
+			<li class="name">{$info.user_name}
+			{if $info.realname}<span style="margin:9px 5px 0 0px;background: url(images/taobao/verify.png) no-repeat;float: left;width: 18px;height: 18px;" title="通过V实名认证用户"></span>{/if}
+			</li>
+			<li name="">{if $info.sex}女{else}男{/if}<img src="images/ico/level/b_red_1.gif" style="margin-left: 30px;" title="积分:"><span class="jf_ico"> {$info.pay_points}值 经验越高,信誉越高</span></li>
+			<li class="pj"><span class="hp">{$type.1}</span><span class="zp">{$type.2}</span><span class="cp">{$type.3}</span></li>
+			<li class="jj">好评率：<span class="chengse">{$haoping}</span></li>
+			<li class="jj">注册时间：<span class="time">{$info.add_time}</span></li>
+			<li class="jj">已被{$info.black}人加入黑名单啦！<a class="jh_btn" href="user.php?act=black" target="_blank"></a></li>
+		</ul>
+		<!-- 帖子 -->
+		<ul id="lt_info">
+			{foreach item=v key=key from=$hot_bbs}
+			<li><a title="·{$v.title}" target="_blank" href="bbs.php?act=view&id={$v.id}">·{$v.title}</a><span class="date">{$v.add_time}</span></li>
+			{/foreach}
+		</ul>
+		<div class="cle"></div>
+		<!-- 评论 -->
+		<table width="100%" cellspacing="0" cellpadding="0" border="0">
+	        <tbody><tr class="u_tit">
+	            <td width="10" class="u_hr u_left">&nbsp;</td>
+	            <td width="20%" class="u_hr">评论用户</td>
+	            <td width="20%" class="u_hr">被评论用户</td>
+	            <td width="25%" class="u_hr">评论内容</td>
+	            <td width="20%" class="u_hr">提交时间</td>
+	            <td class="u_hr">状态</td>
+	            <td width="10" class="u_right">&nbsp;</td>
+	        </tr>
+	        	{foreach item=v key=key from=$comm.record}
+		        <tr>
+		            <td>&nbsp;</td>
+		            <td class="x_xian"><a class="lanse" target="_blank">{$v.user_name}(匿名)（接手者打分）</a></td>
+		            <td class="x_xian">{$info.user_name}</td>
+		            <td class="x_xian">{$v.content}</td>
+		            <td class="time x_xian">{$v.addtime}</td>
+		            <td class="x_xian {$v.typeclass}">{$v.type}</td>		            		            <td>&nbsp;</td>
+		        </tr>
+		        {/foreach}
+		    </tbody></table>
+		<div id="page">{$comm.pagestr}</div>
+	</div>
+	{else}
+	<div class="userError">
+			<div class="h_30"></div> 
+			<div class="error_panel"><span>对不起，此用户不存在！</span></div>
+			<div class="h_30"></div>
+			<div class="h_30"></div>
+			<div class="h_30"></div>
+			<div class="h_30"></div>
+			<div class="h_30"></div>
+			<div class="h_30"></div>
+			<div class="h_30"></div>
+			<div class="h_30"></div>
+			<div class="h_30"></div>
+			<div class="h_30"></div>
+			<div class="h_30"></div>
+	</div>
+	{/if}
+{include common/footer}

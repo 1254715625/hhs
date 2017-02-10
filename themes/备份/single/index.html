@@ -1,0 +1,51 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="css/login.css">
+<link rel="stylesheet" type="text/css" href="css/kongbao.css">
+<link rel="stylesheet" type="text/css" href="css/login_common.css">
+<link rel="stylesheet" type="text/css" href="css/dropkick.css">
+<style type="text/css">
+#page {margin: 30px 10px 25px;padding: 0 15px;}
+#page a:hover, .paydetails #page a.nov {background: none repeat scroll 0 0 #EAF4FD;border-color: #B0D0E9;}
+#page a {background: none repeat scroll 0 0 #F8F8F8;border: 1px solid #E8E8E8;display: block;float: left;height: 25px;margin: 0 2px;text-align: center;width: 25px;}
+#page .pr,.total {float: right;}
+#page a:hover, #page a.now-page {background: #EAF4FD;border-color: #B0D0E9;}
+</style>
+<div><div class="center">
+<!--项目列表-->
+<div class="project">
+     <!--标题-->
+     <ol>
+         <li class="projectit"><img src="images/single/icon_01.png">空包中心<span>/Empty</span></li>
+         <li>1.这里是空包中心,在这里您可以空包下单,管理或查看您已下单的空包。</li>
+         <li class="red">2. 空包下单前,请检查余额是否充足！</li>
+     </ol>
+     <!--标题 end-->
+     <!--菜单栏-->
+<style type="text/css">
+	.MENU_nav ul li.nover{background-color: rgb(0, 153, 255);}
+</style>
+     <div class="MENU_nav">
+         <ul id="leftmenu0">
+             <a href="single.php"><li {if $mod=='single'}class="nover"{/if}>单号大厅</li></a>
+             <a href="single.php?mod=bag"><li {if $mod=='bag'}class="nover"{/if}>空包中心</li></a>
+             <a href="single.php?mod=deliver"><li {if $mod=='deliver'}class="nover"{/if}>发货地址</li></a>
+             <a href="single.php?mod=wait"><li {if $mod=='wait'}class="nover"{/if}>等待发货</li></a>
+             <a href="single.php?mod=already"><li {if $mod=='already'}class="nover"{/if}>已经发货</li></a>
+             <a href="single.php?mod=apply"><li {if $mod=='apply'}class="nover"{/if}>底单申请</li></a>
+         </ul>
+      </div>   
+     <!--菜单栏 end-->
+     <!--内容列表-->
+    <div class="kongbao_list" style="display: block; height: 530px;">
+		{if $mod== 'single'}{include single/single}{/if}
+		{if $mod== 'bag'}{include single/bag}{/if}
+		{if $mod== 'deliver'}{include single/deliver}{/if}
+		{if $mod== 'wait'}{include single/wait}{/if}
+		{if $mod== 'already'}{include single/already}{/if}
+		{if $mod== 'apply'}{include single/apply}{/if}
+ </div>
+</div>
+     <img src="images/single/pic_01.jpg" width="998" height="25">
+</div>
+</div>
+{include common/footer}

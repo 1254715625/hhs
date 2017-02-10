@@ -1,0 +1,75 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="../css/user_userData.css">
+<script type="text/javascript" src="../js/user/userinfo.js"></script>
+<script type="text/javascript" src="../js/region.js"></script>
+<div id="main">
+<div class="user_left">
+	{include user/leftmenu}
+</div>
+
+<div id="_right">
+<div id="myDate">
+    <div class="bq_menu2">
+		<a href="user.php?act=userinfo">修改个人资料</a>
+		<a href="user.php?act=revlog">修改登录密码</a>
+		<a class="nov" href="user.php?act=safecode">修改安全操作码</a>
+		<a href="user.php?act=mailsafe">获取安全验证码</a>
+		<a href="user.php?act=vident">加V实名认证</a>
+	</div>
+	<br>
+	
+	<form id="jForm" action="" method="post" onsubmit="return checkForm(this);">
+    <table width="625" border="0" cellspacing="0" cellpadding="0" id="safeTable">
+		<tbody><tr>
+			<td width="89" valign="middle" height="40" align="right" style="border-bottom:#CCCCCC 1px dashed;">旧安全码：</td>
+			<td style="color:#878787;border-bottom:#CCCCCC 1px dashed;">
+				<input type="password" name="safepass" class="text_normal">
+			</td>
+		</tr>
+		<tr>
+			<td valign="middle" height="40" align="right">新安全码：</td>
+			<td style="color:#878787;">
+				<input type="password" name="password" class="text_normal">
+			</td>
+		</tr>
+		<tr>
+			<td valign="middle" height="40" align="right">确认安全码：</td>
+			<td>
+				<input type="password" name="pass" class="text_normal">
+			</td>
+		</tr>
+		<tr>
+			<td> </td>
+			<td>
+				<input type="submit" class="Safe_sub">
+			</td>
+		</tr>
+	</tbody></table>
+	</form>
+</div></div>
+
+</div>
+<script type="text/javascript">
+function checkForm(form)
+{
+	if(form.safepass.value == "")
+	{
+		alert("请输入旧安全码");
+		return false;
+	}
+	
+	if(form.password.value == "")
+	{
+		alert("请输入新安全码");
+		return false;
+	}
+	
+	if(form.password.value != form.pass.value)
+	{
+		alert("请输入二次密码输入不一致。");
+		return false;
+	}
+}
+</script>
+
+{include common/footer}

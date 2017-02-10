@@ -1,0 +1,120 @@
+<?php
+error_reporting(E_ALL);
+if(__FILE__ == '') die('Fatal error code: 0');
+
+define('IN_MCS', true);
+define('ROOT_PATH', str_replace('mcscore/init.php', '', str_replace('\\', '/', __FILE__)));
+define('IS_POST', $_SERVER['REQUEST_METHOD'] == 'POST');
+define('IS_AJAX',isset($_SERVER['HTTP_X_REQUESTED_WITH'])&&strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest');
+define('PHP_SELF', isset($_SERVER['PHP_SELF']) ? $_SERVER['PHP_SELF'] : $_SERVER['SCRIPT_NAME']);
+define('CHARSET', 'UTF-8');
+
+@ini_set('memory_limit',          '64M');
+@ini_set('session.cache_expire',  180);
+@ini_set('session.use_trans_sid', 0);
+@ini_set('session.use_cookies',   1);
+@ini_set('session.auto_start',    0);
+@ini_set('display_errors',        1);
+
+if (DIRECTORY_SEPARATOR == '\\')
+{
+    @ini_set('include_path', '.;' . ROOT_PATH);
+}
+else
+{
+    @ini_set('include_path', '.:' . ROOT_PATH);
+}
+
+require ROOT_PATH . 'data/configs.php';
+
+if(defined('DEBUG_MODE') == false) define('DEBUG_MODE', 0);
+if (PHP_VERSION >= '5.1' && !empty($timezone)) date_default_timezone_set($timezone);
+
+require ROOT_PATH . 'mcscore/root.class.php';
+
+Root::loadFunc('base');
+Root::loadFunc('common');
+
+if(!get_magic_quotes_gpc())
+{
+    $_GET       = addslashesStr($_GET);
+    $_POST      = addslashesStr($_POST);
+    $_COOKIE    = addslashesStr($_COOKIE);
+    $_REQUEST   = addslashesStr($_REQUEST);
+}
+
+$db = Root::loadClass('mysql');
+$db->connect($db_host, $db_user, $db_pass, $db_name);
+$db_host = $db_user = $db_pass = $db_name = NULL;
+
+/* 载入系统参数 */
+$_CFG = loadConfig();
+require ROOT_PATH . 'langs/' . $_CFG['lang'] . '/common.php';
+
+if($_CFG['site_closed'] == 1)
+{
+    /* 商店关闭了，输出关闭的消息 */
+    header('Content-type: text/html; charset='. CHARSET);
+
+    die('<div style="margin: 150px; text-align: center; font-size: 14px"><p>' . $_LANG['site_closed'] . '</p><p>' . $_CFG['close_comment'] . '</p></div>');
+}
+
+require ROOT_PATH . 'mcscore/session.class.php';
+$sess = new session($db, 'mcs_sessions');
+define('SESS_ID', $sess->getSessionId());
+
+header('Cache-control: private');
+header('Content-type: text/html; charset='. CHARSET);
+
+$view = root::loadClass('view');
+
+$view->cache_lifetime = $_CFG['cache_time'];
+$view->template_dir   = ROOT_PATH . 'themes/' . $_CFG['template'] . '/';
+$view->cache_dir      = ROOT_PATH . 'temp/caches/';
+$view->compile_dir    = ROOT_PATH . 'temp/compiled/';
+
+$view->direct_output = false;
+$view->force_compile = true;
+
+define('TMP_DIR', 'themes/' . $_CFG['template'] . '/');
+
+//print_r($_CFG);
+
+$view->assign('lang', $_LANG);
+$view->assign('cfg', $_CFG);
+
+error_reporting(E_ALL ^ (E_NOTICE | E_WARNING)); 
+
+defined('INIT_NO_SMARTY') && gzipEnabled() ? ob_start() : ob_start('ob_gzhandler');
+
+$action = isset($_GET['act']) ? trim($_GET['act']) : (isset($_POST['act']) ? trim($_POST['act']) : '');
+
+$db->Execute("update mcs_users set user_rank=0, rank_expiry=0 where rank_expiry<". time());
+$uinfo = $db->getRow("select * from mcs_users where user_id='{$_SESSION['user_id']}'");
+if($uinfo)
+{
+	
+    if($uinfo['user_rank'] && $uinfo['rank_expiry'] > time())
+    {
+        $rank = $db->getRow("select * from mcs_user_rank where rank_id='{$uinfo['user_rank']}'");
+        $uinfo['rank_name'] = $rank['rank_name'];
+        $uinfo['params'] = unserialize($rank['param']);
+    
+	}
+    else
+    {
+        $rank = $db->getRow("select * from mcs_user_rank where min_points<='{$uinfo['rank_points']}' and '{$uinfo['rank_points']}'<=max_points order by max_points desc");
+        $uinfo['rank_name'] = $rank['rank_name'];
+        $uinfo['params'] = unserialize($rank['param']);
+    }
+
+    if($uinfo['mprz']) $uinfo['mobile_phone'] = preg_replace('/(\d{3})\d{4}/', '\1****', $uinfo['mobile_phone']);
+
+	if(empty($uinfo['safepass'])&&PHP_SELF!='/user.php'&&$_GET['act']!='operate'){
+		Redirect('user.php?act=operate');
+	}
+	$uinfo['read_num']=$db->getCount("mcs_member_message","tuid=".$uinfo['user_id']." and pid=0 and fuid>0");
+}
+$view->assign('uinfo', $uinfo);
+$view->assign('link', $db->getAll('select * from mcs_link order by shownum asc,id asc'));
+?>

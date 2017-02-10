@@ -1,0 +1,139 @@
+{include bbs/header}
+<script type="text/javascript" charset="utf-8" src="ueditor143/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="ueditor143/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="ueditor143/lang/zh-cn/zh-cn.js"></script>
+
+<style type="text/css">
+.pl {}
+.pl table {table-layout:fixed;width:100%;}
+.pl .dt {width:100%;}
+
+.plm {vertical-align:bottom !important;}
+.plc,.pls {vertical-align:top;}
+.plc {padding:0 20px;}
+.pls {width:160px;background:#E5EDF2;overflow:hidden;border-right:1px solid #C2D5E3;}
+.pls .avatar {margin:10px 15px;}
+.pls .favatar {background:transparent;height:auto;border-width:0px;overflow:visible;}
+.pls p,.pls .pil,.pls .o {margin:5px 10px 5px 20px;}
+.pls p em,.pls dt em {color:#F26C4F;}
+.pls dd,.pls dt {float:left;overflow:hidden;height:1.6em;line-height:1.6em;}
+.pls dt {margin-right:3px;width:55px;}
+.pls dd {width:70px;}
+.pls dd img {margin-top:-2px;max-width:65px;}
+.ie6 .pls dd img,.ie7 .pls dd img {margin-top:2px;width:expression(this.width > 65 ? 65:true);}
+.ad .pls {background:#C2D5E3;padding:0;height:4px;}
+.ad .plc {background:#E5EDF2;padding:0;overflow:hidden;}
+.pl .pnv .pls {background:#E5EDF2;border:solid #C2D5E3;border-width:0 1px 1px 0;line-height:16px;}
+.pl .pnv .tns p {font-size:12px;}
+.pl .pnv .plc {border-bottom:1px solid #C2D5E3;}
+.pnh {padding:11px 20px;}
+.tnv {text-align:center;vertical-align:middle;}
+
+#threadstamp {position: relative;width: 100%;height: 0;overflow: visible;}
+#threadstamp img {position: absolute;top: -20px;right: 170px;}
+.hasfsl {margin-right:170px;zoom:1;}
+#f_pst .bm_c {padding:20px;}
+#f_pst .tedt {width:auto;}
+#f_pst .upfl {height:auto;max-height:100%;}
+#f_pst .upfl td {padding:4px 0;}
+#f_pst .atds {width:100px;}
+#f_pst .px {padding:2px;}
+#f_pst .plc {padding:20px;}
+#f_pst .fpp label {zoom:1;}
+#f_pst .avatar {margin-top:15px;}
+#fastsmilies {text-align:right;}
+#fastsmilies table {table-layout:auto;width:160px;height:133px;}
+#fastsmilies td {text-align:right;vertical-align:middle;cursor:pointer;}
+#fastsmilies img {vertical-align:middle;}
+
+.pn-post button {width: 128px;height: 37px;background: url(../images/lunreplay.jpg) no-repeat;line-height: 99px;text-indent: 999px;overflow: hidden;display: block;border: none;cursor: pointer;}
+.post_submit{float:left;}
+.post_fastreply_gotolast{float:left;padding-left:5px;padding-top:5px;}
+</style>
+<div id="content">
+  <div class="lt_left">
+    <p class="lthd_wz" style="float:none;">当前位置：<a href="http://www.haohuisua.com/" class="comlink">首页</a> &gt; <a href="/" class="comlink">互动论坛</a> &gt; <a href="bbs.php?act=list&fid={$subject.id}" class="comlink">{$subject.forum_name}</a> &gt; <span title="{$subject.title}">{$subject.title}</span></p>
+    <div id="defalutpost">
+      <div class="luntan_top">
+        <form class="searchform" method="get" autocomplete="off" action="" onsubmit="if($('input[name=keys]').val() == ''){alert('请填写搜索关键词'); return false;}">
+          <input type="hidden" name="act" value="search">
+          <table width="365" height="37" border="0" cellpadding="0" cellspacing="0" style="float:right;">
+              <tr> 
+                <td align="right"><input type="text" id="keys" name="keys" class="luntan_inp" />
+                </td>
+                <td width="50"><input type="submit" id="scform_submit" value="true" class="luntan_btn"></td>
+              </tr>
+          </table>
+        </form>
+        <a href="bbs.php?act=post&fid={$subject.fid}" class="luntan_ft" style="float:left;"></a> 
+        <a href="#reply" class="luntan_hf" style="float:left;">回复</a> 
+      </div>
+      <div class="ltlook_tit"><span class="ltlook_ico4"></span>[ {$subject.forum_name} ]
+        <h1 style="display:inline;font-size:16px;" title="{$subject.title}">{$subject.title}</h1>
+        <span class="ltlook_sz">{$subject.reply} / {$subject.views}</span>
+      </div>
+
+      <div class="luntan_bk">
+        <div class="ltlook_user"> <a href="user.php?act=info&uname={$subject.user_name}" target="_blank"> <img src="images/user/headimg/{if $subject.headimg==''}user_head.gif{else}{$subject.headimg}{/if}" width="60"> </a>
+          <p><strong><a href="user.php?act=info&uname={$subject.user_name}" target="_blank" class="ltlook_name">{$subject.user_name}</a></strong></p>
+          <p class="ltlook_dj">会员等级：<span class="rq">平台教官</span></p>
+          <p class="ltlook_lc"></p>
+          <p class="ltlook_sj">{$subject.add_time}</p>
+        </div>
+        <div class="ltlook_text ltlook_a">{$subject.content}</div>
+        <div class="ltlook_do ltlook_a"><a href="#reply">回复</a></div>
+	</div>
+    
+	{foreach item=item key=key from=$list.record}
+    <div class="luntan_bk">
+        <div class="ltlook_user"><a href="user.php?act=info&uname={$item.user_name}" target="_blank"> <img src="http://192.168.100.9/avatar.php?uid=104710&amp;size=small"> </a>
+          <p><strong><a href="user.php?act=info&uname={$item.user_name}" target="_blank" class="ltlook_name">{$item.user_name}</a></strong></p>
+          <p class="ltlook_dj">会员等级：<span>{$item.rank_name}</span></p>
+          <p class="ltlook_lc">{$item.floor} 楼</p>
+          <p class="ltlook_sj">{$item.add_time}</p>
+        </div>
+        <div class="ltlook_text ltlook_a">{$item.content}</div>
+        <div class="ltlook_do ltlook_a"><a href="#reply">回复</a></div>
+         
+	</div>
+	{/foreach}
+
+	<div class="pgs mtm mbm cl" style="padding:10px 0">{$list.pagestr}</div>
+    <a name="reply"></a>
+	<div id="f_pst" class="pl bm bmw" style="padding:20px;">
+	<form method="post" action="" onsubmit="return checkReply(this);">
+	<script id="message" name="message" type="text/plain" style="width:100%; height:160px;">{$info.content}</script>
+	<div class="ptm pn-post">
+		<div class="post_submit">
+		<button type="submit" onmouseover="checkpostrule('seccheck_fastpost', 'ac=reply');this.onmouseover=null" name="replysubmit" id="fastpostsubmit" class="pn pnc vm" value="replysubmit" tabindex="5"></button>
+  		</div>
+	</div>
+	</form>
+	<div class="cle"></div>
+	</div> 
+    <div class="cle"></div>
+    </div>
+  </div>
+  <div class="lt_right">
+    {include bbs/rightbox}
+  </div>
+</div>
+<div class="cle"></div>
+<script type="text/javascript">
+function checkReply(form)
+{	
+	if(form.message.value == "")
+	{
+		alert("请填写回复内容");
+		return false;
+	}
+}
+
+UE.getEditor('message',{
+            //这里可以选择自己需要的工具按钮名称,此处仅选择如下五个
+            toolbars:[['bold' , 'forecolor' , 'simpleupload' , 'link' , 'blockquote' , 'emotion' , '|' ,'上传' ]],
+			elementPathEnabled:false,
+			wordCount:false
+        	});
+</script>
+{include common/footer}

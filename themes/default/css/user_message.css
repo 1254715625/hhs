@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+/*论坛帖子*/
+#messagedata {float: left;width: 760px;margin-left: 10px;}
+#messagedata .bq_menu {background: url(../images/user/der_ico.png) repeat scroll 0 -374px ;height: 32px;}
+#messagedata .bq_menu a {background: url(../images/user/der_ico.png) no-repeat scroll 0 -324px ;display: block;float: left;font-size: 14px;height: 32px;line-height: 30px;margin-right: 3px;text-align: center;width: 128px;}
+#messagedata .bq_menu a:hover, #messagedata .bq_menu a.nov {background: url(../images/user/der_ico.png) no-repeat scroll 0px -277px ;font-weight: bold;color: #177EE4;}
+#messagedata .chengse2 {color: #EB0F0F;}
+#messagedata .h15 {clear: both;font-size: 0;height: 15px;line-height: 15px;}
+#messagedata .mh_tishi {background: none repeat scroll 0 0 #FFFBF2;border: 1px solid #FBE1C4;margin-bottom: 15px;padding: 12px 15px;}
+#messagedata .txjl_bg1 {background: url(../images/user/tx_btn.gif) no-repeat scroll 0 -225px ; width:10px; height:37px;}
+#messagedata .txjl_bg2 {background: url(../images/user/tx_btn.gif) repeat-x scroll 0 -264px ;color: #333;height:37px;vertical-align: middle;font-size: 14px;font-weight: bold;}
+#messagedata .txjl_bg3 {background: url(../images/user/tx_btn.gif) no-repeat scroll right -303px ;}
+#messagedata .znx_sj {background: url(../images/user/der_ico.png) no-repeat scroll 4px -518px ;color: #177EE4;display: block;float: left;font-weight: bold;height: 35px;line-height: 35px;text-indent: 25px;width: 200px;}
+#messagedata .znx_btn {background: url(../images/user/der_ico.png) 0 -432px no-repeat;display: block;width: 115px;height: 35px;margin: 0 7px 0 0;float: left;border: none;line-height: 99px;text-indent: 999px;overflow: hidden;cursor: pointer;}
+#messagedata .znx_ac {background: url(../images/user/der_ico.png) 0 -474px no-repeat;display: block;width: 115px;height: 35px;margin: 0 7px 0 0;float: left;border: none;line-height: 99px;text-indent: 999px;overflow: hidden;cursor: pointer;}
+#messagedata .mh_xxian{height:35px;border-bottom: 1px dotted #DDDDDD;text-align: center;vertical-align: middle;}
+#messagedata .znx_bg1 {background: url(../images/user/der_ico.png) no-repeat  0 -565px ;height:35px;}
+#messagedata .znx_bg2 {background: url(../images/user/der_ico.png) repeat-x  0 -606px ;height:35px;}
+#messagedata .znx_bg2 a {color: #1F3143;padding: 0 5px;}
+#messagedata .znx_bg3 {background: url(../images/user/der_ico.png) no-repeat  right -647px ;height:35px;}
+#messagedata #sendData {width: 450px;border: 1px dashed #ddd;margin: 0 auto;padding: 50px 70px 50px 30px;margin-top: 30px;}
+#messagedata #sendData table td{vertical-align: top;font-size: 14px;}
+#messagedata #sendData .text_normal {color: #666;border: 1px solid #DDDDDD;height: 25px;line-height: 150%;padding-left: 5px;margin-right: 4px;}
+#messagedata #sendData .real{background: url(../images/user/icon_ok.gif) no-repeat left -3px;color: green;padding-left: 24px;}
+#messagedata #sendData .error{background: url(../images/user/icon_error.gif) no-repeat left -3px;color: green;padding-left: 24px;}
+#messagedata #sendData .textarea {height: 100px;width: 300px;}
+#messagedata #sendData .btn_2 {background: #2288cc;border: 1px solid #1c6a9e;padding: 3px 8px;color:white;cursor: pointer;}
+#messagedata #page {margin: 30px 10px 25px;padding: 0 15px;width: 710px;float: left;display: inline;}
+#messagedata #page a:hover, .paydetails #page a.nov {background: none repeat scroll 0 0 #EAF4FD;border-color: #B0D0E9;}
+#messagedata #page a {background: none repeat scroll 0 0 #F8F8F8;border: 1px solid #E8E8E8;display: block;float: left;height: 25px;margin: 0 2px;text-align: center;width: 25px;}
+#messagedata #page .pr,.total {float: right;}
+
+/* 加载对话列表*/
+#dialogues{width:500px;}
+#dialogues li{margin-bottom: 10px;float: left;width: 500px;}
+#dialogues .his{border-radius: 5px;float: left; background: rgb(250, 250, 250); border: 1px solid rgb(221, 221, 221); padding: 0px 10px;}
+#dialogues .my{border-radius: 5px;float: right; background: #b3e85a; border: 1px solid rgb(221, 221, 221); padding: 0px 10px;}
+#dialogues li i{font-size:11px;margin-left:10px;}
+#dialogues li p{padding: 4px; color: rgb(0, 0, 0);padding: 5px 0;}
+#dialogues li a{color:#177EE4}
+#dialogues .link{float: right;font-size: 12px;float:right;}
+#dialogues #page {margin-top: 25px;padding: 0 15px;width: 450px;float: left;display: inline;}
+#dialogues #page a:hover, .paydetails #page a.nov {background: #EAF4FD;border-color: #B0D0E9;}
+#dialogues #page a {background:#F8F8F8;border: 1px solid #E8E8E8;display: block;float: left;height: 25px;margin: 0 2px;text-align: center;width: 25px;}
+#dialogues #page .pr,.total {float: right;}
+#dialogues #page .now-page{background: #EAF4FD;border-color: #B0D0E9;color: #1996E6;}
+

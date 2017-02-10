@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="js/artDialog.js"></script>
+<script type="text/javascript" src="js/layer/layer.js"></script>
+</head>
+<body>
+	<div class="ur_here">首页 &raquo; 任务管理 &raquo; 任务管理</div>
+	<div class="container">
+		<div class="itemtitle">
+			<h3>刷钻任务管理</h3>
+		</div>
+		<form name="cpform" method="post" autocomplete="off" action="task_brushdrill.php" id="cpform">
+			<div class="btnBox">
+				<ul class="clearfix classfiy">
+					<li class="{if $type=='tb'}current{/if}">
+					  	<a href="task_brushdrill.php?opt=all&type=tb">淘 宝</a>
+					</li>
+
+					<!--<li class="{if $type=='pp'}current{/if}">
+					  	<a href="task_brushdrill.php?opt=all&type=pp">拍 拍</a>
+					</li>-->
+
+				</ul>
+				<ul class="clearfix">
+					<li class="{if $opt=='all'}current{/if}">
+						<a href="task_brushdrill.php?opt=all&type={$type}">全部任务</a>
+					</li>
+					<li class="{if $opt=='wait'}current{/if}">
+						<a href="task_brushdrill.php?opt=wait&type={$type}">等待接手任务</a>
+					</li>
+					<li class="{if $opt=='doing'}current{/if}">
+						<a href="task_brushdrill.php?opt=doing&type={$type}">进行中任务</a>
+					</li>
+					<li class="{if $opt=='kwait'}current{/if}">
+						<a href="task_brushdrill.php?opt=kwait&type={$type}">等待快递单号</a>
+					</li>
+					<li class="{if $opt=='over'}current{/if}">
+						<a href="task_brushdrill.php?opt=over&type={$type}">已完成任务</a>
+					</li>
+					<li class="{if $opt=='puse'}current{/if}">
+						<a href="task_brushdrill.php?opt=puse&type={$type}">暂停中任务</a>
+					</li>
+				</ul>
+			</div>
+			<table width="100%" id="listTb">
+			    <tr>
+			        <th colspan="9">
+			        	共搜索到<strong style="padding:0 3px;color:#f30;">{$num}</strong>名符合条件的用户
+			        </th>
+			    </tr>
+			    <tr>
+				    <td>任务</td>
+					<td>发布人</td>
+					<td>接手人</td>
+					<td>类型</td>
+					<td>商品总价</td>
+					<td>发布点</td>
+					<td>发布时间</td>
+					<td>状态</td>
+					<td>操作</td>
+			    </tr>
+			    {foreach item=val key=key from=$list.record}
+			    <tr>
+				    <td>{$val.task}</td>
+					<td>{$val.user_name}</td>
+					<td>{$val.guser}</td>
+					<td>{$val.types}</td>
+					<td>{$val.goods_price}</td>
+					<td>{$val.total_points}</td>
+					<td>{$val.addtime}</td>
+					<td>{$val.states}</td>
+					<td>
+						<a href="javascript:;" onclick="return confirm('您确定要挂起此帐号吗？')">挂起</a>|<a href="javascript:;" onclick="return confirm('您确定要锁定此帐号吗？')">锁定</a>
+					</td>
+				</tr>
+				{/foreach}
+				<tr>
+				    <td colspan="9" class="footer"><div class="page">{$list.pagestr}</div></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

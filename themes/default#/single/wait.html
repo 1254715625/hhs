@@ -1,0 +1,49 @@
+<style type="text/css">
+.btn_jc {
+margin: 5px 0;
+padding: 3px 15px;
+border: 1px solid #2fadcb;
+border-top-right-radius: 4px;
+border-bottom-right-radius: 4px;
+border-bottom-left-radius: 4px;
+border-top-left-radius: 4px;
+color: #fff;
+text-decoration: none;
+cursor: pointer;
+background:#13a7c7;
+-webkit-transition: all 0.1s ease-in; -moz-transition: all 0.1s ease-in; -ms-transition: all 0.1s ease-in; -o-transition: all 0.3s ease-in; transition: all 0.3s ease-in;
+}
+.btn_jc:hover{ color: #fff; background-color: #0799ff;}
+.success-del{background:#bd362f}
+</style>
+<form method="post" action="">
+<ol id="topUpUL" class="block" style="height: 525px;">
+	<table cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td class="td-bak ta-align">序号</td>
+			<td class="td-bak ta-align">快递类型</td>
+			<td class="td-bak ta-align">发件人</td>
+			<td class="td-bak ta-align">手机号码</td>
+			<td class="td-bak ta-align">发货地址</td>
+			<td class="td-bak ta-align">收货地址</td>
+			<td class="td-bak ta-align">邮编</td>
+			<td class="td-bak ta-align">提交时间</td>
+			<td class="td-bak ta-align">操作</td>
+		</tr>
+		{foreach item=val key=key from=$list.record}
+		<tr>
+			<td class="ta-align td-bor">{$val.id}</td>
+			<td class="ta-align td-bor">{$val.wl}</td>
+			<td class="ta-align td-bor">{$val.addname}</td>
+			<td class="ta-align td-bor">{$val.phone}</td>
+			<td class="ta-align td-bor">{$val.send_add}</td>
+			<td class="ta-align td-bor">{$val.to_add}</td>
+			<td class="ta-align td-bor">{$val.zipcode}</td>
+			<td class="ta-align td-bor">{$val.addtime}</td>
+			<td class="ta-align td-bor"><a class="btn_jc gm">等待发货</a></td>
+		</tr>
+	   {/foreach}
+	</table>
+	<div id="page">{$list.pagestr}</div>
+</ol>	
+</form>

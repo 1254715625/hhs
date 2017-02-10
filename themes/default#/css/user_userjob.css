@@ -1,0 +1,22 @@
+/*任务奖励*/
+#myjob {float: left;width: 760px;margin-left: 10px;}
+#myjob .top {padding: 10px 15px 15px 17px;border: 1px solid #f4e9d4;background-color: #fffeea;}
+#myjob .tiebuy h1 {height: 33px;background: url(../images/user/tiebuy01.jpg) no-repeat;text-indent: 32px;color: #ff6600;font-family: "新宋体";font-size: 15px;font-weight: bolder;letter-spacing: -1px;}
+#myjob .tiebuy p {font-size:13px; color:#44443e;  font-family:'宋体';}
+#myjob .member-job1 {background: none repeat scroll 0 0 #FFFEF9;border: 1px solid #FEDB9F;margin-top: 20px;}
+#myjob .member-job1 h1 {background: url(../images/user/admin_mbg.jpg) no-repeat right 0px;font-size: 12px;font-weight: bolder;height: 35px;line-height: 35px;overflow: hidden;}
+#myjob .member-job1 h1 span {background: url(../images/user/admin_biao.gif) no-repeat 0 -5px;color: #408FCB;display: block;float: left;font-size: 14px;height: 35px;line-height: 35px;margin-left: 5px;margin-right: 10px;text-indent: 70px;}
+#myjob .member-job1 ul {background: url(../images/user/admin_biao.gif) no-repeat 0 -80px;margin-bottom: 15px;margin-left: 10px;margin-top: 15px;overflow: hidden;position: relative;width: 730px;}
+#myjob .member-job1 ul li {height: 20px;line-height: 20px;text-indent: 45px;}
+#myjob span.li0 {color: #408FCB;font-weight: bolder;}
+#myjob .member-job1 ul li.to1 .a {background: url(../images/user/admin_an.gif) no-repeat 0 -126px;float: left;height: 32px;left: 438px;line-height: 32px;position: absolute;text-align: center;width: 80px;}
+#myjob span.li1 {color: #FF0000;}
+#myjob .member-job2 {background: #FFF9F9;border: 1px solid #FE9FB4;margin-top: 10px;}
+#myjob .space10 {height: 10px;line-height: 10px;font-size: 0px;clear: both;}
+#myjob .member-job2 ul {background: url(../images/user/admin_biao.gif) no-repeat 0 -202px;margin-bottom: 15px;margin-left: 10px;margin-top: 15px;overflow: hidden;position: relative;width: 730px;}
+#myjob .member-job2 ul li {height: 20px;line-height: 20px;text-indent: 45px;width: 700px;}
+#myjob a.aa {background: url(../images/user/admin_an.gif) no-repeat  0 -83px ;float: left;height: 32px;left: 438px;line-height: 32px;position: absolute;text-align: center;width: 80px;}
+#myjob a.schedule {background: url(../images/user/admin_an.gif) no-repeat  0 -83px ;float: left;height: 32px;left: 438px;line-height: 32px;position: absolute;text-align: center;width: 80px;}
+#myjob a.over {background: url(../images/user/admin_an.gif) no-repeat  0 -39px ;float: left;height: 32px;left: 549px;line-height: 32px;position: absolute;text-align: center;width: 80px;}
+#myjob a.ok {background: url(../images/user/admin_an.gif) no-repeat  0 -495px ;float: left;height: 32px;left: 438px;line-height: 32px;position: absolute;text-align: center;width: 80px;}
+#myjob a.no {background: url(../images/user/admin_an.gif) no-repeat  0 -211px ;float: left;height: 32px;left: 438px;line-height: 32px;position: absolute;text-align: center;width: 127px;}

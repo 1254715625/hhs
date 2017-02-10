@@ -1,0 +1,36 @@
+<div class="chooseBuyer"><div id="task-tips-title"><span class="black font-18">此任务要求</span><span class="orange">（鼠标一到相应图标显示描述）</span></div>
+<div class="tips-ico" >
+
+</div>
+
+<div class="tdOpenTrueNameBa" val="0" onclick="tdopen(0);">
+	<span>
+	<img src="images/taobao/hidden.gif" style="margin-top:2px;">普通账户（可用{$con_mai}个，点击查看）
+	</span>
+</div>
+<ul class="true-name-0" style="display: block;">
+{foreach item=val key=key from=$mai}
+	<li>
+		<label class="orange bname"><input type="radio" value="{$val.id}" name="buyer" {if $key==0}checked{/if}>{$val.nickname}</label>
+		<span>(淘宝信用：{$val.buyer_credit},本周已接：{$val.week},今日已接：{$val.today})</span>
+		
+	</li>
+{/foreach}
+</ul>
+
+<div class="tdOpenTrueNameBa" val="1" onclick="tdopen(1);">
+	<span>
+	<img src="images/taobao/show.png" style="margin-top:2px;">实名账户（可用{$con_mais}个，点击查看）
+	</span>
+</div>
+<ul class="true-name-1" style="display: none;">
+	{foreach item=val key=key from=$mais}
+	<li>
+		<label class="orange bname"><input type="radio" value="{$val.id}" name="buyer">{$val.nickname}</label>
+		<span>(淘宝信用：{$val.buyer_credit},本周已接：{$val.week},今日已接：{$val.today})</span>
+		
+	</li>
+ {/foreach}
+
+</ul>
+</div>

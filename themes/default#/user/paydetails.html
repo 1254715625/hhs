@@ -1,0 +1,36 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="css/user_index.css">
+<link rel="stylesheet" type="text/css" href="css/user_userdata.css">
+<link rel="stylesheet" type="text/css" href="css/user_paydetails.css">
+<style type="text/css">
+#page a:hover, #page a.now-page {
+background: #EAF4FD;
+border-color: #B0D0E9;
+}
+</style>
+<div id="main">
+<div class="user_left">
+	{include user/leftmenu}
+</div>
+<div id="_right">
+	<div class="paydetails">
+	<div class="bq_menu">
+		<a class="payde {if $pay=='payde'}nov{/if}" href="user.php?act=payde&pay=payde">存款</a>
+		<a class="logpoint {if $pay=='logpoint'}nov{/if}" href="user.php?act=payde&pay=logpoint">刷点</a>
+		<a class="logcredit {if $pay=='logcredit'}nov{/if}" href="user.php?act=payde&pay=logcredit">积分</a>
+		<a class="logtask {if $pay=='logtask'}nov{/if}" href="user.php?act=payde&pay=logtask">任务</a>
+		<a class="logtopup {if $pay=='logtopup'}nov{/if}" href="user.php?act=payde&pay=logtopup">充值</a>
+		<a class="logpayment {if $pay=='logpayment'}nov{/if}" href="user.php?act=payde&pay=logpayment">提现</a>
+		<a class="logaccount {if $pay=='logaccount'}nov{/if}" href="user.php?act=payde&pay=logaccount">登录</a>			
+	</div>
+	<div class="cle"></div>
+		{if $pay== 'payde'}{include user/paydetails/payde}{/if}
+		{if $pay== 'logpoint'}{include user/paydetails/logpoint}{/if}
+		{if $pay== 'logcredit'}{include user/paydetails/logcredit}{/if}
+		{if $pay== 'logtask'}{include user/paydetails/logtask}{/if}
+		{if $pay== 'logtopup'}{include user/paydetails/logtopup}{/if}
+		{if $pay== 'logpayment'}{include user/paydetails/logpayment}{/if}
+		{if $pay== 'logaccount'}{include user/paydetails/logaccount}{/if}
+</div>
+</div>
+{include common/footer}

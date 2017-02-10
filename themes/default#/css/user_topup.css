@@ -1,0 +1,86 @@
+@charset "utf-8";
+/* CSS Document */
+/*支付宝*/
+#topup {float: left;width: 760px;margin-left: 10px;margin-bottom:50px;}
+#topup .Top_h {height: 55px;position: relative;}
+#topup .Top_h h2 {background: url(../images/user/cxth.png) no-repeat;height: 40px;left: 0;position: absolute;top: 5px;width: 760px;}
+#topup .Top_list {height: 220px;}
+#topup .Top_list a {background: #C9C7C7;border-left: 1px solid #A1A1A1;float: left;height: 100px;margin-bottom: 10px;position: relative;width: 374px;}
+#topup .Top_list_all{background: url(../images/user/cztp.png) no-repeat;display: block;height: 65px;left: 10px;position: absolute;top: 20px;width: 370px;}
+#topup .Top_list .alipay{background-position: -400px 0;}
+#topup .Top_list .taobao{background-position: 0 -107px;}
+#topup .Top_list .other{background-position: -395px -107px;}
+#topup .Top_list .nov0{background: #87CC67;}
+#topup .Top_list .nov1{background: #016DEC;}
+#topup .Top_list .nov2{background: #FF5921;}
+#topup .Top_list .nov3{background: #1568B4;}
+/* 网上银行支付 */
+#topup .Top_cun_box{float: left;width:760px;background:#C3E5B3;}
+#topup .Top_cun_box .BankImg{background: url(../images/user/chu.png) no-repeat;}
+#topup .Top_cun_box .tstitle{margin: 20px auto;font-size: 14px;  background-position: 1px 1px; height: 25px; width: 680px;border-bottom: 1px dotted #666666;}
+#topup .Top_cun_box ul{width: 680px;margin: 0 auto;}
+#topup .Top_cun_box ul li{float: left;height: 30px;margin: 3px 15px;display: inline;border:1px solid #C3E5B3;cursor: pointer;}
+#topup .Top_cun_box ul li .inlineblock{float: left;margin-top: 5px;}
+#topup .Top_cun_box ul li .gs_yh {float:left;background-position:-23px -48px;height: 29px;overflow: hidden;width: 115px;}
+#topup .Top_cun_box ul li .js_yh {float:left;background-position:-212px -48px;height: 29px;overflow: hidden;width: 115px;}
+#topup .Top_cun_box ul li .ny_yh {float:left;background-position:-402px -48px;height: 29px;overflow: hidden;width: 115px;}
+#topup .Top_cun_box ul li .zg_yh {float:left;background-position:-589px -50px;height: 29px;overflow: hidden;width: 115px;}
+#topup .Top_cun_box ul li .zs_yh {float:left;background-position:-23px -84px;height: 29px;overflow: hidden;width: 115px;}
+#topup .Top_cun_box ul li .ms_yh {float:left;background-position:-209px -84px;height: 29px;overflow: hidden;width: 115px;}
+#topup .Top_cun_box ul li .jt_yh {float:left;background-position:-404px -86px;height: 29px;overflow: hidden;width: 115px;}
+#topup .Top_cun_box ul li .zx_yh {float:left;background-position:-590px -83px;height: 29px;overflow: hidden;width: 115px;}
+#topup .Top_cun_box ul li .gf_yh {float:left;background-position:-22px -120px;height: 29px;overflow: hidden;width: 115px;}
+#topup .Top_cun_box ul li .hz_yh {float:left;background-position:-210px -120px;height: 29px;overflow: hidden;width: 115px;}
+#topup .Top_cun_box ul li .nb_yh {float:left;background-position:-400px -120px;height: 29px;overflow: hidden;width: 115px;}
+#topup .Top_cun_box ul li .gs_yh {float:left;background-position:-23px -48px;height: 29px;overflow: hidden;width: 115px;}
+#topup .Top_cun_box ul li .yz_yh {float:left;background-position:-588px -119px;height: 29px;overflow: hidden;width: 115px;}
+#topup .Top_cun_box ul li .sz_yh {float:left;background-position:-25px -156px;height: 29px;overflow: hidden;width: 115px;}
+#topup .Top_cun_box ul li .sh_yh {float:left;background-position:-210px -156px;height: 29px;overflow: hidden;width: 115px;}
+#topup .Top_cun_box ul li .pd_yh {float:left;background-position:-402px -156px;height: 29px;overflow: hidden;width: 115px;}
+#topup .Top_cun_box ul li .xy_yh {float:left;background-position:-588px -157px;height: 29px;overflow: hidden;width: 115px;}
+#topup .Top_cun_box .rechargeMoney{float: left;margin: 30px 75px;display: inline;font-size: 20px;width: 610px;color: #000;}
+#topup .Top_cun_box .rechargeMoney .Top_nums {text-indent: 5px;float:left;border: 1px solid #32870B;font-size: 16px;font-weight: bold;height: 41px;line-height: 150%;*line-height: 250%;width: 173px;}
+#topup .Top_cun_box .rechargeMoney .Top_sub {font-size: 16px;float:left;background: url(../images/user/xhfy.png) no-repeat;border: medium none;cursor: pointer;height: 44px;width: 90px;margin-left: -7px;}
+#topup .Top_cun_box .depict1{background: rgb(195, 229, 179); padding-left: 75px;float: left;width: 685px;}
+#topup .Top_cun_box .depict2 {background:#C3E5B3;color: #1F3415;line-height: 23px;padding: 15px 75px;float:left;}
+
+/*支付宝*/
+#topup .Top_zhifubao{background: #80b6f5;float: left;width: 760px;}
+#topup .Top_zhifubao .zftitle {font-weight: bold;font-size: 16px;color: white;float: left;letter-spacing: 2px;width: 725px;border-bottom: 1px dotted white;margin: 15px 0 0 15px ;height: 35px;}
+#topup .Top_zhifubao .prompt{color: rgb(0, 0, 0); float: left; font-size: 13px; padding: 9px 90px;font-family:'Microsoft YaHei','微软雅黑';}
+#topup .Top_zhifubao .prompt a{font-weight:bold; cursor:pointer;color:black;}
+#topup .Top_zhifubao .zfbmoney{height: 55px;width:695px;float: left;margin: 15px 0 0 15px;display: inline;}
+#topup .Top_zhifubao .zfbmoney .Top_tit2 {color: #016DEC;font-size: 16px;font-weight: bold;letter-spacing: 1px;padding-top: 10px;float: left;}
+#topup .Top_zhifubao .zfbmoney .Top_nums2 {border: 1px solid #016DEC;font-size: 16px;font-weight: bold;height: 40px;line-height: 260%;text-indent: 10px;width: 320px;float: left;}
+#topup .Top_zhifubao .zfbmoney .Top_sub2 {background: url(../images/user/xhfy.png) no-repeat -120px 0;border: medium none;cursor: pointer;height: 42px;width: 220px;float: left;}
+#topup .Top_zhifubao .zfbmoney a:hover{text-decoration: underline;}
+#topup .Top_zhifubao #zzyz{color:white;font-size:14px;font-weight:bold;padding-left: 25px;float: left;}
+#topup .Top_zhifubao #zzyz:hover{text-decoration: underline;}
+#topup .Top_zhifubao .whatHelp {margin-left:290px;color: white;font-size: 14px;font-weight: bold;float: left;text-align: right;height:35px;}
+#topup .Top_zhifubao .Msg_tip_box2 {float: left;background:#80B6F5;color: #1F3415;font-size: 13px;line-height: 23px;padding:0 20px 20px 20px;}
+
+/*淘宝*/
+#topup .Top_taobao{background: #ffac90;float: left;width: 760px;}
+#topup .Top_taobao .mstitle{margin: 15px 15px;color: #000;}
+#topup .Top_taobao .mstitle strong{font-size:14px; color:#FD4F13;}
+#topup .Top_taobao .taobmoney{height: 55px;width:695px;float: left;margin: 15px 0 0 15px;display: inline;}
+#topup .Top_taobao .taobmoney .zh_tb{background: url(../images/user/xhfy.png) no-repeat -186px -107px;display: block;float: left;height: 40px;width: 116px;}
+#topup .Top_taobao .Top_tit3 {color: #FD4F13;font-size: 16px;font-weight: bold;letter-spacing: 1px;padding-top: 10px;float: left;}
+#topup .Top_taobao .Top_nums3 {border:1px solid #FD4F13;font-size: 16px;font-weight: bold;height: 40px;line-height: 260%;text-indent: 10px;width: 320px;float: left;}
+#topup .Top_taobao .Top_sub3 {background: url(../images/user/xhfy.png) no-repeat -374px 0;border: medium none;cursor: pointer;height: 42px;width: 122px;float: left;}
+#topup .Top_taobao .thelp {color: white;font-weight: bold;font-size: 14px;margin-right: 77px;float: right;margin-bottom: 10px;}
+#topup .Top_taobao .Msg_tip_box3 {background: #FFAC90;color: #1F3415;line-height: 23px;margin-top: 35px;padding: 15px 20px;float: left;}
+
+/* 财付通转账 */
+#topup .Top_tenpay{background: #80b6f5;float: left;width: 760px;}
+#topup .Top_tenpay .tenpaytitle {font-weight: bold;font-size: 16px;color: white;float: left;letter-spacing: 2px;width: 725px;border-bottom: 1px dotted white;margin: 15px 0 0 15px ;height: 35px;}
+#topup .Top_tenpay .prompt{color: rgb(0, 0, 0); float: left; font-size: 13px; padding: 9px 90px;font-family:'Microsoft YaHei','微软雅黑';}
+#topup .Top_tenpay .prompt a{font-weight:bold; cursor:pointer;color:black;}
+#topup .Top_tenpay .tenpaymoney{height: 55px;width:695px;float: left;margin: 15px 0 0 15px;display: inline;}
+#topup .Top_tenpay .tenpaymoney .Top_tit4 {color: #016DEC;font-size: 16px;font-weight: bold;letter-spacing: 1px;padding-top: 10px;float: left;}
+#topup .Top_tenpay .tenpaymoney .Top_nums4 {border: 1px solid #016DEC;font-size: 16px;font-weight: bold;height: 40px;line-height: 260%;text-indent: 10px;width: 320px;float: left;}
+#topup .Top_tenpay .tenpaymoney .Top_sub4 {background: url(../images/user/xhfy.png) no-repeat -543px 0;border: medium none;cursor: pointer;height: 42px;width: 220px;float: left;}
+#topup .Top_tenpay #tenpayyz{color:white;font-size:14px;font-weight:bold;padding-left: 25px;float: left;}
+#topup .Top_tenpay .whatHelp {margin-left:290px;color: white;font-size: 14px;font-weight: bold;float: left;text-align: right;height:35px;}
+#topup .Top_tenpay .Msg_tip_box4 {float: left;background:#80B6F5;color: #1F3415;font-size: 13px;line-height: 23px;padding:0 20px 20px 20px;}
+

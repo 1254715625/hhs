@@ -1,0 +1,253 @@
+<?php
+require 'mcscore/init.php';
+
+switch($action)
+{
+    case 'tuoguan':
+        if(IS_POST)
+        {
+            $user = $db->getRow("select * from mcs_users where user_id='{$_SESSION['user_id']}'");
+            if(!$user)
+            {
+                echo json_encode(array('code'=>0, 'info'=>'您还没有登录或登录超时，请先登录'));
+                exit;
+            }
+
+            $itemid = isset($_POST['itemid']) ? intval($_POST['itemid']) : 0;
+            $info = $db->getRow("select * from mcs_tuoguan where id=$itemid");
+            if(!$info)
+            {
+                echo json_encode(array('code'=>0, 'info'=>'请选择您要购买的套餐类型。'));
+                exit;
+            }
+
+            if($user['user_money'] < $info['price'])
+            {
+                echo json_encode(array('code'=>0, 'info'=>'您的余额不足，请先充值'));
+                exit;
+            }
+
+            $last = $db->getRow("select o.*, days from mcs_orders o, mcs_tuoguan t where o.gid=t.id and uid='{$_SESSION['user_id']}' and otype='tuoguan' order by add_time desc");
+
+            if($last && $last['add_time'] + $last['days'] * 86400 > time())
+            {
+                echo json_encode(array('code'=>0, 'info'=>'您当前有一个套餐正在进行，不能重复购买'));
+                exit;
+            }
+            
+            $newoid = date('YmdHis'). mt_rand(1000, 9999);
+            $sql = "insert into mcs_orders(oid, uid, otype, gid, add_time) values('$newoid', '{$_SESSION['user_id']}', 'tuoguan', '$itemid', '". time() ."')";
+
+            if($db->Execute($sql))
+            {
+                $db->Execute("update mcs_users set user_money=user_money-'{$info['price']}' where user_id='{$_SESSION['user_id']}'");
+                echo json_encode(array('code'=>1, 'info'=>'交易成功，刷新页面后查看'));
+                exit;
+            }
+            else
+            {
+                echo json_encode(array('code'=>0, 'info'=>'交易失败，状态异常'));
+                exit;
+            }
+            
+            exit;
+        }
+
+        $tuoguanod = $db->getRow("select o.*, title, days from mcs_orders o, mcs_tuoguan t where o.gid=t.id and uid='{$_SESSION['user_id']}' and otype='tuoguan' order by add_time desc");
+
+        if($tuoguanod && $tuoguanod['add_time'] + $tuoguanod['days'] * 86400 > time())
+        {
+            $ctime = $tuoguanod['days'] * 86400;
+            $stime = time()-$tuoguanod['add_time'];
+
+            if($ctime - $stime < 1000) $stime = $ctime;
+
+            $tuoguanod['bl'] = round($stime / $ctime * 100, 2);
+
+
+            $view->assign('tuoguanod', $tuoguanod);
+        }
+
+        $tglist = $db->getAll("select o.*, title, days, user_name from mcs_orders o, mcs_tuoguan t, mcs_users u where u.user_id=o.uid and o.gid=t.id and otype='tuoguan' order by add_time desc limit 10");
+        $view->assign('tglist', $tglist);
+
+
+        $view->assign('tgitem', $db->getAll("select * from mcs_tuoguan order by price asc"));
+        $view->display('home/tuoguan');
+        break;
+
+    case 'soft':
+        $downs = $db->getAll("select * from mcs_download");
+        foreach($downs as $key => $val)
+        {
+            $val['key'] = $key+1;
+            $downs[$key] = $val;
+        }
+        $view->assign('downs', $downs);
+
+        $view->display('home/soft');
+        break;
+
+    case 'buypoint':
+        if(IS_POST)
+        {
+            $mod = isset($_POST['mod']) ? trim($_POST['mod']) : '';
+
+            $user = $db->getRow("select * from mcs_users where user_id='{$_SESSION['user_id']}'");
+            if(!$user)
+            {
+                echo json_encode(array('code'=>0, 'info'=>'您还没有登录或登录超时，请先登录'));
+                exit;
+            }
+
+            switch($mod)
+            {
+                case 'card':
+                    $num = intval($_POST['num']);
+                    $price = intval($_POST['price']);
+
+                    if($price <= 0)
+                    {
+                        echo json_encode(array('code'=>0, 'info'=>'请选择您要购买的数量'));
+                        exit;
+                    }
+
+                    if($user['user_money'] < $price)
+                    {
+						$db->Execute("insert into mcs_member_logs(uid,createtime,user_money,info,logtype,num,type) value(".$uinfo['user_id'].",'".time()."','-".$price."','购买".$num."个刷点','存款日志',".($uinfo['user_money']-$price).",'payde')");//存款日志
+									
+						$db->Execute("insert into mcs_member_logs(uid,createtime,info,pay_point,logtype,num,type) value(".$uinfo['user_id'].",'".time()."','购买".$num."个刷点','".$num."','刷点日志',".($uinfo['pay_money']+$num).",'logpoint')");//刷点日志
+
+                        echo json_encode(array('code'=>0, 'info'=>'您的余额不足，请先充值'));
+                        exit;
+                    }
+
+                    $sql = "update mcs_users set user_money=user_money-$price, pay_money=pay_money+$num where user_id='{$_SESSION['user_id']}'";
+
+                    if($db->Execute($sql))
+                    {
+                        echo json_encode(array('code'=>1, 'info'=>'交易成功，刷新页面后查看'));
+                        exit;
+                    }
+                    else
+                    {
+                        echo json_encode(array('code'=>0, 'info'=>'交易失败，状态异常'));
+                        exit;
+                    }
+                    break;
+
+                case 'vip':
+                    $price = array(6=>array(1=>29, 2=>56, 3=>75, 6=>138, 12=>239, 24=>429),
+                                   7=>array(1=>49, 2=>89, 3=>129, 6=>246, 12=>456, 24=>839),
+                                   8=>array(1=>99, 2=>189, 3=>279, 6=>568, 12=>1058, 24=>2046));
+
+                    $urank = intval($_POST['urank']);
+                    $months = intval($_POST['months']);
+
+                    $urank = $db->getRow("select * from mcs_user_rank where rank_id='$urank'");
+
+                    if(!$urank || $months < 1 || empty($price[$urank['rank_id']][$months]))
+                    {
+                        echo json_encode(array('code'=>0, 'info'=>'请选择您要购买的产品项目'));
+                        exit;
+                    }
+
+                    $money = $price[$urank['rank_id']][$months];
+
+
+                    if($user['user_money'] < $money)
+                    {
+                        echo json_encode(array('code'=>0, 'info'=>'您的余额不足，请先充值'));
+                        exit;
+                    }
+
+                    if($user['rank_expiry'] > time())
+                    {
+                        echo json_encode(array('code'=>0, 'info'=>'VIP未到期，购买失败'));
+                        exit;
+                    }
+
+                    $time = strtotime("{$months}months", time());
+
+                    $sql = "update mcs_users set user_money=user_money-$money, user_rank={$urank['rank_id']}, rank_expiry=$time where user_id='{$_SESSION['user_id']}'";
+
+                    if($db->Execute($sql))
+                    {
+                        echo json_encode(array('code'=>1, 'info'=>'交易成功，刷新页面后查看'));
+                        exit;
+                    }
+                    else
+                    {
+                        echo json_encode(array('code'=>0, 'info'=>'交易失败，状态异常'));
+                        exit;
+                    }
+
+                    break;
+
+                case 'points':                  
+                    $num = intval($_POST['num']);
+                    $price = $_CFG['unit_price'] * $num;
+
+                    if($price <= 0)
+                    {
+                        echo json_encode(array('code'=>0, 'info'=>'请选择您要购买的数量'));
+                        exit;
+                    }
+
+                    if($user['user_money'] < $price)
+                    {
+                        echo json_encode(array('code'=>0, 'info'=>'您的余额不足，请先充值'));
+                        exit;
+                    }
+
+                    $sql = "update mcs_users set user_money=user_money-$price, pay_money=pay_money+$num where user_id='{$_SESSION['user_id']}'";
+
+                    if($db->Execute($sql))
+                    {
+						$db->Execute("insert into mcs_member_logs(uid,createtime,user_money,info,logtype,num,type) value(".$uinfo['user_id'].",'".time()."','-".$price."','购买".$num."个刷点','存款日志',".($uinfo['user_money']-$price).",'payde')");//存款日志
+									
+						$db->Execute("insert into mcs_member_logs(uid,createtime,info,pay_point,logtype,num,type) value(".$uinfo['user_id'].",'".time()."','购买".$num."个刷点','".$num."','刷点日志',".($uinfo['pay_money']+$num).",'logpoint')");//刷点日志
+
+                        echo json_encode(array('code'=>1, 'info'=>'交易成功，刷新页面后查看'));
+                        exit;
+                    }
+                    else
+                    {
+                        echo json_encode(array('code'=>0, 'info'=>'交易失败，状态异常'));
+                        exit;
+                    }
+                    break;
+
+                default:
+                    echo json_encode(array('code'=>0, 'info'=>'请选择您要购买的项目'));
+                    exit;
+                    break;
+            }
+
+            exit;
+        }
+
+        $view->display('home/buypoint');
+        break;
+
+    default:
+        $artlist = $db->getAll("select id, title, add_time from mcs_forum_post where pid=0 and fid=1 order by id desc limit 7");
+        foreach($artlist as $key => $val)
+        {
+            $val['title'] = cnsubstr($val['title'], 20);
+            $val['add_time'] = date('m-d', $val['add_time']);
+            $artlist[$key] = $val;
+        }
+        $view->assign('artlist', $artlist);
+		
+		$sql="select a.addtime,b.user_name as susername from mcs_task_taobao a,mcs_users b where a.uid=b.user_id order by rand() desc limit 8";
+		$now=$db->getAll($sql);
+		$view->assign('now', $now);
+
+        $newuser = $db->getAll("select user_name, add_time from mcs_users order by add_time desc limit 5");
+        $view->assign('newuser', $newuser);
+
+        $view->display('home/index');
+        break;
+}
+?>

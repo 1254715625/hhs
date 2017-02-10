@@ -1,0 +1,67 @@
+#content {background:#ECECEC;margin: 20px auto;width: 1000px;}
+#content #gm_kd {margin: 20px auto;width: 900px;}
+#content #gm_kd .line {background: url(../images/buypoint/dg_img20131025.gif) no-repeat  -18px -24px ;float: left;height: 198px;margin: 30px 10px 20px;position: relative;width: 430px;}
+#content #gm_kd .bg2 {background-position: -461px -24px;}
+#content #gm_kd .line p {height: 30px;left: 33px;line-height: 30px;position: absolute;top: 135px;}
+#content .STYLE5 {color: #FF0000;font-size: 13px;font-weight: bold;}
+#content .STYLE3 {color: #FF0000;font-weight: bold;}
+#content .STYLE4 {color: #151515;font-size: 11px;}
+#content .STYLE7 {color: #FF0000;font-size: 13px;}
+
+#content #gm_kd .line .in_bk {border: 1px solid #E4E4E4;color: #FF0000;font-family: Georgia,"Times New Roman",Times,serif;font-size: 18px;font-weight: bold;height: 28px;left: 92px;line-height: 22px;padding-left: 7px;position: absolute;top: 135px;width: 75px;}
+#content #gm_kd .line .t2 {left: 180px;position: absolute;top: 135px;}
+#content #gm_kd .line .gm_btn {background: url(../images/buypoint/dg_btn.png) no-repeat  0 0 ;border: medium none;cursor: pointer;display: block;height: 37px;left: 287px;line-height: 99px;overflow: hidden;position: absolute;text-indent: 999px;top: 132px;width: 120px;}
+#content #list {margin: 20px auto;}
+#content #gm_kd .line .jiage {color: #FF9900;font-size: 14px;font-weight: bold;left: 157px;position: absolute;top: 89px;}
+#content #gm_kd .line .jiage .tq {color: #1996E6;font-size: 12px;margin-left: 10px;}
+
+#content #list li {float: left;height: 205px;margin: 15px 10px;width: 280px;}
+#content #list li .kp {background: url(../images/buypoint/dg_img20131025.gif) no-repeat  -21px -269px ;height: 155px;position: relative;cursor: pointer;}
+#content #list li.k2 .kp {background-position:-315px -269px ;}
+#content #list li.k3 .kp {background-position:-608px -269px;}
+#content #list li.k4 .kp {background-position:-21px -464px;}
+#content #list li.k5 .kp {background-position: -315px -464px;}
+#content #list li.k6 .kp {background-position: -608px -464px;}
+#content #list li .kp .btn2 {background: url(../images/buypoint/dg_btn.png) no-repeat  0 -82px ;border: medium none;cursor: pointer;display: block;height: 29px;left: 184px;line-height: 99px;overflow: hidden;position: absolute;text-indent: 99px;top: 109px;width: 78px;}
+#content #list li .text {color: #434343;font-size: 14px;padding: 10px 0 0 10px;}
+#content .hongse {color: #EB0F0F;}
+#content #list li.k7, #content  #list li.k8, #content  #list li.k9, #content  #list li.k10, #content  #list li.k11 {height: 100px;width: 150px;}
+#content #list li.k7 .kp {background-position: -21px -652px ;height: 55px;width: 135px;cursor:pointer;}
+#content #list li.k8 .kp {background-position: -176px -652px ;height: 55px;width: 135px;cursor:pointer;}
+#content #list li.k9 .kp {background-position: -330px -652px ;height: 55px;width: 135px;cursor:pointer;}
+#content #list li.k10 .kp {background-position:  -480px -652px ;height: 55px;width: 135px;cursor:pointer;}
+#content #list li.k11 .kp {background-position:-633px -652px ;height: 55px;width: 135px;cursor:pointer;}
+
+/*提示弹出框样式*/
+#mdData{float: left;width: 200px;}
+#mdData img{float: right;padding: 10px 0 30px;}
+#mdData p{float: left;}
+#mdData p b{color:red;margin:0 2px;}
+
+#mdData #spreader{border: 1px solid #ddd;}
+
+
+.line.open,.k1.open,.k2.open,.k3.open,.k4.open,.k5.open,.k6.open,.k7.open,.k8.open,.k9.open,.k10.open,.k11.open{
+      -webkit-animation-name:'open'; -moz-animation-name:'open'; -o-animation-name:'open'; animation-name:'open'; 
+      -webkit-animation-duration:.8s; -moz-animation-duration:.8s; -o-animation-duration:.8s; animation-duration:.8s;
+}
+/* open browser keyframes */
+@-webkit-keyframes 'open' {
+	from { opacity:0; -webkit-transform:translate3d( 210px, -145px, 0); }
+	25%  { opacity:1; -webkit-transform:translate3d( -15.6px, 4.1px, 0); }
+	30%  { opacity:1; -webkit-transform:translate3d( -10.3px, 2.7px, 0); }
+	35%  { opacity:1; -webkit-transform:translate3d( 0, 0, 0); }
+	40%  { opacity:1; -webkit-transform:translate3d( 4.5px, -1.2px, 0); }
+	45%  { opacity:1; -webkit-transform:translate3d( 2.9px, -0.8px, 0); }
+	50%  { opacity:1; -webkit-transform:translate3d( 0, 0, 0); }
+	55%  { opacity:1; -webkit-transform:translate3d( -1.3px, 0.3px, 0); }
+	60%  { opacity:1; -webkit-transform:translate3d( -0.8px, 0.2px, 0); }
+	65%  { opacity:1; -webkit-transform:translate3d( 0, 0, 0); }
+	70%  { opacity:1; -webkit-transform:translate3d( 0.4px, -0.1px, 0); }
+	75%  { opacity:1; -webkit-transform:translate3d( 0.2px, -0.1px, 0); }
+	80%  { opacity:1; -webkit-transform:translate3d( 0, 0, 0); }
+	85%  { opacity:1; -webkit-transform:translate3d( -0.1px, 0, 0); }
+	90%  { opacity:1; -webkit-transform:translate3d( -0.1px, 0, 0); }
+	to   { opacity:1; -webkit-transform:translate3d( 0, 0, 0); }
+}
+

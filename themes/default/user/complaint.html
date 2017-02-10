@@ -1,0 +1,56 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="css/user_index.css">
+<link rel="stylesheet" type="text/css" href="css/user_complain.css">
+<link rel="stylesheet" type="text/css" href="css/taobao_common.css" />
+<script type="text/javascript" src="js/user/complaint.js"></script>
+<div id="main">
+<div class="user_left">
+	{include user/leftmenu}
+</div>
+<div id="_right"><div id="shensu">
+	<div style="margin-bottom:10px;"><img src="images/user/hqscbanner.jpg"></div>
+	<div class="mh_tishi" style="font-size: 14px;">
+		<span>您共有<strong>{$appeal_state}</strong>个申诉需要处理。
+        </span>
+	</div>
+	<div class="bq_menu">
+		<a class="launch {if $opt=='launch'}nov{/if}" href="?act=complaint&opt=launch">发起的普通申诉</a>
+		<a class="receive {if $opt=='receive'}nov{/if}" href="?act=complaint&opt=receive">收到的普通申诉</a>
+		<a class="lclaims {if $opt=='lclaims'}nov{/if}" href="?act=complaint&opt=lclaims">发起的软件问题</a>
+		<a class="rclaims {if $opt=='rclaims'}nov{/if}" href="?act=complaint&opt=rclaims">收到的软件问题</a>
+	</div>
+
+	<table width="100%" cellspacing="0" cellpadding="0" border="0">
+		<tbody><tr>
+            <td class="txjl_bg1"></td>
+            <td width="15%" class="txjl_bg2">{if $opt=='launch'}被申诉人{/if}{if $opt=='receive'}申诉人{/if}</td>
+            <td class="txjl_bg2">内容</td>
+            <td width="13%" class="txjl_bg2">提交时间</td>
+            <td width="10%" class="txjl_bg2">状态</td>
+			<td width="8%" class="txjl_bg2">操作</td>
+            <td class="txjl_bg3"></td>
+        </tr>
+
+			{if $list_num==0}<tr><td height="35" class="mh_xxian" colspan="6" align="center">无申诉信息</td></tr>{else}
+            {foreach item=val key=key from=$list}
+            <tr>
+                <td>&nbsp;</td>
+                <td height="35" class="mh_xxian">
+                   {$val.user}
+                </td>
+                <td class="mh_xxian">{$val.info}</td>
+                <td class="mh_xxian">{$val.add_time}</td>
+                <td class="mh_xxian">
+                	<span class="lvse{$val.state}">
+                		{if $val.state==0}进行中{else}{if $val.state==1}申诉成功{else}撤销申诉{/if}{/if}
+					</span>
+                </td>
+    			<td class="mh_xxian"><a class="rw_btn" href="javascript:;" state="{$val.id}">查看申诉</a></td>
+    		</tr>
+			{/foreach}
+			{/if}
+    </tbody></table>
+	<div id="page">{if $page.pages.pagetotal>1}{$page.pagestr}{/if}</div>
+</div>
+</div>
+{include common/footer}

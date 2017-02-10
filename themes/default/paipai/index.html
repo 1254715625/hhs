@@ -1,0 +1,95 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="css/mm.css">
+<link rel="stylesheet" type="text/css" href="css/paipai_common.css">
+<script type="text/javascript" src="js/paipai/index.js"></script>
+<script type="text/javascript" src="js/paipai/task_fun.js"></script>
+<script type="text/javascript">
+$(function(){
+	getTask();
+});
+</script>
+
+{include paipai/nav_up}
+<span id="tloading" style="background-image: url(images/paipai/loading.gif); width: 100px; height: 50px; float: left; text-indent: 40px; margin: 25px 0px 0px 305px; background-attachment: scroll; background-repeat: no-repeat; background-position: 0% 0%;background-color: transparent;"><img src="images/paipai/fg.gif"></span>
+<div id="moveContent"><div><div class="rwdt_xx"><input type="hidden" name="desc" value="desc">
+	<p class="rwdt_lx" id="rwdt_lx">
+		<a href="javascript:;" class="nov" onclick="getTask({t_type:''}),getTaska(this,1);">全部任务</a>
+		
+		<a href="javascript:;" class="" onclick="getTask({t_type:'virtual'}),getTaska(this,1);">虚拟任务</a>
+		
+		<a href="javascript:;" class="" onclick="getTask({t_type:'entity'}),getTaska(this,1);">实物任务</a>
+		
+	</p>
+	<p class="rwdt_lx" style="left: 265px;">
+  任务编号：<input type="text" style="height: 22px;border: 1px solid #B2CAFF;" id="taskinfo"><button style="border: 1px solid #B2CAFF;background: white;margin-left: 5px;color: #777;height: 24px;" id="taskid" onclick="getTasksearch('gettask');">搜索</button>
+		
+	</p>
+	<ul class="rwdt_jg" id="rwdt_jg">
+		<li><span class="tico gdt1"></span></li>
+		
+		<li><a href="javascript:;" title="不限" class="tico nov" onclick="getTask(),getTaska(this,2);">不限</a></li>
+		
+		<li><a href="javascript:;" title="1-30元" class="tico" onclick="getTask({sp:1, ep:30}),getTaska(this,2);">1-30元</a></li>
+		
+		<li><a href="javascript:;" title="31-100元" class="tico" onclick="getTask({sp:31, ep:100}),getTaska(this,2);">31-100元</a></li>
+		
+		<li><a href="javascript:;" title="101-400元" class="tico" onclick="getTask({sp:101, ep:400}),getTaska(this,2);">101-400元</a></li>
+		
+		<li><a href="javascript:;" title="400以上" class="tico" onclick="getTask({sp:400}),getTaska(this,2);">400以上</a></li>
+
+		<li><span class="tico gdt2"></span></li>
+	</ul>
+	<div class="rwdt_btn">
+		<a href="paipai.php?mod=addTask" class="tico fb_btn"></a>
+		<a href="javascript:sx();" class="tico sx_btn"></a>
+	</div>
+	<div class="autotk orange cnxhtask" style="right: 355px;top: 30px;cursor: pointer;padding: 8px;background: #3ABCE5;color: #FFF;border-radius: 3px;font-size: 14px;" val="1">
+    	<strong style="font-weight: normal;">猜你喜欢任务</strong>
+    </div>
+    <div class="autotk orange">
+    	<input type="checkbox" id="nAuTotk" name="nAuTotk"> 
+    	<strong>自动接任务</strong>
+    	<a href="user.php?act=autoam" target="_blank">
+    		<strong class="orange">（配置自动接任务筛选条件）</strong>
+    	</a>
+    </div>
+</div>
+<div class="cle"></div>
+<div id="taobao-lists">
+	<div id="taskList">
+	 	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tlisttable">
+          <thead>
+	        <tr>
+	            <td width="10" height="39" align="center" valign="middle" class="tico rwdt_bt1"></td>
+	            <td width="21%" align="center" valign="middle" class="tico rwdt_bt2"><span class="h-sort" val="0" style="width:80px;margin-left: 30px;">任务编号</span></td>
+	            <td width="12%" align="left" valign="middle" class="tico rwdt_bt2">发布人</td>
+	            <td width="12%" align="left" valign="middle" class="tico rwdt_bt2"><span class="h-sort" val="1">任务价格</span></td>
+	            <td width="23%" align="center" valign="middle" class="tico rwdt_bt2"><span class="h-sort" val="2" style="width:93px">发布者要求</span></td>
+	            <td width="22%" align="left" valign="middle" class="tico rwdt_bt2"><span class="h-sort" val="3">悬赏麦点</span></td>
+	            <td width="10%" align="center" valign="middle" class="tico rwdt_bt2">操作</td>
+	            <td width="10" align="center" valign="middle" class="tico rwdt_bt3"></td>
+	        </tr>
+	        <tr><td colspan="8" class="newdatas" style="display:none">有<b>0</b>个新发布的任务，点击刷新<span></span></td></tr>
+		  </thead>
+		  
+		  <tbody class="tlisttable table-row">
+		  </tbody>
+        </table>
+		<div class="rwdt_dlm">
+			<a href="bbs.php" target="_blank" class="tico rwdt_tbhelp"></a>
+			<div id="page">	  				<a href="javascript:;" page="NULL" class="up-no">&lt;</a>																		<a href="javascript:;" page="NULL" class="now-page">1</a>																			<a href="javascript:;" page="2">2</a>																		<a href="javascript:;" page="3">3</a>																		<a href="javascript:;" page="4">4</a>																		<a href="javascript:;" page="5">5</a>																		<a href="javascript:;" page="6">6</a>																		<a href="javascript:;" page="7">7</a>																		<a href="javascript:;" page="8">8</a>																		<a href="javascript:;" page="9">9</a>																		<a href="javascript:;" page="10">10</a>																		<a href="javascript:;" page="11">11</a>																		<a href="javascript:;" page="12">12</a>																		<a href="javascript:;" page="13">13</a>																		<a href="javascript:;" page="14">14</a>																		<a href="javascript:;" page="15">15</a>										<a href="javascript:;" page="2" class="next-page">&gt;</a>										<p class="total">总：共30页 当前:第<span class="now-show"> 1 </span>页</p>				   </div>
+		</div>
+	</div>
+	<table id="reAutoAM" style="width:100%;height:150px;background-color:#FBFBFB;display:none;">
+        <tbody><tr>
+            <td align="right" style="width:30%"><img src="images/paipai/loading.gif"></td>
+            <td><span style="margin-left:20px;color:Red;font-weight:bold;"></span><input id="btnAutoAM" style="display:none;"></td>
+        </tr>
+    </tbody></table>
+</div>
+		
+
+
+
+</div></div></div>
+{include common/footer}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="js/artDialog.js"></script>
+<script type="text/javascript" src="js/layer/layer.js"></script>
+</head>
+<body>
+	<div class="ur_here">首页 &raquo; 任务管理 &raquo; 任务纠纷处理</div>
+	<div class="container">
+		<div class="itemtitle">
+			<h3>任务纠纷处理</h3>
+		</div>
+		<form name="cpform" method="post" autocomplete="off" action="task_appeal.php" id="cpform">
+			<div class="btnBox">
+				<ul class="clearfix">
+					<li class="{if $opt == 'tbbuy'}current{/if}">
+						<a href="task_appeal.php?opt=tbbuy">淘宝接手申诉管理</a>
+					</li>
+					<!--<li class="{if $opt == 'tbsel'}current{/if}">
+						<a href="task_appeal.php?opt=tbsel">淘宝发布方申诉管理</a>
+					</li>-->
+
+
+					<!-- <li class="{if $opt == 'ppbuy'}current{/if}">
+						<a href="task_appeal.php?opt=ppbuy">拍拍接手方申诉管理</a>
+					</li>
+					<li class="{if $opt == 'ppsel'}current{/if}">
+						<a href="task_appeal.php?opt=ppsel">拍拍发布方申诉管理</a>
+					</li> -->
+				</ul>
+			</div>
+			<table width="100%" id="listTb">
+				<tr>
+				    <th colspan="7">
+				    	共搜索到<strong style="padding:0 3px;color:#f30;">{$num}</strong>名符合条件的申诉
+				    </th>
+				</tr>
+				<tr>
+					<td>任务ID</td>
+					<td>申诉人</td>
+					<td>被申诉人</td>
+					<td>任务状态</td>
+					<td style="width:330px;">申诉内容</td>
+					<td>发起时间</td>
+					<td>操作</td>
+				</tr>
+				{foreach item=val key=key from=$list.record}
+				<tr>
+				    <td>{$val.task}</td>
+					<td>{$val.user}</td>
+					<td>{$val.aser}</td>
+					{if $val.state eq 0 }
+							<td>未操作</td> 
+						{elseif $val.state eq 1 }
+							<td>扣积分或刷点</td>
+						{elseif $val.state eq 2 }
+							<td>撤销</td>
+					{/if}
+					<td>{$val.info}</td>
+					<td>{$val.add_time}</td>
+					<td>
+						{if $val.state eq 0 }
+							<a href="task_mediation.php?id={$val.id}">调解</a>
+						{elseif $val.state eq 1 }
+							<a href="task_mediation.php?id={$val.id}">查看</a>
+						{elseif $val.state eq 2 }
+							<a href="task_mediation.php?id={$val.id}">查看</a>
+						{/if}
+						
+					</td>
+				  </tr>
+				  {/foreach}
+				  <tr>
+				    <td colspan="7" class="footer"><div class="page">{$list.pagestr}</div></td>
+				  </tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

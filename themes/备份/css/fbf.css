@@ -1,0 +1,240 @@
+@charset "utf-8";
+/* CSS Document */
+
+#fbcontent{margin:20px auto;width: 1000px;}
+.jsf_img, .fbf_img {
+background:url(../images/help/taskin_jsf.gif) no-repeat;
+height: 252px;
+margin-top: 10px;
+position: relative; 
+}
+.fbf_img {
+background: url(../images/help/taskin_fbf.gif) no-repeat;
+}
+.jsf_img .jsf_menu .m1, .jsf_img .jsf_menu .m2, .jsf_img .jsf_menu .m3, .jsf_img .jsf_menu .m4, .jsf_img .jsf_menu .m5, .jsf_img .jsf_menu .m6, .jsf_img .jsf_menu .m7, .jsf_img .jsf_menu .m8 {
+background: url(../images/help/taskin_jsf.gif) no-repeat -23px -167px;
+display: block;
+height: 73px;
+left: 23px;
+position: absolute; 
+top: 167px;
+width: 90px;
+}
+.jsf_img .jsf_menu .m2 {
+background: url(../images/help/taskin_jsf.gif) no-repeat -144px -167px;
+left: 144px;
+}
+.jsf_img .jsf_menu .m3 {
+background: url(../images/help/taskin_jsf.gif) no-repeat -261px -167px;
+left: 261px;
+}
+.jsf_img .jsf_menu .m4 {
+background: url(../images/help/taskin_jsf.gif) no-repeat -388px -167px;
+left: 388px;
+}
+.jsf_img .jsf_menu .m5 {
+background: url(../images/help/taskin_jsf.gif) no-repeat -501px -167px;
+left: 501px;
+}
+.jsf_img .jsf_menu .m6 {
+background: url(../images/help/taskin_jsf.gif) no-repeat -618px -167px;
+left: 618px;
+width: 120px;
+}
+.jsf_img .jsf_menu .m7 {
+background: url(../images/help/taskin_jsf.gif) no-repeat -768px -167px;
+left: 768px;
+}
+.jsf_img .jsf_menu .m8 {
+background: url(../images/help/taskin_jsf.gif) no-repeat -880px -167px;
+left: 880px;
+}
+.jsf_img .jsf_menu .m1:hover, .jsf_img .jsf_menu .m1.nov {
+background: url(../images/help/taskin_jsf.gif) no-repeat -23px -269px;
+}
+.jsf_img .jsf_menu .m2:hover, .jsf_img .jsf_menu .m2.nov {
+background: url(../images/help/taskin_jsf.gif) no-repeat -144px -269px;
+}
+.jsf_img .jsf_menu .m3:hover, .jsf_img .jsf_menu .m3.nov {
+background: url(../images/help/taskin_jsf.gif) no-repeat -261px -269px;
+}
+.jsf_img .jsf_menu .m4:hover, .jsf_img .jsf_menu .m4.nov {
+background: url(../images/help/taskin_jsf.gif) no-repeat -388px -269px;
+}
+.jsf_img .jsf_menu .m5:hover, .jsf_img .jsf_menu .m5.nov {
+background: url(../images/help/taskin_jsf.gif) no-repeat -501px -269px;
+}
+.jsf_img .jsf_menu .m6:hover, .jsf_img .jsf_menu .m6.nov {
+background: url(../images/help/taskin_jsf.gif) no-repeat -618px -269px;
+}
+.jsf_img .jsf_menu .m7:hover, .jsf_img .jsf_menu .m7.nov {
+background: url(../images/help/taskin_jsf.gif) no-repeat -768px -269px;
+}
+.jsf_img .jsf_menu .m8:hover, .jsf_img .jsf_menu .m8.nov {
+background: url(../images/help/taskin_jsf.gif) no-repeat -880px -269px;
+}
+.fbf_img .fbf_menu .m1, .fbf_img .fbf_menu .m2, .fbf_img .fbf_menu .m3, .fbf_img .fbf_menu .m4, .fbf_img .fbf_menu .m5, .fbf_img .fbf_menu .m6, .fbf_img .fbf_menu .m7, .fbf_img .fbf_menu .m8 {
+background: url(../images/help/taskin_fbf.gif) no-repeat -23px -167px;
+display: block;
+height: 73px;
+left: 23px;
+position: absolute;
+top: 167px;
+width: 90px;
+}
+.fbf_img .fbf_menu .m2 {
+background: url(../images/help/taskin_fbf.gif) no-repeat -144px -167px;
+left: 144px;
+}
+.fbf_img .fbf_menu .m3 {
+background: url(../images/help/taskin_fbf.gif) no-repeat -261px -167px;
+left: 261px;
+}
+.fbf_img .fbf_menu .m4 {
+background: url(../images/help/taskin_fbf.gif) no-repeat -388px -167px;
+left: 388px;
+}
+.fbf_img .fbf_menu .m5 {
+background: url(../images/help/taskin_fbf.gif) no-repeat -525px -167px;
+left: 525px;
+}
+.fbf_img .fbf_menu .m6 {
+background: url(../images/help/taskin_fbf.gif) no-repeat -646px -167px;
+left: 646px;
+}
+.fbf_img .fbf_menu .m7 {
+background: url(../images/help/taskin_fbf.gif) no-repeat -761px -167px;
+left: 761px;
+}
+.fbf_img .fbf_menu .m8 {
+background: url(../images/help/taskin_fbf.gif) no-repeat -880px -167px;
+left: 880px;
+}
+.fbf_img .fbf_menu .m1:hover, .fbf_img .fbf_menu .m1.nov {
+background: url(../images/help/taskin_fbf.gif) no-repeat -23px -269px;
+}
+.fbf_img .fbf_menu .m2:hover, .fbf_img .fbf_menu .m2.nov {
+background: url(../images/help/taskin_fbf.gif) no-repeat -144px -269px;
+}
+.fbf_img .fbf_menu .m3:hover, .fbf_img .fbf_menu .m3.nov {
+background: url(../images/help/taskin_fbf.gif) no-repeat -261px -269px;
+}
+.fbf_img .fbf_menu .m4:hover, .fbf_img .fbf_menu .m4.nov {
+background: url(../images/help/taskin_fbf.gif) no-repeat -388px -269px;
+}
+.fbf_img .fbf_menu .m5:hover, .fbf_img .fbf_menu .m5.nov {
+background: url(../images/help/taskin_fbf.gif) no-repeat -525px -269px;
+}
+.fbf_img .fbf_menu .m6:hover, .fbf_img .fbf_menu .m6.nov {
+background: url(../images/help/taskin_fbf.gif) no-repeat -646px -269px;
+}
+.fbf_img .fbf_menu .m7:hover, .fbf_img .fbf_menu .m7.nov {
+background: url(../images/help/taskin_fbf.gif) no-repeat -761px -269px;
+}
+.fbf_img .fbf_menu .m8:hover, .fbf_img .fbf_menu .m8.nov {
+background: url(../images/help/taskin_fbf.gif) no-repeat -880px -269px;
+}
+.jsf_xs {
+background: none repeat 0 0 #F7FBFF;
+border: 1px solid #D8ECFF;
+margin-bottom: 10px;
+padding: 10px;
+}
+.htitle a {
+color: #1271B9;
+font-weight: bold;
+}
+.jsf_bk {
+background: none repeat 0 0 #F4F9FF;
+border: 1px solid #D8ECFF;
+margin-top: 15px;
+float: left;
+padding: 10px 0;
+}
+.jsf_bk .jsf_bz, .jsf_bk .jsf_bz1 {
+background: url(../images/help/taskin_jsf.gif) no-repeat 0 -373px;
+color: #1271B9;
+height: 40px;
+line-height: 40px;
+text-indent: 50px;
+}
+.jsf_bk .jsf_bz1 {
+background: url(../images/help/taskin_jsf.gif) no-repeat 0 -420px;
+}
+.jsf_list {
+float: left;
+width: 498px;
+}
+.jsf_list li a {
+background: url(../images/help/taskin_jsf.gif) no-repeat 0 -651px #FFFFFF;
+border: 1px solid #D8ECFF;
+display: block;
+height: 33px;
+line-height: 33px;
+margin: 3px 8px;
+text-indent: 25px;
+width: 480px;
+}
+.jsf_list li .jsf_cx {
+background: none repeat 0 0 #FFFFFF;
+border: 1px solid #D8ECFF;
+color: #000000;
+margin: -4px 8px 0;
+padding: 20px;
+width: 440px;
+}
+.jsf_padd {
+padding: 5px 10px;
+}
+.jsf_table {
+border-collapse: collapse;
+}
+.jsf_table tr td {
+border: 1px solid #D2E7FF;
+}
+.jsf_an, .fbf_an {
+margin: 15px 0 0;float: left;
+}
+.jsf_an .jsf_btn1, .jsf_an .jsf_btn2, .fbf_an .fbf_btn1, .fbf_an .fbf_btn2 {
+background: url(../images/help/taskin_jsf.gif) no-repeat 0 -500px;
+display: block;
+float: left;
+height: 68px;
+width: 495px;
+}
+.hnav1, .hnav2, .hnav3, .hnav4, .hnav5, .hnav6, .hnav7, .hnav8 {
+padding-bottom: 13px;
+}
+.jsf_an .jsf_btn2 {
+background: url(../images/help/taskin_jsf.gif) no-repeat -503px -500px;
+margin-left: 7px;
+}
+.jsf_an .jsf_btn1:hover {
+background: url(../images/help/taskin_jsf.gif) no-repeat 0 -579px;
+}
+.jsf_an .jsf_btn2:hover {
+background: url(../images/help/taskin_jsf.gif) no-repeat -503px -579px;
+}
+.fbf_an .fbf_btn1 {
+background: url(../images/help/taskin_fbf.gif) no-repeat 0 -370px;
+}
+.fbf_an .fbf_btn2 {
+background: url(../images/help/taskin_fbf.gif) no-repeat -503px -370px;
+margin-left: 7px;
+}
+.fbf_an .fbf_btn1:hover {
+background: url(../images/help/taskin_fbf.gif) no-repeat 0 -449px;
+}
+.fbf_an .fbf_btn2:hover {
+background: url(../images/help/taskin_fbf.gif) no-repeat -503px -449px;
+}
+.STYLE1 {
+color: #FC520C;
+font-weight: bold;
+}
+.STYLE2 {
+color: #4484B4;
+}
+.STYLE3 {
+color: #333333;
+}

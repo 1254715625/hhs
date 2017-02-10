@@ -1,0 +1,86 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="css/mm.css">
+<link rel="stylesheet" type="text/css" href="css/paipai_common.css">
+<script type="text/javascript" src="js/paipai/index.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.get('?mod=getaccount&type=seller', function(data, suatus){
+		$('.sellerdiv').html(data);
+	});
+});	
+</script>
+<style type="text/css">
+.gaveAddress {
+display: block;
+width: 52px;
+height: 22px;
+color: #a68d8b;
+background: url('themes/default/images/paipai/buyers_btn.png') no-repeat;
+margin-bottom: 2px;
+}
+.mico.mh_cz {
+background-position: 0 -239px;
+width: 53px;
+height: 24px;
+}
+.mico {
+background: url('themes/default/images/paipai/mhgl_btn.gif') no-repeat;
+display: block;
+border: none;
+cursor: pointer;
+overflow: hidden;
+}
+.mico.paipai {
+background-position: 0 -95px;
+width: 80px;
+height: 80px;
+margin: 5px 10px;
+}
+</style>
+{include paipai/nav_up}
+
+<span id="tloading" style="background-image: url(images/paipai/loading.gif); width: 100px; height: 50px; float: left; text-indent: 40px; margin: 25px 0px 0px 305px; display: none; background-position: initial initial; background-repeat: no-repeat no-repeat;"><img src="/static/images/paipai/fg.gif"></span>
+
+<div id="moveContent"><div class="cle"></div>
+<div class="lst_info">
+<div class="mh_tishi">
+		1、您目前是<span class="orange">{$uinfo.rank_name}</span>用户，可以绑定{$uinfo.params.bdzgsl}个掌柜！<br>
+2、如果您的帐号还没有发布过任务，可以自己免费删除掌柜一次；发布过任务的帐号删除掌柜需要付费5元！
+<br>
+
+</div>
+<div class="bq_menu">
+	<a href="taobao.php?mod=bindseller">绑定淘宝掌柜</a>
+	<a href="paipai.php?mod=bindseller" class="nov">绑定拍拍掌柜</a>
+</div>
+	
+    <div>
+    	<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:20px;font-size:14px;background: url(images/public/mhgl_btn.gif) 400px -401px no-repeat;" class="zg_tb">
+      <tbody><tr>
+        <td width="20%" height="30" align="left" valign="middle"><span class="mico paipai"></span></td>
+      </tr>
+
+      <tr>
+        <td width="20%" height="40" align="left" valign="middle"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tbody>
+          	<tr>
+            <td width="23%" style="padding:0;">拍拍掌柜名（QQ名）：</td>
+            <td align="left" style="padding:0;"><input onclick="if(this.value.indexOf('输入QQ名称') >= 0)this.value='';" value="输入QQ名称进行绑定" type="text" name="nickName" id="nickName" class="mh_bk"></td>
+         	 </tr>
+        	</tbody></table>
+    	</td>
+      </tr>
+	 
+      <tr>
+        <td height="60" align="left" valign="middle"><input type="button" id="addSeller" class="mico mh_bdbtn2" style="background-position: 0 -1250px;"></td>
+      </tr>
+	   
+      <tr>
+        <td width="20%" height="40" align="left" valign="middle" class="mh_xian"><span class="orange">您目前是{$uinfo.rank_name}用户，可以绑定{$uinfo.params.bdzgsl}个掌柜</span> <a href="/BuyPoint/" class="chengse2">申请VIP</a>最高可绑定{$vipbd.bdzgsl}个掌柜！ <a href="/vip.html" target="_blank" class="lanse">查看VIP限权</a></td>
+      </tr>
+    </tbody>
+</table>
+	<div class="sellerdiv"></div>   
+	<!--结束-->
+	</div></div></div></div>
+	{include common/footer}

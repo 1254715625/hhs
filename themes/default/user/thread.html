@@ -1,0 +1,71 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="css/user_index.css">
+<link rel="stylesheet" type="text/css" href="css/thread.css">
+
+<div id="main">
+<div class="user_left">
+	{include user/leftmenu}
+</div>
+<div id="_right">
+
+<div id="threaddate">
+    <div class="bq_menu">
+		<a class="theme {if $thread=='theme'}nov{/if}" href="user.php?act=thread&thread=theme">我的主题</a>
+		<a class="reply {if $thread=='reply'}nov{/if}" href="user.php?act=thread&thread=reply">我的回复</a>
+		<a class="collection {if $thread=='collection'}nov{/if}" href="user.php?act=thread&thread=collection">我的收藏</a>
+	</div>
+		
+    <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
+        <tbody><tr>
+            <td height="15">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+            	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+              		<tbody><tr>
+		                <td width="10" height="37" class="txjl_bg1"></td>
+		                <td width="{if $thread=='collection'}5{else}7{/if}8%" align="left" class="txjl_bg2">&nbsp; 标题</td>
+		                <td width="20%" align="center" class="txjl_bg2">时间</td>
+						{if $thread=='collection'}
+		                <td width="20%" align="center" class="txjl_bg2">操作</td>
+						{/if}
+		                <td width="10" height="37" class="txjl_bg3"></td>
+             		</tr>
+             		{foreach item=val key=key from=$list.record}
+			  		<tr class="end">
+		                <td height="35">&nbsp;</td>
+		                <td align="left" class="mh_xxian">&nbsp; <a target="_blank" class="lttz_sj" href="bbs.php?act=view&id={$val.id}">{$val.title}</a></td>
+		                <td align="center" class="mh_xxian">{$val.add_time}</td>
+						{if $thread=='collection'}
+						<td class="mh_xxian" align="center">
+							<a class="lttz_sj cd" data="{$val.did}" href="javascript:;">删除</a>
+						</td>
+						{/if}
+		                <td>&nbsp;</td>
+              		</tr>
+					{/foreach}
+			 	</tbody></table>
+			</td>
+    	</tr>
+ 	</tbody></table>
+</div>
+</div>
+</div>
+{if $thread=='collection'}
+<script type="text/javascript">
+$(function(){
+	$(".cd").click(function(){
+		var self=$(this);
+		var form=self.attr('data');
+		if(form){
+			$.post('user.php?act=thread&thread=collection',{'id':form},function(data){
+				if(data==form){
+					self.parents('tr.end').remove();
+				}
+			});
+		}
+	});
+});
+</script>
+{/if}
+{include common/footer}

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+</head>
+<body>
+<div class="ur_here">首页 &raquo; 论坛管理 &raquo; 帖子管理</div>
+<div class="container">
+    <form id="form1" name="form1" method="post" action="">
+    <table width="100%" id="listTb">
+      <tr>
+        <th>帖子标题</th>
+        <th>发表时间</th>
+        <th>所属版块</th>
+        <th>回复/浏览</th>
+        <th>全局置顶</th>
+        <th>板块置顶</th>
+        <th>精华</th>
+        <th>火热</th>
+        <th>操作</th>
+      </tr>
+	  {foreach item=item key=key from=$list.record}
+      <tr data="{$item.id}">
+        <td style="width:100px;">{$item.title}</td>
+        <td>{$item.add_time}</td>
+        <td>{$item.forum_name}</td>
+        <td>{$item.repnum}/{$item.views}</td>
+        <td class="opt" data="global_top" alt="{$item.global_top}">{if $item.global_top}<img src="images/yes.gif" />{else}<img src="images/no.gif" />{/if}</td>
+		<td class="opt" data="top" alt="{$item.top}">{if $item.top}<img src="images/yes.gif" />{else}<img src="images/no.gif" />{/if}</td>
+        <td class="opt" data="essence" alt="{$item.essence}">{if $item.essence}<img src="images/yes.gif" />{else}<img src="images/no.gif" />{/if}</td>
+        <td class="opt" data="hot" alt="{$item.hot}">{if $item.hot}<img src="images/yes.gif" />{else}<img src="images/no.gif" />{/if}</td>
+        <td><a href="../../../bbs.php?act=view&id={$item.id}" target="_blank">查看</a>|<a href="?act=post&dropid={$item.id}" onclick="return confirm('您确定要删除此帖吗？')">删除</a></td>
+      </tr>
+	  {/foreach}
+	  <tr>
+        <td colspan="9" class="footer">{$list.pagestr}</td>
+      </tr>
+    </table>
+    </form>
+</div>
+<script type="text/javascript">
+$(function(){
+	$(".opt").click(function(){
+		var opt=$(this).attr('data');
+		var alt=$(this).attr('alt');
+		var data=$(this).parents('tr').attr('data');
+		var self=$(this);
+		if(data!=''&&opt!=''){
+			$.post('forum.php?act=post',{"data":data,"opt":opt,"alt":alt},function(data){
+				if(data.state){
+					self.attr('alt',data.alt);
+					self.find('img').attr('src',data.img);
+				}
+			},'json');
+		}
+	});
+});
+</script>
+</body>
+</html>

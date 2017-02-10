@@ -1,0 +1,94 @@
+body{background:#cee8ff}
+.imgms{background: url(../images/help/guide_151.png) no-repeat;}
+.imgfj{background: url(../images/help/guide_xchbyh.png) no-repeat;}
+
+#header{background:white;height:80px;width: 100%;border-bottom:1px solid #ddd;box-shadow: 0 0 4px #999999;}
+
+#header .head{width:980px;margin:0 auto;height:80px;}
+#header .head .login{background-position: 0 25px;height: 80px;width: 280px;float: left;}
+#header .head .navigation li {float:right;height: 35px;width: 120px;text-indent: -9999px;margin: 35px 0;cursor: pointer;}
+#header .head .navigation .li1{background-position: 9px -68px;}
+#header .head .navigation .li1:hover{background-position: 9px -125px;}
+#header .head .navigation .li2{background-position: -106px -68px;}
+#header .head .navigation .li2:hover{background-position: -106px -125px;}
+#header .head .navigation .li3{background-position: -221px -68px;width: 100px;}
+#header .head .navigation .li3:hover{background-position: -221px -125px;}
+#header .head .navigation .li4{background-position: -318px -68px;}
+#header .head .navigation .li4:hover{background-position: -318px -125px;}
+#header .head .navigation .li5{background-position: -435px -68px;width: 90px;}
+#header .head .navigation .li5:hover{background-position: -435px -125px;}
+#header .head .navigation .nov1{background-position: 9px -125px;}
+#header .head .navigation .nov2{background-position: -106px -125px;}
+#header .head .navigation .nov3{background-position: -221px -125px;}
+#header .head .navigation .nov4{background-position: -318px -125px;}
+#header .head .navigation .nov5{background-position: -435px -125px;}
+
+#bwei{background: url(../images/help/guide_back.gif) no-repeat bottom;width: 100%;}
+/*第一个*/
+#bwei .container {width:980px;border:1px solid #f0f8ff;margin:0 auto;margin-top:40px;;background: url(../images/help/guide_jo.png) repeat;}
+#bwei .container .top{position: relative;height:205px;width:980px;background:#f4f8ff;}
+#bwei .container .top .fbf,#bwei .container .top .jsf{float: left;margin: 30px 0 0;clear: both;width:830px;}
+#bwei .container .top .fbf li,#bwei .container .top .jsf li{  float: left;height: 50px;width: 115px;}
+#bwei .container .top .fbf .f1{background-position: -325px 15px;text-indent: -9999px;}
+#bwei .container .top .jsf .j1{background-position: -460px 15px;text-indent: -9999px;}
+#bwei .container .top .fbjsf{background-position: 1px 1px;cursor: pointer;}
+#bwei .container .top .fbbs{background-position: 1px -63px;cursor: pointer;}
+#bwei .container .top .fbjsf b{background-position: 1px 1px;float: left;height: 15px;margin: 18px 0 0 30px;text-indent: -9999px;width: 56px;}
+#bwei .container .top .fbjsf .b1{background-position: -201px 0;}
+#bwei .container .top .fbjsf .b2{background-position: -316px 0;}
+#bwei .container .top .fbjsf .b3{background-position: -201px -40px;}
+#bwei .container .top .fbjsf .b4{background-position: -316px -40px;}
+#bwei .container .top .fbjsf .b5{background-position: -201px -80px;}
+#bwei .container .top .fbjsf .b6{background-position: -316px -80px;}
+#bwei .container .top .fbjsf .b7{background-position: -419px 0;}
+#bwei .container .top .fbjsf .b8{background-position: -547px 0;}
+#bwei .container .top .fbjsf .b9{background-position: -418px -40px;margin: 19px 0 0 16px;width: 80px;}
+#bwei .container .top .fbjsf .b10{background-position: -547px -40px;}
+#bwei .container .top .fbjsf .b11{background-position: -419px -80px;}
+#bwei .container .top .fbjsf .b12{background-position: -547px -80px;}
+#bwei .container .top .fbjsf:hover{background-position: 1px -63px;}
+#bwei .container .top .bear{background:#bff1fa url(../images/help/guide_151.png) no-repeat -568px -42px;height: 160px;position: absolute;right: 30px;top: 20px;width: 110px;}
+#bwei .container .content{width: 980px;margin-bottom: 115px;text-align: center;position: relative;}
+#bwei .container .content img{box-shadow: 0 5px 5px #666666;}
+#bwei .container .content .no_bhimg{display: none;}
+#bwei .container .content .n_left {display: none;background-position: 0 -207px;height: 50px;left: -70px;position: absolute;top: 102px;width: 50px;cursor: pointer;}
+#bwei .container .content .n_right {background-position: -88px -207px;height: 50px;right: -70px;position: absolute;top: 102px;width: 50px;cursor: pointer;}
+
+/*第二个*/
+#bwei .sendTask {text-align: center;display:none;height:700px;width:980px;border:1px solid #f0f8ff;margin:0 auto;margin-top:40px;;background: url(../images/help/guide_jo.png) repeat;}
+#bwei .send_top1{;margin:30px 0 0 115px;background:#DD7700;float: left;height: 115px;width: 320px;background: #DD7700 url(../images/help/guide_151.png) no-repeat 85px -292px;}
+#bwei .send_top2{margin:30px 0 0 115px;float: left;height: 115px;width: 320px;background: #006600 url(../images/help/guide_151.png) no-repeat -210px -292px;}
+#bwei .send_cont1{cursor: pointer;background: url(../images/help/guide_ms.png) no-repeat;width: 165px;height:160px;float: left;margin: 70px 0 0 210px;}
+#bwei .send_cont2{cursor: pointer;background: url(../images/help/guide_ms.png) no-repeat -400px 0;width: 235px;height:160px;float: left;margin: 70px 0 0 228px;}
+#bwei .send_cont3{cursor: pointer;background: url(../images/help/guide_ms.png) no-repeat 5px -200px;float: left;height: 160px;margin: 70px 0 0 110px;width: 350px;}
+#bwei .send_cont4{cursor: pointer;background: url(../images/help/guide_ms.png) no-repeat -495px -204px;float: left;height: 160px;margin: 70px 0 0 105px;width: 310px;}
+
+/*第三个*/
+#bwei .jsTask{text-align: center;display:none;height:700px;width:980px;border:1px solid #f0f8ff;margin:0 auto;margin-top:40px;;background: url(../images/help/guide_jo.png) repeat;}
+#bwei .js_cont1{cursor: pointer;background: url(../images/help/guide_ms.png) no-repeat 0 -440px;float: left;height: 140px;margin: 70px 0 0 170px;width: 185px;}
+#bwei .js_cont2{cursor: pointer;background: url(../images/help/guide_ms.png) no-repeat -400px -440px;float: left;height: 140px;margin: 70px 0 0 190px;width: 285px;}
+#bwei .js_cont3{cursor: pointer;background: url(../images/help/guide_js.png) no-repeat 0px 0px;float: left;height: 140px;margin: 70px 0 0 150px;width: 230px;}
+#bwei .js_cont4{cursor: pointer;background: url(../images/help/guide_js.png) no-repeat  -425px 0;float: left;height: 140px;margin: 70px 0 0 172px;width: 280px;}
+#bwei .js_link{float: left;margin: 35px;}
+
+/*第四个*/
+#bwei .tgInier{text-align: center;display:none;height:700px;width:980px;border:1px solid #f0f8ff;margin:0 auto;margin-top:40px;;background: url(../images/help/guide_jo.png) repeat;}
+#bwei .tg_cont1{cursor: pointer;background: url(../images/help/guide_js.png) no-repeat 0 -235px;float: left;height: 70px;margin: 70px 0 0 100px;width: 320px;}
+#bwei .tg_cont2{cursor: pointer;background: url(../images/help/guide_js.png) no-repeat -440px -235px;float: left;height: 85px;margin: 70px 0 0 110px;width: 365px;}
+#bwei .tg_cont3{cursor: pointer;background: url(../images/help/guide_js.png) no-repeat  0 -408px;float: left;height: 80px;margin: 70px 0 0 100px;width: 380px;}
+#bwei .tg_cont4{cursor: pointer;background: url(../images/help/guide_js.png) no-repeat -440px -405px;float: left;height: 100px;margin: 70px 0 0 50px;width: 365px;}
+#bwei .tg_link{float: left;margin: 70px 35px;}
+
+/*第五个*/
+#bwei .bilks{display:none;height:750px;width:980px;border:1px solid #f0f8ff;margin:0 auto;margin-top:40px;;background: url(../images/help/guide_jo.png) repeat;}
+#bwei .bilks .ui-warp{position: relative;height: 600px;overflow: hidden;width: 960px;margin: 10px auto;}
+#bwei .bilks .ui-slider {height: 600px;overflow: hidden;width: 5760px;float: left;list-style-type: none;margin: 0;padding: 0;}
+#bwei .bilks .ui-cont {float: left;height: 600px;position: relative;width: 960px;}
+#bwei .bilks .ui-digit {bottom: 54px;display: block;height: 34px;left: 162px;position: absolute;width: 960px;z-index: 45;}
+#bwei .bilks .ui-digit li {background: url(../images/help/guide_bg1.jpg) no-repeat;color: #FFFFFF;cursor: pointer;display: inline-block;float: left;font-family: "微软雅黑";font-size: 16px;height: 34px;line-height: 34px;margin: 0 17px 0 0;text-align: center;width: 87px;}
+#bwei .bilks .ui-digit li.curent {background: url(../images/help/guide_bg2.jpg) no-repeat;}
+#bwei .bilks .ui-warp .pointer {cursor: pointer;display: block;height: 59px;position: absolute;top: 270px;width: 59px;z-index: 30;}
+#bwei .bilks .ui-warp .right {background: url(../images/help/oL7EpEL1x_src.png) no-repeat;right: 45px;}
+#bwei .bilks .ui-warp .left {background: url(../images/help/oL7NocWTF_src.png) no-repeat;left: 45px;}
+#bwei .bilks .a_link{text-align: center; float: left; width: 100%; margin: 20px auto;}
+#footer{margin-top:0;}

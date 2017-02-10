@@ -1,0 +1,112 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="css/mm.css"/>
+<link rel="stylesheet" type="text/css" href="css/taobao.css"/>
+<script type="text/javascript" src="js/sou/index.js"></script>
+<script type="text/javascript" src="js/sou/addtask.js"></script>
+<script type="text/javascript" src="js/sou/shoptask.js"></script>
+<script type="text/javascript" src="js/sou/from.js"></script>
+	<div id="content"><div class="h15"></div>
+<div class="fabu_box1">
+    <div class="fabu_title"><span class="tico fabu_left"></span><span class="tico fabu_h2">发布任务须知（*号为必填项）</span><span class="tico fabu_right"></span></div>
+	<div class="cle"></div>
+	<div class="fabu_cont">
+	  <ul>
+		<li>马上好评任务：淘宝交易的物品为虚拟物品，买卖双方可以即时确认完成交易并付款。</li>
+		<li>24-72小时确认任务：淘宝交易的物品为实际存在的物品，可能包含运费和物流等，需要1－3天后方能确认收货并评价。</li>
+		<li>要尽量保证平台任务担保价大于 (淘宝商品价格+快递运费)/2 ，否则接手人拍下商品后您的淘宝改价将会导致您的支付宝使用率低于50%既被淘宝视为信用炒作处理；</li>
+		<li>您发任务时，平台中的保证金不得少于任务价，成功发布任务将会在平台中扣押相应的任务保证金；接手人完成您的任务时等额的资金会作为商品款返回给您网店的帐户中；</li>
+		<li>您想发布任务的时候，必须保证您拥有相应的麦点，每次发布都会根据商品价格不同扣除相应的麦点数。您如果想让任务排名靠前就可以追加麦点奖励，追加的越多排名就越靠前；</li>
+		<li class="chengse">请确认商品地址绝对正确，否则会造成不必要的纠纷。</li>
+		<li class="chengse">为了您的店铺安全，发布“实物任务”商品价格请大于10元！</li>
+	  </ul>
+	</div>
+</div>
+
+<a id="mao1"></a>
+{include sou/taskmenu}
+<div class="cle"></div>
+<div class="reListTitle">
+	<table width="1000" border="0" cellspacing="0" cellpadding="4" id="tpl">
+		<thead>
+			<tr>
+				<td colspan="6">
+					<ul class="inout">
+						<li class="id">模板名称</li>
+						<li class="poster">掌柜/商品/网址</li>
+						<li class="price">任务价格</li>
+						<li class="oktime">任务要求</li>
+						<li class="poster">限制</li>
+						<li class="do">操作</li>
+					</ul>
+				</td>
+			</tr>
+		</thead>
+		<tbody>
+		{foreach item=val key=key from=$list}
+			<tr class="hui_border">
+				<td class="id">
+					<span class="hico type{if $val.value.ddlOKDay>0}6{else}5{/if} topt">
+						<strong>{$val.name}</strong>
+					</span>
+				</td>
+				<td class="poster">
+					掌柜：{$val.value.nickname}
+					<br>
+					名称：
+					<span title="" class="mouse"></span>
+					<br>
+					网址：
+					<a href="{$val.value.goodsurl}" target="_blank" class="orange">查看网址</a>
+				</td>
+				<td class="price">
+					<p>{$val.value.goods_price}元</p> 
+					<i>奖励<span class="orange">{$val.value.txtMinMPrice}</span>个麦点</i> 
+				</td>
+				<td class="oktime">
+					
+					<p class="{if $val.value.ddlOKDay>0}green{else}orange{/if}" >{if $val.value.ddlOKDay==0}立即{else}{$val.value.ddlOKDays}小时{/if}五星好评</p>
+					
+				</td>
+				<td class="poster">
+					限制接手人：{if $val.value.attrs.cbxIsFMaxMCount}是{else}否{/if}
+					<br></td>
+				<td class="do">
+					<a href="javascript:;" class="btn_orange" del_id="{$val.id}">删除</a>
+				</td>
+			</tr>
+			{/foreach}
+		</tbody>
+	</table>
+</div></div>
+<script type="text/javascript">
+$(function(){
+	$('a.btn_orange').click(function(){
+		var id = $(this).attr('del_id');
+		var cur = $(this).parent('td').parent('tr');
+		if(id)
+		{
+			art.dialog({title : '温馨提示',
+				  content : '您确认删除本模版，删除后无法恢复?',
+				  okValue : "确定",
+				  ok : function(){
+					  $.get('taobao.php?mod=del_taskTemplate&id='+id,function(data){
+							if(data.state){
+								cur.addClass('success-del').fadeOut(1000,function(){
+									cur.remove();
+								});	
+							}else{
+								alert(data.str);
+							}
+					  },'json');
+						
+							
+				},
+				cancelValue : "取消",
+				cancel : {},
+				lock : true})
+		}
+		return fa
+	});
+});
+</script>
+{include common/footer}

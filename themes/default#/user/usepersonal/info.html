@@ -1,0 +1,22 @@
+<div style="overflow-x: hidden;overflow-y:scroll;" id="count">
+<ul id="dialogues">
+{foreach item=val key=key from=$info}
+	<li>
+		<div class="{$val.class}">
+			<span>{$val.name}</span>
+			<i>{$val.gettime}</i>
+			<p>{$val.content}</p>
+		</div>
+	</li>
+{/foreach}
+</ul>
+</div>
+<script type="text/javascript">
+$(function(){
+	var count={$count};
+	if(count>6){
+		count=6;
+	}
+	$("#count").height(count*60);
+});
+</script>

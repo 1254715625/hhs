@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="js/artDialog.js"></script>
+<script type="text/javascript" src="js/layer/layer.js"></script>
+</head>
+<body>
+	<div class="ur_here">首页 &raquo; 任务管理 &raquo; 掌柜买号管理</div>
+    <div class="container">
+		<div class="itemtitle">
+			<h3>掌柜买号管理</h3>
+		</div>
+		<div class="btnBox">
+			<ul class="clearfix">
+				<li class="{if $opt=='tbbuy'}current{/if}"><a href="task_manager.php?act=tbbuy">淘宝买号管理</a></li>
+				<li class="{if $opt=='tbsel'}current{/if}"><a href="task_manager.php?act=tbsel">淘宝掌柜管理</a></li>
+
+				<!--<li class="{if $opt=='ppbuy'}current{/if}"><a href="task_manager.php?act=ppbuy">拍拍买号管理</a></li>
+				<li class="{if $opt=='ppsel'}current{/if}"><a href="task_manager.php?act=ppsel">拍拍掌柜管理</a></li>-->
+
+			</ul>
+		</div>
+		<form name="cpform" method="post" autocomplete="off" action="task_manager.php" id="cpform">
+			<input type="hidden" name="formhash" value="2fbf31a2">
+			<input type="hidden" name="scrolltop" id="formscrolltop" value="">
+			<input type="hidden" name="anchor" value="">
+			<table width="100%" id="listTb">
+			  <tr>
+			    <th colspan="9">
+			    	共搜索到<strong style="padding:0 3px;color:#f30;">{$user_num}</strong>名符合条件的用户
+			    </th>
+			  </tr>
+			  <tr>
+			    <th>ID</th>
+				<th>昵称</th>
+				<th>所属用户</th>
+				<th>初始信誉</th>
+				<th>当前信誉</th>
+				<th>正在进行任务</th>
+				<th>已经完成任务</th>
+				<th>状态</th>
+				<th>操作</th>
+			  </tr>
+			   {foreach item=val key=key from=$list.record}
+			  <tr>
+			    <td>{$val.id}</td>
+				<td>{$val.nickname}</td>
+				<td>{$val.user_name}</td>
+				<td>{$val.attr.seller_credit} {$val.attr.seller_credit_img}</td>
+				<td>{$val.attr.seller_credit} {$val.attr.seller_credit_img}</td>
+				<td>{$val.doing}</td>
+				<td>{$val.complete}</td>
+				<td>{$val.state}</td>
+				<td>
+					{if $val.is_hang==0}<a href="task_manager.php?action={$action}&opt=tbbuy&hang={$val.id}" onclick="return confirm('您确定要挂起此帐号吗？')">挂起</a>|{/if}{if $val.is_hang==1}<a href="task_manager.php?action={$action}&opt=tbbuy&unhang={$val.id}" onclick="return confirm('您确定要解挂此帐号吗？')">解挂|</a>{/if}{if $val.is_lock==0}<a href="task_manager.php?action={$action}&opt=tbbuy&lock={$val.id}" onclick="return confirm('您确定要锁定此帐号吗？')">锁定</a>|{/if}{if $val.is_lock==1}<a href="task_manager.php?action={$action}&opt=tbbuy&unlock={$val.id}" onclick="return confirm('您确定要解锁此帐号吗？')">解锁</a>|{/if}<a href="task_manager.php?action={$action}&opt=tbbuy&del={$val.id}" onclick="return confirm('您确定要此此帐号吗？')">删除</a>
+				</td>
+			  </tr>
+			  {/if}
+			  <tr>
+			    <td colspan="9" class="footer"><div class="page">{$list.pagestr}</div></td>
+			  </tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

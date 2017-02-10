@@ -1,0 +1,31 @@
+<style type="text/css">
+.imgs ul{width:460px;}
+.imgs li{width:90px;float:left;margin:1px;cursor: pointer;}
+.imgs li img{width:87px;height:87px;border: 1px solid #BABFC2;box-shadow: 0px 0px 8px #B4BABE;}
+.imgs li img:hover{width:85px;height:85px;border: 2px solid #3C94D3;box-shadow: 0px 0px 8px #3C94D3;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;}
+.imgs li.act img{width:85px;height:85px;border: 2px solid #3C94D3;box-shadow: 0px 0px 8px #3C94D3;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;}
+</style>
+<div class="imgs">
+	<ul>
+		{foreach item=val key=key from=$img}
+		<li {if $uinfo.headimg==$val}class="act"{/if}><img src="themes/default/images/user/headimg/{$val}" data="{$val}"></li>
+		{/foreach}
+	</ul>
+</div>
+<script type="text/javascript">
+$(function(){
+	$('.imgs img').click(function(){
+		var img=$(this).attr('data');
+		if(img){
+			$.post('user.php?act=headimg',{"img":img},function(data){
+				if(data.src){
+					$('#user_avatar').attr('src','themes/default/images/user/headimg/'+data.src);
+					$.dialog({id: 'img'}).close();
+				}else{
+					$.dialog({title: '提示',content: data.info,fixed: true,lock: true});
+				}
+			},'json');
+		}
+	});
+});
+</script>

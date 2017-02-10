@@ -1,0 +1,76 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="../css/user_paydetails.css" />
+<script type="text/javascript" src="../js/My97DatePicker/WdatePicker.js"></script>
+
+<div id="main">
+<div class="user_left">
+	{include user/leftmenu}
+</div>
+
+<div id="_right">
+	<div class="paydetails">
+	<div class="bq_menu">
+		<a class="payde" href="user.php?act=payde">存款</a>
+		<a class="logpoint nov" href="user.php?act=logpoint">麦点</a>
+		<a class="logcredit " href="user.php?act=logcredit">积分</a>
+		<a class="logtask " href="user.php?act=logtask">任务</a>
+		<a class="logtopup " href="user.php?act=logtopup">充值</a>
+		<a class="logpayment " href="user.php?act=logpayment">提现</a>
+		<a class="logaccount " href="user.php?act=logaccount">登录</a>
+	</div>
+	<div class="cle"></div>
+	<div class="f_text">
+		<span class="img1"></span>
+		<p class="f16">麦点流动查询</p>
+		<p>发布点就是麦点，在这里，查查您获得了多少麦点吧</p>
+	</div>
+				
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">	
+		<input type="hidden" id="type" name="type" value="logpoint">
+		<tbody>
+			<tr>
+                <td width="370" valign="middle" height="25" align="right">
+                	日期：<input type="text" name="dateStart" class="i_bk hasDatepicker " value="2015-07-27 00:00" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})" readonly="readonly">
+                	 - <input type="text" name="dateEnd" class="i_bk hasDatepicker " value="2015-08-03 16:45" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})" readonly="readonly">
+				</td>
+				<td>
+					<input type="button" class="s_btn" id="bt_submit" text="1">
+				</td>
+			</tr>
+			  
+		</tbody>
+	</table>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+        	
+
+        	
+
+        	
+
+        	
+
+        	
+
+        	
+	        	<tr>
+	                <td class="titbg1"></td>
+	                <td width="10%" height="43" class="titbg">类型</td>
+	                <td width="33%" class="titbg">详细内容</td>
+	                <td width="15%" class="titbg">数量</td>
+	                <td width="15%" class="titbg">总数量</td>
+	                <td width="15%" class="titbg">时间</td>
+	                <td class="titbg2"></td>
+	            </tr>
+				
+	        	   
+
+            
+         </tbody>
+     </table>
+	 
+	</div>
+</div>
+</div>
+
+{include common/footer}

@@ -1,0 +1,114 @@
+<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" id="sellerbox">
+	<tr id="row-head">
+	  <td width="10" height="37" class="txjl_bg1"></td>
+	  <td width="12%" height="37" align="center" valign="middle" class="txjl_bg2" style="color:#333;">淘宝账号</td>
+	  <td width="20%" height="37" align="center" valign="middle" class="txjl_bg2" style="color:#333;">初始信誉-现信誉</td>
+	  <td width="23%" height="37" align="center" valign="middle" class="txjl_bg2" style="color:#333;">当日/本周/已完成任务数</td>
+	  <td width="10%" height="37" align="center" valign="middle" class="txjl_bg2" style="color:#333;">买号状态</td>
+	  <td width="10%" height="37" align="center" valign="middle" class="txjl_bg2" style="color:#333;">买号排序</td>
+      <td width="10%" height="37" align="center" valign="middle" class="txjl_bg2" style="color:#333;">是否启用</td>
+      <td width="13%" height="37" align="center" valign="middle" class="txjl_bg2" style="color:#333;">操作</td>
+      <td width="10" height="37" class="txjl_bg3"></td>
+    </tr>
+	{foreach item=acc key=key from=$acclist}
+	<tr>
+		<td>&nbsp;</td>
+		<td height="35" align="center" valign="middle" class="mh_xxian maihao">
+			<span class="blue">{$acc.nickname}</span> 
+			{if $acc.sm}
+			<img src="images/taobao/tx_ico_02.jpg" width="34" height="17" title="通过支付宝实名认证用户" align="absmiddle">{/if}
+			<img val="{$acc.nickname}" class="click-refresh" style="cursor: pointer; display: none;" title="点击刷新买号信息" src="images/ico/loading-static.gif">
+		</td>
+		<td align="center" valign="middle" class="mh_xxian">
+			{$acc.value.seller_credit} / {$acc.value.buyer_credit} {$acc.value.seller_credit_img}
+		</td>
+		<td align="center" valign="middle" class="mh_xxian">{$acc.today} / {$acc.week} / {$acc.all}</td>
+		<td align="center" valign="middle" class="mh_xxian">
+			{if $acc.state==0}<span class="orange">未启用</span>{elseif $acc.state==1}<span class="green">正常</span>{else}<span style="color:#FF00B8;">删除</span>{/if}
+		</td>
+		<td align="center" valign="middle" class="mh_xxian">
+			<input type="text" size="3" data="{$acc.id}" name="order" value="{$acc.shownum}" class="mh_bk2">
+		</td>
+		<td align="center" class="mh_xxian"><input type="checkbox" data="{$acc.id}" {if $acc.state==1}checked=""{/if} class="active" {if $acc.state==2}style="display:none;"{/if}>
+			
+		</td>
+		<td align="center" class="mh_xxian">
+				{if $acc.state==2}<a href="javascript:;" data="{$acc.id}" class="closehf">&nbsp;</a>
+				{else}<a href="javascript:;" class="gaveAddress">&nbsp;</a>
+				<a href="javascript:;" data="{$acc.id}" class="mico mh_cz deleteBuyer"></a>{/if}
+		</td>
+		<td>&nbsp;</td>
+	</tr>
+	{/foreach}
+</table>
+<div class="rwdt_dlm">
+	<div id="page">{$page.pagestr}</div>
+</div>
+<div class="cle"></div>
+<script type="text/javascript">
+$(function(){
+	state = ['<span class="orange">未启用</sapn>','<span class="green">正常</span>','<span style="color:#FF00B8;">删除</span>'];
+	$('.active').click(function(){
+		var status,obj = $(this),self = this;
+		if (obj.attr('checked')=='checked'){
+			status = 1;
+			
+		}else{
+			status = 0;
+		}
+		$(this).parents('tr').find('td.mh_xxian:eq(3)').html(state[status]);
+		$.post('sou.php?mod=getbuyaccount&opt=state',{"bin":obj.attr('data'),"status":status});
+		var obj=$(this).parents('tr');
+		setBakckgoundAndOpacity(obj,'#62c462');
+	});
+	$(".maihao").mouseover(function(){
+		$(this).find('.click-refresh').show();
+	});
+	$(".maihao").mouseout(function(){
+		$(this).find('.click-refresh').hide();
+	});
+	$(".mh_bk2").change(function(){
+		var order=$(this).val();
+		if(order){
+			$.post('sou.php?mod=getbuyaccount&opt=order',{"bin":$(this).attr('data'),"order":order},function(){location.reload();});
+		}
+	});
+	$('.click-refresh').click(function(){
+		var val = $(this).attr('val');
+		$.dialog({id:'temp', title:'温馨提示', lock:true,
+			content : '<p>是否刷新买号: <font color="#1996e6">'+val+'</font> 的信息?</p>',
+			ok : function(){
+				$.dialog({id:"ajaxStart",title: '正在处理中..',fixed: true});
+				setTimeout("clo()",1200);
+			},
+			okValue : '确定',
+			cancel : {},
+			cancelValue : '取消',
+			fixed:true,
+		});
+	});
+	$(".deleteBuyer").click(function(){
+		var cur=$(this).parents('tr');
+		var bin=$(this).attr('data');
+		$.dialog({title:'温馨提示', lock:true,content:'你确定要删除此买号吗？<br/>删除后将无法重新绑定此买号，其他账号也无法绑定这个买号！',okValue : '确定',ok:function(){
+			$.post('sou.php?mod=getbuyaccount&opt=del',{"bin":bin});
+			cur.addClass('success-del').fadeOut(1000,function(){
+				cur.remove();
+			});
+		},cancel:{},cancelValue:'取消'});
+	});
+	$(".closehf").click(function(){
+		var bin=$(this).attr('data');
+		var obj=$(this).parents('tr');
+		$.dialog({title:'温馨提示', lock:true,content:'你确定要恢复此买号吗？',okValue : '确定',ok:function(){
+			$.post('s.php?mod=getbuyaccount&opt=hf',{"bin":bin});
+			setBakckgoundAndOpacity(obj,'#62c462');
+			location.reload();
+		},cancel:{},cancelValue:'取消'});
+	});
+});
+function clo(){
+	$.dialog.get('ajaxStart').close();
+	location.reload();
+}
+</script>

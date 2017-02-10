@@ -1,0 +1,41 @@
+@charset "utf-8";
+@charset "utf-8";
+/* CSS Document */
+html, body, div, h1, h2, h3, h4, h5, h6, p, 
+img, dl, dt, dd, ol, ul, li,form, table, tr, th, td {margin: 0;padding: 0;border: 0;}
+h1,h2,h3,h4,h5,h6 { font-weight:normal;}
+ol, ul li { list-style: none; }
+i,b,em,strong { font-style:normal; text-decoration:none; font-weight: normal;}
+body { font-family:'Microsoft YaHei','simsun','Lucida Grande','Lucida Sans Unicode'; font-size:12px; background:#f7f7f7; color:#555;}
+*{margin:0; padding:0;}
+ul,ol{ list-style:none;}
+a{ text-decoration:none; color:#333;}
+a:hover{ text-decoration:none; color:#09f;}
+.clear {clear:both;}
+img{border:0;}
+.red{color:#F00}
+.blue{color:#09f;}
+.yellow{color:#FF0}
+/*头部*/
+.header{height:70px; background-color:#f7f7f7; width:100%;}
+.head{width:998px; height:70px; margin:0 auto;position:relative; z-index:100;line-height:70px;font-size:12px;}
+.head span{float:right}
+.head a{margin:0px 5px}
+.head img{margin-top:10px;float:left}
+.login_nav{width:100%;height:60px;background:#09f;position:relative; color:#FFF}
+.login_nav ul{width:998px;margin:0 auto; line-height:60px; font-size:16px; text-align:center}
+.login_nav ul li{width:124.5px;float:left;background:#09f}
+.login_nav ul li.chouse{height:58px;background:#eee; color:#000; margin-top:2px}
+.login_nav ul li a,.login_nav ul li a:hover{color:#FFF;}
+.login_nav ul li.chouse a,.login_nav ul li.chouse a:hover{color:#000}
+.login_nav ul li img{position:absolute; margin-top:8px; margin-left:20px}
+/*版权*/
+.foot{width:998px;margin:0 auto;overflow:hidden}
+.foot p{color:#555;text-align:center}
+/*右上角广告*/
+#topright_banner{width:161px;height:88px;position:fixed; right:0;top:0px;z-index:999; cursor:pointer;overflow:hidden}
+#topright_banner #aClose3{ color:#060}
+#topright_banner #aClose3{font-family:Tahoma;padding:0px 5px;text-decoration:none;font-size:12px; font-weight:bold;position:absolute;right:42px;top:55px;line-height:14px;height:14px;width:7px;
+border-radius:14px;-moz-border-radius:14px;z-index:99999}
+/* CSS Document */
+

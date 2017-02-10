@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+
+<!-- 旧的 -->
+<!-- <link rel="stylesheet" type="text/css" href="../../../themes/default/css/user_complain.css"> -->
+</head>
+<body>
+<!-- 老的模板 -->
+<!-- <form method="post" action="task_mediation.php">
+	<div style="width:80%;margin-left:20px;">
+		<div class="sllb" style="margin:0;font-size: 13px;">
+	        <p class="sp">
+	        	<strong>任 务 ID：</strong>
+			    <span class="hongse rwid">{$info.task}</span>
+			    <input type="hidden" name="id" value="{$id}">
+			    <input type="hidden" name="task_uid" value="{$info.task_uid}">
+	        </p>
+	        <p class="sp">
+	        	<strong>任务状态：</strong> 
+				<span class="lanse">
+					{if $info.process==0}等待接手方付款{/if}
+					{if $info.process==1}接手方已付款，等待发布方发货{/if}
+					{if $info.process==2}发布方已发货，等待接手方好评{/if}
+					{if $info.process==3}接手方已确认，等待发布方核实{/if}
+					{if $info.process==4}任务已完成{/if}
+				</span>
+	        </p>
+			<p class="sp">
+				<strong>申诉内容：</strong>
+				{$info.info}
+			</p>
+			<p class="sp">
+				<strong>对方 QQ：</strong>
+				{$info.qq}
+			</p>
+			<ul class="tcss_hk">
+				{foreach item=val key=key from=$lists}
+				<li>
+					<strong>
+						 {$val.user}
+						<i>{$val.add_time}</i>
+					</strong>
+					<p>{$val.content}</p>
+				</li>
+				{/foreach}
+				<li>
+					<strong>
+						{$info.user}(申诉方)
+						<i>{$info.add_time}</i>
+					</strong>
+					{$info.content}
+				</li>
+			</ul>
+	        <p style="clear: both;"></p>  
+
+			<p class="pdjg">
+				{if $info.state>0}判定结果：{$info.over}
+				{else}
+				处理选项：
+				<select name="handle" id="handle" class='apple'>
+					<option value="3" >撤销申诉</option>
+					<option value="1" {if $info.rank_points==0}disabled{/if}>举报成功,扣积分</option>
+					<option value="2" {if $info.pay_money==0}disabled{/if}>举报成功,扣刷点</option>
+					<option value="4" >胡乱举报</option>
+				</select>
+				<input type="text" name="num" value="" placeholder="扣除数额" id="num" style="width:60px;">(该用户还有{$info.upay_money}刷点，{$info.urank_points}积分)
+				<br>
+				判定结果：
+				<textarea name="over" id="mycomp" style="width:480px;height:140px;"></textarea>
+				<input type="submit" id="mysubmit">
+				{/if}
+			</p>
+			<input type='hidden' class='mobile_phone' value='{$mobile_phone}'>
+			<input type='hidden' class='dingdan_id' value='{$info.task}'>
+		</div>
+	</div>
+</form> -->
+
+<!-- 修改后的模板 by wdb -->
+<div class="ur_here">首页 &raquo; 任务管理 &raquo; 任务申诉处理</div>
+<div class="container">
+	<div class="subnav">
+		<a href="task_appeal.php">返回列表</a>
+	</div>
+    <form method="post" action="task_mediation.php">
+	    <input type='hidden' class='mobile_phone' value='{$mobile_phone}'>
+		<input type='hidden' class='dingdan_id' value='{$info.task}'>
+	    <table width="100%" id="editTb">
+	        <tr>
+	            <th colspan="2">任务申诉处理</th>
+	        </tr>
+	        <tr>
+	            <td class="left">任务ID</td>
+	            <td>
+	          	    <span style="color:#f30;">{$info.task}</span>
+			        <input type="hidden" name="id" value="{$id}">
+			        <input type="hidden" name="task_uid" value="{$info.task_uid}">
+	            </td>
+	        </tr>
+	        <tr>
+	            <td class="left">任务状态</td>
+	            <td>
+	          	    <span style="color:#1996e6;">
+	          	    {if $info.process==0}等待接手方付款{/if}
+					{if $info.process==1}接手方已付款，等待发布方发货{/if}
+					{if $info.process==2}发布方已发货，等待接手方好评{/if}
+					{if $info.process==3}接手方已确认，等待发布方核实{/if}
+					{if $info.process==4}任务已完成{/if}
+					</span>
+	            </td>
+	        </tr>
+	  	    <tr>
+	            <td class="left">申诉内容</td>
+	            <td>{$info.info}</td>
+	        </tr>
+	        <tr>
+	            <td class="left">对方QQ</td>
+	            <td>{$info.qq}</td>
+	        </tr>
+	        <tr>
+	            <td class="left">申诉详情</td>
+	            <td style="padding:5px;">
+	            	<ul>
+						{foreach item=val key=key from=$lists}
+						<li>
+							<p>
+								<span style="color:#f30;">{$val.user}</span> 	
+								<span style="float:right;margin-right:3%;">{$val.add_time}</span>
+							</p>
+							<p>{$val.content}</p>
+						</li>
+						{/foreach}
+						<li>
+							<p>
+								<span style="color:#f30;">{$info.user}(申诉方)</span>
+								<span style="float:right;margin-right:3%;">{$info.add_time}</span>
+							</p>
+							{$info.content}
+						</li>
+					</ul>
+	            </td>
+	        </tr>
+	        <tr>
+	            <td class="left">申诉处理</td>
+	            <td>
+	            	{if $info.state>0}判定结果：{$info.over}
+					{else}
+					处理选项：
+					<select name="handle" id="handle" class='apple' style="width:auto;">
+						<option value="3" >撤销申诉</option>
+						<option value="1" {if $info.rank_points==0}disabled{/if}>举报成功,扣积分</option>
+						<option value="2" {if $info.pay_money==0}disabled{/if}>举报成功,扣刷点</option>
+						<option value="4" >胡乱举报</option>
+					</select>
+					<span>
+						<input type="text" name="num" value="" placeholder="扣除数额" id="num" style="width:60px;">
+					    <font color="#f30;">(该用户还有{$info.upay_money}刷点，{$info.urank_points}积分)</font>
+					</span>
+					<p>
+						<em style="float:left;">判定结果：</em>
+						<textarea name="over" id="mycomp" style="height:100px;margin-left:4px;"></textarea>
+					</p>
+	            	{/if}
+	            </td>
+	        </tr>
+	        <tr>
+	          <td colspan="2" class="footer">
+	      			<input type="submit" class="submit" id="mysubmit" value="提交" />
+	      		</td>
+	        </tr>
+	    </table>
+    </form>
+</div>
+<script type="text/javascript">
+$(function(){
+	var opval = "撤销申诉";
+	$('.apple').change(function(){
+		var options = $(this).find("option");
+		for(var i=0; i<options.length; i++){
+			if($(options[i]).is(":selected")){
+				opval=$(options[i]).html();
+			}
+		}
+	})
+	$('form').submit(function(){
+	
+		var money={$info.upay_money};
+		var rank_points={$info.urank_points};
+		var handle=$("#handle option:selected").val();
+		var num=$("#num").val();
+		var mycomp=$("#mycomp").val();
+
+		if(mycomp==''){alert('请填写判定结果');return false;}
+		if(handle==1){if(num>rank_points){alert('积分不足');return false;}}
+		if(handle==2){if(num>money){alert('刷点不足');return false;}}
+		
+		var mobile_phone=$('.mobile_phone').val();
+		var dingdan_id=$('.dingdan_id').val();
+		var apple_id=$(this).val();
+		
+		if(handle == 1){ //扣积分
+			$.get('http://hhs.lianmon.com/plugins.php',{type:143791,dingdan_id:dingdan_id,mobile:mobile_phone,jf:num});
+		}else if(handle == 2){ //扣刷点
+			$.get('http://hhs.lianmon.com/plugins.php',{type:143793,dingdan_id:dingdan_id,mobile:mobile_phone,sd:num});
+		}
+		$.get('http://hhs.lianmon.com/plugins.php',{type:143786,dingdan_id:dingdan_id,mobile:mobile_phone,result:opval});
+
+	});
+});
+</script>
+</body>
+</html>

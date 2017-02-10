@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+/*商保*/
+#shangbao {float: left;width: 760px;margin-left: 10px;}
+#shangbao .mh_tishi {background: #FFFBF2;border: 1px solid #FBE1C4;margin-bottom: 15px;padding: 12px 15px;}
+#shangbao .chengse2 {color: #EB0F0F;}
+#shangbao .lanse {color: #1996E6;}
+#shangbao .content{border-bottom: 1px dotted #DDDDDD;height:115px;width:760px;}
+#shangbao .jrsb_left{ background: url(../images/user/jrsb_btn.gif) no-repeat  -10px -614px ;height:115px;width:160px;margin-left: 20px;float: left;}
+#shangbao .jrsb_text{height: 70px;margin-left: 15px;float: left;margin-top: 20px;}
+#shangbao .jrsb_btn1{background: url(../images/user/jrsb_btn.gif) no-repeat  -310px -633px;float: left;height: 33px;width: 95px;margin:55px 0 0 35px;}
+#shangbao .agree {font-size: 14px;border: tan;margin: 10px 0 0 195px;float: left;}
+#shangbao .jrsb_btn2 {background: url(../images/user/jrsb_btn.gif) no-repeat  -416px -633px ;height: 33px;float: left;width: 95px;}
+#shangbao .jrsb_btn3 {background: url(../images/user/jrsb_btn.gif) no-repeat  -524px -633px ;height: 33px;float: left;width: 95px;margin-left:10px;}
+#shangbao .jrsb_img {background: url(../images/user/jrsb_btn.gif);height: 613px;margin-top: 30px;width: 760px;float:left;}

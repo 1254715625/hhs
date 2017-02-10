@@ -1,0 +1,98 @@
+<script language="javascript" type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
+<style type="text/css">
+.btn_jc {
+margin: 5px 0;
+padding: 3px 15px;
+border: 1px solid #2fadcb;
+border-top-right-radius: 4px;
+border-bottom-right-radius: 4px;
+border-bottom-left-radius: 4px;
+border-top-left-radius: 4px;
+color: #fff;
+text-decoration: none;
+cursor: pointer;
+background:#13a7c7;
+-webkit-transition: all 0.1s ease-in; -moz-transition: all 0.1s ease-in; -ms-transition: all 0.1s ease-in; -o-transition: all 0.3s ease-in; transition: all 0.3s ease-in;
+}
+.btn_jc:hover{ color: #fff; background-color: #0799ff;}
+.success-del{background:#bd362f}
+</style>
+<form method="post" action="">
+<ol id="topUpUL" class="block" style="height: 525px;">
+	<div style="margin-left:20px; margin-top:-3px; height:50px;"> 
+		快递单号：<input name="eid" id="haveordnumber" style="color:#7e7e7e; background:#fff; height:22px; width:125px; border:1px solid #CCC" value="{$eid}" placeholder="请输入快递单号">
+		日期时间：
+		<input type="hidden" name="search" value="1">
+		<input name="stime" id="d4311" style="height:20px;" placeholder="请输入日期" class="laydate-icon" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',maxDate:'#F{$dp.$D(\'d4312\')}'})" readonly="readonly" highLineWeekDay="true" value="{$stime}"> - 
+
+		<input name="etime" id="d4312" style="height:20px;" placeholder="请输入日期" class="laydate-icon" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',minDate:'#F{$dp.$D(\'d4311\')}'})" readonly="readonly" highLineWeekDay="true" value="{$etime}">
+		<input type="submit" value="开始查询" class="btn_jc" style="margin-top:14px;">
+		<input type="reset" value="清空" class="btn_jc" style="margin-top:14px;" onclick="location.href='single.php'">
+	</div>
+	<table cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td class="td-bak ta-align">序号</td>
+			<td class="td-bak ta-align">快递类型</td>
+			<td class="td-bak ta-align">快递单号</td>
+			<td class="td-bak ta-align">预计发货时间</td>
+			<td class="td-bak ta-align">发货地址</td>
+			<td class="td-bak ta-align">收货地址</td>
+			<td class="td-bak ta-align">操作</td>
+		</tr>
+		{foreach item=val key=key from=$list.record}
+		<tr>
+			<td class="ta-align td-bor">{$val.id}</td>
+			<td class="ta-align td-bor">{$val.wl}</td>
+			<td class="ta-align td-bor">{$val.eid}</td>
+			<td class="ta-align td-bor">{$val.send_time}</td>
+			<td class="ta-align td-bor">{$val.send_add}</td>
+			<td class="ta-align td-bor">{$val.to_add}</td>
+			<td class="ta-align td-bor"><a class="btn_jc gm" data="{$val.id}">购买</a></td>
+		</tr>
+	   {/foreach}
+	</table>
+	<div id="page">{$list.pagestr}</div>
+</ol>	
+</form>
+<script type="text/javascript">
+$(function(){
+	var num={$num};
+	var money={$uinfo.user_money};
+	var mon={$uinfo.params.kddhgm};
+	$(".gm").click(function(){
+		var express=$(this).attr('data');
+		if(express){
+			var str='';
+			if(num>0){
+				str='今日还可免费获得<font color="#fe5500">'+num+'</font>个快递单，点击免费获取~';
+				but='免费获取';
+			}else{
+				
+				if(money<mon){
+					str='快递单号购买价格为 <font color="#fe5500">'+mon+'元/个</font>，您的余额不足~';
+				}else{
+					str='快递单号购买价格为 <font color="#fe5500">'+mon+'元/个</font>，点击立即购买~';
+				}
+				but='购买 '+mon+'元/个';
+			}
+			var cur=$(this).parents('tr');
+			$.dialog({
+				title: '友情提示',
+				content: '亲，您是 <font color="#fe5500">{$uinfo.rank_name}</font> 会员，'+ str,
+				fixed: true,
+				lock: true,
+				okValue: but,
+				ok: function () {
+					$.post('single.php?mod=single',{'express': express},function(data){
+						$.dialog({title: '提示',content: data.info,fixed: true,lock: true,lock: true,cancelValue: '确定',cancel: function () { if(data.state){cur.addClass('success-del').fadeOut(1000,function(){cur.remove();if(num==0){location.reload();}num--;money=money-mon;});	}return true;}});
+					},'json');
+				},
+				cancelValue: '取消',
+				cancel: function () { return true;}
+			});
+		}else{
+			$.dialog({id:'mention', title: '提示',content: '快递单不存在~',fixed: true,lock: true,cancelValue: '确定',cancel: function () { return true;}});return false;
+		}
+	});
+});
+</script>

@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+.SecKill{background:url("../images/user/SceKill.jpg") no-repeat scroll 0 0 transparent;height:482px;position:relative;width:760px;margin-left:10px;float:left;}
+.SecKill .SecKill_down{height:33px;left:105px;position:absolute;top:227px;}
+.SecKill .SecKill_down .dleft{background-color:#AF0924;border-top:2px solid #AF0924;color:#FFFFFF;display:block;float:left;font-family:黑体,宋体,新宋体;font-size:18px;height:31px;line-height:33px;padding-left:22px;text-align:center;width:347px;}
+.SecKill .SecKill_down .dright{float:left;height:31px;width:180px;padding-left:10px;border-width:1px 1px 1px medium;-moz-border-right-colors:none;-moz-border-bottom-colors:none;-moz-border-left-colors:none;border-image:none;line-height:31px;font-family:宋体,新宋体;font-weight:bold;font-size:17px;color:rgb(51,51,51);border-color:rgb(207,107,124) rgb(207,107,124) rgb(207,107,124) -moz-use-text-color;-moz-border-top-colors:none;border-style:solid solid solid none;}
+.SecKill .SecKill_sub{position:absolute;top:385px;left:155px;font-family:Microsoft YaHei,微软雅黑,Microsoft JhengHei,Arial,宋体;font-size:18px;color:rgb(51,51,51);}
+.SecKill .SecKill_sub span{color:rgb(175,9,36);font-size:22px;}
+.SecKill .SecKill_txt{position:absolute;top:377px;left:336px;}
+.SecKill .SecKill_txt1{width:165px;float:left;margin-top:5px;}
+.SecKill .SecKill_txt input{width:165px;height:35px;line-height:35px;font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;border:0px none;}
+.SecKill .SecKill_buy,.SecKill_buy1{float:left;width:111px;height:42px;overflow:hidden;}
+.SecKill .SecKill_buy input{border:medium none;background:url("../images/user/SceKill_wait.jpg") no-repeat scroll 0% 0% transparent;height:42px;}
+.SecKill .SecKill_explain{position:absolute;top:423px;left:333px;line-height:25px;font-family:宋体;font-size:12px;color:rgb(114,114,114);}
+.SecKill .SecKill_explain span{color:rgb(175,9,36);font-size:15px;font-weight:bold;}
+.SecKill_ftCon{width:710px;margin-left:10px;float:left;padding-left:50px;padding-top:25px;height:100px;line-height:22px;font-size:18px;font-family:Microsoft YaHei,微软雅黑,Microsoft JhengHei,Arial,宋体;color:rgb(51,51,51);background:url("../images/user/SecKill_bottom.jpg") no-repeat scroll 0px 0px transparent;}
+.SecKill_ftCon span{color:rgb(175,9,36);font-weight:bold;}
+.SecKill .SecKill_buy1 input{background:url("../images/user/SceKill_do.jpg") no-repeat scroll 0 0 transparent;border:medium none;cursor:pointer;height:42px;line-height:99px;}

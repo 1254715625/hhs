@@ -1,0 +1,397 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="../css/user_exam.css">
+<div id="content">
+	<p>您现在的位置：<a href="/">首页</a> &gt; 考试</p>
+	<div id="divsuccess" style="display:none">
+        <div class="succee">
+            <p>恭喜您！您的调查问卷已经完成，此时您可以<a href="http://taobao.haohuisua.com.cn/#publish/oneTask">发布任务</a><a href="http://taobao.haohuisua.com.cn/#index">接手任务</a>发布任务注意事项：</p>
+            <ul>
+                <li>设置审核对象：<span>请关注<a href="http://taobao.haohuisua.com.cn/#outTask">“已发任务”</a>中任务是否被接手</span></li>
+                <li>保持联系畅通：<span>请随时登录好QQ，刷友正在四处找您</span></li>
+                <li>规定好评内容：<span>注意任务规定的好评内容和收货地址</span></li>
+                <li>设定发布时间：<span>发布的任务最好是不改价不审核的</span></li>
+            </ul>
+        </div>
+        <div class="cont" style="padding-left:130px;">
+            <a class="button_all" href="http://taobao.haohuisua.com.cn?act=oneTask">立即去发布任务</a>
+            <a class="button_all" href="http://taobao.haohuisua.com.cn.cn">立即接手任务</a>
+            <a class="button_all" href="user.php">进入我的后台管理</a>
+        </div>
+    </div>
+    	<div class="kaoshi-left" id="kaoshi-left">
+		 <div id="examnum">
+            <div class="kaoshi-sub">
+                <ul>
+					<li index="1" class="kaoshi-sub-current">一题</li>
+					<li index="2">二题</li>
+					<li index="3">三题</li>
+					<li index="4">四题</li>
+					<li index="5">五题</li>
+					<li index="6">六题</li>
+					<li index="7">七题</li>
+					<li index="8">八题</li>
+					<li index="9">九题</li>
+					<li index="10">十题</li>
+					<li index="11">十一题</li>
+					<li index="12">十二题</li>
+				</ul>
+            </div>
+            <div id="exam1">
+				<p class="kaoshi-tishi">加油！回答完这个问题您还有<b>11</b>题就可以完成<b>调查问卷</b>了</p>
+				<div class="kaoshi-timu">
+                    <p style="margin-bottom:10px;">好会刷平台是怎么刷信誉的？ </p>
+               		<p>
+               			<input type="radio" name="r1" id="radio0" value="A">
+						<b>A</b>
+						<label for="radio0"> 发布任务方通过压存款+奖励(麦点)在平台，接手任务方在淘宝拍等额的商品到最终付款好评获得平台存款+奖励，达到刷信誉目的</label>
+					</p>
+					<p>
+						<input type="radio" name="r1" id="radio1" value="B">
+						<b>B</b>
+						<label for="radio1"> 接手任务后，您要通过淘宝购买对方的任务商品并付款，任务完成后，您帮对方刷1个信誉，并获得麦点和商品花费等值的存款</label>
+					</p>
+					<p>
+						<input type="radio" name="r1" id="radio2" value="C">
+						<b>C</b><label for="radio2"> 以上全对</label>
+					</p>
+					<p class="kaoshi-next">
+						<a name="btnanswer" index="1" select="C">
+							<img src="images/user/kaoshi-next.jpg">
+						</a>
+					</p>
+                </div>
+                <div class="kaoshi-xiaotishi">
+                    <h3>答案小提示：</h3>
+                        <p>1 在平台的资金担保下，您购买对方任务设置的一个商品，帮别人刷一个好评，获得奖励麦点，然后您再发一个任务，别人再购买您任务里设置的商品，帮您刷一个好评，全国不同IP（不是简单的两两对刷，是平台几万会员随机接手完成），所以很安全。
+						2 这是需要钱来回周转使用（您买别人的，别人买您的），但没有1分钱损失，所以实质还是免费，只需卡里有资金来回周转就行了，资金有周转流动，实质毫无损失。 </p>
+                 </div>
+            </div>
+            <div id="exam2" style="display:none;">
+				<p class="kaoshi-tishi">加油！回答完这个问题您还有<b>10</b>题就可以完成<b>调查问卷</b>了</p>
+				<div class="kaoshi-timu">
+                    <p style="margin-bottom:10px;">什么叫平台任务？有什么用？</p>
+                    <p>
+						<input type="radio" name="r2" id="radio0" value="A">
+						<b>A</b><label for="radio0"> 任务包含了需要购买的淘宝商品 </label>
+					</p>
+					<p>
+						<input type="radio" name="r2" id="radio1" value="B">
+						<b>B</b><label for="radio1"> 通过接手方购买淘宝商品并完成任务来提升店铺信誉 </label>
+					</p>
+					<p>
+						<input type="radio" name="r2" id="radio2" value="C">
+						<b>C</b><label for="radio2"> 发布任务可以提升店铺信誉，接手任务可以赚取麦点</label>
+					</p>
+					<p>
+						<input type="radio" name="r2" id="radio3" value="D">
+						<b>D</b><label for="radio3"> 以上全对 </label>
+					</p>
+					<p class="kaoshi-next">
+						<a name="btnanswer" index="2" select="D">
+							<img src="images/user/kaoshi-next.jpg">
+						</a>
+					</p>
+                    </div>
+                    <div class="kaoshi-xiaotishi">
+                        <h3>答案小提示：</h3>
+                        <p>1 任务是平台刷钻行为的基本单位。每发布一个任务需要拥有麦点才可发布，每个任务中包含一个您淘宝店中拥有的商品地址，发布成功后由其他刷友接您的任务，然后根据这个商品地址进行购买，并且在支付宝付给您等值的人民币，同时完成交易后给您好评和淘宝信用点。
+ 						2 而接任务的刷友则在完成后获得平台奖励的麦点以及和在淘宝上所付出的人民币等值的存款。这个保证金可以通过提现返还到支付宝账户中，所以：平台存款=人民币现金 </p>
+                    </div>
+			</div>
+			<div id="exam3" style="display:none;">
+				<p class="kaoshi-tishi">加油！回答完这个问题您还有<b>9</b>题就可以完成<b>调查问卷</b>了</p>
+				<div class="kaoshi-timu">
+				<p style="margin-bottom:10px;">什么叫麦点？麦点有什么用？ </p>
+				<p>
+				<input type="radio" name="r3" id="radio0" value="A">
+				<b>A</b><label for="radio0"> 代表积分，区分等级</label></p>
+				<p>
+				<input type="radio" name="r3" id="radio1" value="B">
+				<b>B</b><label for="radio1"> 代表RMB，用于平台现金交易</label></p>
+				<p>
+				<input type="radio" name="r3" id="radio2" value="C">
+				<b>C</b><label for="radio2"> 平台的流通货币，用于发布任务，悬赏给接手任务的人</label></p>
+				<p class="kaoshi-next"><a name="btnanswer" index="3" select="C"><img src="images/user/kaoshi-next.jpg"></a></p>
+				</div>
+				<div class="kaoshi-xiaotishi">
+				<h3>答案小提示：</h3>
+				<p>麦点是平台价值流通形式，用于发布任务，提高淘宝信誉，理论上一个麦点等于一个平台任务且等于一个淘宝信誉。麦点可以通过帮助别人刷信用来免费获得，也可以通过存款直接购买获得。 </p>
+				</div>
+			</div>
+			<div id="exam4" style="display:none;">
+				<p class="kaoshi-tishi">加油！回答完这个问题您还有<b>8</b>题就可以完成<b>调查问卷</b>了</p>
+				<div class="kaoshi-timu">
+                    <p style="margin-bottom:10px;">什么是大号，什么是买号？ </p>
+                    <p>
+					<input type="radio" name="r4" id="radio0" value="A">
+					<b>A</b><label for="radio0"> 大号就是淘宝掌柜名（旺旺号）</label></p>
+					<p>
+					<input type="radio" name="r4" id="radio1" value="B">
+					<b>B</b><label for="radio1"> 买号就是在淘宝用邮箱新注册的小号，在平台接任务购买别人东西的</label></p>
+					<p>
+					<input type="radio" name="r4" id="radio2" value="C">
+					<b>C</b><label for="radio2"> 大号就是在平台用来发任务提升信誉的号</label></p>
+					<p>
+					<input type="radio" name="r4" id="radio3" value="D">
+					<b>D</b><label for="radio3"> 买号需要在平台捆绑，然后才能接任务</label></p>
+					<p>
+					<input type="radio" name="r4" id="radio4" value="E">
+					<b>E</b><label for="radio4"> 以上全对 </label></p>
+					<p class="kaoshi-next"><a name="btnanswer" index="4" select="E"><img src="images/user/kaoshi-next.jpg"></a></p>
+                </div>
+                <div class="kaoshi-xiaotishi">
+                    <h3>答案小提示：</h3>
+                    <p>1 卖号，也可称为“大号”，指的是您开淘宝店铺所用的淘宝帐号，同时也是您的掌柜号，用来让别人给自己刷信用的。注意一点的是，卖号（掌柜号）最好不要给别人刷信用，这样不安全。 
+					2 小号，也可称为“买号”，指的是您在淘宝注册的小号，不需要认证身份，用来给别人刷信用并且给自己赚取麦点的。 </p>
+                 </div>
+			</div>
+			<div id="exam5" style="display:none;">
+				<p class="kaoshi-tishi">加油！回答完这个问题您还有<b>7</b>题就可以完成<b>调查问卷</b>了</p>
+				<div class="kaoshi-timu">
+				<p style="margin-bottom:10px;">以下任务操作有严重错误的是？</p>
+				<p>
+				<input type="radio" name="r5" id="radio0" value="A">
+				<b>A</b><label for="radio0"> 接到任务后要检查任务担保金和淘宝付款的金额是否一致，一致才付款 </label></p>
+				<p>
+				<input type="radio" name="r5" id="radio1" value="B">
+				<b>B</b><label for="radio1"> 发布任务后，当对方在淘宝确认收货并且评价完成，要及时到平台确认完成任务</label></p>
+				<p>
+				<input type="radio" name="r5" id="radio2" value="C">
+				<b>C</b><label for="radio2"> 对方如果长期不完成任务操作，要立刻在旺旺跟对方联系催促 </label></p>
+				<p>
+				<input type="radio" name="r5" id="radio3" value="D">
+				<b>D</b><label for="radio3"> 淘宝操作一步，平台紧接着也要跟着操作一步，两边的状态要一致 </label></p>
+				<p class="kaoshi-next"><a name="btnanswer" index="5" select="C"><img src="images/user/kaoshi-next.jpg"></a></p>
+				</div>
+				<div class="kaoshi-xiaotishi">
+				<h3>答案小提示：</h3>
+				<p>1 接手任务者：接到任务后，您需要打开任务商品，进行购买付款，这时您要注意平台的任务金额和您要付款的商品金额是否一致，如果不一致，请马上联系对方修改价格，付款成功后，回到平台点“已付款”，然后等待对方发货，也可以通过QQ联系对方发货，然后在淘宝上确认收货并好评，再返回平台点“已按照要求好评”，最后联系对方完成任务。您获得麦点奖励和存款，需要注意的就是，淘宝操作一步，平台也操作一步。同时也要注意，平台的任务金额和您要付给对方的商品金额是否一致，对方只是在淘宝上给予假发货（点一下发货按钮，对方不会真的发货的）对方发任务前是扣除了存款的，这笔钱和您要支付的存款是相等的。任务完成后，您淘宝给他付款，他平台给您付款，没有钱的损失，只是他发布任务，您接任务，对方给您麦点的奖励。
+				2 发布任务者：您发布任务会显示在大厅，对方在接到您的任务后，就会打开任务商品，进行购买付款，当对方在淘宝付款成功后，对方就会回到平台点“已付款” ，然后对方就等待您在淘宝发货，当您看到对方付款成功后，您就可以在淘宝发货，然后您就在平台点“已发货”也可以通QQ联系对方收货，那么这时对方就会在淘宝确认收货并给您店铺好评，然后再返回平台点“已按照要求好评”，最后联系您完成任务，对方获得麦点奖励和存款，需要注意的就是，淘宝操作一步，平台也操作一步；同时也要注意平台的任务金额和对方要付给您的商品金额是否一致 您只是在淘宝上给予假发货（点一下发货按钮，不会真的发货的）您发任务前是扣除了存款的，这笔钱和对方要支付的存款是相等的。任务完成后，对方淘宝给您付款，您平台给对方付款，也就是说您发布任务时要冻结存款，交易完成后存款系统就会自动返还到对方的平台账户上，对方之前购买您的商品就会付款到您支付宝，交易过程中没有钱的损失，发布任务给对方麦点奖励而已。</p>
+				</div>
+			</div>
+			<div id="exam6" style="display:none;">
+				<p class="kaoshi-tishi">加油！回答完这个问题您还有<b>6</b>题就可以完成<b>调查问卷</b>了</p>
+				<div class="kaoshi-timu">
+				<p style="margin-bottom:10px;">实物任务和虚拟任务以及购物车任务的区别是什么？</p>
+				<p>
+				<input type="radio" name="r6" id="radio0" value="A">
+				<b>A</b><label for="radio0"> 实物任务包含的是需要物流运送的商品，比如服装等，需要24-72小时才能确认收货。</label></p>
+				<p>
+				<input type="radio" name="r6" id="radio1" value="B">
+				<b>B</b><label for="radio1"> 虚拟任务包含的是不需要物流运送的商品，比如充值卡，需要立刻确认收货。</label></p>
+				<p>
+				<input type="radio" name="r6" id="radio2" value="C">
+				<b>C</b><label for="radio2"> 购物车任务是包含2-6个商品的任务，发布一次可增长2-6个信誉点</label></p>
+				<p>
+				<input type="radio" name="r6" id="radio3" value="D">
+				<b>D</b><label for="radio3"> 以上全对</label></p>
+				<p class="kaoshi-next"><a name="btnanswer" index="6" select="D"><img src="images/user/kaoshi-next.jpg"></a></p>
+				</div>
+				<div class="kaoshi-xiaotishi">
+				<h3>答案小提示：</h3>
+				<p>平台上的任务分为两种：一种是实物任务，另外一种是虚拟任务。实物任务需要物流运送的商品，比如鞋子、衣服、首饰等等，也就是说需要填写物流信息的商品，此类任务需要在24-72小时后才能确认收货并给予好评的。虚拟任务就是不需要物流运送的商品，比如游戏点卡、Q币充值等等，也就是说不需要填写物流信息的商品，此类任务就需要立即发货、立即收货并给予好评的。购物车任务就是包含2-6个商品的任务，不管是实物任务（需要物流运送的商品）还是虚拟任务（不需要物流运送的商品）都可以放在购物车里面发布，发布一次购物车任务就可以获得2-6个信誉点。需要注意的是，不要把实物任务当成虚拟任务来发，这样会很危险的，当发布实物任务时就填写需要物流运送的商品地址，发布虚拟任务时就填写不需要物流运送的商品地址，这样才安全。 </p>
+				</div>
+			</div>
+			<div id="exam7" style="display:none;">
+				<p class="kaoshi-tishi">加油！回答完这个问题您还有<b>5</b>题就可以完成<b>调查问卷</b>了</p>
+				<div class="kaoshi-timu">
+				<p style="margin-bottom:10px;">下面那种买号是平台上允许绑定且受发布人欢迎的？</p>
+				<p>
+				<input type="radio" name="r7" id="radio0" value="A">
+				<b>A</b><label for="radio0"> 买号刚注册，还没填写完整个人交易信息等基本资料</label></p>
+				<p>
+				<input type="radio" name="r7" id="radio1" value="B">
+				<b>B</b><label for="radio1"> 大咪咪，爱上吃屎，XXX.com, 我是你爸</label></p>
+				<p>
+				<input type="radio" name="r7" id="radio2" value="C">
+				<b>C</b><label for="radio2"> 春光小明媚，我爱钉子户，现代大马力，李华与赵刚</label></p>
+				<p>
+				<input type="radio" name="r7" id="radio3" value="D">
+				<b>D</b><label for="radio3"> bigboy001，bigboy002，sddsl123，dsflj232dsfs</label></p>
+				<p class="kaoshi-next"><a name="btnanswer" index="7" select="C"><img src="images/user/kaoshi-next.jpg"></a></p>
+				</div>
+				<div class="kaoshi-xiaotishi">
+				<h3>答案小提示：</h3>
+				<p>买号名字请务必填写真实，为了您和发布方的安全请使用不重复，正常的淘宝名字。</p>
+				</div>
+			</div>
+			<div id="exam8" style="display:none;">
+				<p class="kaoshi-tishi">加油！回答完这个问题您还有<b>4</b>题就可以完成<b>调查问卷</b>了</p>
+				<div class="kaoshi-timu">
+				<p style="margin-bottom:10px;">接手实物任务有严重操作错误的是？ </p>
+				<p>
+				<input type="radio" name="r8" id="radio0" value="A">
+				<b>A</b><label for="radio0"> 接到实物任务付款后，发布方一般一个小时后才发货，力求真实</label></p>
+				<p>
+				<input type="radio" name="r8" id="radio1" value="B">
+				<b>B</b><label for="radio1"> 接到实物任务后，发布方在淘宝一发货，立刻就确认收货</label></p>
+				<p>
+				<input type="radio" name="r8" id="radio2" value="C">
+				<b>C</b><label for="radio2"> 按照发布方规定好评收货地址填写，不按规定来就没有麦点奖励</label></p>
+				<p class="kaoshi-next"><a name="btnanswer" index="8" select="B"><img src="images/user/kaoshi-next.jpg"></a></p>
+				</div>
+				<div class="kaoshi-xiaotishi">
+				<h3>答案小提示：</h3>
+				<p>实物任务是需要物流运送的商品，不可能马上就收到货，要模拟淘宝真实交易的原则，实物任务一般在对方付款成功后，一个小时后再发货，这样更真实，所以不需要立即发货的，当然，接任务者接到实物任务付款成功后，不需要催促对方立即发货，当对方发货后您更不需要马上就收货，因为实物任务一般是24-72小时后才能收货并给予好评，当已接任务列表中显示红色的“已按发布者要求进行好评”按钮时，才到淘宝确认收货并给予好评，完成后返回平台点击此红色按钮。如果发布者在任务说明中要求有收货地址和评价内容的，一定要按要求填写，否则会受到扣除本任务麦点的处罚。</p>
+				</div>
+			</div>
+			<div id="exam9" style="display:none;">
+				<p class="kaoshi-tishi">加油！回答完这个问题您还有<b>3</b>题就可以完成<b>调查问卷</b>了</p>
+				<div class="kaoshi-timu">
+				<p style="margin-bottom:10px;">碰到任务商品和淘宝商品价格不一致，要怎么办？</p>
+				<p>
+				<input type="radio" name="r9" id="radio0" value="A">
+				<b>A</b><label for="radio0"> 跟对方QQ联系，直接要求对方修改商品价格，一致后再拍下付款</label></p>
+				<p>
+				<input type="radio" name="r9" id="radio1" value="B">
+				<b>B</b><label for="radio1"> 先拍下商品，不要付款，然后QQ联系对方，要求对方修改交易价格，一致后再付款</label></p>
+				<p>
+				<input type="radio" name="r9" id="radio2" value="C">
+				<b>C</b><label for="radio2"> 直接取消任务，碰到骗子了</label></p>
+				<p class="kaoshi-next"><a name="btnanswer" index="9" select="B"><img src="images/user/kaoshi-next.jpg"></a></p>
+				</div>
+				<div class="kaoshi-xiaotishi">
+				<h3>答案小提示：</h3>
+				<p>接任务者当接到任务打开商品付款，任务商品和淘宝商品价格不一致，拍下不要付款，点击确认购买后立即关闭窗口，然后联系对方QQ，要求对方修改交易价格，当任务商品价格与淘宝商品价格一致后再付款。 </p>
+				</div>
+			</div>
+			<div id="exam10" style="display:none;">
+				<p class="kaoshi-tishi">加油！回答完这个问题您还有<b>2</b>题就可以完成<b>调查问卷</b>了</p>
+				<div class="kaoshi-timu">
+				<p style="margin-bottom:10px;">我要跟任务发布方或者任务接手方联系，以下什么方法是错误的？</p>
+				<p>
+				<input type="radio" name="r10" id="radio0" value="A">
+				<b>A</b><label for="radio0"> 在已接任务和已发任务中找到需要联系对方的任务，点击QQ图标进行联系</label></p>
+				<p>
+				<input type="radio" name="r10" id="radio1" value="B">
+				<b>B</b><label for="radio1"> 在已接任务和已发任务中找到需要联系对方的任务，点击手机图标发短信通知</label></p>
+				<p>
+				<input type="radio" name="r10" id="radio2" value="C">
+				<b>C</b><label for="radio2"> 对方在线，直接旺旺联系</label></p>
+				<p class="kaoshi-next"><a name="btnanswer" index="10" select="C"><img src="images/user/kaoshi-next.jpg"></a></p>
+				</div>
+				<div class="kaoshi-xiaotishi">
+				<h3>答案小提示：</h3>
+				<p>当您在做任务过程中，需要对方审核，价格不一致等问题时，您需要和对方联系，您可以在已接任务和已发任务中找到需要联系对方的任务，点击靠右侧的QQ图标进行联系；如果联系对方的QQ长时间没有反应，您也可以在已接任务和已发任务中找到需要联系对方的任务，点击QQ图标后侧的手机图标发短信通知，此短信通知是直接发到对方在平台所绑定的手机号码上面，当对方看到您给他发的信息通知时就会来处理您们这个任务的；当对方需要先聊旺旺的要求时，最好与对方通过QQ商量好需要在旺旺上面聊些什么，以免给卖家带来安全隐患，需要注意的是对方没有要求您聊旺旺时，即使对方的旺旺在线，也不要随意的在旺旺上面聊，平台禁止在旺旺上提到任何“刷信誉”、“任务确认”、“平台”等会暴露卖家身份的言语，一经举报立即封号</p>
+				</div>
+			</div>
+			<div id="exam11" style="display:none;">
+				<p class="kaoshi-tishi">加油！回答完这个问题您还有<b>1</b>题就可以完成<b>调查问卷</b>了</p>
+				<div class="kaoshi-timu">
+				<p style="margin-bottom:10px;">接任务提到的买号不一致是什么意思？不一致后有什么后果？</p>
+				<p>
+				<input type="radio" name="r11" id="radio0" value="A">
+				<b>A</b><label for="radio0"> 平台接任务显示的买号应该跟拍淘宝商品的号是一致的</label></p>
+				<p>
+				<input type="radio" name="r11" id="radio1" value="B">
+				<b>B</b><label for="radio1"> 小号不一致会导致任务发布人分辨不了是真实买家还是平台刷友</label></p>
+				<p>
+				<input type="radio" name="r11" id="radio2" value="C">
+				<b>C</b><label for="radio2"> 小号不一致一旦被投诉，任务所得麦点全部返还给发布方作为补偿</label></p>
+				<p>
+				<input type="radio" name="r11" id="radio3" value="D">
+				<b>D</b><label for="radio3"> 以上全对</label></p>
+				<p class="kaoshi-next"><a name="btnanswer" index="11" select="D"><img src="images/user/kaoshi-next.jpg"></a></p>
+				</div>
+				<div class="kaoshi-xiaotishi">
+				<h3>答案小提示：</h3>
+				<p>接任务前的首要准备就是绑定买号，接任务的时候需要选择小号，接到任务后登录淘宝购买商品的帐号也应该是这个小号，比如您接任务时用的是A号，首先您就打开淘宝所在的页面左上方的淘宝账号信息是不是A号，如果不是，您可以点击旁边的退出，然后登录您接任务的A号。因为接任务时的买号（也就是小号）不一致会导致任务发布人无法定位到是谁接了他任务，分辨不了是真实买家还是平台刷友；一旦出现小号（接任务的号与淘宝付款的号）不一致的情况，发任务者有权发起投诉，核实后，将扣除接手者的金币奖励返还给发布者，同时计有效投诉一次，一旦6次投诉成立，将被系统自动封号。 </p>
+				</div>
+			</div>
+			<div id="exam12" style="display:none;">
+				<p class="kaoshi-tishi">加油！回答完这个问题您还有<b>0</b>题就可以完成<b>调查问卷</b>了</p>
+				<div class="kaoshi-timu">
+				<p style="margin-bottom:10px;">我接任务或者发任务碰到纠纷了，正确的处理方式是？</p>
+				<p>
+				<input type="radio" name="r12" id="radio0" value="A">
+				<b>A</b><label for="radio0"> 联系平台管理员给予解决，和平处理调停才是双赢的</label></p>
+				<p>
+				<input type="radio" name="r12" id="radio1" value="B">
+				<b>B</b><label for="radio1"> 不管了，拖着吧</label></p>
+				<p class="kaoshi-next"><a name="btnanswer" index="12" select="A"><img src="images/user/kaoshi-next.jpg"></a></p>
+				</div>
+				<div class="kaoshi-xiaotishi">
+				<h3>答案小提示：</h3>
+				<p>当在平台做任务的时候与对方发生纠纷时，可以联系平台管理员，而不是互相报复，平台以和为贵，和气生财，大家都是来刷信誉的，要多在对方的角度思考问题，以“忍一时风平浪静，退一步海阔天空”、“您好，我好，大家好”的想法来处理平台做任务所发生的纠纷，这样和平处理才是最好的。 </p>
+				</div>
+			</div>
+        </div>
+	</div>
+	<!-- right -->
+	<div class="kaoshi-right">
+    	<div class="kaoshi-user">
+        	<div class="kaoshi-user-top">
+            	<h4>会员信息</h4>
+            </div>
+            <div class="kaoshi-user-cen">
+            	<p class="huan">欢迎来到好会刷：<b>{$session.user_name}</b></p>
+                <p>您当前拥有: 
+				</p><p>平台存款：<b>{$uinfo.user_money}</b> 元</p>
+                <p>平台麦点：<b>{$uinfo.pay_money}</b> 个</p>
+                <p>平台积分：<b>{$uinfo.rank_points}</b> 分</p>
+                <p>属于：<b>{$uinfo.rank_name}</b></p>
+                <p class="shucao">
+                <a href="http://taobao.haohuisua.com.cn" class="jrw">接任务赚存款</a>        
+                <a href="user.php?act=bank" class="zjput">直接购买存款</a> </p>
+                <p>
+                	<a href="user.php"><b>进入会员中心</b></a>
+                </p>
+            </div>
+        </div>
+        <p style="margin-top:15px;">
+        	<a href="/bbs/t626/">
+        		<img src="/static/images/user/kaoshi-ad.jpg">
+        	</a>
+        </p>
+    </div>
+    </div>
+<script type="text/javascript">
+$(function(){
+		$("a[name=btnanswer]").click(function(){
+		 	var index = parseInt($(this).attr("index"));
+		 	var select = $(this).attr("select");
+	        var choose = $("#exam" + index + " input:radio[name=r"+ index +"][checked]").val();
+
+	        /*选择答案*/
+	        if(choose!=null && choose!=""){
+	        	/*答案正确*/
+	        	if(select == choose){
+	        		if(index == 12){  
+	        			$.ajax({
+							   type: "POST",
+							   url: "user.php?act=exam",
+							   data: "curid=1",
+							   success: function(data){
+							   		obj = jQuery.parseJSON(data);															   		
+							   		if(obj.status == 1){
+			                           
+			                            $("#kaoshi-left").remove();
+			                            $("#exam"+ index).remove();
+			                            $("div.kaoshi-right").remove(); 
+										$("#divsuccess").show();
+
+			                        }else if(obj.status == 2){
+
+			                        	$.dialog({ id:'aasdsd',time:2000,title: '提示',content: '你之前已提交过问卷了~',fixed: true});
+			                        }else{
+			                            
+			                            $.dialog({id:'aasd',time:2000, title: '['+obj.errorCode+']提示',content: '提交问卷失败~',fixed: true});
+			                        }
+							   }
+						});
+	                }else{
+	                    $("#exam"+ index).hide();
+	                    $("#exam"+(index+1)).show();
+	                    $("#examnum li").removeClass();
+	                    $("#examnum li[index="+ (index+1) +"]").addClass("kaoshi-sub-current");
+	                }
+	        	}else{
+	        		$.dialog({ id:'asd',time:2000,title: '警告',content: '回答错误，请重新选择[可查看下方提示]~',fixed: true});
+	        	}
+	        }else{
+	            $.dialog({ id:'asda',time:2000,title: '警告',content: '请选择答案~',fixed: true});
+	        }
+		 });
+	});
+</script>
+{include common/footer}

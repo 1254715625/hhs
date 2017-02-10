@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="ur_here">首页 &raquo; 会员管理 &raquo; 会员等级</div>
+<div class="container">
+	<div class="subnav">
+		<a href="user_rank.php?act=info">新增等级</a>
+	</div>
+    <form id="form1" name="form1" method="post" action="">
+      <table width="100%" id="listTb">
+        <tr>
+          <th>会员等级名称</th>
+          <th>积分下限</th>
+          <th>积分上限</th>
+          <th>特殊会员组</th>
+          <th>操作</th>
+        </tr>
+  	    {foreach item=item key=key from=$ranks}
+        <tr>
+          <td>{$item.rank_name}</td>
+          <td>{$item.min_points}</td>
+          <td>{$item.max_points}</td>
+          <td>
+            {if $item.special}
+            <img src="images/yes.gif"/>
+            {else}
+            <img src="images/no.gif" />
+            {/if} 
+          </td>
+          <td><a href="?act=info&rid={$item.rank_id}">修改</a>|<a href="?dropid={$item.rank_id}" onclick="return confirm('请谨慎删除!')">删除</a></td>
+        </tr>
+  	    {/foreach}
+      </table>
+    </form>
+</div>
+</body>
+</html>

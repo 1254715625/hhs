@@ -1,0 +1,90 @@
+<div id="bq_menu2_cont_2">
+	 	<p>
+	 		<span class="STYLE4">您当前等级为：</span>
+	 		<span class="hsmd_dj">
+	 			<span class="lanse">普通会员</span> &nbsp;&nbsp;&nbsp; 
+	 		</span>
+	 		<span class="STYLE4">当前积分：</span>
+	 		<span class="hsmd_dj">
+	 			<span class="chengse2">{$uinfo.rank_points}</span> &nbsp;&nbsp;&nbsp; 
+	 		</span>
+	 		<span class="STYLE4">可换积分</span>
+	 		<span class="hsmd_dj">：
+	 			<span class="chengse2">{$rank_points}</span> 
+	 		</span>，兑换前您的帐号必须先预留1000积分。
+	 	</p>
+		<input type="hidden" value="0" name="rank_points">
+		<ul class="hsmd_list">
+		 	<li class="hs_jf">100积分</li>
+			<li class="hs_jb">可兑换刷点<span class="hongse">1</span>个</li>
+			<li><input type="hidden" value="1" name="num"><input type="button" class="hs_dh"></li>
+		</ul>
+		 <ul class="hsmd_list">
+		 	<li class="hs_jf">200积分</li>
+			<li class="hs_jb">可兑换刷点<span class="hongse">2</span>个</li>
+			<li><input type="hidden" value="2" name="num"><input type="button" class="hs_dh"></li>
+		 </ul>
+		 <ul class="hsmd_list">
+		 	<li class="hs_jf">400积分</li>
+			<li class="hs_jb">可兑换刷点<span class="hongse">4</span>个</li>
+			<li><input type="hidden" value="4" name="num"><input type="button" class="hs_dh"></li>
+		 </ul>
+		 <ul class="hsmd_list">
+		 	<li class="hs_jf">800积分</li>
+			<li class="hs_jb">可兑换刷点<span class="hongse">8</span>个</li>
+			<li><input type="hidden" value="8" name="num"><input type="button" class="hs_dh"></li>
+		 </ul>
+		 <ul class="hsmd_list">
+		 	<li class="hs_jf">1000积分</li>
+			<li class="hs_jb">可兑换刷点<span class="hongse">10</span>个</li>
+			<li><input type="hidden" value="10" name="num"><input type="button" class="hs_dh"></li>
+		 </ul>
+		 <ul class="hsmd_list">
+		 	<li class="hs_jf">2000积分</li>
+			<li class="hs_jb">可兑换刷点<span class="hongse">20</span>个</li>
+			<li><input type="hidden" value="20" name="num"><input type="button" class="hs_dh"></li>
+		 </ul>
+	</div>
+	<div class="cle"></div>
+	<p class="fuli">刷点还可以换以下福利：</p>
+	<div class="weal_hsj">
+		<ul>
+			<li><input type="radio" name="sid" value="6"> <img src="images/ico/rechange2.gif"> 一级VIP月使用权　<font color="red">60刷点</font></li>
+			<li><input type="radio" name="sid" value="7"> <img src="images/ico/rechange4.gif"> 钻石VIP月使用权　<font color="red">100刷点</font></li>
+			<li><input type="radio" name="sid" value="8"> <img src="images/ico/rechange3.gif"> 皇冠VIP月使用权　<font color="red">200刷点</font></li>
+	 	 </ul>
+	 	<p style="padding:10px 0px; line-height:20px; color:#666">
+	  		我们所提供的均为安全有效买号，售出后由于违反淘宝规则造成封号，不予任何售后。购买后买号信息将发送到您的站内信箱，请登陆 会员中心 - 站内提醒 查收。请遵循以上原则后进行购买。
+	  	</p>
+     	<p>
+     		<input type="submit" class="weal_btn">
+     	</p>
+	</div>
+	<script type="text/javascript">
+	$(".hs_dh").click(function(){
+		var num = parseInt($(this).siblings("input[name='num").val());
+		if({$uinfo.rank_points} -(num*100) < 1000 ){
+			$.dialog({title: '提示',content: '对不起，您的可换积分低于最小兑换',fixed: true,lock: true,cancelValue: '确定',cancel: function () { return true;}});
+			return false;
+		}
+		$.dialog({
+			id:'hsmd',
+			title: '提示',
+			content: '您将兑换'+ num +'个麦点~<br/><p style="margin:10px 0;color:#EB0F0F;">请输入安全码：<input style="border:1px solid #999;" type="password" id="safecode"></p>',
+			fixed: true,
+			lock: true,
+			okValue: '确定',
+			ok: function () {
+
+				if($("#safecode").val() ==''){
+					$.dialog({id:'mention', title: '提示',content: '请输入安全码~',fixed: true,lock: true,cancelValue: '确定',cancel: function () { return true;}});return false;
+				}
+				$.post('user.php?act=rechange&Recovery=integral',{'rank_points': num,'safecode':$("#safecode").val()},function(data){
+					$.dialog({title: '提示',content: data.info,fixed: true,lock: true,lock: true,cancelValue: '确定',cancel: function () { return true;}});
+
+				},'json');
+			}
+		})
+	});
+
+	</script>

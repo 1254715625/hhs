@@ -1,0 +1,35 @@
+
+		<table width="625" border="0" cellspacing="0" cellpadding="0" id="formQuestions">
+    	<tbody><tr>
+			<td width="89" valign="middle" height="40" align="left" colspan="5" style="color: #EB6222;padding-left: 18px;">提示：如取消安全提问则默认选择【无安全问题】,答案为空,输入安全操作码后确认即可。
+			</td>
+		</tr>
+		<tr>
+			<td width="89" valign="middle" height="40" align="right">选择问题：</td>
+			<td>
+				<select class="text_normal" id="questionid" name="question">
+	    			{foreach item=val key=key from=$question_arr}
+					<option value="{$key}" {if $questiontype == $key} selected = "selected" {/if}>{$val}</option>
+					{/foreach}
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td valign="middle" height="40" align="right">问题的答案：</td>
+			<td>
+				<input type="text" name="password" class="text_normal">
+			</td>
+		</tr>
+		<tr>
+			<td valign="middle" height="40" align="right">安全操作码：</td>
+			<td>
+				<input type="password" name="safepass" class="text_normal">
+			</td>
+		</tr>
+		<tr>
+			<td> </td>
+			<td>
+				<input type="submit" class="quest_sub">
+			</td>
+		</tr>
+	</tbody></table>

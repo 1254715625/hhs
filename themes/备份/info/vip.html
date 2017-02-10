@@ -1,0 +1,41 @@
+{include common/header}
+<style>
+#wrap{ margin: 0 auto;width: 1000px;}
+.sq_vipbg{ background: url(images/info/vip_1.png) no-repeat ;height: 324px;margin: 15px auto 0;position: relative;width: 983px;}
+.sqvip_btn{ background: url(images/info/vip_1.png) no-repeat -2px -340px;display: block;height: 50px;left: 716px;position: absolute;top: 147px;width: 125px;}
+.sqvip_bk{ border-collapse: collapse;margin: 0 auto 20px;}
+.sqvip_bk tr td{ border: 1px solid #A0D2EC;}
+.hongs{ color: #EB0F0F;}
+</style>
+<div id="wrap">
+		<div class="sq_vipbg"><a target="_blank" class="sqvip_btn" href="user.php?act=vip"></a></div>
+	     <table width="983" cellspacing="0" cellpadding="0" border="0" align="center" class="sqvip_bk">
+               <tbody>
+			   <tr>
+                    <td height="31" align="center"><strong>对应积分</strong></td>
+					{foreach item=val key=key from=$info}
+                    {if $val.special}<td align="center" class="hongse">无要求</td>{else}<td align="center">{$val.min_points}-{$val.max_points}</td>{/if}
+					{/foreach}
+               </tr>
+			  
+	{foreach item=item key=key from=$rank_params}
+      <tr>
+        <td width="162" height="31" bgcolor="eef9ff" align="center"><strong style="color:{$item.color}">{$item.name}</strong></td>
+		{foreach item=val key=k from=$info}
+		<td width="126" bgcolor="eef9ff" align="center">
+		{if $item.input=='text'}{$val.param.$key}{$item.unit}{/if}
+		{if $item.input=='radio'}{if $val.param.$key==0}{$item.value.0}{else}{$item.value.1}{/if}{/if}
+		</td>
+		{/foreach}
+      </tr>
+	  {/foreach}
+         	   <tr>
+	            <td height="31" bgcolor="#EEF9FF" align="center"><strong>费用</strong></td>
+				{foreach item=val key=key from=$info}
+	            <td bgcolor="#EEF9FF" align="center">{if $val.price==0}免费{else}{$val.price}元/月{/if}</td>
+				{/foreach}
+	          </tr>
+        </tbody></table>
+
+</div>
+{include common/footer}

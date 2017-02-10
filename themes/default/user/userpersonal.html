@@ -1,0 +1,33 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="css/user_index.css">
+<link rel="stylesheet" type="text/css" href="css/user_message.css">
+<script type="text/javascript" src="js/user/personal.js"></script>
+<script type="text/javascript" src="js/user/newDate.js"></script>
+<style type="text/css">
+#messagedata #page a:hover, #messagedata #page a.now-page {
+background: #EAF4FD;
+border-color: #B0D0E9;
+}
+</style>
+<div id="main">
+<div class="user_left">
+	{include user/leftmenu}
+</div>
+<div id="_right">
+
+<div id="messagedata">
+    <div class="bq_menu">
+		<a class="myRest {if $opt == 'myRest'}nov{/if}"   href="user.php?act=personal&opt=myRest">私人消息{if $opt == 'myRest'}(<span class="chengse2">{$read}个</span>){/if}</a>
+		<a class="rootRest {if $opt == 'rootRest'}nov{/if}"   href="user.php?act=personal&opt=rootRest">官方消息{if $opt == 'rootRest'}(<span class="chengse2">唯一</span>){/if}</a>
+		<a class="newDate {if $opt == 'newDate'}nov{/if}"   href="user.php?act=personal&opt=newDate">发新信息</a>
+		<a class="instation {if $opt == 'instation'}nov{/if}"   href="user.php?act=personal&opt=instation">站内提醒设置</a>
+	</div> 	
+	<div class="h15"></div>
+
+{if $opt== 'myRest'}{include user/usepersonal/myRest}{/if}
+{if $opt== 'rootRest'}{include user/usepersonal/rootRest}{/if}
+{if $opt== 'newDate'}{include user/usepersonal/newDate}{/if}
+{if $opt== 'instation'}{include user/usepersonal/instation}{/if}
+
+</div>
+{include common/footer}

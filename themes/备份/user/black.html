@@ -1,0 +1,151 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="css/user_index.css">
+<link rel="stylesheet" type="text/css" href="css/user_message.css">
+<link rel="stylesheet" type="text/css" href="css/user_black.css">
+<div id="main">
+<div class="user_left">
+	{include user/leftmenu}
+</div>
+<div id="_right">
+
+<div class="black">
+	<div class="mh_tishi">
+			{if $buser == 'ublack'}
+			<span>1、0可添加6个，1-100可添加8个，101-1000可添加10个，1001-5000可添加12个，5001积分以上可添加24个，VIP用户不受积分限制，最多可添加200个。
+				<br>2、选择以任务编号拉黑方式，如此任务不是自己的，将优先拉黑接手用户。
+				<br>3、拉黑后，将于30天后自动清除。
+			</span>
+			{else}
+			<span>1、0可添加20个，1-100可添加24个，101-1000可添加28个，1001-5000可添加32个，5001积分以上可添加50个，VIP用户不受积分限制，最多可添加320个。
+				<br>2、选择以任务编号拉黑方式，如此任务不是自己的，将优先拉黑买号。
+				<br>3、拉黑后，将于30天后自动清除。
+			</span>
+			{/if}
+	</div>
+	<div class="bq_menu2">
+		<a class="ublack {if $buser == 'ublack'}nov{/if}" href="user.php?act=black&buser=ublack">用户黑名单</a>
+		<a class="taobao {if $buser == 'taobao'}nov{/if}" href="user.php?act=black&buser=taobao">淘宝买号黑名单</a>
+		<a class="paipai {if $buser == 'paipai'}nov{/if}" href="user.php?act=black&buser=paipai">拍拍买号黑名单</a>      
+	</div>
+	<br>
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tbody><tr>
+				<td height="40" colspan="2">您是<strong class="chengse2">{$uinfo.rank_name}</strong>，可以添加 <strong class="chengse2">{$black.num}</strong> 个{if $buser == 'ublack'}用户{else}买号{/if}到黑名单</td>
+			</tr>
+			<tr>
+				<td>
+					<select class="select" name="types">
+							{if $buser == 'ublack'}
+							<option value="1">用户名</option>
+							<!-- <option value="2">任务编号</option> -->
+							{elseif $buser == 'taobao'}
+							<option value="1">淘宝买号</option>
+							<!-- <option value="2">淘宝任务编号</option> -->
+							{elseif $buser == 'paipai'}
+							<option value="1">拍拍用户名</option>
+							<!-- <option value="2">拍拍任务编号</option> -->
+							{/if}
+					</select>
+				</td>
+				<td><input type="text" maxlength="25" class="xginfo_bk" id="typesname" name="typesname"></td>
+			</tr>
+			<tr>
+				<td valign="top" style="padding-top:10px;"><strong>拉黑原因：</strong></td><td><textarea placeholder="为了避免恶意拉黑，请填写拉黑原因！" class="hmd_bk" name="complain" maxlength="200"></textarea></td>
+			</tr>
+			<tr>
+				<td></td><td height="55"><input type="submit" class="hmd_btn"></td>
+			</tr>
+
+		</tbody></table>
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tbody><tr>
+							<td class="txjl_bg1"></td>
+							<td width="15%" class="txjl_bg2">黑名单</td>
+							<td width="20%" class="txjl_bg2">被拉总数</td>
+							<td width="20%" class="txjl_bg2">拉黑原因</td>
+							<td width="20%" class="txjl_bg2">已拉天数</td>
+							<td width="13%" class="txjl_bg2">操作</td>
+							<td class="txjl_bg3"></td>
+						</tr>
+						{foreach item=val key=key from=$black.record}
+						<tr class="jd">
+		                    <td>&nbsp;</td>
+		                    <td height="35" class="mh_xxian"><a target="_blank" href="">{$val.getuname}</a></td>
+		                    <td class="chengse2 mh_xxian"><strong>{$val.blacknum}</strong></td>
+		                    <td class="mh_xxian"><input disabled="disabled" class="text" value="{$val.bname}"></td>
+							<td class="mh_xxian"> {$val.btime} 天</td>
+							<td class="mh_xxian"><a class="remove" href="javascript:;" mark="{$val.id}">移出黑名单</a></td>
+		                    <td>&nbsp;</td>
+	                 	</tr>
+						{/foreach}
+						{if $black.pagestr}
+						<tr>
+						<td class="mh_xxian"></td>
+						<td class="mh_xxian" colspan="5">
+							<div id="page">
+							{$black.pagestr}
+							</div>
+						</td>
+						<td class="mh_xxian"></td>
+						</tr>
+						{/if}
+					</tbody></table>
+<script type="text/javascript">
+$(function(){
+		$('.hmd_btn').click(function(){	
+			var self = $(this);
+			var sel = parseInt($(".select[name='types'] option:selected").val());
+			var goaction = "{$buser}";
+			var title = $("#typesname").val();
+			var content = $(".hmd_bk").val();
+
+			if(goaction != 'ublack'){
+				var tit = "买号不能为空~";
+			}else{
+				var tit = "用户名不能为空~";
+			}
+
+			if(title == ''){
+				$.dialog({title: '警告',content: tit,fixed: true,lock: true,cancelValue: '确定',cancel: function () { return true;}});
+				return false;
+			}
+
+			content = content.replace(/\s+/g,"");
+			if(content.length < 10){
+				$.dialog({title: '警告',content: "为了避免恶意拉黑，拉黑内容不能少于10个字符！",fixed: true,lock: true,cancelValue: '确定',cancel: function () { return true;}});
+				return false;
+			}
+			if({$black.num} == 0){
+				$.dialog({title: '警告',content: '黑名单个数已用完~',fixed: true,lock: true,cancelValue: '确定',cancel: function () { return true;}});
+				return false;
+			}
+			$.post('user.php?act=black&buser={$buser}',{'sel': sel,'title':title,'content':content},function(data){
+				$.dialog({title: '提示',content: data.info,fixed: true,lock: true,lock: true,cancelValue: '确定',cancel: function () { return true;}});
+			},'json');
+			return false;
+		});
+		$("a.remove").click(function(){
+			var i = $(this).attr("mark");
+			$.dialog({
+				id : 'clear',
+				title: '提示',
+				content: '确定移除吗？',
+				fixed: true,
+				lock: true,
+				okValue: '确定',
+			    ok: function () {
+					$.post('user.php?act=black&opt=del',{'del': i},function(data){
+						$.dialog({id : 'clear',title: '提示',content: data.info,fixed: true,lock: true,cancelValue: '确定',cancel: function () { return true;}});
+					},'json');
+           				
+           				
+			    }
+			})
+		});
+	});
+</script>
+</div>
+</div>
+{include common/footer}

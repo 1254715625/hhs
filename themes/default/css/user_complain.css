@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+/*申诉*/
+#shensu {float: left;width: 760px;margin-left: 10px;}
+#shensu .mh_tishi {background: #FFFBF2;border: 1px solid #FBE1C4;margin-bottom: 15px;padding: 12px 15px;}
+#shensu .mh_tishi span{color:#000;}
+#shensu .mh_tishi span strong{color:red;font-size: 16px;}
+#shensu .bq_menu {background: url(../images/user/fy_ico.jpg) repeat 0 -1342px;margin-bottom: 15px;height: 32px;}
+#shensu .bq_menu a {float: left;font-size: 13px;line-height: 30px;text-align: center;border: 1px solid #DDD;border-bottom: none;padding: 0 10px;margin-right: 5px;}
+#shensu .bq_menu a:hover, #shensu  .bq_menu a.nov {font-weight: bold;color:#1996E6;border-bottom: 1px solid #FFF;}
+#shensu .txjl_bg1 {background: url(../images/user/tx_btn.gif) no-repeat  0 -225px ;height:37px;width: 10px;}
+#shensu .txjl_bg2 {background: url(../images/user/tx_btn.gif) repeat-x  0 -264px ;color: #1996E6;font-size: 14px;font-weight: bold;vertical-align: middle;height:37px;text-align: center;color:#333;}
+#shensu .txjl_bg3 {background: url(../images/user/tx_btn.gif) no-repeat  right -303px ;height: 37px;width: 10px;}
+#shensu .mh_xxian {border-bottom: 1px dotted #DDDDDD;text-align:center;vertical-align: middle;}
+#shensu .rw_btn{background: url(../images/user/mhgl_btn.gif) no-repeat  -161px -281px ;display: block;height: 25px;overflow: hidden;text-indent: 99px;width: 60px;}
+#shensu .lvse0{color: #2D71A5;}
+#shensu .lvse1{color:green;}
+#shensu .lvse2{color:red;}
+
+/*申诉详细*/
+.sllb{width: 500px;}
+.sllb .sp{height:28px;}
+.sllb .hongse {color: #EB0F0F;}
+.sllb .lanse {color: #1996E6;}
+.sllb .tishi {border-top: 1px solid #DEC;font-size: 14px;text-align: center;padding: 5px 0;margin: 10px 0;border-bottom: 1px solid #DEC;}
+.sllb .tcss_hk{float: left;width: 100%;margin-bottom: 10px;}
+.sllb .tcss_hk li{float: left;width: 100%;border-bottom: 1px dashed #ddd;margin-bottom: 5px;padding-bottom: 5px;}
+.sllb .tcss_hk li strong{height: 30px;float: left;width: 100%;color: #E06;}
+.sllb .tcss_hk li strong i{color:#777;font-weight: normal;float: right;}
+.sllb .pdjg{background: #CEA;border: 1px solid #999;padding: 10px;color: #000;}
+.sllb img{max-width:500px;}

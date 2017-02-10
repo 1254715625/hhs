@@ -1,0 +1,98 @@
+#newpeople {margin: 0px auto;width: 100%;background: url(../images/help/newpeople_1.gif) no-repeat top;height: 1360px;}
+.imgstr1{background: url(../images/help/newpeople_2.png) no-repeat;}
+.imgstr2{background: url(../images/help/newpeople_3.png) no-repeat;}
+.content{width: 862px;margin:0 auto;}
+.content .title {float: left;height: 60px;margin-top: 30px;width: 290px;}
+.content .daohang {float: left;background-position: 0 -90px;height: 135px;width: 610px;margin-top: 30px;}
+.content .daohang img{color: #FF0000;left: -32px;position: absolute;top: 25px;display: none;z-index: 1000;}
+.content .daohang .fabu{float:left;margin: 3px 0 0 91px;}
+.content .daohang .fabu li{cursor: pointer;width:30px;height:30px;float:left;background-position: -474px -6px;position: relative;}
+.content .daohang .fabu li:hover{background-position: -381px -6px;}
+.content .daohang .fabu .fabu_2{margin-left:64px;}
+.content .daohang .fabu .fabu_3{margin-left:64px;}
+.content .daohang .fabu .fabu_4{margin-left:62px;}
+.content .daohang .fabu .fabu_5{margin-left:64px;}
+.content .daohang .fabu .fabu_6{margin-left:56px;}
+
+.content .daohang .jieshou{float:left;margin: 52px 0 0 91px;}
+.content .daohang .jieshou li{cursor: pointer;width:30px;height:30px;float:left;background-position: -666px -6px;position: relative;}
+.content .daohang .jieshou li:hover{background-position: -573px -6px;}
+.content .daohang .jieshou .jieshou_2{margin-left:64px;}
+.content .daohang .jieshou .jieshou_3{margin-left:64px;}
+.content .daohang .jieshou .jieshou_4{margin-left:62px;}
+.content .daohang .jieshou .jieshou_5{margin-left:64px;}
+.content .daohang .jieshou .jieshou_6{margin-left:56px;}
+
+.content .p-video{margin-left:57px;margin-top:20px;float:left;}
+.content .p-video .video {background: url(../images/help/help-ico.png) no-repeat;background-position: 0 0;float: left;height: 155px;text-indent: -9999px;width: 195px;}	
+
+.content .security{float: left;margin-top: 115px;}
+.content .security .security-bg{width:862px;height:146px;background: url(../images/help/help-ico.png) no-repeat;background-position: 0 -158px;}
+.content .security .security-l{float:left;width:370px;margin:43px 0 0 70px;}
+.content .security .security-r{float:left;width:370px;margin:43px 0 0 40px;}
+.content .security li{height:30px;line-height:30px;font-weight:bold;}
+
+.content .answer{float: left;margin-top: 34px;}
+.content .answer .answer-jsf,.content .answer .answer-fbf{float:left;width:420px;overflow:hidden;}
+.content .answer .answer-fbf{margin-left:22px;}
+.content .answer .answer-jsf .jsf{float:left;width:202px;height:29px;background: url(../images/help/help-ico.png) no-repeat;background-position: -230px 0px;}
+.content .answer .answer-fbf .fbf{float:left;width:202px;height:29px;background: url(../images/help/help-ico.png) no-repeat;background-position: -230px -44px;}
+.content .answer .more{float:left;height:29px;line-height:29px;padding-left:17px;margin-top:7px;}
+.content .answer .answer-jsf .more a{color:#4291e1;}
+.content .answer .answer-fbf .more a{color:#ff6900;}
+.content .answer .answer-jsf li,.content .answer .answer-fbf li{float:left;width:420px;}
+.content .answer .answer-jsf li a{margin-left:8px;height:25px;line-height:25px;font-weight:900;color:#4291e1;}
+.content .answer .answer-fbf li a{margin-left:8px;height:25px;line-height:25px;font-weight:900;color:#ff6900;}
+
+.content .answer .answer-jsf .on{color:#4291e1}
+.content .answer .answer-jsf li .info{width:400px;background:#d4e9ff;padding:6px;display:none;overflow:hidden;color:#004c99;line-height:20px;}
+.content .answer .answer-jsf li i{float:left;margin-top:7px;width:9px;height:9px;background: url(../images/help/help-ico.png) no-repeat;background-position: -243px -140px;}
+.content .answer .answer-jsf li i:hover{float:left;margin-top:7px;width:9px;height:9px;background: url(../images/help/help-ico.png) no-repeat;background-position: -243px -116px;}
+.content .answer .answer-jsf li i.ion{float:left;margin-top:7px;width:9px;height:9px;background: url(../images/help/help-ico.png) no-repeat;background-position: -243px -92px;}
+
+.content .answer .answer-fbf .on{color:#ff6900}
+.content .answer .answer-fbf li .info{width:400px;background:#ffdeb9;padding:6px;display:none;overflow:hidden;color:#d55b05;line-height:20px;}
+.content .answer .answer-fbf li i{float:left;margin-top:7px;width:9px;height:9px;background: url(../images/help/help-ico.png) no-repeat;background-position: -243px -140px;}
+.content .answer .answer-fbf li i:hover{float:left;margin-top:7px;width:9px;height:9px;background: url(../images/help/help-ico.png) no-repeat;background-position: -275px -116px;}
+.content .answer .answer-fbf li i.ion{float:left;margin-top:7px;width:9px;height:9px;background: url(../images/help/help-ico.png) no-repeat;background-position: -275px -92px;}
+
+.content .noun{float:left;width:862px;margin-top:20px;background:#ffecdf;margin-bottom:1px;}
+.content .noun .pt-noun{width:132px;height:33px;background: url(../images/help/help-ico.png) no-repeat;background-position: -487px 0px;margin:12px 0 0 20px;}
+
+.content .noun-info{float:left;width:862px;background:#ffecdf;margin-bottom:1px;}
+.content .noun-info .rw,.content .noun-info .ck,.content .noun-info .md,.content .noun-info .jf,.content .noun-info .xh,.content .noun-info .dh{float:left;width:90px;margin-top:10px;margin-left:20px;height:38px;background: url(../images/help/help-ico.png) no-repeat;text-indent: -9999em;}
+.content .noun-info .rw{background-position: -487px -40px;}
+.content .noun-info .ck{background-position: -487px -86px;}
+.content .noun-info .md{background-position: -487px -136px;}
+.content .noun-info .jf{background-position: -583px -40px;}
+.content .noun-info .xh{background-position: -583px -86px;}
+.content .noun-info .dh{background-position: -583px -136px;}
+.content .noun-info .sm{float:left;width:750px;color:#666666;}
+.content .noun-info .sz{line-height:48px;height:48px;}
+.content .noun-info:hover{background:#ffdcc3}
+
+.content .foottask{float:left;width:862px;background:#eeeeee;height:98px;margin-top:12px;}
+.content .foottask .mstask,.content .foottask .link1,.content .foottask .link2,.content .shoptg{background: url(../images/help/help-ico.png) no-repeat;}
+.content .foottask .mstask{width: 455px;height: 35px;float: left;margin: 35px 0 0 25px; background-position: 0px -323px;}
+.content .foottask .link1 {float: left;height: 41px;width: 181px;margin: 30px 10px 0 0;background-position: 0px -362px;}
+.content .foottask .link2 {float: left;height: 41px;width: 157px;margin: 30px 10px 0 0;background-position: -199px -362px;}
+
+.content .shoptg{float:left;margin-top:10px;width:862px;height:159px;background-position: 0px -408px;}
+.content .shoptg a{float:left;text-indent: -9999em;width:862px;height:159px;}
+
+#fld{ position: fixed;background: #FEFFFC;width: 100%;height: 65px;left: 0;top: 0;z-index: 999;border-bottom: 1px solid rgb(15, 196, 44);}
+#fld .hed{ width: 980px;height: 100%;margin: 0 auto;}
+#fld .hed h3{ float: left;font-size: 22px;margin:22px 22px 22px 65px;}
+#fld .hed #phcase{ font-size: 16px;text-indent: 4px;width: 220px;height: 30px;line-height: 30px;margin: 17px;border: 1px solid #CCC;float: left;}
+#fld .hed #code{ font-size: 16px;text-indent: 4px;width: 150px;height: 30px;line-height: 30px;margin: 17px;border: 1px solid #CCC;float: left;color:#999;}
+#fld .hed .code_time{ float: left;margin-top: 32px; margin-left: 5px;color: #999;}
+#fld .hed .ast{ margin: 14px 5px;float: left;}
+#fld .hed .yan_er{ display: none;}
+
+#fldsi{ position: fixed;background: #FEFFFC;width: 100%;height: 65px;left: 0;top: 0;z-index: 999;border-bottom: 1px solid rgb(15, 196, 44);}
+#fldsi .hed{ width: 1068px;height: 100%;margin: 0 auto;}
+#fldsi .hed h3{ float: left;font-size: 17px;margin:22px 22px 22px 85px;}
+#fldsi .hed .ast{ margin: 14px 5px;float: left;}
+#fldsi .hed .reds{ margin-top: 29px;margin-left: 40px;color: red;float: left;}
+#fldsi .hed .reds:hover{ text-decoration: underline;}
+#m_logo{ padding-top: 60px;}

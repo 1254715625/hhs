@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+#cash{float: left; width: 750px;margin-left:10px;}
+#cash .tixian_text {background: url(../images/user/tx_btn.gif) no-repeat scroll 10px 0 transparent;height: 110px; margin-bottom: 10px;padding: 10px 0 10px 175px;}
+#cash .tixian_text p.f16 {font-size: 18px;font-weight: bold;line-height: 35px;}
+#cash .lvse {color: #2C9E0A;}
+#cash .lanse {color: #1996E6;}
+#cash .lanses{font-size:13px; font-weight:bold;color: #1996E6;}
+#cash .hongse {color: #EB0F0F;}
+#cash .bq_menu {background: url(../images/user/fy_ico.jpg) repeat scroll 0 -1342px transparent;height: 32px;}
+#cash .bq_menu a:hover, #cash .bq_menu a.nov {color:#1996E6;text-decoration:none;background: url(../images/user/fy_ico.jpg) no-repeat scroll -4px -758px ;font-weight: bold;}
+#cash .bq_menu a {background: url(../images/user/fy_ico.jpg) no-repeat scroll -4px -806px transparent;float: left;font-size: 14px;height: 32px;line-height: 30px;margin-right: 3px;text-align: center;width: 96px;}
+#cash table{width:750px;margin-top:20px;font-size:14px;table-layout:fixed;}
+#cash table td{height: 35px;}
+#cash table .x_xian {border-bottom: 1px solid #E8E8E8; line-height: 16px;text-align: center;vertical-align: middle;height: 35px;}
+#cash .txbk {border: 1px solid #9ADCF2;height: 28px;line-height: 28px;width: 135px;}
+#cash .tjsq_btn {background: url(../images/user/tx_btn.gif) no-repeat  0 -143px ;border: medium none;cursor: pointer;height: 35px;width: 145px;}
+#cash .sjlb{border-bottom: 1px solid #E8E8E8;text-align: center;vertical-align: middle;}
+#cash .sjlb a{color: #1996E6;}
+#cash .bq_menu{cursor: pointer;}
+#cash .data_bg2{text-align:center;font-size: 12px;vertical-align: middle;border-bottom: 1px dashed #DDDDDD;}
+#cash .tx_jl {background: url(../images/user/tx_btn.gif) 0 -187px no-repeat;float: left;height: 30px;line-height: 30px;font-size: 14px;font-weight: bold;text-indent: 25px;}
+#cash .txjl_bg1 {background: url(../images/user/tx_btn.gif) 0 -264px repeat-x;text-align: center;vertical-align: middle;line-height: 230%;height:35px;color: #1996e6;font-size: 14px;font-weight: bold;border-left: 1px solid #ddd;}
+#cash .txjl_bg2 {background: url(../images/user/tx_btn.gif) 0 -264px repeat-x;text-align: center;vertical-align: middle;line-height: 230%;height:35px;color: #1996e6;font-size: 14px;font-weight: bold;}
+#cash .txjl_bg3 {background: url(../images/user/tx_btn.gif) 0 -264px repeat-x;text-align: center;vertical-align: middle;line-height: 230%;height:35px;color: #1996e6;font-size: 14px;font-weight: bold;border-right: 1px solid #ddd;}
+#cash .textxs{margin-top: 30px;}
+#cash #page {margin: 30px 10px 25px;padding: 0 15px;width: 710px;float: left;display: inline;}
+#cash #page a:hover, .paydetails #page a.nov {background: none repeat scroll 0 0 #EAF4FD;border-color: #B0D0E9;}
+#cash #page a {background: none repeat scroll 0 0 #F8F8F8;border: 1px solid #E8E8E8;display: block;float: left;height: 25px;margin: 0 2px;text-align: center;width: 25px;}
+#cash #page .pr,.total {float: right;}
+#cash .addcards{background: url(../images/user/tixian.png) no-repeat;width: 115px;float: left;height: 35px;text-indent: -9999px;margin: 10px 25px;}
+#addcard select{color: #666;border: 1px solid #DDDDDD;height: 25px;line-height: 150%;}
+#addcard .card_name{padding-left: 5px;color: #666;border: 1px solid #DDDDDD;height: 25px;line-height: 150%; width: 220px}
+#addcard .card_number{padding-left: 5px;color: #666;border: 1px solid #DDDDDD;height: 25px;line-height: 150%;width: 250px;}
+#addcard .card_vcode{padding-left: 5px;color: #666;border: 1px solid #DDDDDD;height: 25px;line-height: 150%;width: 100px;}
+#addcard .card_button{border: 1px solid #ddd;height: 30px;padding:4px;background:white;cursor: pointer;}

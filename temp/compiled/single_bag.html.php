@@ -1,0 +1,358 @@
+<style type="text/css">
+.mainBox3 {
+border: 1px solid #f3f3f3;
+background: #fff;
+margin-bottom: 7px;
+}
+.mainBox3 h3 {
+font-size: 14px;
+font-weight: bold;
+color: #FFFFFF;
+padding: 5px;
+}
+.red {
+color: #f75d39;
+font-weight: bold;
+}
+.content {
+padding: 10px;
+}
+.mainBox3 img {
+border: 0px currentColor;
+width: auto;
+height: auto;
+vertical-align: middle;
+-ms-interpolation-mode: bicubic;
+max-width: 100%;
+}
+.tab td {
+padding: 5px;
+}
+.input {
+border: 1px solid #ddd;
+padding: 2px;
+}
+input {
+font-size: 12px;
+}
+.btn {
+background: url(themes/default/images/stkb.gif) repeat-x;
+color: #fff;
+border: 0;
+padding: 5px 15px;
+cursor: pointer;
+}
+
+</style>
+
+<ol id="topUpUL" class="block" style="">
+<div style="width:950px; height:95%; MARGIN-RIGHT: auto; MARGIN-LEFT: auto;">
+            
+	<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0" class="sf8sh">
+	<tbody>
+	<tr>
+		<td height="30" align="center" colspan="3" class="sf8sh1"><p><span style="color: rgb(255, 0, 0);"><strong>所有快递时间均为：20:00，超过20:00 下单的将延迟到次日20:00 发货！</strong></span></p></td>
+	</tr>
+	<tr>
+		<td height="10" colspan="3"></td>
+	</tr>
+	<tr>
+		<td width="150" rowspan="2" class="kdmb">
+			<table height="60" border="0" cellpadding="0" cellspacing="0" class="jgxx">
+			<tbody>
+			<tr>
+				<td width="60"></td>
+				<td>
+					选择快递：
+				</td>
+			</tr>
+			</tbody>
+			</table>
+		</td>
+        
+		<td width="550" rowspan="2" class="kdmb">
+		<div style="margin:0px 10px 0px ;">
+          <div class="dk_container dk_theme_default existing_event" id="dk_container_express" tabindex="0" aria-hidden="true" style="display: block;"><a class="dk_toggle dk_label" style="width: 212px;"><?php echo $this->_var['express']['0']['title']; ?></a>
+		  <div class="dk_options">
+			  <ul class="dk_options_inner" role="main" aria-hidden="true">
+				<?php if($this->_var['express'])foreach($this->_var['express'] as $this->_var['key'] => $this->_var['val']){ ?>
+				<li class="<?php if($this->_var['key'] == 0){ ?>dk_option_current<?php } ?>"><a data-dk-dropdown-value="<?php echo $this->_var['val']['id']; ?>"><?php echo $this->_var['val']['title']; ?></a></li>
+				<?php } ?>
+			  </ul>
+		  </div>
+		  <select name="express" class="existing_event" id="express" style="width: 210px; display: none;">
+			<?php if($this->_var['express'])foreach($this->_var['express'] as $this->_var['key'] => $this->_var['val']){ ?>
+			 <option value="<?php echo $this->_var['val']['id']; ?>"><?php echo $this->_var['val']['title']; ?></option>
+			<?php } ?>
+		  </select></div></div>
+		</td>
+		<td width="335" class="kdmbmr kbxx" style="padding-left:15px" id="mr"><span id="onwo"><?php if($this->_var['default_express']){ ?>已<?php }else{ ?>未<?php } ?>设置默认快递：</span><span id="woyo">您当前<?php if($this->_var['default_express']){ ?>已设置 <font color="green"><?php echo $this->_var['express']['0']['title']; ?></font> 为<?php }else{ ?>还未设置<?php } ?>默认快递</span></td>
+	</tr>
+	
+	<tr>
+	  <td class="kdmbbtn" align="center" style="padding:2px 0px 5px 0px"><a class="media-filter" href="javascript:void(0)" id="woyo_btn">设置默认快递</a></td>
+	</tr>
+	<tr>
+		<td colspan="3" style="padding:3px;"></td>
+	</tr>
+	<tr>
+		<td colspan="3" class="hyxxxxx">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border-spacing: 0px;">
+			<tbody>
+			<tr>
+				<td width="138" height="50" align="left">
+					<table height="60" border="0" cellpadding="0" cellspacing="0" class="jgxs">
+					<tbody>
+					<tr>
+						<td width="60">
+						</td>
+						<td>
+							快递详情：
+						</td>
+					</tr>
+					</tbody>
+					</table>
+				</td>
+				<td width="14" height="60" align="center">
+				</td>
+				<td width="647" align="left">
+				<?php if($this->_var['express'])foreach($this->_var['express'] as $this->_var['key'] => $this->_var['val']){ ?>
+				 <div class="kuaidi" data="<?php echo $this->_var['val']['id']; ?>" style="width:100%;margin:0px;padding:0px;<?php if($this->_var['key'] > 0){ ?>display:none;<?php } ?>;font-size:<?php echo $this->_var['font_size']; ?>px;">
+					<?php echo  strip_tags(htmlspecialchars_decode($this->_var['val']['content']));?>
+					
+				 </div>
+				<?php } ?>
+				</td>
+			</tr>
+			</tbody>
+			</table>
+		</td>
+	</tr>
+	<tr><td colspan="3" class="hyxxxxx">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="kbfj" style="margin-top:0;">
+		<tbody>
+		<tr>
+			<td height="40" align="left">
+				<table width="100%" height="80" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-spacing: 0px;">
+				<tbody>
+				<tr>
+					<td align="left">
+                    <div class="mainBox3" id="div1">
+          <h3 class="red">⒊请严格按样式图去复制地址提交，否则不出物流</h3>
+          <div class="content"> <img src="themes/default/images/single/me01.gif" width="700" height="130" style="float:none;"><br>
+            <br>
+            <span style="font-size:14px; line-height:24px;">直接到淘宝后台——已卖出宝贝——等待发货——点详情——再点收货和物流信息。<br>
+            就可以看到一个买家留的"收货地址"，请复制这个格式到下面即可</span><br>
+          <span class="red"><br>收货地址格式：小优，15888888888， ，广东省 广州市 越秀区 应元路华光街，510000<br>收货地址格式：小优，15888888888，广东省 广州市 越秀区 应元路华光街，510000<br>收货地址格式：小优, 15888888888, 广东省 广州市 越秀区 应元路华光街, 510000	<font color="red">(新增)</font><br>收货地址格式：收件人:小优 手机:15888888888 地址:广东省 广州市 越秀区 应元路华光街 邮编:510000 <font color="red">(新增)</font></span></div>
+        </div>
+						</td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="40" align="left">
+				<table width="100%" height="80" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-spacing: 0px;">
+				<tbody>
+				<tr>
+					<td align="left">
+						<div class="mainBox3">
+          <h3>⒋收货地填写<br>
+          </h3>
+          <div class="content">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tab">
+<tbody><tr>
+<td><font color="red">*</font> 收货人姓名： </td>
+<td width="618"><input name="realname" type="text" class="input" id="realname" size="40"><span id="realnameSpan" style="color:#999999">请输入姓名</span></td>
+</tr>
+<tr>
+<td><font color="red">*</font> 收货人电话： </td>
+<td><input name="tel" type="text" class="input" id="tel" size="40" maxlength="11" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"><span id="telSpan" style="color:#999999">请输入联系电话</span></td>
+</tr>
+<tr>
+<td width="116"><font color="red">*</font> 收货人城市： </td>
+<td>
+<div id="city_2">
+	<select class="prov"></select> 
+	<select class="city" disabled="disabled"></select>
+	<select class="dist" disabled="disabled"></select>
+	<span id="addressSpan" style="color:#999999">请选择地址</span>
+
+</div>
+
+</td>
+<script type="text/javascript" src="themes/default/js/jquery.cityselect.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#city_2").citySelect({
+			prov: "南京",
+			nodata: "none"
+		});
+	});
+</script>
+</tr>
+<tr>
+<td><font color="red">*</font> 详细地址： </td>
+<td><input name="street" type="text" class="input" id="street" size="40"><span id="streetSpan" style="color:#999999">请输入详细地址</span></td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><input type="button" class="btn" id="Qiad" value="添加"><span id="streetSpan" style="color:#999999">　　↓添加到下面↓</span></td>
+</tr>
+</tbody></table>
+</div></div>	
+					</td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+
+				
+				<tr>
+					<td height="55" colspan="3" valign="bottom">
+						<table width="100%" height="40" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-spacing: 0px;">
+						<tbody>
+						<tr>
+							<td>
+							</td>
+							<td colspan="2">
+							</td>
+						</tr>
+						<tr>
+							<td width="20" align="left">
+								 
+							</td>
+							<td width="105" align="center">
+								收货地址：
+							</td>
+							<td width="851" align="left">
+								<div class="kongbao_form">
+									<div class="sh_box">
+										<div class="sh_cont_left">
+											<div class="textarea_cont" id="show_czlc">
+                                             <div class="form-control">
+                                               <textarea name="address" class="textarea_lest" id="address" spellcheck="false"></textarea>
+                                             </div>
+                                             
+										  </div>
+                                          <div style="float:right; padding-right:5px"><div title="清空收货地址" id="clear" onclick="delcontr()">×</div></div>
+										</div>
+										<div class="sh_cont_right">
+											<p class="sh_mm"><span id="kblev">我的等级：<?php echo $this->_var['uinfo']['rank_name']; ?></span></p><p class="sh_mm"><span id="kbord" class="color_ord">享受单价：<?php echo $this->_var['uinfo']['params']['zsdhgm']; ?>元/单</span></p><p class="sh_mm"><span id="kbmoney">余额：<b id="xydd" class="color_or"> ¥<?php echo $this->_var['uinfo']['user_money']; ?><?php if($this->_var['uinfo']['user_money'] < $this->_var['uinfo']['params']['zsdhgm']){ ?><font color="red">余额不足</font><?php } ?></b></span></p>
+											<p class="pdt"><a class="btn_jc" href="single.php?mod=apply">查看订单</a></p>
+											<p class="pdt"><input name="btnSubmit" class="ljbutton orange medium" type="button" id="but" value="提交订单"></p>
+										</div>
+                                        
+									</div>
+								</div>
+                                
+							</td>
+						</tr>
+						</tbody>
+						</table>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+			<td width="1"></td></tr></tbody>
+		  </table>
+		</div>
+    </ol>
+	<script type="text/javascript" src="themes/default/js/kbjsAddress.js"></script>
+	<script type="text/javascript">
+ addressInit('Select1', 'Select2', 'Select3');
+</script>
+	<script type="text/javascript">
+        $(function(){
+			$(".dk_container").mouseenter(function(){
+				$(this).children('.dk_options').show();
+			});
+			$(".dk_container").mouseleave(function(){
+				$(this).children('.dk_options').hide();
+			});
+			$(".dk_container .dk_options_inner li").click(function(){
+				$(this).addClass('dk_option_current').siblings('li').removeClass('dk_option_current');
+				var value=$(this).children('a').attr('data-dk-dropdown-value');
+				var html=$(this).children('a').text();
+				$(this).parents('.dk_container').children('a.dk_toggle').text(html);
+				$(this).parents('.dk_container').find('select option[value="'+value+'"]').attr("selected",true);
+				$(this).parents('.dk_options').hide();
+				$('.kuaidi').hide();
+				$('.kuaidi[data="'+value+'"]').show();
+			});
+			$("#woyo_btn").click(function(){
+				var id=$("#express option:selected").val();
+				var text=$("#express option:selected").text();
+				var de=<?php echo $this->_var['default_express']; ?>;
+				if(id){
+					if(id==de){
+						art.dialog({id:'mention', title: '提示',content: '您当前已设置 <font color="green">'+text+'</font> 为默认快递~',fixed: true,lock: true,cancelValue: '确定',cancel: function () { return true;}});return false;
+					}else{
+						$.post('single.php?mod=bag&act=set_default',{'did': id},function(data){
+							art.dialog({title: '提示',content: ''+data.info,fixed: true,lock: true,lock: true,cancelValue: '确定',cancel: function () { if(data.state){$("#mr").html(data.mr);de=id;}return true;}});
+						},'json');
+					}
+				}
+			});
+			$("#add_def").click(function(){
+				var id=$("#delivery option:selected").val();
+				if(id){
+					$.post('single.php?mod=bag&act=add_default',{'did': id},function(data){
+						art.dialog({title: '提示',content: ''+data.info,fixed: true,lock: true,lock: true,cancelValue: '确定',cancel: function () {return true;}});
+					},'json');
+				}
+			});
+			$("#but").click(function(){
+				var express=$("#express option:selected").val();
+				var address=$("#address").val();
+				if(express==''){
+					art.dialog({title: '提示',content: '请选择快递~',fixed: true,lock: true,lock: true,cancelValue: '确定',cancel: function () {return true;}});
+				}else if(address==''){
+					art.dialog({title: '提示',content: '请填写收货地址~',fixed: true,lock: true,lock: true,cancelValue: '确定',cancel: function () {$("#address").focus();return true;}});
+				}else{
+					$.post('single.php?mod=bag&act=submit',{'express': express,'address': address},function(data){
+						art.dialog({title: '提示',content: ''+data.info,fixed: true,lock: true,lock: true,cancelValue: '确定',cancel: function () {if(data.state){location.href='single.php?mod=apply';}return true;}});
+					},'json');
+				}
+
+			});
+		});
+        </script>
+<script type="text/javascript"> 
+$(function() {
+	$("#Qiad").click(function() {
+		var nam = $("#realname").val();
+		var tel = $("#tel").val();
+		var sf = $(".prov").val();
+		var cs = $(".city").val();
+		var xq = $(".dist").val();
+		var xx = $("#street").val();
+		var n = ($("#address").val().split('\n')).length - 1;
+		if (n >= 9) {
+			art.dialog({title: '提示',content: '最多添加10条！',fixed: true,lock: true,lock: true,cancelValue: '确定',cancel: function () {return true;}});
+			return;
+		}
+		if (nam == "" || tel == "" || sf == "" || cs == "" || xx == "") {
+			art.dialog({title: '提示',content: '请填写完整！',fixed: true,lock: true,lock: true,cancelValue: '确定',cancel: function () {return true;}});
+			return;
+		}
+		if(xq==null ){xq='';}
+		var qsr = nam + "，" + tel + "，" + sf + " " + cs + " " + xq + " " + xx ;
+
+		if ($("#address").val() == "") {
+			$("#address").val(qsr);
+		} else {
+			$("#address")[0].value += "\n" + qsr;
+		}
+
+		$("#realname").val("");
+		$("#tel").val("");
+		$("#street").val("");　　　
+	});
+});
+</script>

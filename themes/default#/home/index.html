@@ -1,0 +1,303 @@
+{include common/header}
+
+<div id="d_banner" action-index="home"> 
+	<div class="main_visual">
+		<div id="dmh-login"> 
+			{if $session.user_id}
+			<div class="ilogData">
+				<ul id="goone">
+					<li><span>一个真实的淘宝信誉平台期待您的加入</span></li>
+					<li class="li-a">用户名：<a href="info.php?act=info&uname={$session.user_name}">{$session.user_name}</a></li>
+					<li class="li-b">存款：<a href="user.php?act=payde">{$uinfo.user_money}</a></li>
+					<li class="li-b">麦点：<a href="user.php?act=logpoint">{$uinfo.pay_money}</a></li>
+					<li class="li-b">经验：<a href="user.php?act=logcredit">{$uinfo.rank_points}</a></li>
+					<li class="li-b">登陆次数：<a href="user.php?act=logaccount">{$uinfo.log_count}</a></li>
+					<li class="li-b"><a href="http://taobao.haohuisua.com"><img width="275" height="49" src="../images/home/goone.png"></a></li>
+					<div class="touimg">
+						<a href="info.php?act=info&uname={$session.user_name}">
+						<img width="100" height="100" id="user_avatar" src="images/user/headimg/{if $uinfo.headimg==''}user_head.gif{else}{$uinfo.headimg}{/if}">
+						</a>
+					</div>
+				</ul>
+			</div>
+			{else}
+			<div class="login">
+				<form action="user.php?act=login" method="post" id="action">
+				<div id="userentry">
+					<p class="join">一站式威客服务平台期待您的加入！</p>
+					<a class="reg-btn" href="user.php?act=reg"></a>
+					<p class="ui-p">
+						<label id="J-label-name" class="ui-label">
+							<span class="ui-name-icon">用户名：</span>
+		      			</label>
+		     			<input type="text" maxlength="26" class="ui-input" id="lusername" name="username" autocomplete="off" tabindex="1" value="" placeholder="好会刷用户名">
+					</p>
+					<p style="height:50px;"></p> 
+					<p class="ui-p">
+						<label id="J-label-pass" class="ui-label">
+							<span class="ui-pass-icon">密码：</span>
+		      			</label>
+		     			<input type="password" maxlength="16" class="ui-input" id="lpassword" name="password" autocomplete="off" tabindex="1" value="" placeholder="好会刷密码">
+					</p>
+					<p style="height:15px;"></p>
+				</div>
+				<ul id="interlocution" style="display:none;">
+					<li class="usertour">您的账户设置了安全提问,请您验证安全问题。</li>
+					<li id="usertourError"></li>
+					<li>
+						<span class="usertourText">安全提问：</span>
+						<select id="loginquestionid" name="questionid" class="selectque">
+						<option value="0">请选择问题</option>
+						<option value="1">早上几点起床？</option>
+						<option value="2">TA最爱吃的菜？</option>
+						<option value="3">好朋友的名字？</option>
+						<option value="4">你理想的体重？</option>
+						<option value="5">爱人的生日？</option>
+						</select>
+					</li>
+					<li>
+						<span id="loginpwd" class="answer">问题答案：</span>
+						<input type="text" maxlength="20" value="" id="trouble" class="input-answer">
+					</li>
+				</ul>
+				<input type="submit" class="login-btn" id="login_btn" value="" />
+				<ul>
+					<li id="miaoname" class="fl"></li>
+					<li id="miaopwd" class="fl"></li>
+					<li class="fr" style="margin-right: 30px;">
+						<a href="help.php?act=selfservice" target="_blank" style="color:#e5e5e5">忘记密码?</a>
+					</li>
+				</ul>
+			</div>
+			{/if}
+			<div class="bsicon">
+				<a href="user.php?act=spread" target="_blank" class="a1">推广排名</a>
+				<a href="single.php" target="_blank" class="a2">快递单号</a>
+				<a href="home.php?act=tuoguan" target="_blank" class="a3">网店托管</a>
+			</div>
+		</div>
+		
+		<div class="main_image">
+			<ul>
+				<li style="background:url(../images/home/banner-1.jpg) center top no-repeat;"></li>
+				<li style="background:url(../images/home/banner-2.jpg) center top no-repeat;"></li>
+				<li style="background:url(../images/home/banner-3.jpg) center top no-repeat;"></li>
+			</ul>			
+		</div>
+	</div>
+</div>
+<!-- 内容 -->
+<div id="content">
+	<!-- 图文教程 -->
+	<div id="course">
+		<ul class="course-fbf">
+			<li><a class="fbf-1" href="home.php?act=buypoint"></a></li>
+			<li><a class="fbf-2" href="help.php" target="_blank"></a></li>
+			<li><a class="fbf-3" href="help.php" target="_blank"></a></li>
+		</ul>
+		<p class="fbf-p"><a href="help.php" target="_blank"></a></p>
+		<ul class="course-jsf">
+			<li><a class="jsf-1" href="help.php" target="_blank"></a></li>
+			<li><a class="jsf-2" href="help.php" target="_blank"></a></li>
+			<li><a class="jsf-3" href="help.php" target="_blank"></a></li>
+		</ul>
+		<p class="jsf-p"><a href="help.php" target="_blank"></a></p>
+	</div>
+	<div id="guide_left">
+		<a target="_blank" href="help.php?act=video">
+			<span class="play"></span>
+			<img width="405" height="239" class="image" src="../images/home/dmh-video.jpg" alt="视频操作指南">
+		</a>
+	</div>
+	<div id="guide_right"> 
+		<div class="notice">
+			<ul>
+			<h4 class="notice-t"></h4>
+				{foreach item=item key=key from=$artlist}
+				<li>
+					<a target="_blank" href="bbs.php?act=view&id={$item.id}">
+					{if $key==0}<strong>{$item.title}</strong>{else}{$item.title}{/if}</a>
+					<span class="date">{$item.add_time}</span>
+				</li>
+				{/foreach}
+			</ul>
+		</div>
+		<div class="arises quctl" id="c_bk3">
+			<ul class="ajax_i">
+				<h4 class="arises-t"></h4>
+				{foreach item=item key=key from=$now}
+				<li>
+				<div class="fl arises-d">
+					<a target="_blank" style="color:#1996E6" href="info.php?act=info&uname={$item.susername}">{$item.susername}</a>
+					<span>发布任务网店提升<b style="color:#ff7112">+1</b></span>
+				</div>
+				</li>
+				{/foreach}
+			</ul>
+		</div>
+	</div>
+	<div id="fontImg">
+		<div class="depict"><img src="../images/home/td-help.png" alt="服务指南"></div>
+		<div class="bricks">
+            <a class="itm1 itm-L" href="http://taobao.haohuisua.com" target="_blank">
+            	<img src="../images/home/ban1.gif">
+            </a>
+            <a class="itm2 itm-S" href="http://taobao.haohuisua.com" target="_blank">
+            	<img src="../images/home/ban2.gif">
+            </a>
+            <a class="itm3 itm-S" href="home.php?act=tuoguan" target="_blank">
+            	<img src="../images/home/ban3.gif">
+            </a>
+            <a class="itm4 itm-S" href="home.php?act=tuoguan" target="_blank" style="left: 751px; top: 0px; height: 240px; width: 250px;">
+            	<img src="../images/home/ban4.gif">
+            </a>
+        </div>
+	</div>
+	<!-- 选择我们 --> 
+	<div class="choice">
+		<ul class="yelkuang">
+			<li class="li_first" style="background-color: rgb(113, 199, 250); background-position: initial initial; background-repeat: initial initial;"><span class="bgtxt0 allimg">好会刷的优势</span></li>
+			<li><a href="help.php?act=newpeople"><span class="bgtxt1 allimg">领先的互动平台</span></a></li>
+
+			<li><a href="help.php?act=newpeople"><span class="bgtxt2 allimg">精准的营销服务</span></a></li>
+			<li class="li_first"><a href="help.php?act=newpeople"><span class="allimg bghide3 bgtxt3">超人气平台</span></a></li>
+			<li><a href="help.php?act=newpeople"><span class="bgtxt4 allimg">完善的安全保证</span></a></li>
+			<li><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=800081529&amp;site=qq&amp;menu=yes" target="_blank">
+				<span class="allimg bghide5 bgtxt5">企业QQ</span></a>
+			</li>
+		</ul>
+		<div class="rigdata"> 
+			<div class="namehead">
+				<span class="left allimg">加入时间</span>
+			</div>
+			<ul class="zhanggui">
+				{foreach item=item key=key from=$newuser}
+				<li><a href="info.php?act=info&uname={$item.user_name}">{$item.user_name}</a><span>刚刚加入</span></li>
+				{/foreach}
+			</ul>
+			<div class="tuig allimg" style="background-position: -587px -56px;margin: 8px 0 0 10px;">
+				<span>推荐一个会员就可以产生<b>5</b>元丰厚收入！做好会刷推广，轻松赚大钱！</span>
+				<ul class="line" style="float: left;height: 25px;overflow: hidden;width: 208px;margin-top: 2px;text-align:center;">
+				<li style="color:rgb(255, 153, 0); margin-top: -21.705254641181757px;">longang123 获得推广提成5元</li><li style="color: rgb(255, 153, 0); margin-top: 0px;">strongzzq 获得推广提成5元</li><li style="color: rgb(255, 153, 0); margin-top: 0px;">xhaxb 获得推广提成5元</li><li style="color: rgb(255, 153, 0); margin-top: 0px;">hellosee 获得推广提成5元</li><li style="color: rgb(255, 153, 0); margin-top: 0px;">15876535067 获得推广提成5元</li><li style="color: rgb(255, 153, 0); margin-top: -5.763041605441566px;">longang123 获得推广提成5元</li><li style="color: rgb(255, 153, 0); margin-top: -0.48865267153631936px;">longang123 获得推广提成5元</li></ul>
+				<a class="one" href="help.php">愉悦的大麦</a>
+				<a href="help.php">核心词</a>
+				<a class="three" href="help.php">chaofen</a>
+				<a href="home.php?act=popularize" class="tg_btn" title="加入好会刷推广" alt="加入好会刷推广"></a>
+			</div>
+		</div>
+		<div class="whatdmh">
+			<span class="txt allimg">为什么选择好会刷</span>
+			<div class="xzthree">
+				<a href="help.php?act=newpeople" class="allimg">担保交易</a>
+				<a href="help.php?act=newpeople" class="noleft allimg">消费者保障</a>
+				<a href="help.php?act=newpeople" class="noright allimg">威客认证</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- bottomBar -->
+	
+</div>
+<div id="d-bottomBar" style="display: none;">
+	<div class="d-bottomBar-wrap"> 
+	   <a class="d-signin"> </a> 
+	   <a class="d-signup" href="qqlogin.php" target="_blank"></a> 
+	   <a class="d-signup1" href="user.php?act=reg"></a> 
+	   <a class="d-signup1" href="home.php?act=tuoguan" style="margin-left: 32px;background-position: -287px -89px;width: 144px;"></a>
+	</div>
+	<span id="d-closeBottomBar">关闭</span> 
+</div>
+<script type="text/javascript">
+if(!$.cookie('d-bottomBar')){
+	var dhideFlag = true;
+	$(window).scroll(function(){
+		 if(dhideFlag) {
+			 ($(this).scrollTop() > 200) ? $("#d-bottomBar").fadeIn() : $("#d-bottomBar").fadeOut();
+		 }
+	});
+	$("#d-closeBottomBar").click(function(){
+		 dhideFlag = false;
+		 var offset = document.domain.indexOf('haohuisua'),
+		 domain = document.domain.substr(offset);
+		 $.cookie('d-bottomBar',1,{ domain:domain});
+		 $("#d-bottomBar").fadeOut();
+	});
+}
+	//3秒弹出数据
+	function delayTime(i,data){
+		if(data == ""){
+			return false;
+		}
+		var n = i - 1;
+		var cont = '<li style="display:none;">';
+			cont +='<div class="fl arises-d"><a target="_blank" style="color:#1996E6" href="info.php?act=info&uname='+data[n]['susername']+'">'+data[n]['susername']+'</a>';
+			cont +='<span>发布任务网店提升<b style="color:#ff7112">+1</b></span></div>';
+			//cont +='<div class="fl"><span class="date">'+data[n]['complateTime']+'前</span></div>';
+			//cont +='<div class="fl"><span class="date">'+data[n]['complateTime'].split("时")[1]+'前</span></div>';
+			cont +='</li>';
+		var lisize = $(".ajax_i li").length;
+		if(lisize >= 7){
+			$(".ajax_i li:gt(5)").fadeOut("slow");//.remove()
+			$(".ajax_i li:gt(5)").hide();
+		}
+		$(".ajax_i .arises-t").after(cont);
+		$(".ajax_i li:first").fadeIn("slow"); 
+		if(n > 0){
+			if(lisize < 7){
+				setTimeout(function(){ delayTime(n,data);},1);
+			}else{
+
+				setTimeout(function(){ delayTime(n,data);},3000);
+			}
+		}else{
+			$(".ajax_i li:hidden").remove();//删除不可见的。
+		}
+	}
+	//读取成功的任务
+	function getTaskOver(){
+		$.ajax({
+			type : 'GET',
+			dataType : 'json',
+			url : 'getTaskOver.php',
+			success : function(data){
+				var i = data.length;
+				delayTime(i,data);
+			}
+		});
+		setTimeout("getTaskOver()",3000);
+	}
+	//调调
+	getTaskOver();
+	$(".choice .yelkuang li").each(function(i){
+	$(this).mouseover(function(){
+		if(i != 0){
+			$(".choice .yelkuang li:eq(0)").css("background","#71c7fa");
+			$(this).children("a").children("span:first").removeClass("bghide"+i).addClass("bgshow"+i);
+			$(this).children("a").children("span:last").removeClass("bgtxt"+i).addClass("bgtext"+i);
+		}
+	});
+	$(this).mouseout(function(){
+		if(i != 0){
+			$(".choice .yelkuang li:eq(0)").css("background","#71c7fa");
+			$(this).children("a").children("span:first").removeClass("bgshow"+i).addClass("bghide"+i);
+			$(this).children("a").children("span:last").removeClass("bgtext"+i).addClass("bgtxt"+i);
+		}
+	})
+});
+var _wrap=$('ul.line');
+	var _interval=500;
+	var _moving;
+	_wrap.hover(function(){
+		clearInterval(_moving);
+	},function(){
+		_moving=setInterval(function(){
+			var _field=_wrap.find('li:first');
+			var _h=_field.height();
+			_field.animate({ marginTop:-_h+'px'},1600,function(){
+				_field.css('marginTop',0).appendTo(_wrap);
+			})
+		},_interval)
+	}).trigger('mouseleave');
+</script>
+
+{include common/footer}

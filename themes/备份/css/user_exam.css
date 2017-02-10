@@ -1,0 +1,170 @@
+ul {
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+#content {
+width: 940px;
+margin: 0 auto;
+padding-bottom: 20px;
+padding-top: 5px;
+}
+#content .kaoshi-left {
+width: 691px;
+float: left;
+font-family: 微软雅黑;
+margin-top: 15px;
+margin-bottom: 20px;
+}
+#content .kaoshi-sub {
+height: 35px;
+background: #d6efad;
+line-height: 35px;
+border: #c6df9d 1px solid;
+}
+#content .kaoshi-user-cen {
+background: #fbfff5;
+border: #c8e0a0 1px solid;
+padding: 10px;
+line-height: 25px;
+padding-left: 20px;
+}
+#content .kaoshi-sub ul li {
+display: block;
+height: 35px;
+line-height: 35px;
+text-align: center;
+width: 50px;
+color: #426606;
+float: left;
+}
+#content .kaoshi-tishi {
+background: url(../images/user/kaoshii.jpg) no-repeat left;
+padding-left: 20px;
+color: #6d6d6d;
+margin: 15px 0;
+}
+#content .kaoshi-timu {
+background: #fbfff5;
+padding: 35px;
+line-height: 24px;
+border: #c8e0a0 1px solid;
+}
+#content .kaoshi-sub ul li.kaoshi-sub-current {
+background: #a9d069;
+display: block;
+height: 35px;
+line-height: 35px;
+text-align: center;
+width: 50px;
+}
+#content .kaoshi-next {
+border-top: #c8e0a0 1px solid;
+margin-top: 20px;
+padding-top: 30px;
+padding-left: 200px;
+}
+#content .kaoshi-next a{cursor: pointer;}
+#content .kaoshi-xiaotishi {
+background: #fbfff5 url(../images/user/kaoshi-wenhao.jpg) no-repeat left;
+border: #c8e0a0 1px solid;
+margin-top: 15px;
+padding: 30px 30px 30px 140px;
+color: #00682e;
+font-weight: bold;
+line-height: 24px;
+min-height: 114px;
+}
+#content .kaoshi-xiaotishi h3 {
+color: #eb6100;
+}
+#content .kaoshi-right {
+float: right;
+width: 236px;
+font-family: 微软雅黑;
+margin-top: 15px;
+}
+#content .kaoshi-user-top {
+color: #426606;
+height: 35px;
+background: #d6efad;
+line-height: 35px;
+border: #c6df9d 1px solid;
+padding-left: 10px;
+}
+#content .kaoshi-user-cen .huan{font-size:14px; border-bottom:#c8e0a0 1px solid;}
+#content .kaoshi-user-cen b {
+color: #00682e;
+}
+#content .kaoshi-user-cen{border-top:#c8e0a0 1px solid; padding-top:10px; margin-top:10px;}
+#content .kaoshi-user-cen .jrw{background:url(../images/user/kaoshi-icon2.jpg) no-repeat left; padding-left:18px;}
+#content .kaoshi-user-cen .zjput{background:url(../images/user/kaoshi-icon3.jpg) no-repeat left; padding-left:18px;}
+#divsuccess {
+border: 1px dashed #ddd;
+float: left;
+width: 840px;
+padding-bottom: 30px;
+margin: 20px 0;
+}
+#divsuccess .succee {
+padding-left: 100px;
+
+margin-top: 10px;
+padding-top: 20px;
+}
+#divsuccess .succee p {
+background: url(../images/user/msg_bg.gif) no-repeat  0 -600px ;
+font-size: 14px;
+height: 32px;
+text-indent: 40px;
+width: 695px;
+}
+#divsuccess .succee p a {
+color: #FF0000;
+font-weight: bolder;
+height: 32px;
+line-height: 32px;
+margin-left: 5px;
+margin-right: 5px;
+}
+#divsuccess .succee ul {
+background: #F5FAFF;
+border: 1px solid #BAE1FE;
+margin-top: 10px;
+overflow: hidden;
+padding: 20px 10px;
+width: 673px;
+}
+#divsuccess .succee ul li {
+color: #656462;
+display: inline;
+float: left;
+height: 24px;
+line-height: 24px;
+overflow: hidden;
+width: 330px;
+}
+#divsuccess .succee ul li span {
+color: #FF6E05;
+font-weight: bolder;
+}
+#divsuccess .succee ul li a {
+color: #3472A1;
+}
+#divsuccess .cont {
+margin-top: 37px;
+width: 910px;
+}
+#divsuccess .cont a {
+background: url(../images/user/login_bg.gif) no-repeat;
+color: #000000;
+display: block;
+float: left;
+font-size: 14px;
+font-weight: bold;
+height: 35px;
+line-height: 35px;
+margin-right: 30px;
+text-align: center;
+width: 161px;
+}

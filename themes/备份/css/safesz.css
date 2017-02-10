@@ -1,0 +1,17 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin: 0;padding: 0;}
+table { border-collapse: collapse;border-spacing: 0;}
+table, tr, td { font-size: 12px;}
+#safesz{ margin: 0 auto;}
+#safesz .ks-clear:after { clear: both;display: block;height: 0;}
+#safesz .col-main { float: left;min-height: 1px;width: 100%;}
+#safesz .ks-clear{ width:956px; margin:0 auto;}
+#safesz .shouze { font-family: 微软雅黑;margin-bottom: 30px;margin-top: 10px;text-align: center;}
+#safesz .shouze table { border-left: 1px solid #C0C1BD;}
+#safesz .shouze-biaotou { background: #DFDFDF;color: #6E706C;font-size: 14px;font-weight: bold;height: 40px;line-height: 40px;}
+#safesz .shouze td { border-bottom: 1px solid #C0C1BD;border-right: 1px solid #C0C1BD;}
+#safesz .shouze-del td { padding: 30px 0;width: 345px;}
+#safesz .shouze-tebie p { border-bottom: 1px solid #DDDDDD;margin: 10px 15px 0;padding-bottom: 10px;}
+#safesz .shouze-tuijian { background: url(../images/help/safesz_tebie.jpg) no-repeat ;font-family: 微软雅黑;height: 141px;margin-left: 30px;margin-top: 30px;padding-left: 20px;padding-top: 20px;width: 270px;text-align: left;}
+.shouze-tuijian dt { color: #FB873B;font-weight: bold;}
+.shouze-tuijian-input { border: 1px solid #FFCBA9;height: 28px;width: 255px;color:#555;line-height: 200%;}
+.shouze-tuijian-btn { margin-left: 55px;margin-top: 15px;}

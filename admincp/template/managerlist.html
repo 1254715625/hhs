@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="ur_here">首页 &raquo; 任务管理 &raquo; 托管列表</div>
+<div class="container">
+    <form id="form1" name="form1" method="post" action="">
+		<table width="100%" id="listTb">
+			<tr>
+				<th>ID</th>
+				<th>掌柜帐号</th>
+				<th>订单号</th>
+				<th>店铺地址</th>
+				<th>商品地址</th>
+				<th>QQ号码</th>
+				<th>手机号码</th>
+				<th>添加时间</th>
+			</tr>
+			{foreach item=v key=key from=$data['record']}
+			<tr>
+				<td>{$v.id}</td>
+				<td>{$v.uid}</td>
+				<td>{$v.oid}</td>
+				<td>{$v.shopUrl}</td>
+				<td>{$v.proUrl}</td>
+				<td>{$v.QQ}</td>
+				<td>{$v.phone}</td>
+				<td>{$v.addtime}</td>
+			</tr>
+			{/foreach}
+			<tr>
+				<td colspan="8" class="footer"><div class="page">{$data.pagestr}</div></td>
+			</tr>
+		</table>
+    </form>
+</div>
+</body>
+</html>

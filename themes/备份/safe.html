@@ -1,0 +1,31 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="css/mm.css" />
+<link rel="stylesheet" type="text/css" href="css/taobao.css" />
+<script type="text/javascript" src="js/taobao/index.js"></script>
+<script type="text/javascript">
+$(function(){
+{if $_COOKIE['safepass']!=$uinfo['user_id']}
+		var win = $.dialog({title : '请输入安全验证码',
+				  content : '<div style="padding: 20px 25px;width:295px"><span style="color:red;padding: 20px 25px;">您需要输入安全操作码才可以继续进行操作。</span><br><br><span style="color:blue">请输入安全码： </span><input type="password" name="safepass"><br><br><br><a href="user.php?act=userinfo&opt=setsafepass" style="color:blue">找回安全码</a></div>',
+				  okValue : "确定",
+				  ok : function(){
+							$.post('taobao.php',{'safepass':'safepass','pass': $('input[name=safepass]').val()}, function(data){
+								 $.dialog({title : '温馨提示',
+								  content : data.str,
+									stack : true,
+								  okValue : "确定",
+								  ok : function(){
+										if(data.state){
+											location.href="taobao.php";
+										}else{
+											history.back();
+										}
+								  },
+								  lock : true});
+								  return false;
+							},'json');
+						},
+	lock : true});
+{/if}
+});
+</script>

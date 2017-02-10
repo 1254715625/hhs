@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+.black { float: left; width: 760px;margin-left:10px;}
+.black .mh_tishi{background: none repeat scroll 0 0 #FFFBF2; border: 1px solid #FBE1C4; margin-bottom: 15px; padding: 12px 15px;}
+.black .bq_menu2{background: url(../images/user/der_ico.png) repeat scroll 0 -374px transparent; height: 32px;}
+.black .bq_menu2 a:hover, .black .bq_menu2 a.nov{background: url(../images/user/der_ico.png) no-repeat scroll 0 -277px transparent; font-weight: bold;color:#1996E6;}
+.black .bq_menu2 a{background: url(../images/user/der_ico.png) no-repeat scroll 0 -324px transparent; display: block; float: left; font-size: 14px; height: 32px; line-height: 30px; margin-right: 3px; text-align: center; width: 128px;}table{border-collapse: collapse; border-spacing: 0;}
+.black .chengse2{color: #EB0F0F;}
+.black .xginfo_bk, .xginfo_bk2{border: 1px solid #DDDDDD; height: 20px; line-height: 20px; text-indent: 5px; width: 180px;}
+.black .hmd_bk{border: 1px solid #DDDDDD; height: 80px; margin-top: 15px; padding: 7px; width: 495px;}
+.black .hmd_btn{background: url(../images/user/der_ico.png) no-repeat scroll 0 -229px ; border: medium none; cursor: pointer; display: block; height: 35px; line-height: 999px; overflow: hidden; text-indent: 999px; width: 127px;}
+.black .txjl_bg1{background: url(../images/user/tx_btn.gif) no-repeat scroll 0 -225px ;height:37px;width:10px;}
+.black .txjl_bg3{background: url(../images/user/tx_btn.gif) no-repeat scroll right -303px ;height:37px;width:10px;}
+.black .txjl_bg2{background: url(../images/user/tx_btn.gif) repeat-x scroll 0 -264px ; color: #1996E6; font-size: 14px; font-weight: bold;height:37px;text-align:center;color:#333;vertical-align: middle;}
+.black .mh_xxian{border-bottom: 1px dotted #DDDDDD;text-align: center;vertical-align: middle;height: 35px;}
+.black #page{margin: 30px 10px 25px; padding: 0 15px;}
+.black .select{border: 1px solid #ddd;font-size: 14px;}
+.black .text{width: 240px;border: none;text-align: center;background: white;}

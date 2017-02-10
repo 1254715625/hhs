@@ -1,0 +1,79 @@
+@charset "utf-8";
+@charset "utf-8";
+/* CSS Document */
+.center{width:998px;margin:0 auto;}
+/* 账户信息 */
+/* 项目列表 */
+.project{width:100%;float:left;}
+.project ol{width:100%;float:left; margin:20px 0px}
+.project ol li{width:100%;float:left; line-height:20px;}
+.project ol img{float:left}
+.project ol li.projectit{font-size:20px;float:left; line-height:36px; margin-bottom:5px}
+.project ol li.projectit img{margin-right:10px}
+.project ol li.projectit span{color:#979797; font-size:20px}
+.login_menu{width:100%;height:50px; line-height:50px; background:#505050;float:left}
+.login_menu ul{width:100%;float:left}
+.login_menu ul li{line-height:50px; margin-right:10px; color:#FFF; font-size:14px; letter-spacing:1pt;float:left}
+.menu_box{width:180px;height:25px;line-height:25px;color:#666;float:left; margin:10px 5px 0px 5px;border:1px solid #abadb3}
+.menu_boxI{height:26px;color:#333;width:180px;_margin:20px 5px 0px 20px;border:1px solid #abadb3}
+.login_btn{width:100px;height:26px;line-height:26px;text-decoration:none;color:#FFF;border:none;cursor:pointer;font-family:微软雅黑; font-size:14px; text-align:center;margin-right:20px; letter-spacing:1pt;_margin:20px 5px 0px 20px}
+.loginbtn-pink{background:#ffaa11;}
+.loginbtn-pink:hover{background-color:#ffb125;}
+.loginbtn-pink:active{background-color:#ffb125}
+.button-windows{background:#09f}
+.button-windows:hover{background-color:#28a9ff}
+.button-windows:active{background-color:#28a9ff}
+.login_list{width:100%;float:left; background:#e8e8e8; padding-bottom:10px; height:800px}
+.login_list ul{width:978px;float:left;background:#FFF;margin-left:10px;_margin-left:5px; margin-top:5px}
+.login_list ul li{width:100%;float:left; border-bottom:1px dashed #ccc; padding-bottom:10px; text-align:center;
+line-height:18px; margin-bottom:10px;max-height:26px;overflow:hidden;}
+.login_list ul li span{width:150px;float:left}
+.login_list ul li span.big{width:228px;float:left;word-wrap:break-word;line-height: 16px;}
+.login_list ul li.listit{font-size:14px; font-weight:bold;background:#e8e8e8; border-bottom:none}
+.login_list ul li span.other{width:378px;float:left}
+.login_list ul li span.messagecon{width:478px;float:left}
+.login_btnI{width:100px;height:26px;line-height:26px;text-decoration:none;color:#FFF;border:none;cursor:pointer;font-family:微软雅黑; font-size:14px; text-align:center;}
+.loginbtn-blove{background:#505050;}
+.loginbtn-blove:hover{background-color:#656565;}
+.loginbtn-blove:active{background-color:#656565}
+.login_list ul li.listpage{border:none; margin:10px 0px}
+.login_list ul li.listpage em{margin-right:10px;}
+.login_list ul li.listpage em.pagenumber{font-size:16px; color:#09f}
+.login_list-box{height:26px;color:#666;width:70px;margin-left:5px;border:1px solid #abadb3}
+/* 新项目 */
+.login_list ul.new_project{width:978px;float:left;background:#FFF;margin-left:10px; margin-top:10px; padding:30px 0px}
+.login_list ul.new_project li{width:958px; margin-left:20px;float:left;line-height:28px; border:none; text-align:left}
+.login_list ul.new_project li span{width:80px; margin-right:10px; font-size:14px; letter-spacing:1pt; text-align:right;float:left;}
+.login_list ul.new_project li em{font-size:12px; color:#F00; text-align:left}
+.newproject-box{height:28px;color:#666;width:300px;float:left; margin-right:5px;border:1px solid #abadb3}
+.newkard-box{height:28px;color:#666;width:300px;float:left; margin-right:5px;border:1px solid #abadb3; background:#efefef}
+/* 资金记录 */
+.MENU_nav{width:100%;height:50px; line-height:50px; background:#505050;float:left}
+.MENU_nav ul{width:100%;float:left}
+.MENU_nav ul li{width:120px;line-height:50px;color:#FFF; font-size:14px; letter-spacing:1pt;float:left; text-align:center;}
+.MENU_nav ul li.onmenu{width:120px; background:#09f}
+.MENU_nav ul li{background:#505050; cursor:pointer}
+.MENU_nav ul li:hover{background-color:#09f;}
+.MENU_nav ul li:active{background-color:#09f}
+
+.butII {
+height: 28px;
+line-height: 28px;
+padding: 0px 10px;
+_padding: 0px 0px;
+text-decoration: none;
+color: #FFF;
+border: none;
+cursor: pointer;
+text-align: center;
+font-family: 微软雅黑;
+font-size: 14px;
+letter-spacing: 1pt;
+margin-left: 5px;
+}
+.button-pink {
+background: #ffaa11;
+}
+.buttonI-pink {
+background: #505050;
+}

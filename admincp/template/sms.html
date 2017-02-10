@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+</head>
+<body>
+<div class="ur_here">首页 &raquo; 短信设置 &raquo; 短信记录</div>
+<div class="container">
+    <table width="100%" id="listTb">
+      <tr>
+        <th>手机号码</th>
+        <th>发送时间</th>
+        <th>验证码</th>
+        <th>短信类型</th>
+        <th>状态</th>
+      </tr>
+	    {foreach item=item key=key from=$list.record}
+      <tr data="{$item.id}">
+        <td>{$item.phone}</td>
+        <td>{$item.sendtime}</td>
+        <td>{$item.code}</td>
+        <td>{$item.type}</td>
+        <td>{$item.state}</td>
+      </tr>
+	    {/foreach}
+	  <tr>
+        <td colspan="5">{$list.pagestr}</td>
+      </tr>
+    </table>
+</div>
+</body>
+</html>

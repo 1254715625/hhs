@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+</head>
+<body>
+<div class="ur_here">首页 &raquo; 会员管理 &raquo;  短信金额</div>
+<div class="container">
+	<table width="100%" id="listTb">
+	  <tr>
+		<th>ID</th>
+		<th>会员类型</th>
+		<th>短信金额</th>
+		<th>操作</th>
+	  </tr>
+	  {foreach item=v key=key from=$data}
+	  <tr>
+		<td>{$v.id}</td>
+		<td>{$v.name}</td>
+		<td>{$v.value}元</td>
+		<td><a href='system.php?act=massage_money_save&id={$v.id}'>修改</a></td>
+	  </tr>
+	  {/foreach}
+	</table>
+</div>
+</body>
+</html>

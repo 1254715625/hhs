@@ -1,0 +1,224 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="css/selfservice.css">
+<div id="service">
+	<div class="box">
+      	<div class="top">您可以方便快捷地自助完成修改联系方式、找回登录密码、找回操作密码等服务。</div>
+      	<div class="con">
+        	<ul>
+			<li class="l_pas">
+				<h4><em></em>找回登录密码</h4>
+				<div class="gray">通过账号与绑定的手机号码，自助找回登录密码。</div>
+				<div class="but"><button class="stateGo">点击开始</button></div>
+			</li>
+			<li class="p_pas">
+				<h4><em></em>找回操作密码</h4>
+				<div class="gray">通过账号与绑定的邮箱地址，找回操作密码。</div>
+				<div class="but"> <button onclick="window.open('http://user.haohuisua.com/user.php?act=userinfo&opt=setsafepass');">点击开始</button></div>
+			</li>
+			<li class="count">
+				<h4><em></em>修改联系方式</h4>
+				<div class="gray">自助修改QQ号码、真实姓名等个人联系信息。</div>
+				<div class="but"><button onclick="window.open('http://user.haohuisua.com/user.php?act=userinfo&opt=userinfo');">点击开始</button></div>
+			</li>
+			<li class="tixian">
+				<h4><em></em>账户充值</h4>
+				<div class="gray">通过网银在线、淘宝店铺等方式给账户在线充值。</div>
+				<div class="but"><button onclick="window.open('http://user.haohuisua.com/user.php?act=topup');">点击开始</button></div>
+			</li>
+			<li class="renz">
+				<h4><em class="icon5"></em>账号认证</h4>
+				<div class="gray">进行手机认证、小调查、新手考试等操作。</div>
+				<div class="but"><button onclick="window.open('http://user.haohuisua.com');">点击开始</button></div>
+			</li>
+			</ul>
+      </div>
+    </div>
+    <div class="ico"></div>
+    <div class="tab2">
+    	<div class="tops">更多自助服务</div>
+    	<div class="zhpass">
+	    	<div class="top">
+				<span class="icos"></span>
+				<div class="title">
+					<strong>找回登录密码</strong><br>忘记登录密码了？不用着急，您可以在这里找回来：）
+				</div>
+			</div>
+			<div class="con">
+				<div class="item1">
+					<table cellspacing="0" cellpadding="0">
+						<tr>
+							<td class="t1"><strong>手机找回密码</strong></td>
+							<td colspan="2">&nbsp;</td>
+						</tr>
+						<tr>
+							<td class="t1">请输入您的账号:</td>
+							<td class="t2">
+								<input type="text" maxlength="15" class="input" id="username" >
+							</td>
+							<td class="t3"> </td>
+						</tr>
+						<tr>
+							<td class="t1">请输入您的手机:</td>
+							<td class="t2">
+								<input type="text" maxlength="11" class="input" id="mobile">
+							</td>
+							<td class="t3">输入绑定的手机号</td>
+						</tr>
+						<tr>
+							<td class="t1"> </td>
+							<td colspan="2">
+								<button class="slefsub" id="sendToMobile">确定</button>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<!-- <div style="float:left;" class="con">
+				<div class="item1">
+					<input type="hidden" value="email" name="type">
+					<table cellspacing="0" cellpadding="0">
+						<tbody><tr>
+							<td class="t1"><strong>邮箱找回密码</strong></td>
+							<td colspan="2">&nbsp;</td>
+						</tr>
+						<tr>
+							<td class="t1">请输入您的账号:</td>
+							<td class="t2">
+								<input type="text" maxlength="15" class="input" name="username" tabindex="3" id="username2">
+							</td>
+							<td class="t3"> </td>
+						</tr>
+						<tr>
+							<td class="t1">请输入Email地址:</td>
+							<td class="t2">
+								<input type="text" maxlength="40" class="input" name="email" tabindex="4" id="email">
+							</td>
+							<td class="t3">输入绑定的邮箱地址</td>
+						</tr>
+						<tr>
+							<td class="t1"> </td>
+							<td colspan="2">
+									<input type="hidden" value="1">
+									<button class="slefsub" id="sendToEmail">确定</button>
+							</td>
+						</tr>
+					</tbody></table>
+				</div>
+			</div> -->
+		</div>
+	    <div class="box" id="alink">
+	      <div class="top">更多自助服务<a name="moreservice"></a></div>
+				<div id="workdiv">
+					<ul class="default">
+					<li>
+						<strong>账号安全</strong>|
+						<a class="stateGo" href="javascript:;">找回登录密码</a>
+						<a target="_blank" href="http://user.haohuisua.com/user.php?act=userinfo&opt=password">修改登录密码</a>
+						<a target="_blank" href="http://user.haohuisua.com/user.php?act=userinfo&opt=setsafepass">修改操作密码</a>
+						<a target="_blank" href="##"></a>
+					</li>
+					<li>
+						<strong>支付提现</strong>|
+						<a target="_blank" href="http://user.haohuisua.com/user.php?act=topup">账户充值</a>
+						<a target="_blank" href="http://user.haohuisua.com/user.php?act=payment">申请提现</a>
+					</li>
+					<li>
+						<strong>服务管理</strong>|
+						<a target="_blank" href="home.php?act=buypoint">购买流量</a>
+						<a target="_blank" href="home.php?act=buypoint">购买发布点</a>
+						<a target="_blank" href="home.php?act=buypoint">批量获得发布点</a>
+					</li>
+					<li>
+						<strong>账户认证</strong>|
+						<a target="_blank" href="http://user.haohuisua.com">手机认证</a>
+						<a target="_blank" href="http://taobao.haohuisua.com/taobao.php?mod=bindseller">掌柜认证</a>
+						<a target="_blank" href="http://taobao.haohuisua.com/taobao.php?mod=bindBuyer">买号认证</a>
+					</li>
+					<li><strong>任务管理</strong>|
+						<a target="_blank" href="http://taobao.haohuisua.com/taobao.php?mod=addTask">发布任务</a>
+						<a target="_blank" href="http://taobao.haohuisua.com/taobao.php?mod=outTask">已发布任务</a>
+						<a target="_blank" href="http://taobao.haohuisua.com/taobao.php?mod=inTask">已接手任务</a>
+					</li>
+					<li><strong>自助查询</strong>|
+						<a target="_blank" href="http://user.haohuisua.com/user.php?act=payde&pay=payde">资金明细查询</a>
+						<a target="_blank" href="http://user.haohuisua.com/user.php?act=payde&pay=logpoint">刷点明细查询</a>
+						<a target="_blank" href="http://user.haohuisua.com/user.php?act=payde&pay=logcredit">积分明细查询</a>
+						<a target="_blank" href="http://user.haohuisua.com/user.php?act=payde&pay=logtopup">充值明细查询</a>
+						<a target="_blank" href="http://user.haohuisua.com/user.php?act=payde&pay=logpayment">提现明细查询</a>
+					</li>
+					</ul>
+				</div>
+	    </div>
+    </div>
+    <div style="clear:both; margin:10px 0px;">
+		<div style="float:left; width:480px;">
+			<a target="_blank" href="help.php?act=taskout"><img width="480" src="images/help/self_gg.gif"></a>
+		</div>
+		<div style="float:right; width:480px;">
+			<a target="_blank" href="help.php?act=taskout"><img width="480" src="images/help/self_hh.gif"></a>
+		</div>
+	</div>
+</div>
+<script language="JavaScript" type="text/javascript">
+	$(function(){
+		$(".stateGo").click(function(){
+			$(".zhpass,.tops").show();
+			$("#alink").hide();
+		})
+		/*短信找回密码*/
+		$("#sendToMobile").click(function(){
+			var name = $("#username").val();
+			var mobile = $("#mobile").val();
+			if(name == ''){
+				$.dialog({ id:'yz',title: '提示',content: '请输入您的账号~',fixed: true});return false;
+			}
+			if(mobile == ''){
+				$.dialog({ id:'yz',title: '提示',content: '请输入您绑定的手机号，确保其准确性~',fixed: true});return false;
+			}
+
+			$.dialog({ id:"ajaxStart",title: '数据正在检测中..',fixed: true,lock: true});
+
+	    	$.post("help.php?act=selfservice",{"action":1,"mobile":mobile,"username":name},function(data){
+				$.dialog.get('ajaxStart').close();
+				if(data.state == 1){
+					var cont = '<p style=" margin-bottom: 15px; ">'+data.info+'</p><table cellspacing="0" cellpadding="0"><tr><td class="t1">短信验证码：</td><td class="t2"><input type="text" id="fh_code"></td></tr><tr><td class="t1">确认新密码：</td><td class="t2"><input type="password" id="newpsd"></td></tr><tr><td class="t1">帐号新密码：</td><td class="t2"><input type="password" id="qd_newpsd"></td></tr><input type="hidden" value="'+data.uid+'" id="usid"></table>';
+					$.dialog({ 
+						title: '提示',
+						content:cont,
+						fixed: true,
+						lock: true,
+						okValue:'确定',
+						ok : function(){
+							var code = $("#fh_code").val();
+							var newpsd = $("#newpsd").val();
+							var qd_newpsd = $("#qd_newpsd").val();
+							var usid = $("#usid").val();
+							if(code == ''){
+								$.dialog({ id:'update',title: '提示',content: '请输入短信验证码~',fixed: true,lock: true});return false;
+							}
+							if(newpsd == ''){
+								$.dialog({ id:'update',title: '提示',content: '修改密码不能为空~',fixed: true,lock: true});return false;
+							}
+							if(newpsd != qd_newpsd){
+								$.dialog({ id:'update',title: '提示',content: '两次密码不一致！',fixed: true,lock: true});return false;
+							}
+							$.post("help.php?act=selfservice",{"code":code,"qd_newpsd":qd_newpsd,"usid":usid},function(data){
+								if(data.state == 1){
+									$.dialog({ title: '提示',content: data.info,fixed: true,lock: true,okValue:'确定',ok:function(){
+										location.href = "user.php?act=login";
+									}});
+								}else{
+									$.dialog({ title: '提示',content: data.info,fixed: true,lock: true});
+								}
+						   },'json');
+						   return false;
+						}
+					}); 
+					return false;
+				}
+				$.dialog({ title: '提示',content: data.info,fixed: true,lock: true});
+		   },'json');
+		});
+	});
+</script>
+{include common/footer}

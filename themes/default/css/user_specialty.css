@@ -1,0 +1,109 @@
+@charset "utf-8";
+/* CSS Document */
+/*职业刷客*/
+#shuake {float: left;width: 760px;margin-left: 10px;}
+
+#shuake .mh_tishi {
+background: #FFFBF2;
+border: 1px solid #FBE1C4;
+margin-bottom: 15px;
+padding: 12px 15px;
+}
+.ke {
+margin-top: 10px;
+width: 760px;
+}
+.ke h1 {
+background: url(../images/user/skaa.jpg) no-repeat  left top ;
+color: #408FCB;
+font-size: 14px;
+height: 33px;
+line-height: 27px;
+margin-bottom: 5px;
+}
+.ke h1 span {
+color: #000000;
+font-size: 12px;
+overflow: hidden;
+padding-left: 30px;
+padding-top: 7px;float: left;
+}
+.shenqing {
+background: url(../images/user/shuake.jpg) no-repeat  0 0 ;
+border: medium none;
+cursor: pointer;
+float: right;
+height: 27px;
+line-height: 99px;
+margin-top: 3px;
+overflow: hidden;
+text-indent: 101px;
+width: 100px;
+}
+.receive {
+background: url(../images/user/shuakes.jpg) no-repeat  0 0 ;
+border: medium none;
+cursor: pointer;
+float: right;
+height: 27px;
+line-height: 99px;
+margin-top: 3px;
+overflow: hidden;
+text-indent: 101px;
+width: 100px;
+}
+.ke ul {
+background: url(../images/user/bang_bg.gif) repeat-x scroll 0 0 transparent;
+border: 1px solid #C0DBF8;
+height: 22px;
+line-height: 22px;
+width: 760px;
+}
+.ke ul li {
+color: #999999;
+display: inline;
+float: left;
+text-align: center;
+}
+.ke table {
+border: 1px solid #a8dbff;
+border-top: none;
+}
+.ke table td {
+line-height: 30px;
+}
+.ke table .k01 {
+text-align: center;
+width: 180px;
+}
+.ke table .k02 {
+width: 340px;
+text-align: center;
+}
+.ke table .k03 {
+width: 260px;
+text-indent: 50px;
+color: #ff5500;
+}
+.ke table .tcolor td {
+background-color: #FBFBFB;
+border-bottom: 1px dotted #EBEBEB;
+border-top: 1px dotted #EBEBEB;
+}
+.zhiye{height:18px; padding-top:20px;font-size:15px; font-weight:bold;}
+.miaoshu{padding-top:10px}
+.miaoshu .puy{font-size:15px; font-weight:bold;}
+.miaoshu .cont{padding:10px 0px; line-height:20px; color:#666}
+.miaoshu .hsmd_btn {
+background: url(../images/user/hsmd_ico.png) no-repeat 0 -234px ;
+border: medium none;
+cursor: pointer;
+display: block;
+float: left;
+height: 33px;
+line-height: 99px;
+overflow: hidden;
+text-indent: 999px;
+width: 95px;
+}
+

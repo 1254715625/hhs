@@ -1,0 +1,105 @@
+{include common/header}
+<link rel="stylesheet" type="text/css" href="css/mm.css">
+<link rel="stylesheet" type="text/css" href="css/taobao_common.css">
+<script type="text/javascript" src="js/taobao/index.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.get('?mod=getaccount&type=seller', function(data, suatus){
+		$('.sellerdiv').html(data);
+	});
+});	
+</script>
+{include taobao/nav_up}
+<div class="tico menu mesou">
+	
+	<a href="?mod=index" title="搜索任务大厅" class="">搜索任务大厅</a>
+	<a href="?mod=inTask" title="已接任务" class="">已接任务</a>
+	<a href="?mod=outTask" title="已发任务" class="">已发任务</a>
+	<a href="?mod=bindBuyer" title="绑定买号" class="">绑定买号</a>
+	<a href="?mod=bindseller" class="nov" title="绑定掌柜">绑定掌柜</a>
+
+</div>
+<span id="tloading" style="background-image: url(http://taobao.damaihu.com.cn../images/taobao/loading.gif); width: 100px; height: 50px; float: left; text-indent: 40px; margin: 25px 0px 0px 305px; display: none; background-position: initial initial; background-repeat: no-repeat no-repeat;"><img src="../images/taobao/fg.gif"></span>
+<div id="moveContent"><div class="cle"></div>
+<div class="lst_info">
+<div class="mh_tishi">
+		1、您目前是<span class="orange">新手会员</span>用户，可以绑定{$_G.attrs.bdzgsl}个掌柜！<br>
+2、如果您的帐号还没有发布过任务，可以自己免费删除掌柜一次；发布过任务的帐号删除掌柜需要付费5元！
+<br>
+
+</div>
+<div class="bq_menu">
+	<a href="http://taobao.damaihu.com.cn/#bindBuyer" class="nov">绑定淘宝掌柜</a>
+	<a href="http://paipai.damaihu.com.cn/#bindBuyer">绑定拍拍掌柜</a>
+</div>
+	
+    <div>
+    	<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:20px;font-size:14px;background: url(../images/taobao/mhgl_btn.gif) 400px -401px no-repeat;" class="zg_tb">
+      <tbody><tr>
+        <td width="20%" height="30" align="left" valign="middle"><span class="mico taobao"></span></td>
+      </tr>
+
+      <tr>
+        <td width="20%" height="40" align="left" valign="middle"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tbody>
+          	<tr>
+            <td width="23%" style="padding:0;">淘宝掌柜名（旺旺名）：</td>
+            <td align="left" style="padding:0;"><input onclick="if(this.value.indexOf('输入旺旺名称') &gt;= 0)this.value='';" value="输入旺旺名称进行绑定" type="text" name="nickName" id="nickName" class="mh_bk"></td>
+         	 </tr>
+        	</tbody></table>
+    	</td>
+      </tr>
+	 
+      <tr>
+        <td height="60" align="left" valign="middle"><input type="button" id="addSeller" class="mico mh_bdbtn2"></td>
+      </tr>
+	   
+      <tr>
+        <td width="20%" height="40" align="left" valign="middle" class="mh_xian"><span class="orange">您目前是新手会员用户，可以绑定2个掌柜</span> <a href="/BuyPoint/" class="chengse2">申请VIP</a>最高可绑定30个掌柜！ <a href="/vip.html" target="_blank" class="lanse">查看VIP限权</a></td>
+      </tr>
+    </tbody>
+</table>
+    <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tbody><tr>
+        <td height="25">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tbody>
+          	<tr id="row-head">
+	            <td width="10" height="37" class="txjl_bg1"></td>
+	            <td width="20%" height="37" align="center" valign="middle" class="txjl_bg2 black">淘宝掌柜帐号</td>
+              <td width="30%" height="37" align="center" valign="middle" class="txjl_bg2 black">淘宝掌柜信用</td>
+				      <td width="10%" height="37" align="center" valign="middle" class="txjl_bg2 black">总发布任务</td>
+	            <td width="15%" height="37" align="center" valign="middle" class="txjl_bg2 black">绑定时间</td>
+	            <td width="15%" height="37" align="center" valign="middle" class="txjl_bg2 black">是否激活</td>
+	            <td width="10%" height="37" align="center" valign="middle" class="txjl_bg2 black">&nbsp;</td>
+	            <td width="10" height="37" class="txjl_bg3"></td>
+            </tr>
+        </tbody>
+    	</table></td>
+      </tr>
+    </tbody></table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <div class="rwdt_dlm">
+	  <div id="page">	  				<a href="javascript:;" page="NULL" class="up-no">&lt;</a>										<a href="javascript:;" page="2" class="next-page">&gt;</a>										<p class="total">总：共0页 当前:第<span class="now-show"> 1 </span>页</p>				   </div>
+	</div>
+	<div class="cle"></div>
+	<!--结束-->
+	</div></div></div></div>
+	<div id="footer">
+	<p>
+		<span class="chengse">官方QQ群：<a style="color:#FE5500;" target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=6c3a6de2ba1ebe59b8d437d1564122064f6120f53a8d44fda85634feea9e14b0">176682996</a></span>
+		（加群请注明好会刷）</p>
+	<p class="lanse">
+		<a href="/info/about?p=1">联系我们</a>|
+		<a href="/info/about?p=2">好会刷规则</a>|
+		<a target="_blank" href="http://www.yaodamai.com/">淘宝信誉查询</a>|
+		<a target="_blank" href="http://www.aizhanggui.com/">爱掌柜淘宝培训</a>|
+		<a target="_blank" href="/info/jishu">技术好会刷</a>
+	</p><p class="lanse">Copyright © 2012-2020 Damaihu.com All RightsReserved    好会刷版权所有 
+		<a target="_blank" href="http://www.miitbeian.gov.cn">黔ICP备14004290号</a>
+	</p>
+</div>
+</body></html>

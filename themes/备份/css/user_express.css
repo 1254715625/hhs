@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+/*真实快递单号*/
+#fh_gg{ background: url(../images/user/fh_gg.jpg) no-repeat scroll 0 0 #FFFFFF; float: left; height: 887px; margin-left: 10px; position: relative; width: 760px;}
+#fh_gg .fh_cl, .fh_cl2, .fh_cl3{background: url(../images/user/fh_ggbtn.png) no-repeat scroll 0 -2px transparent; font-weight: bold; height: 43px; left: 35px; line-height: 43px; position: absolute; text-align: center; top: 290px; width: 164px;}
+#fh_gg .fh_cl2{left: 209px;}
+#fh_gg .fh_cl3{left: 383px;}
+#fh_gg .fh_inp{left: 380px; position: absolute; top: 422px;}
+#fh_gg .fh_inp1, #fh_gg .fh_inp2, #fh_gg .fh_inp3, #fh_gg .fh_inp1, #fh_gg .fh_inp4, #fh_gg .fh_inp5, #fh_gg .fh_inp6, #fh_gg .fh_inp7, #fh_gg .fh_inp8{left: 158px; position: absolute; top: 341px;}
+#fh_gg .fh_inp1 input, #fh_gg .fh_inp9 input, #fh_gg .fh_inp6 input{border: medium none; color: #666666; font-size: 14px; height: 32px; line-height: 32px; padding-left: 8px; width: 560px;}
+#fh_gg .fh_inp2{left: 158px; top: 417px;}
+#fh_gg .fh_inp2 input, #fh_gg .fh_inp3 input, #fh_gg .fh_inp4 input, #fh_gg .fh_inp5 input, #fh_gg .fh_inp7 input, #fh_gg .fh_inp8 input{border: medium none; color: #666666; font-size: 14px; height: 32px; line-height: 32px; padding-left: 8px; width: 200px;}
+#fh_gg .fh_inp6{left: 158px; top: 470px;}
+#fh_gg .fh_btn{background: url(../images/user/fh_ggbtn.png) no-repeat scroll 0 -53px transparent; border: medium none; cursor: pointer; display: block; height: 42px; left: 308px; line-height: 99px; overflow: hidden; position: absolute; top: 536px; width: 171px;}
+#fh_gg .fh_btn:hover{background: url(../images/user/fh_ggbtn.png) no-repeat scroll 0px -102px transparent;}
+#fh_gg .fh_text{font-size: 13px; left: 35px; line-height: 25px; position: absolute; text-align: center; top: 612px; width: 723px;}
+#fh_gg .txt_fail{cursor: pointer;}
+#fh_gg #clddh{height: 400px;margin-top: 340px;background: #f6f6dc;float:left;width:100%;}
+#fh_gg #clddh table th,#fh_gg #clddh table td{height:30px;border-bottom: 1px solid #ddd;text-align: center;vertical-align: middle;}
+#fh_gg #clddh .seatch{width: 700px;margin: 10px 0 10px 35px;float:left;}
+#fh_gg #clddh .seatch span{float:left;margin-right:20px;}
+#fh_gg #clddh .seatch span input{height:25px;border:1px solid #ddd;line-height: 200%;vertical-align: middle;}
+#fh_gg #clddh .seatch #sea_btn{cursor: pointer;background: url(../images/user/fy_ico.jpg) repeat-x scroll -4px -865px transparent;border: medium none;height: 28px;width: 68px;}
+#fh_gg #page {margin: 30px 10px 25px;padding: 0 15px;cursor: pointer;}
+#fh_gg #page a:hover, .paydetails #page a.nov {background:#EAF4FD;border-color: #B0D0E9;}
+#fh_gg #page a {background: none repeat scroll 0 0 #F8F8F8;border: 1px solid #E8E8E8;display: block;float: left;height: 25px;margin: 0 2px;text-align: center;width: 25px;}
+#fh_gg #page .pr,.total {float: right;}
+#fh_gg #page .now-page{background:#EAF4FD;border-color: #B0D0E9;color: #1996E6;}
+/*底单申请*/
+#monad{float: left; width: 470px;}
+#monad .tishi{margin-bottom: 10px;height: 30px;float: left;border-bottom: 1px solid #ddd;font-size: 14px;}
+#monad .content{float:left;}
+#monad .content h3{color: #F50;height: 30px;}
+#monad .content p{float:left;height: 35px;}
+#monad .content p span{float: left; width: 100px; text-align: right;}
+#monad .content p input{color: #666;border: 1px solid #DDDDDD;height: 25px;line-height: 150%;text-indent: 5px;}
